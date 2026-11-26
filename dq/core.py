@@ -745,8 +745,12 @@ def load_stats(path=STATS_FILE):
 
 def save_stats(stats, path=STATS_FILE):
     try:
-        with open(path, "w", encoding="utf-8") as f:
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
             json.dump(stats, f, ensure_ascii=False, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
     except Exception:
         LOGGER.warning("Не удалось сохранить статистику", exc_info=True)
 

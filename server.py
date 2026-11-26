@@ -76,6 +76,21 @@ def number_pair(n):
 # --------------------------------------------------------------------------- #
 #  ДАННЫЕ
 # --------------------------------------------------------------------------- #
+def _safe_resolve(base_dir, rel_path):
+    """Resolve rel_path inside base_dir; return None if it escapes (traversal/symlink)."""
+    if not rel_path:
+        return None
+    # strip leading separators / drive letters
+    rel = rel_path.lstrip("/\\")
+    if ".." in rel.split(os.sep) or ".." in rel.split("/"):
+        return None
+    full = os.path.realpath(os.path.join(base_dir, rel))
+    base = os.path.realpath(base_dir)
+    if full == base or full.startswith(base + os.sep):
+        return full
+    return None
+
+
 def _short_title(name):
     """«Здания и городские объекты (Gebäude und Orte in der Stadt)» → «Здания и городские объекты»."""
     short = re.sub(r"\s*\([^)]*\)\s*$", "", name).strip()
@@ -765,6 +780,21 @@ def handle_reset(user_id):
 # --------------------------------------------------------------------------- #
 #  HTTP
 # --------------------------------------------------------------------------- #
+# --- Simple in-memory rate limiter (per IP) ---
+_rate_buckets = {}
+_rate_lock = threading.Lock()
+def _rate_ok(ip, limit=60, window=60):
+    now = time.time()
+    with _rate_lock:
+        bucket = _rate_buckets.get(ip, [])
+        bucket = [t for t in bucket if now - t < window]
+        if len(bucket) >= limit:
+            return False
+        bucket.append(now)
+        _rate_buckets[ip] = bucket
+        return True
+
+
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WEB_DIR, **kwargs)
@@ -1161,6 +1191,24 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
+        client_ip = self.client_address[0]
+        # Rate limiting (stricter for TTS/translate)
+        limit = 30 if path in ("/api/tts", "/api/tr/lookup", "/api/tr/add") else 60
+        if not _rate_ok(client_ip, limit=limit, window=60):
+            self.send_response(429)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Retry-After", "60")
+            self.end_headers()
+            self.wfile.write(b'{"ok":false,"error":"Too many requests"}')
+            return
+        # CSRF: validate Origin/Referer for state-changing requests
+        origin = self.headers.get("Origin") or self.headers.get("Referer") or ""
+        if origin and not origin.startswith(("http://127.0.0.1", "http://localhost", "https://deutsch-quest.fly.dev")):
+            self.send_response(403)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b'{"ok":false,"error":"Forbidden origin"}')
+            return
         payload = self._read_json()
         user_id = _get_user_id(self)
         
@@ -1202,11 +1250,11 @@ class Handler(SimpleHTTPRequestHandler):
 
         # -------- add custom word/phrase (user's own vocabulary) --------
         if path == "/api/tr/add":
-            text = str(payload.get("text") or "").strip()
-            ru = str(payload.get("ru") or "").strip()
-            kind = "phrase" if payload.get("kind") == "phrase" or " " in text else "word"
-            if not text or not ru:
-                return self._json({"ok": False, "error": "text and ru required"})
+            text = str(payload.get("text") or "").strip()[:200]
+            ru = str(payload.get("ru") or "").strip()[:200]
+            kind = payload.get("kind") if payload.get("kind") in ("word","phrase") else ("phrase" if " " in text else "word")
+            if not text or not ru or len(text) > 200 or len(ru) > 200:
+                return self._json({"ok": False, "error": "text and ru required (max 200 chars)"})
             # Save directly to user_words.json
             from dq.translate import load_user_words, save_user_words, key_of
             data = load_user_words()

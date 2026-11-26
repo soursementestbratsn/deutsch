@@ -848,3 +848,46 @@
   gap: 10px;
   margin-top: 20px;
 }
+/* === Touch targets & thumb zone === */
+button, .btn, a, [role="button"], input[type="button"], input[type="submit"] {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+@media (max-width: 768px) {
+  .primary-action, .btn-primary, #nextBtn, #checkBtn, #sayBtn {
+    position: sticky;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+    z-index: 50;
+  }
+  .topbar, header.topbar {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .bottom-nav, .mobile-tabbar {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  input, textarea, select {
+    font-size: 16px; /* prevent iOS zoom */
+    inputmode: text;
+    autocapitalize: none;
+    autocomplete: off;
+  }
+  img {
+    loading: lazy;
+    decoding: async;
+  }
+}
+/* === Reduced motion === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* === PWA safe area === */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
