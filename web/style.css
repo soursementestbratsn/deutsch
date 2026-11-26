@@ -2243,3 +2243,16 @@ body.is-calm .confetti, body.is-calm .streak-badge, body.is-calm .level-badge {
   display: none !important;
 }
 body.is-calm .gamify-panel { display: none !important; }
+
+/* === Print stylesheet === */
+@media print {
+  .topbar, .bottom-nav, .mobile-tabbar, .settings-overlay, .modal, .toast,
+  button, .btn, .confetti, .xp-bar, .hearts { display: none !important; }
+  body { background: white !important; color: black !important; font-size: 12pt; }
+  .glass, .glass-card { background: white !important; border: 1px solid #ccc !important;
+    backdrop-filter: none !important; box-shadow: none !important; }
+  a { text-decoration: none; color: black; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #999; padding: 4px 8px; }
+  .page-break { page-break-after: always; }
+}

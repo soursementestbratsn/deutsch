@@ -201,7 +201,7 @@ def _is_local_request(handler):
 
 def _check_admin_auth(handler):
     """Check if request is authorized for admin endpoints (/backups, /stats).
-    Allows: localhost, or valid admin token in Authorization header or ?token= query.
+    Allows: localhost, or valid admin token in Authorization: Bearer header only.
     """
     if _is_local_request(handler):
         return True
@@ -213,11 +213,7 @@ def _check_admin_auth(handler):
         token = auth[7:].strip()
         if token == ADMIN_TOKEN:
             return True
-    # Check ?token= query param
-    qs = parse_qs(urlparse(handler.path).query)
-    token = (qs.get("token") or [""])[0]
-    if token == ADMIN_TOKEN:
-        return True
+    # ?token= query param no longer accepted (security: token leaks via referrer/history)
     return False
 
 
@@ -227,7 +223,7 @@ def _send_unauthorized(handler):
     handler.send_header("Content-Type", "application/json; charset=utf-8")
     handler.send_header("WWW-Authenticate", 'Bearer realm="Deutsch Quest Admin"')
     handler.end_headers()
-    handler.wfile.write(json.dumps({"error": "Unauthorized", "message": "Admin access required. Provide token via Authorization header or ?token= query."}).encode("utf-8"))
+    handler.wfile.write(json.dumps({"error": "Unauthorized", "message": "Admin access required. Provide token via Authorization: Bearer header."}).encode("utf-8"))
 
 
 # --- Per-user stats ---
@@ -236,7 +232,11 @@ def _get_user_id(handler):
     # Check X-User-ID header (set by frontend after login)
     user_id = handler.headers.get("X-User-ID")
     if user_id:
-        return user_id
+        import re as _re
+        if not _re.fullmatch(r"[a-zA-Z0-9_-]{8,64}", user_id):
+            user_id = None
+        else:
+            return user_id
     # Check cookie
     cookie = handler.headers.get("Cookie", "")
     for part in cookie.split(";"):
@@ -795,6 +795,21 @@ def _rate_ok(ip, limit=60, window=60):
         return True
 
 
+import secrets as _secrets
+def _get_csrf_token(self):
+    token = self.headers.get('X-CSRF-Token', '')
+    cookie = self.headers.get('Cookie', '')
+    # extract csrf from cookie
+    m = None
+    for part in cookie.split(';'):
+        part = part.strip()
+        if part.startswith('csrf_token='):
+            m = part.split('=',1)[1]
+    if m and token and _secrets.compare_digest(m, token):
+        return True
+    return False
+
+
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=WEB_DIR, **kwargs)
@@ -832,6 +847,20 @@ class Handler(SimpleHTTPRequestHandler):
             cache = "public, max-age=86400"
         if cache:
             self.send_header("Cache-Control", cache)
+        # ETag for static files (mtime + size) to enable 304 Not Modified
+        if path and not path.startswith("/api/") and os.path.isfile(os.path.join(WEB_DIR if not path.startswith("/images/") else IMAGES_DIR, path.lstrip("/"))):
+            fpath = os.path.join(WEB_DIR, path.lstrip("/")) if not path.startswith("/images/") else os.path.join(IMAGES_DIR, path.lstrip("/images/").lstrip("/"))
+            try:
+                st = os.stat(fpath)
+                etag = f'"{st.st_mtime_ns}-{st.st_size}"'
+                self.send_header("ETag", etag)
+                inm = self.headers.get("If-None-Match", "")
+                if inm == etag:
+                    self.send_response(304)
+                    super().end_headers()
+                    return
+            except OSError:
+                pass
         super().end_headers()
 
     # Без `; charset=utf-8`: иначе mimetypes не узнаёт расширение и отдаёт
@@ -1341,7 +1370,7 @@ class Handler(SimpleHTTPRequestHandler):
             user_id = f"user_{username}"
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Set-Cookie", f"dq_user={user_id}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000")
+            self.send_header("Set-Cookie", f"dq_user={user_id}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=31536000")
             self.end_headers()
             self.wfile.write(json.dumps({"ok": True, "user_id": user_id, "username": username}).encode("utf-8"))
             return
