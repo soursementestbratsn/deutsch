@@ -1630,6 +1630,7 @@ function renderGroupStats() {
 function bindUI() {
   $$("#nav button").forEach((b) => {
     b.onclick = () => {
+      if (b.dataset.view === "changelog") { window.location.href = "/changelog"; return; }
       showView(b.dataset.view);
       $$("#nav button").forEach((x) => x.classList.toggle("active", x === b));
     };

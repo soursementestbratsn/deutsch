@@ -214,7 +214,7 @@
       </div>
     </div>
   </main>
-  <script src="dq.js?v=138"></script>
+  <script src="dq.js?v=140"></script>
   <script>
     // Load changelog from backups index
     async function loadChangelog() {
@@ -230,12 +230,12 @@
         const versions = [...data.versions].reverse();
         let html = '';
         versions.forEach(v => {
-          const date = new Date(v.timestamp).toLocaleString('ru-RU', {
+          const date = new Date(v.at).toLocaleString('ru-RU', {
             day: '2-digit', month: '2-digit', year: 'numeric',
             hour: '2-digit', minute: '2-digit'
           });
           const changes = v.changes || [];
-          if (!changes.length) return;
+          // show all versions
           
           html += `
             <div class="version-card">
@@ -247,15 +247,19 @@
               <ul class="changes-list">
           `;
           changes.forEach(c => {
-            const typeClass = c.type || 'fix';
-            const files = c.files ? `<span class="change-files">${c.files.join(', ')}</span>` : '';
-            html += `
+            const typeClass = 'fix';
+            const file = c['файл'] || c.file || '';
+            const what = c['что'] || c.what || '';
+            html += 
               <li>
-                <span class="change-type ${typeClass}">${typeClass}</span>
-                <span class="change-desc">${c.desc}${files}</span>
+                <span class="change-type "></span>
+                <span class="change-desc">: </span>
               </li>
-            `;
+            ;
           });
+          if (!changes.length) {
+            html += '<li><span class="change-desc">Снимок без изменений</span></li>';
+          }
           html += `
               </ul>
               <a href="/backups/${v.id}" class="backup-link">Подробнее и статистика →</a>
