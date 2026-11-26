@@ -1,8 +1,8 @@
 {
-  "answered": 808,
-  "correct": 522,
+  "answered": 809,
+  "correct": 523,
   "best_streak": 44,
-  "daily_answers": 2,
+  "daily_answers": 3,
   "last_day": "2026-11-26",
   "theme": "Океан",
   "accent": "Небо",
@@ -11,7 +11,7 @@
   "favorite_group": "Все",
   "day_streak": 1,
   "last_study_day": "2026-11-17",
-  "xp": 8001,
+  "xp": 8011,
   "mode": "Мультивыбор",
   "input_type": "choice",
   "direction": "ru-de",
@@ -681,6 +681,11 @@
         "b": 1,
         "n": 1,
         "last": "2026-11-26"
+      },
+      "sprechen": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-26"
       }
     },
     "due": [
@@ -744,6 +749,7 @@
       "der Hals",
       "die Haut",
       "der Zeh",
+      "das Ohr",
       "das Herz",
       "das Blut",
       "die Ohren",
@@ -774,7 +780,9 @@
       "noch",
       "die Frau",
       "das Haus",
-      "das Kind"
+      "das Kind",
+      "schlecht",
+      "sprechen"
     ]
   },
   "words": {},
@@ -954,8 +962,8 @@
       "c": 9
     },
     "2026-11-26": {
-      "a": 2,
-      "c": 2
+      "a": 3,
+      "c": 3
     }
   }
 }

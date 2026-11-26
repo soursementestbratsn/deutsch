@@ -454,3 +454,27 @@ vor einer Woche = неделю назад
 nach der Arbeit = после работы
 während des Unterrichts = во время урока
 bis Freitag = до пятницы
+
+# Отделяемые приставки
+aufstehen = вставать (auf- отделяется)
+einkaufen = покупать (ein- отделяется)
+mitkommen = идти вместе (mit- отделяется)
+anrufen = звонить (an- отделяется)
+zumachen = закрывать (zu- отделяется)
+abfahren = отъезжать (ab- отделяется)
+fernsehen = смотреть телевизор (fern- не отделяется)
+verstehen = понимать (ver- не отделяется)
+bekommen = получать (be- не отделяется)
+entscheiden = решать (ent- не отделяется)
+
+# Ложные друзья предлогов
+im Winter = зимой (не «в зиму»)
+im Januar = в январе
+am Montag = в понедельник
+um 8 Uhr = в 8 часов
+seit gestern = с вчера
+vor einer Woche = неделю назад
+nach der Arbeit = после работы
+während des Unterrichts = во время урока
+bis Freitag = до пятницы
+trotz des Regens = несмотря на дождь
