@@ -1,0 +1,7 @@
+Improve TTS/voice quality:
+- Text preprocessing/normalization for German (numbers, ordinals, abbreviations, phone numbers)
+- SSML generation with prosody controls (breaks, rate, pitch, volume, emphasis, say-as)
+- More voice options (de-DE, de-AT, de-CH variants for German; ru-RU for Russian)
+- Voice variant selection in settings (Standard/Österreich/Schweiz)
+- Fixed caching to include voice variant in cache key
+- Fixed abbreviation expansion to avoid duplicate periods

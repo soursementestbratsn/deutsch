@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Übungsblatt: Grammatik (A1–A2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        .input-inline {
+            border-bottom: 2px solid #94a3b8;
+            background-color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 6px 6px 0 0;
+            transition: all 0.2s ease;
+            outline: none;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .input-inline:focus {
+            border-bottom-color: #2563eb;
+            background-color: #eff6ff;
+        }
+        .input-correct {
+            border-bottom-color: #16a34a !important;
+            background-color: #dcfce7 !important;
+            color: #14532d !important;
+        }
+        .input-wrong {
+            border-bottom-color: #dc2626 !important;
+            background-color: #fee2e2 !important;
+            color: #7f1d1d !important;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-24">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-md">A1–A2</span>
+                    <h1 class="text-lg sm:text-xl font-bold text-slate-900">Deutsch Übungsblatt: Grammatik</h1>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-500 mt-0.5">Интерактивный тренажёр с алгоритмами решения и разбором ошибок</p>
+            </div>
+            
+            <div class="flex items-center gap-2 self-start sm:self-auto">
+                <div class="flex bg-slate-100 p-1 rounded-lg border border-slate-200">
+                    <button onclick="switchVariant(0)" id="var-btn-0" class="px-3 py-1 text-xs font-semibold rounded-md bg-white text-blue-600 shadow-sm transition">Вариант 1</button>
+                    <button onclick="switchVariant(1)" id="var-btn-1" class="px-3 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition">Вариант 2</button>
+                    <button onclick="switchVariant(2)" id="var-btn-2" class="px-3 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition">Вариант 3</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 pt-6 space-y-8" id="worksheet-container">
+        <!-- Tasks will be rendered here via JS -->
+    </main>
+
+    <!-- Vocabulary Section -->
+    <section class="max-w-4xl mx-auto px-4 mt-10">
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+                <div>
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900">Словарик текущего варианта</h2>
+                    <p class="text-xs sm:text-sm text-slate-500">Выписывай незнакомые слова с артиклем или в тройке форм</p>
+                </div>
+                <span class="text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1 rounded-full">Лексика A1–A2</span>
+            </div>
+            <div id="vocab-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-sm">
+                <!-- Vocab items rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Bottom Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur border-t border-slate-200 py-3 px-4 z-30 shadow-lg">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div id="score-display" class="text-sm font-semibold text-slate-700">
+                Заполни пропуски и нажми «Проверить»
+            </div>
+            <div class="flex items-center gap-2.5">
+                <button onclick="resetWorksheet()" class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
+                    Сбросить
+                </button>
+                <button onclick="checkAnswers()" class="px-5 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-sm transition">
+                    Проверить ответы
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data for 3 complete variants mirroring the user's worksheet structure
+        const variants = [
+            // VARIANT 1
+            {
+                vocab: [
+                    { de: "der Mantel", ru: "пальто" },
+                    { de: "das Geschenk", ru: "подарок" },
+                    { de: "der Kollege", ru: "коллега (муж.)" },
+                    { de: "gehören (+ Dativ)", ru: "принадлежать (кому?)" },
+                    { de: "die Tasche", ru: "сумка" },
+                    { de: "einkaufen (kauft ... ein)", ru: "закупаться продуктами" },
+                    { de: "lesen (liest)", ru: "читать" },
+                    { de: "fliegen (ist geflogen)", ru: "лететь" },
+                    { de: "der Rucksack", ru: "рюкзак" },
+                    { de: "das Regal", ru: "полка / стеллаж" },
+                    { de: "müde", ru: "усталый" },
+                    { de: "pünktlich", ru: "вовремя / пунктуально" }
+                ],
+                task1: [
+                    {
+                        before: "1. Ich kaufe heute",
+                        after: "(ein) warmen Mantel.",
+                        answers: ["einen"],
+                        explanation: "Кладём/покупаем что? → Akkusativ. В скобках (ein) → нужен неопределённый артикль. der Mantel (муж. род) в Akkusativ становится einen."
+                    },
+                    {
+                        before: "2. Kannst du bitte",
+                        after: "(die) Tür schließen? Es zieht.",
+                        answers: ["die"],
+                        explanation: "Закрыть что? → Akkusativ. В скобках (die) → определённый артикль. Женский род (die Tür) в Akkusativ не меняется."
+                    },
+                    {
+                        before: "3. Das neue Handy gehört",
+                        after: "(der) Kollegen.",
+                        answers: ["dem"],
+                        explanation: "Глагол gehören (принадлежать) всегда требует Dativ (кому?). В скобках (der) → der в Dativ становится dem."
+                    },
+                    {
+                        before: "4. Hast du",
+                        after: "(das) Buch schon gelesen?",
+                        answers: ["das"],
+                        explanation: "Прочитал что? → Akkusativ. В скобках (das) → средний род в Akkusativ не меняется и остаётся das."
+                    },
+                    {
+                        before: "5. Die Schlüssel liegen auf",
+                        after: "(der) Schreibtisch.",
+                        answers: ["dem"],
+                        explanation: "Лежат где? (Wo? нет движения) → Dativ. der Schreibtisch (муж. род) в Dativ становится dem."
+                    },
+                    {
+                        before: "6. Ich danke",
+                        after: "(eine) Freundin für die Hilfe.",
+                        answers: ["einer"],
+                        explanation: "Глагол danken (благодарить) всегда требует Dativ (кому?). В скобках (eine) → женский род eine в Dativ становится einer."
+                    }
+                ],
+                task2: [
+                    {
+                        parts: ["1. Gestern", "wir nach Berlin", ". (fliegen – Perfekt)"],
+                        answers: ["sind", "geflogen"],
+                        explanation: "Маркер прошлого (Gestern) → Perfekt. fliegen — глагол движения из точки А в Б, поэтому берём sein (wir sind), а в конце ставим geflogen."
+                    },
+                    {
+                        parts: ["2. Am Samstag", "meine Schwester oft im Supermarkt", ". (einkaufen – Präsens)"],
+                        answers: ["kauft", "ein"],
+                        explanation: "Регулярное действие (Am Samstag) → Präsens. Подлежащее meine Schwester (она = sie, ед.ч.) → окончание -t (kauft). Отделяемая приставка ein- уходит в конец."
+                    },
+                    {
+                        parts: ["3. Was", "du gestern Abend im Kino", "? (sehen – Perfekt)"],
+                        answers: ["hast", "gesehen"],
+                        explanation: "Прошедшее время (gestern Abend) → Perfekt. Глагол sehen не означает перемещение, берём haben (du hast) + gesehen в конце."
+                    },
+                    {
+                        parts: ["4. Paul", "jeden Abend ein Buch. (lesen – Präsens)"],
+                        answers: ["liest"],
+                        explanation: "Регулярное действие → Präsens. Paul = er (он). У сильного глагола lesen в форме er/sie/es корневая e меняется на ie: er liest."
+                    },
+                    {
+                        parts: ["5. Wir", "letzten Monat ein neues Auto", ". (kaufen – Perfekt)"],
+                        answers: ["haben", "gekauft"],
+                        explanation: "Прошлое (letzten Monat) → Perfekt. Обычный глагол kaufen берёт haben (wir haben) + стандартную форму gekauft (ge- + корень + -t)."
+                    },
+                    {
+                        parts: ["6. Wann", "der Unterricht morgen", "? (anfangen – Präsens)"],
+                        answers: ["fängt", "an"],
+                        explanation: "Расписание → Präsens. der Unterricht (он = er). У глагола anfangen корневая a получает умлаут (fängt), а отделяемая приставка an- улетает в конец."
+                    }
+                ],
+                task3: [
+                    {
+                        before: "1. Hier ist eine Bibliothek. Man",
+                        after: "hier nicht laut sprechen.",
+                        answers: ["darf"],
+                        explanation: "Запрет/правило (нельзя громко говорить) → dürfen. Для man (как er/sie/es) форма без окончания: darf."
+                    },
+                    {
+                        before: "2. Ich habe kein Brot mehr. Ich",
+                        after: "heute noch einkaufen gehen.",
+                        answers: ["muss"],
+                        explanation: "Необходимость/вынужденность (хлеб закончился) → müssen. Для ich форма без окончания: muss."
+                    },
+                    {
+                        before: "3.",
+                        after: "du mir bitte kurz helfen?",
+                        answers: ["Kannst"],
+                        explanation: "Вежливая просьба / возможность → können. Для du добавляем -st и меняем гласную: Kannst."
+                    },
+                    {
+                        before: "4. Wir haben im August frei und",
+                        after: "ans Meer fahren.",
+                        answers: ["wollen"],
+                        explanation: "Желание и планы на отпуск → wollen. Для wir форма совпадает с инфинитивом: wollen."
+                    },
+                    {
+                        before: "5. Der Lehrer sagt, ihr",
+                        after: "die Hausaufgaben pünktlich machen.",
+                        answers: ["sollt"],
+                        explanation: "Чужое указание / требование (учитель говорит) → sollen. Для ihr окончание -t: sollt."
+                    }
+                ],
+                task4: [
+                    {
+                        before: "1. Ich lege das Handy",
+                        after: "(in / die) Tasche.",
+                        answers: ["in die"],
+                        explanation: "Кладу куда? (Wohin? есть перемещение) → Akkusativ. Женский род (die Tasche) в Akkusativ не меняется → in die."
+                    },
+                    {
+                        before: "2. Die Bücher stehen",
+                        after: "(in / das) Regal.",
+                        answers: ["in dem", "im"],
+                        explanation: "Стоят где? (Wo? уже находятся на месте) → Dativ. Средний род (das Regal) в Dativ становится dem → in dem (или сокращённо im)."
+                    },
+                    {
+                        before: "3. Er stellt die Flasche",
+                        after: "(auf / der) Tisch.",
+                        answers: ["auf den"],
+                        explanation: "Ставит куда? (Wohin? движение) → Akkusativ. Мужской род (der Tisch) в Akkusativ меняется на den → auf den."
+                    },
+                    {
+                        before: "4. Mein Laptop liegt",
+                        after: "(auf / das) Bett.",
+                        answers: ["auf dem"],
+                        explanation: "Лежит где? (Wo? неподвижно) → Dativ. Средний род (das Bett) в Dativ меняется на dem → auf dem."
+                    }
+                ],
+                task5: [
+                    {
+                        sentence1: "1. Ich gehe heute früh schlafen. Ich bin sehr müde. (weil)",
+                        prefix: "→ Ich gehe heute früh schlafen,",
+                        answers: ["weil ich sehr müde bin.", "weil ich sehr müde bin"],
+                        explanation: "После запятой ставим союз weil, затем подлежащее (ich), второстепенные члены (sehr müde), а спрягаемый глагол (bin) уводим в самый конец."
+                    },
+                    {
+                        sentence1: "2. Sie weiß nicht. Der Zug kommt heute später. (dass)",
+                        prefix: "→ Sie weiß nicht,",
+                        answers: ["dass der Zug heute später kommt.", "dass der Zug heute später kommt"],
+                        explanation: "После союза dass глагол kommt переезжает со 2-го места в самый конец предложения."
+                    },
+                    {
+                        sentence1: "3. Wir machen am Sonntag ein Picknick. Die Sonne scheint. (wenn)",
+                        prefix: "→ Wir machen am Sonntag ein Picknick,",
+                        answers: ["wenn die Sonne scheint.", "wenn die Sonne scheint"],
+                        explanation: "Союз wenn отправляет глагол scheint в конец придаточного предложения."
+                    }
+                ]
+            },
+
+            // VARIANT 2
+            {
+                vocab: [
+                    { de: "der Kuchen", ru: "пирог / торт" },
+                    { de: "die Oma", ru: "бабушка" },
+                    { de: "gefallen (+ Dativ)", ru: "нравиться (кому?)" },
+                    { de: "das Bild", ru: "картина / фото" },
+                    { de: "fernsehen (sieht ... fern)", ru: "смотреть телевизор" },
+                    { de: "schreiben (hat geschrieben)", ru: "писать" },
+                    { de: "laufen (läuft / ist gelaufen)", ru: "бегать / идти пешком" },
+                    { de: "der Stuhl", ru: "стул" },
+                    { de: "die Wand", ru: "стена" },
+                    { de: "das Kino", ru: "кинотеатр" },
+                    { de: "krank", ru: "больной" },
+                    { de: "die Zeit", ru: "время" }
+                ],
+                task1: [
+                    {
+                        before: "1. Zum Frühstück esse ich oft",
+                        after: "(ein) Apfel.",
+                        answers: ["einen"],
+                        explanation: "Ем что? → Akkusativ. В скобках (ein) → неопределённый артикль. der Apfel (муж. род) в Akkusativ становится einen."
+                    },
+                    {
+                        before: "2. Das neue Kleid gefällt",
+                        after: "(die) Mutter sehr gut.",
+                        answers: ["der"],
+                        explanation: "Глагол gefallen (нравиться) требует Dativ (кому?). Женский род (die Mutter) в Dativ меняется на der."
+                    },
+                    {
+                        before: "3. Wir besuchen am Sonntag",
+                        after: "(ein) Freund in München.",
+                        answers: ["einen"],
+                        explanation: "Навещаем кого? → Akkusativ. В скобках (ein) → мужской род der Freund становится einen."
+                    },
+                    {
+                        before: "4. Wo ist",
+                        after: "(das) Kind? Es spielt im Garten.",
+                        answers: ["das"],
+                        explanation: "Кто/что? (подлежащее) → Nominativ. В скобках (das) → средний род остаётся das."
+                    },
+                    {
+                        before: "5. Ich schenke",
+                        after: "(der) Vater ein Buch zum Geburtstag.",
+                        answers: ["dem"],
+                        explanation: "Дарю кому? → Dativ. В скобках (der) → мужской род в Dativ становится dem."
+                    },
+                    {
+                        before: "6. Sie trinkt morgens",
+                        after: "(eine) Tasse Tee.",
+                        answers: ["eine"],
+                        explanation: "Пьёт что? → Akkusativ. В скобках (eine) → женский род в Akkusativ не меняется (eine)."
+                    }
+                ],
+                task2: [
+                    {
+                        parts: ["1. Letzte Woche", "ich einen langen Brief", ". (schreiben – Perfekt)"],
+                        answers: ["habe", "geschrieben"],
+                        explanation: "Прошедшее время (Letzte Woche) → Perfekt. Глагол schreiben берёт haben (ich habe) и сильную форму geschrieben в конце."
+                    },
+                    {
+                        parts: ["2. Abends", "mein Opa gerne", ". (fernsehen – Präsens)"],
+                        answers: ["sieht", "fern"],
+                        explanation: "Регулярно (Abends) → Präsens. mein Opa = er (он) → гласная e меняется на ie (sieht), а отделяемая приставка fern- уходит в конец."
+                    },
+                    {
+                        parts: ["3. Am Sonntag", "wir im Park", ". (laufen – Perfekt)"],
+                        answers: ["sind", "gelaufen"],
+                        explanation: "Perfekt. Глагол laufen означает движение/перемещение, поэтому используется sein (wir sind) + gelaufen."
+                    },
+                    {
+                        parts: ["4. Warum", "du so schnell? (sprechen – Präsens)"],
+                        answers: ["sprichst"],
+                        explanation: "Настоящее время → Präsens. Для du сильный глагол sprechen меняет e на i и получает -st: sprichst."
+                    },
+                    {
+                        parts: ["5. Meine Eltern", "in Frankfurt", ". (wohnen – Präsens)"],
+                        answers: ["wohnen"],
+                        explanation: "Подлежащее Meine Eltern (родители = они, мн.ч.) → в Präsens окончание -en: wohnen."
+                    },
+                    {
+                        parts: ["6. Wann", "ihr gestern nach Hause", "? (kommen – Perfekt)"],
+                        answers: ["seid", "gekommen"],
+                        explanation: "Вчера (gestern) → Perfekt. kommen — глагол движения, берём sein для ihr (ihr seid) + gekommen."
+                    }
+                ],
+                task3: [
+                    {
+                        before: "1. Im Museum",
+                        after: "man keine Fotos machen.",
+                        answers: ["darf"],
+                        explanation: "Правила музея (запрет) → dürfen. Для man форма без окончания: darf."
+                    },
+                    {
+                        before: "2. Max ist krank. Er",
+                        after: "im Bett bleiben.",
+                        answers: ["muss"],
+                        explanation: "Вынужденная необходимость (он болен) → müssen. Для er форма без окончания: muss."
+                    },
+                    {
+                        before: "3. Ich",
+                        after: "sehr gut Gitarre spielen.",
+                        answers: ["kann"],
+                        explanation: "Навык / умение → können. Для ich форма без окончания: kann."
+                    },
+                    {
+                        before: "4.",
+                        after: "ihr heute Abend ins Kino gehen?",
+                        answers: ["Wollt"],
+                        explanation: "Вопрос о желании / планах → wollen. Для ihr добавляем -t: Wollt."
+                    },
+                    {
+                        before: "5. Meine Mutter sagt, ich",
+                        after: "mein Zimmer aufräumen.",
+                        answers: ["soll"],
+                        explanation: "Поручение от другого человека (мама говорит) → sollen. Для ich форма: soll."
+                    }
+                ],
+                task4: [
+                    {
+                        before: "1. Die Katze springt",
+                        after: "(auf / der) Stuhl.",
+                        answers: ["auf den"],
+                        explanation: "Прыгает куда? (Wohin? движение) → Akkusativ. Мужской род (der Stuhl) → auf den."
+                    },
+                    {
+                        before: "2. Das Poster hängt",
+                        after: "(an / die) Wand.",
+                        answers: ["an der"],
+                        explanation: "Висит где? (Wo? уже висит, движения нет) → Dativ. Женский род (die Wand) в Dativ → an der."
+                    },
+                    {
+                        before: "3. Wir gehen am Abend",
+                        after: "(in / das) Kino.",
+                        answers: ["in das", "ins"],
+                        explanation: "Идём куда? (Wohin? направление) → Akkusativ. Средний род (das Kino) не меняется → in das (или ins)."
+                    },
+                    {
+                        before: "4. Die Kinder sitzen",
+                        after: "(in / der) Garten.",
+                        answers: ["in dem", "im"],
+                        explanation: "Сидят где? (Wo? на месте) → Dativ. Мужской род (der Garten) в Dativ → in dem (или im)."
+                    }
+                ],
+                task5: [
+                    {
+                        sentence1: "1. Er kommt heute nicht zur Arbeit. Er hat Fieber. (weil)",
+                        prefix: "→ Er kommt heute nicht zur Arbeit,",
+                        answers: ["weil er Fieber hat.", "weil er Fieber hat"],
+                        explanation: "После союза weil глагол hat уходит со 2-го места в самый конец предложения."
+                    },
+                    {
+                        sentence1: "2. Ich hoffe. Du hast morgen Zeit. (dass)",
+                        prefix: "→ Ich hoffe,",
+                        answers: ["dass du morgen Zeit hast.", "dass du morgen Zeit hast"],
+                        explanation: "В придаточном с dass спрягаемый глагол hast переносится в конец."
+                    },
+                    {
+                        sentence1: "3. Ich trinke einen Kaffee. Ich bin müde. (wenn)",
+                        prefix: "→ Ich trinke einen Kaffee,",
+                        answers: ["wenn ich müde bin.", "wenn ich müde bin"],
+                        explanation: "После wenn глагол bin уходит в самый конец перед точкой."
+                    }
+                ]
+            },
+
+            // VARIANT 3
+            {
+                vocab: [
+                    { de: "der Hund", ru: "собака" },
+                    { de: "die Nachbarin", ru: "соседка" },
+                    { de: "das Geld", ru: "деньги" },
+                    { de: "aufstehen (steht ... auf)", ru: "вставать (с постели)" },
+                    { de: "finden (hat gefunden)", ru: "находить" },
+                    { de: "fahren (fährt / ist gefahren)", ru: "ехать" },
+                    { de: "die Küche", ru: "кухня" },
+                    { de: "der Boden", ru: "пол" },
+                    { de: "das Fenster", ru: "окно" },
+                    { de: "kalt", ru: "холодный" },
+                    { de: "lernen", ru: "учить / учиться" },
+                    { de: "die Prüfung", ru: "экзамен" }
+                ],
+                task1: [
+                    {
+                        before: "1. Wir haben",
+                        after: "(ein) kleinen Hund zu Hause.",
+                        answers: ["einen"],
+                        explanation: "Имеем кого? → Akkusativ. В скобках (ein) → мужской род der Hund в Akkusativ становится einen."
+                    },
+                    {
+                        before: "2. Ich helfe",
+                        after: "(die) Nachbarin mit den Taschen.",
+                        answers: ["der"],
+                        explanation: "Глагол helfen (помогать) всегда требует Dativ (кому?). Женский род die в Dativ меняется на der."
+                    },
+                    {
+                        before: "3. Kannst du mir bitte",
+                        after: "(das) Salz geben?",
+                        answers: ["das"],
+                        explanation: "Дать что? → Akkusativ. Средний род (das Salz) в Akkusativ не меняется → das."
+                    },
+                    {
+                        before: "4. Der Mann gibt",
+                        after: "(ein) Kind ein Eis.",
+                        answers: ["dem", "einem"],
+                        explanation: "Даёт кому? → Dativ. В скобках (ein) → средний род das Kind в Dativ становится einem."
+                    },
+                    {
+                        before: "5. Sie sucht",
+                        after: "(der) Autoschlüssel.",
+                        answers: ["den"],
+                        explanation: "Ищет что? → Akkusativ. В скобках (der) → мужской род в Akkusativ становится den."
+                    },
+                    {
+                        before: "6. Das Auto steht vor",
+                        after: "(das) Haus.",
+                        answers: ["dem"],
+                        explanation: "Стоит где? (Wo?) → Dativ. Средний род das в Dativ становится dem."
+                    }
+                ],
+                task2: [
+                    {
+                        parts: ["1. Morgens", "ich um 7 Uhr", ". (aufstehen – Präsens)"],
+                        answers: ["stehe", "auf"],
+                        explanation: "Регулярно (Morgens) → Präsens. Для ich окончание -e (stehe), а отделяемая приставка auf- уходит в конец."
+                    },
+                    {
+                        parts: ["2. Gestern", "wir endlich den Schlüssel", ". (finden – Perfekt)"],
+                        answers: ["haben", "gefunden"],
+                        explanation: "Прошлое (Gestern) → Perfekt. Обычный глагол finden берёт haben (wir haben) + сильную форму gefunden."
+                    },
+                    {
+                        parts: ["3. Wohin", "ihr im Sommer", "? (fahren – Perfekt)"],
+                        answers: ["seid", "gefahren"],
+                        explanation: "Perfekt. Глагол fahren означает движение/поездку, поэтому берём sein для ihr (ihr seid) + gefahren."
+                    },
+                    {
+                        parts: ["4. Mein Bruder", "jeden Tag mit dem Bus zur Arbeit. (fahren – Präsens)"],
+                        answers: ["fährt"],
+                        explanation: "Регулярно → Präsens. Mein Bruder = er (он). У сильного глагола fahren корневая a получает умлаут: fährt."
+                    },
+                    {
+                        parts: ["5. Was", "du am Wochenende", "? (machen – Perfekt)"],
+                        answers: ["hast", "gemacht"],
+                        explanation: "Perfekt. Глагол machen берёт haben (du hast) + стандартную форму gemacht."
+                    },
+                    {
+                        parts: ["6. Die Kinder", "gerne im Park. (spielen – Präsens)"],
+                        answers: ["spielen"],
+                        explanation: "Подлежащее Die Kinder (дети = они, мн.ч.) → в Präsens окончание -en: spielen."
+                    }
+                ],
+                task3: [
+                    {
+                        before: "1. Es ist sehr kalt. Du",
+                        after: "eine Jacke anziehen.",
+                        answers: ["musst", "sollst"],
+                        explanation: "Необходимость / совет в холодную погоду → müssen (musst) или sollen (sollst). Для du окончание -st."
+                    },
+                    {
+                        before: "2. Hier",
+                        after: "man nicht rauchen. Das ist verboten.",
+                        answers: ["darf"],
+                        explanation: "Прямой запрет (verboten) → dürfen. Для man форма без окончания: darf."
+                    },
+                    {
+                        before: "3. Wir",
+                        after: "leider nicht kommen, wir haben keine Zeit.",
+                        answers: ["können"],
+                        explanation: "Отсутствие возможности (нет времени) → können. Для wir форма: können."
+                    },
+                    {
+                        before: "4. Ich",
+                        after: "Deutsch lernen, weil ich in Deutschland arbeite.",
+                        answers: ["will", "muss"],
+                        explanation: "Личное желание (will) или необходимость (muss). Для ich форма без окончания."
+                    },
+                    {
+                        before: "5. Der Arzt sagt, du",
+                        after: "mehr Obst essen.",
+                        answers: ["sollst"],
+                        explanation: "Рекомендация врача (Der Arzt sagt) → sollen. Для du окончание -st: sollst."
+                    }
+                ],
+                task4: [
+                    {
+                        before: "1. Die Mutter kocht",
+                        after: "(in / die) Küche.",
+                        answers: ["in der"],
+                        explanation: "Готовит где? (Wo? на месте) → Dativ. Женский род (die Küche) в Dativ → in der."
+                    },
+                    {
+                        before: "2. Ich stelle die Schuhe",
+                        after: "(auf / der) Boden.",
+                        answers: ["auf den"],
+                        explanation: "Ставлю куда? (Wohin? движение) → Akkusativ. Мужской род (der Boden) → auf den."
+                    },
+                    {
+                        before: "3. Der Hund liegt",
+                        after: "(unter / der) Tisch.",
+                        answers: ["unter dem"],
+                        explanation: "Лежит где? (Wo? неподвижно) → Dativ. Мужской род (der Tisch) в Dativ → unter dem."
+                    },
+                    {
+                        before: "4. Wir hängen die Lampe",
+                        after: "(über / das) Sofa.",
+                        answers: ["über das"],
+                        explanation: "Вешаем куда? (Wohin? перемещение) → Akkusativ. Средний род (das Sofa) в Akkusativ не меняется → über das."
+                    }
+                ],
+                task5: [
+                    {
+                        sentence1: "1. Ich lerne viel Deutsch. Ich möchte in Berlin studieren. (weil)",
+                        prefix: "→ Ich lerne viel Deutsch,",
+                        answers: ["weil ich in Berlin studieren möchte.", "weil ich in Berlin studieren möchte"],
+                        explanation: "После weil спрягаемый глагол (модальный möchte) уходит в самый конец после инфинитива studieren."
+                    },
+                    {
+                        sentence1: "2. Er sagt. Das Wetter wird morgen besser. (dass)",
+                        prefix: "→ Er sagt,",
+                        answers: ["dass das Wetter morgen besser wird.", "dass das Wetter morgen besser wird"],
+                        explanation: "После dass глагол wird переносится со 2-го места в конец предложения."
+                    },
+                    {
+                        sentence1: "3. Ich rufe dich an. Ich bin zu Hause. (wenn)",
+                        prefix: "→ Ich rufe dich an,",
+                        answers: ["wenn ich zu Hause bin.", "wenn ich zu Hause bin"],
+                        explanation: "Союз wenn отправляет глагол bin в конец придаточного предложения."
+                    }
+                ]
+            }
+        ];
+
+        let currentVariant = 0;
+
+        function renderWorksheet() {
+            const data = variants[currentVariant];
+            const container = document.getElementById('worksheet-container');
+            
+            container.innerHTML = `
+                <!-- AUFGABE 1 -->
+                <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <h2 class="text-base sm:text-lg font-bold text-slate-900">Aufgabe 1: Artikel und Kasus (Nominativ, Akkusativ, Dativ)</h2>
+                        <span class="text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full self-start">6 пунктов</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Ergänzen Sie den richtigen Artikel (<em>der, die, das, den, dem, ein, eine, einen, einem, einer</em>).</p>
+                    
+                    <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm">
+                        <summary class="font-semibold text-blue-700 cursor-pointer flex items-center justify-between">
+                            <span>💡 Алгоритм решения (нажми, чтобы открыть шпаргалку)</span>
+                            <span class="text-xs text-slate-400">▼</span>
+                        </summary>
+                        <div class="mt-2.5 text-slate-700 space-y-1.5 leading-relaxed border-t border-slate-200 pt-2.5">
+                            <p><strong>1. Смотри в скобки:</strong> стоит <code>der/die/das</code> → нужен определённый артикль. Стоит <code>ein/eine</code> → неопределённый.</p>
+                            <p><strong>2. Определи падеж по глаголу:</strong></p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Глаголы <strong>helfen, danken, gehören, gefallen</strong> или «кому?» → всегда <strong>Dativ</strong> (<em>der/das → dem/einem</em>, <em>die → der/einer</em>).</li>
+                                <li>Вопрос «кого/что?» (вижу, покупаю, открываю, пью) → <strong>Akkusativ</strong>. Меняется <strong>только мужской род</strong> (<em>der → den</em>, <em>ein → einen</em>). Женский и средний не меняются!</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <div class="space-y-4">
+                        ${data.task1.map((item, idx) => `
+                            <div class="p-3 rounded-xl bg-slate-50/70 border border-slate-100">
+                                <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+                                    <span>${item.before}</span>
+                                    <input type="text" data-task="1" data-idx="${idx}" data-sub="0" class="input-inline w-24 text-center" placeholder="..." autocomplete="off">
+                                    <span>${item.after}</span>
+                                </div>
+                                <div id="fb-1-${idx}" class="hidden mt-2 text-xs sm:text-sm p-2.5 rounded-lg"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <!-- AUFGABE 2 -->
+                <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <h2 class="text-base sm:text-lg font-bold text-slate-900">Aufgabe 2: Verben im Präsens und Perfekt</h2>
+                        <span class="text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full self-start">6 пунктов</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Setzen Sie die Verben in der richtigen Form ein (Präsens oder Perfekt).</p>
+                    
+                    <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm">
+                        <summary class="font-semibold text-blue-700 cursor-pointer flex items-center justify-between">
+                            <span>💡 Алгоритм решения (Präsens и Perfekt)</span>
+                            <span class="text-xs text-slate-400">▼</span>
+                        </summary>
+                        <div class="mt-2.5 text-slate-700 space-y-1.5 leading-relaxed border-t border-slate-200 pt-2.5">
+                            <p><strong>1. Если указано Präsens:</strong> найди подлежащее (кто делает?) и подставь окончание (<em>ich -e, du -st, er/sie/es -t, wir/sie -en, ihr -t</em>). Если есть приставка <strong>an-, auf-, ein-, fern-</strong> — оторви её и поставь в самый конец!</p>
+                            <p><strong>2. Если указано Perfekt:</strong> на 2-е место ставим <strong>haben</strong> или <strong>sein</strong>, в конец — форму с <strong>ge-...</strong>. <em>Sein</em> берём только для движения из А в Б (<em>fahren, fliegen, gehen, kommen, laufen</em>). Всё остальное — <em>haben</em>.</p>
+                        </div>
+                    </details>
+
+                    <div class="space-y-4">
+                        ${data.task2.map((item, idx) => `
+                            <div class="p-3 rounded-xl bg-slate-50/70 border border-slate-100">
+                                <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+                                    <span>${item.parts[0]}</span>
+                                    <input type="text" data-task="2" data-idx="${idx}" data-sub="0" class="input-inline w-28 text-center" placeholder="..." autocomplete="off">
+                                    <span>${item.parts[1]}</span>
+                                    ${item.answers.length > 1 ? `
+                                        <input type="text" data-task="2" data-idx="${idx}" data-sub="1" class="input-inline w-32 text-center" placeholder="..." autocomplete="off">
+                                        <span>${item.parts[2]}</span>
+                                    ` : ''}
+                                </div>
+                                <div id="fb-2-${idx}" class="hidden mt-2 text-xs sm:text-sm p-2.5 rounded-lg"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <!-- AUFGABE 3 -->
+                <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <h2 class="text-base sm:text-lg font-bold text-slate-900">Aufgabe 3: Modalverben (können, müssen, dürfen, wollen, sollen)</h2>
+                        <span class="text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full self-start">5 пунктов</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Wählen Sie das passende Modalverb und konjugieren Sie es richtig.</p>
+                    
+                    <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm">
+                        <summary class="font-semibold text-blue-700 cursor-pointer flex items-center justify-between">
+                            <span>💡 Алгоритм решения (выбор смысла и формы)</span>
+                            <span class="text-xs text-slate-400">▼</span>
+                        </summary>
+                        <div class="mt-2.5 text-slate-700 space-y-1.5 leading-relaxed border-t border-slate-200 pt-2.5">
+                            <p><strong>Смысл:</strong> <em>dürfen</em> (разрешение/запрет), <em>müssen</em> (вынужден/надо), <em>können</em> (уметь/мочь), <em>wollen</em> (хотеть/планы), <em>sollen</em> (совет/указание от другого человека).</p>
+                            <p><strong>Форма:</strong> у <strong>ich</strong> и <strong>er/sie/es/man</strong> <u>НЕТ окончаний</u> (<em>ich muss, man darf, er kann, ich will, ich soll</em>). Для <strong>du</strong> добавляем <em>-st</em> (<em>kannst, musst, darfst, willst, sollst</em>).</p>
+                        </div>
+                    </details>
+
+                    <div class="space-y-4">
+                        ${data.task3.map((item, idx) => `
+                            <div class="p-3 rounded-xl bg-slate-50/70 border border-slate-100">
+                                <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+                                    <span>${item.before}</span>
+                                    <input type="text" data-task="3" data-idx="${idx}" data-sub="0" class="input-inline w-28 text-center" placeholder="..." autocomplete="off">
+                                    <span>${item.after}</span>
+                                </div>
+                                <div id="fb-3-${idx}" class="hidden mt-2 text-xs sm:text-sm p-2.5 rounded-lg"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <!-- AUFGABE 4 -->
+                <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <h2 class="text-base sm:text-lg font-bold text-slate-900">Aufgabe 4: Wechselpräpositionen (Wo? → Dativ / Wohin? → Akkusativ)</h2>
+                        <span class="text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full self-start">4 пункта</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Ergänzen Sie die Präposition und den Artikel in der richtigen Form.</p>
+                    
+                    <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm">
+                        <summary class="font-semibold text-blue-700 cursor-pointer flex items-center justify-between">
+                            <span>💡 Алгоритм решения (Wo? или Wohin?)</span>
+                            <span class="text-xs text-slate-400">▼</span>
+                        </summary>
+                        <div class="mt-2.5 text-slate-700 space-y-1.5 leading-relaxed border-t border-slate-200 pt-2.5">
+                            <p><strong>Задай один вопрос к действию:</strong></p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><strong>Куда? (Wohin?)</strong> — предмет перемещают (кладут, ставят, вешают, идут) → <strong>Akkusativ</strong> (меняется только <em>der → den</em>; <em>die</em> и <em>das</em> не меняются).</li>
+                                <li><strong>Где? (Wo?)</strong> — предмет уже находится на месте (лежит, стоит, спит, сидит) → <strong>Dativ</strong> (<em>der/das → dem</em>, <em>die → der</em>).</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <div class="space-y-4">
+                        ${data.task4.map((item, idx) => `
+                            <div class="p-3 rounded-xl bg-slate-50/70 border border-slate-100">
+                                <div class="flex flex-wrap items-center gap-2 text-sm sm:text-base">
+                                    <span>${item.before}</span>
+                                    <input type="text" data-task="4" data-idx="${idx}" data-sub="0" class="input-inline w-32 text-center" placeholder="предлог + арт." autocomplete="off">
+                                    <span>${item.after}</span>
+                                </div>
+                                <div id="fb-4-${idx}" class="hidden mt-2 text-xs sm:text-sm p-2.5 rounded-lg"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+
+                <!-- AUFGABE 5 -->
+                <section class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <h2 class="text-base sm:text-lg font-bold text-slate-900">Aufgabe 5: Nebensätze mit „weil“, „dass“ und „wenn“</h2>
+                        <span class="text-xs font-medium bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full self-start">3 пункта</span>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">Verbinden Sie die zwei Sätze mit der Konjunktion in Klammern (Verb am Ende).</p>
+                    
+                    <details class="mb-5 bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm">
+                        <summary class="font-semibold text-blue-700 cursor-pointer flex items-center justify-between">
+                            <span>💡 Алгоритм решения (конвейер в 3 шага)</span>
+                            <span class="text-xs text-slate-400">▼</span>
+                        </summary>
+                        <div class="mt-2.5 text-slate-700 space-y-1.5 leading-relaxed border-t border-slate-200 pt-2.5">
+                            <p><strong>Шаг 1:</strong> После запятой напиши союз из скобок (<em>weil / dass / wenn</em>).</p>
+                            <p><strong>Шаг 2:</strong> Возьми второе предложение и «выдерни» из него глагол со 2-го места.</p>
+                            <p><strong>Шаг 3:</strong> Напиши остаток предложения, а выдернутый глагол поставь <strong>в самый конец</strong> перед точкой.</p>
+                        </div>
+                    </details>
+
+                    <div class="space-y-4">
+                        ${data.task5.map((item, idx) => `
+                            <div class="p-3.5 rounded-xl bg-slate-50/70 border border-slate-100 space-y-2">
+                                <p class="text-sm sm:text-base font-medium text-slate-800">${item.sentence1}</p>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm sm:text-base">
+                                    <span class="text-slate-600 whitespace-nowrap">${item.prefix}</span>
+                                    <input type="text" data-task="5" data-idx="${idx}" data-sub="0" class="input-inline w-full" placeholder="weil / dass / wenn ... (глагол в конце)" autocomplete="off">
+                                </div>
+                                <div id="fb-5-${idx}" class="hidden mt-2 text-xs sm:text-sm p-2.5 rounded-lg"></div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+
+            renderVocab();
+            updateVariantButtons();
+            document.getElementById('score-display').innerHTML = 'Заполни пропуски и нажми «Проверить»';
+        }
+
+        function renderVocab() {
+            const vocab = variants[currentVariant].vocab;
+            const grid = document.getElementById('vocab-grid');
+            grid.innerHTML = vocab.map(v => `
+                <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
+                    <span class="font-semibold text-slate-800">${v.de}</span>
+                    <span class="text-slate-500 text-xs sm:text-sm">${v.ru}</span>
+                </div>
+            `).join('');
+        }
+
+        function updateVariantButtons() {
+            for (let i = 0; i < 3; i++) {
+                const btn = document.getElementById(`var-btn-${i}`);
+                if (i === currentVariant) {
+                    btn.className = "px-3 py-1 text-xs font-semibold rounded-md bg-white text-blue-600 shadow-sm transition";
+                } else {
+                    btn.className = "px-3 py-1 text-xs font-semibold rounded-md text-slate-600 hover:text-slate-900 transition";
+                }
+            }
+        }
+
+        function switchVariant(idx) {
+            currentVariant = idx;
+            renderWorksheet();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function normalize(str) {
+            return str.trim().replace(/\s+/g, ' ').replace(/\.$/, '').toLowerCase();
+        }
+
+        function checkAnswers() {
+            const data = variants[currentVariant];
+            let totalQuestions = 0;
+            let correctCount = 0;
+
+            // Helper to evaluate a task list
+            const evaluateTask = (taskNum, items, isMultiInput = false) => {
+                items.forEach((item, idx) => {
+                    totalQuestions++;
+                    const fbEl = document.getElementById(`fb-${taskNum}-${idx}`);
+                    
+                    if (isMultiInput && item.answers.length > 1) {
+                        const in0 = document.querySelector(`input[data-task="${taskNum}"][data-idx="${idx}"][data-sub="0"]`);
+                        const in1 = document.querySelector(`input[data-task="${taskNum}"][data-idx="${idx}"][data-sub="1"]`);
+                        const ok0 = normalize(in0.value) === normalize(item.answers[0]);
+                        const ok1 = normalize(in1.value) === normalize(item.answers[1]);
+
+                        in0.classList.remove('input-correct', 'input-wrong');
+                        in1.classList.remove('input-correct', 'input-wrong');
+                        in0.classList.add(ok0 ? 'input-correct' : 'input-wrong');
+                        in1.classList.add(ok1 ? 'input-correct' : 'input-wrong');
+
+                        if (ok0 && ok1) {
+                            correctCount++;
+                            showFeedback(fbEl, true, `${item.answers[0]} ... ${item.answers[1]}`, item.explanation);
+                        } else {
+                            showFeedback(fbEl, false, `${item.answers[0]} ... ${item.answers[1]}`, item.explanation);
+                        }
+                    } else {
+                        const input = document.querySelector(`input[data-task="${taskNum}"][data-idx="${idx}"][data-sub="0"]`);
+                        const userVal = normalize(input.value);
+                        const isMatch = item.answers.some(ans => normalize(ans) === userVal);
+
+                        input.classList.remove('input-correct', 'input-wrong');
+                        input.classList.add(isMatch ? 'input-correct' : 'input-wrong');
+
+                        if (isMatch) {
+                            correctCount++;
+                            showFeedback(fbEl, true, item.answers[0], item.explanation);
+                        } else {
+                            showFeedback(fbEl, false, item.answers[0], item.explanation);
+                        }
+                    }
+                });
+            };
+
+            evaluateTask(1, data.task1, false);
+            evaluateTask(2, data.task2, true);
+            evaluateTask(3, data.task3, false);
+            evaluateTask(4, data.task4, false);
+            evaluateTask(5, data.task5, false);
+
+            const percent = Math.round((correctCount / totalQuestions) * 100);
+            const scoreEl = document.getElementById('score-display');
+            scoreEl.innerHTML = `Результат: <span class="text-blue-600 font-bold">${correctCount} из ${totalQuestions}</span> (${percent}%)`;
+        }
+
+        function showFeedback(el, isCorrect, correctAnswer, explanation) {
+            el.classList.remove('hidden', 'bg-green-50', 'text-green-900', 'border-green-200', 'bg-red-50', 'text-red-900', 'border-red-200');
+            if (isCorrect) {
+                el.classList.add('bg-green-50', 'text-green-900', 'border', 'border-green-200');
+                el.innerHTML = `<span class="font-bold">✓ Верно!</span> ${explanation}`;
+            } else {
+                el.classList.add('bg-red-50', 'text-red-900', 'border', 'border-red-200');
+                el.innerHTML = `<span class="font-bold">✗ Правильный ответ: <u>${correctAnswer}</u></span><br><span class="text-slate-700">${explanation}</span>`;
+            }
+        }
+
+        function resetWorksheet() {
+            renderWorksheet();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderWorksheet();
+        };
+    </script>
+</body>
+</html>

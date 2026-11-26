@@ -1,0 +1,12 @@
+# Deutsch Quest — зависимости
+#
+# Веб-версия (python main.py / python server.py) работает на стандартной
+# библиотеке Python — ставить ничего не нужно.
+#
+# Необязательно:
+pillow>=9.0            # предзагрузка картинок (--prefetch-images)
+edge-tts>=6.1          # ЖИВАЯ озвучка (нейро-голоса Katja/Conrad). Без него — Google TTS
+
+# Для голосового ввода микрофоном (только старое окно --desktop):
+#   SpeechRecognition>=3.10
+#   pyaudio

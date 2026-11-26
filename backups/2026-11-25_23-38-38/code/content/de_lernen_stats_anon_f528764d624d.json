@@ -1,0 +1,51 @@
+{
+  "answered": 0,
+  "correct": 0,
+  "best_streak": 0,
+  "daily_answers": 0,
+  "last_day": "",
+  "theme": "????",
+  "accent": "Мята",
+  "animations": true,
+  "animation_level": "Плавно",
+  "favorite_group": "",
+  "day_streak": 0,
+  "last_study_day": "",
+  "xp": 0,
+  "mode": "Все вместе",
+  "input_type": "Выбор вариантов",
+  "direction": "DE ➔ RU (Вопрос на немецком)",
+  "daily_goal": 10,
+  "session_goal": 10,
+  "hearts": 5,
+  "favorites": [],
+  "mistakes": [],
+  "auto_images": true,
+  "auto_images_limit": 250,
+  "online_images": false,
+  "listen_lang": "de",
+  "enabled_groups": [],
+  "enabled_words": [],
+  "needs_choice": true,
+  "games": {
+    "speed": 0,
+    "anagram": 0,
+    "pairs": 0,
+    "quiz": 0,
+    "best_speed": 0,
+    "listen": 0,
+    "typing": 0,
+    "images": 0,
+    "sentence": 0
+  },
+  "grammar": {
+    "asked": 0,
+    "correct": 0,
+    "sentences": 0
+  },
+  "srs": {
+    "box": {},
+    "due": []
+  },
+  "words": {}
+}

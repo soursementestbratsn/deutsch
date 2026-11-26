@@ -1,0 +1,192 @@
+<!-- обновлять agents.md -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deutsch Quest — Admin Panel</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #070c15; color: #f5f8ff;
+    margin: 0; padding: 20px; min-height: 100vh;
+  }
+  .container { max-width: 1000px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 20px; }
+  .card {
+    background: rgba(18, 31, 52, .9);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card h2 { margin-top: 0; font-size: 16px; color: #a9b9d7; }
+  .user-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+    align-items: center;
+  }
+  .user-row:last-child { border-bottom: none; }
+  .user-name { font-weight: 600; }
+  .user-stats { display: flex; gap: 16px; font-size: 13px; color: #a9b9d7; }
+  .btn {
+    padding: 8px 16px; border: none; border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-primary { background: #4ade80; color: #070c15; }
+  .btn-primary:hover { background: #22c55e; }
+  .btn-ghost { background: rgba(255,255,255,.1); color: #f5f8ff; }
+  .btn-ghost:hover { background: rgba(255,255,255,.2); }
+  .loading { text-align: center; padding: 40px; color: #a9b9d7; }
+  .error { color: #f87171; padding: 20px; background: rgba(248,113,113,.1); border-radius: 8px; }
+  .detail-panel {
+    display: none;
+    background: rgba(10, 20, 35, .95);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 12px;
+    overflow-x: auto;
+  }
+  .detail-panel.open { display: block; }
+  .detail-row { display: flex; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .detail-label { min-width: 160px; color: #a9b9d7; font-size: 13px; }
+  .detail-value { color: #f5f8ff; font-size: 13px; }
+  pre { background: #050a12; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto; }
+  .token-input {
+    width: 100%; max-width: 400px;
+    padding: 10px 12px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.1);
+    background: #050a12; color: #f5f8ff;
+    font-size: 13px; font-family: monospace;
+  }
+  .token-input:focus { outline: none; border-color: #4ade80; }
+  .muted { color: #7383a2; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🛡️ Deutsch Quest — Admin Panel</h1>
+
+  <div class="card">
+    <h2>🔐 Admin Token</h2>
+    <p class="muted">Enter your admin token to load users. On localhost it works without token.</p>
+    <input type="password" class="token-input" id="tokenInput" placeholder="DEUTSCH_QUEST_ADMIN_TOKEN (optional on localhost)" />
+    <div style="margin-top: 12px;">
+      <button class="btn btn-primary" id="loadBtn">Load Users</button>
+      <button class="btn btn-ghost" id="clearBtn" style="margin-left: 8px;">Clear</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>👥 Users (<span id="userCount">0</span>)</h2>
+    <div id="usersList">
+      <div class="loading">Click "Load Users" to fetch data</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+const API_BASE = '';
+let adminToken = '';
+
+async function fetchJSON(path) {
+  const headers = { 'Content-Type': 'application/json' };
+  if (adminToken) headers['Authorization'] = 'Bearer ' + adminToken;
+  const res = await fetch(API_BASE + path, { headers });
+  if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+  return res.json();
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&','<':'<','>':'>','"':'"'}[c]));
+}
+
+function formatStats(stats) {
+  if (!stats) return '—';
+  const parts = [];
+  if (stats.answered !== undefined) parts.push(stats.answered + ' answers');
+  if (stats.correct !== undefined) parts.push(stats.correct + ' correct');
+  if (stats.xp !== undefined) parts.push(stats.xp + ' XP');
+  if (stats.best_streak !== undefined) parts.push('streak ' + stats.best_streak);
+  if (stats.theme) parts.push(stats.theme);
+  return parts.join(' · ') || '—';
+}
+
+function renderUsers(users) {
+  const list = $('#usersList');
+  if (!users.length) {
+    list.innerHTML = '<div class="loading">No users found</div>';
+    $('#userCount').textContent = '0';
+    return;
+  }
+  $('#userCount').textContent = users.length;
+  list.innerHTML = users.map(u => `
+    <div class="user-row">
+      <div class="user-name">${escapeHtml(u.user_id)}</div>
+      <div class="user-stats">${escapeHtml(formatStats(u.stats))}</div>
+      <div class="user-stats">${u.words_count || 0} words · ${u.phrases_count || 0} phrases</div>
+      <button class="btn btn-ghost" onclick="showDetails('${escapeHtml(u.user_id)}')">Details</button>
+      <div class="detail-panel" id="detail-${escapeHtml(u.user_id)}"></div>
+    </div>
+  `).join('');
+}
+
+async function showDetails(userId) {
+  const panel = $('#detail-' + userId);
+  if (panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    return;
+  }
+  panel.innerHTML = '<div class="loading">Loading...</div>';
+  panel.classList.add('open');
+  try {
+    const data = await fetchJSON('/api/admin/user/' + encodeURIComponent(userId));
+    const stats = data.stats || {};
+    const uw = data.user_words || {};
+    const photos = data.photos || {};
+    panel.innerHTML = `
+      <div class="detail-row"><span class="detail-label">User ID</span><span class="detail-value">${escapeHtml(data.user_id)}</span></div>
+      <div class="detail-row"><span class="detail-label">Stats</span><span class="detail-value">${escapeHtml(JSON.stringify(stats, null, 2))}</span></div>
+      <div class="detail-row"><span class="detail-label">User Words</span><span class="detail-value">${escapeHtml(JSON.stringify(uw, null, 2))}</span></div>
+      <div class="detail-row"><span class="detail-label">Photos</span><span class="detail-value">${escapeHtml(JSON.stringify(photos, null, 2))}</span></div>
+    `;
+  } catch (e) {
+    panel.innerHTML = '<div class="error">Error: ' + escapeHtml(e.message) + '</div>';
+  }
+}
+
+$('#loadBtn').onclick = async () => {
+  adminToken = $('#tokenInput').value.trim();
+  const list = $('#usersList');
+  list.innerHTML = '<div class="loading">Loading...</div>';
+  try {
+    const data = await fetchJSON('/api/admin/users');
+    renderUsers(data.users || []);
+  } catch (e) {
+    list.innerHTML = '<div class="error">Error: ' + escapeHtml(e.message) + '</div>';
+  }
+};
+
+$('#clearBtn').onclick = () => {
+  adminToken = '';
+  $('#tokenInput').value = '';
+  $('#usersList').innerHTML = '<div class="loading">Click "Load Users" to fetch data</div>';
+  $('#userCount').textContent = '0';
+};
+
+// Auto-load on localhost
+if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+  $('#loadBtn').click();
+}
+</script>
+</body>
+</html>

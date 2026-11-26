@@ -1,0 +1,3188 @@
+{
+ "meta": {
+  "sources": [
+   "seed",
+   "en.wiktionary",
+   "de.wiktionary",
+   "rules"
+  ],
+  "version": 2,
+  "words": 529
+ },
+ "words": {
+  "abend": {
+   "ipa": "ˈaːbn̩t",
+   "ru": "Абнт",
+   "src": "seed",
+   "syl": "Ab-end"
+  },
+  "abzug": {
+   "ipa": "ˈapˌt͡suːk",
+   "ru": "АБЦ-ук",
+   "src": "wiktionary",
+   "syl": "Ab-zug"
+  },
+  "ahnung": {
+   "ipa": "anʊŋ",
+   "ru": "А-нунг",
+   "src": "rules",
+   "syl": "Ahn-ung"
+  },
+  "akkuschrauber": {
+   "ipa": "akkʊʃʁaʊbɐ",
+   "ru": "Ак-куш-рау-ба",
+   "src": "rules",
+   "syl": "Ak-kusch-raub-er"
+  },
+  "alles": {
+   "ipa": "ˈaləs",
+   "ru": "Ал-лэз",
+   "src": "wiktionary",
+   "syl": "Al-les"
+  },
+  "alles klar.": {
+   "ipa": "allɛs klaʁ.",
+   "ru": "АЛ-лэз-клАр",
+   "src": "rules",
+   "syl": ""
+  },
+  "als": {
+   "ipa": "als",
+   "ru": "Алс",
+   "src": "wiktionary",
+   "syl": "als"
+  },
+  "alt": {
+   "ipa": "alt",
+   "ru": "Алт",
+   "src": "wiktionary",
+   "syl": "alt"
+  },
+  "ampel": {
+   "ipa": "ampɛl",
+   "ru": "Ам-пэл",
+   "src": "rules",
+   "syl": "Am-pel"
+  },
+  "amtsgericht": {
+   "ipa": "amtsɡɛʁɪçt",
+   "ru": "Амц-гэ-рихт",
+   "src": "rules",
+   "syl": "Amts-ger-icht"
+  },
+  "antwort": {
+   "ipa": "antvɔʁt",
+   "ru": "Ант-ворт",
+   "src": "rules",
+   "syl": "Ant-wort"
+  },
+  "antworten": {
+   "ipa": "antvɔʁtn̩",
+   "ru": "Ант-вортн",
+   "src": "rules",
+   "syl": "ant-wor-ten"
+  },
+  "apfel": {
+   "ipa": "ˈapfəl",
+   "ru": "АПФ-эл",
+   "src": "wiktionary",
+   "syl": "Ap"
+  },
+  "apotheke": {
+   "ipa": "apoˈteːkə",
+   "ru": "А-по-тЭ-ке",
+   "src": "seed",
+   "syl": "Ap-ot-hek-e"
+  },
+  "arbeit": {
+   "ipa": "ˈaʁbaɪ̯t",
+   "ru": "Ар-байт",
+   "src": "seed",
+   "syl": "Ar-beit"
+  },
+  "arbeiten": {
+   "ipa": "aʁbaɪtn̩",
+   "ru": "Ар-байтн",
+   "src": "rules",
+   "syl": "ar-beit-en"
+  },
+  "auf": {
+   "ipa": "aʊf",
+   "ru": "АУф",
+   "src": "rules",
+   "syl": "auf"
+  },
+  "auf wiedersehen.": {
+   "ipa": "aʊf viːdɛʁsɛhɛn.",
+   "ru": "АУФ-вИ-дэр-сэ-хэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "augendusche": {
+   "ipa": "aʊɡɛndʊʃɛ",
+   "ru": "АУ-гэн-ду-шэ",
+   "src": "rules",
+   "syl": "Aug-en-dusch-e"
+  },
+  "aus": {
+   "ipa": "aʊ̯s",
+   "ru": "АУС",
+   "src": "wiktionary",
+   "syl": "aus"
+  },
+  "auto": {
+   "ipa": "aʊtɔ",
+   "ru": "АУ-то",
+   "src": "rules",
+   "syl": "Aut-o"
+  },
+  "autobahn": {
+   "ipa": "aʊtɔban",
+   "ru": "АУ-то-бан",
+   "src": "rules",
+   "syl": "Aut-ob-ahn"
+  },
+  "bahnhof": {
+   "ipa": "ˈbaːnhoːf",
+   "ru": "БАН-хоф",
+   "src": "seed",
+   "syl": "Bahn-hof"
+  },
+  "baumarkt": {
+   "ipa": "baʊmaʁkt",
+   "ru": "БАУ-маркт",
+   "src": "rules",
+   "syl": "Baum-arkt"
+  },
+  "bedeutet": {
+   "ipa": "bɛdɔʏtɛt",
+   "ru": "БЭ-дой-тэт",
+   "src": "rules",
+   "syl": "bed-eut-et"
+  },
+  "beim": {
+   "ipa": "baɪm",
+   "ru": "БАЙМ",
+   "src": "rules",
+   "syl": "beim"
+  },
+  "bergab": {
+   "ipa": "bɛʁɡap",
+   "ru": "БЭР-гап",
+   "src": "rules",
+   "syl": "ber-gab"
+  },
+  "bergauf": {
+   "ipa": "bɛʁɡaʊf",
+   "ru": "БЭР-гауф",
+   "src": "rules",
+   "syl": "ber-gauf"
+  },
+  "bestelle": {
+   "ipa": "bɛstɛllɛ",
+   "ru": "БЭС-тэл-лэ",
+   "src": "rules",
+   "syl": "bes-tel-le"
+  },
+  "bestätigung": {
+   "ipa": "bɛstɛtɪɡʊŋ",
+   "ru": "бЭс-тэ-ТИ-гунг",
+   "src": "rules",
+   "syl": "Bes-tät-ig-ung"
+  },
+  "bezahlen": {
+   "ipa": "bɛtsaln̩",
+   "ru": "БЭ-цалн",
+   "src": "rules",
+   "syl": "bez-ahl-en"
+  },
+  "billig": {
+   "ipa": "bɪllɪç",
+   "ru": "БИЛ-лих",
+   "src": "rules",
+   "syl": "bil-lig"
+  },
+  "bin": {
+   "ipa": "bɪn",
+   "ru": "БИН",
+   "src": "seed",
+   "syl": "bin"
+  },
+  "bis": {
+   "ipa": "bɪz",
+   "ru": "БИЗ",
+   "src": "rules",
+   "syl": "Bis"
+  },
+  "bis später!": {
+   "ipa": "bɪs ʃpɛtɛʁ!",
+   "ru": "БИЗ-шпЭ-тэр",
+   "src": "rules",
+   "syl": ""
+  },
+  "bitte": {
+   "ipa": "ˈbɪtə",
+   "ru": "БИ-те",
+   "src": "seed",
+   "syl": "bit-te"
+  },
+  "bitte schön.": {
+   "ipa": "bɪttɛ ʃœn.",
+   "ru": "БИ-те-шЁн",
+   "src": "rules",
+   "syl": ""
+  },
+  "bohrmaschine": {
+   "ipa": "bɔʁmaʃɪnɛ",
+   "ru": "БОР-ма-ши-нэ",
+   "src": "rules",
+   "syl": "Bohr-masch-in-e"
+  },
+  "brauche": {
+   "ipa": "bʁaʊxɛ",
+   "ru": "БРАУ-хэ",
+   "src": "rules",
+   "syl": "brauch-e"
+  },
+  "brot": {
+   "ipa": "bʁɔt",
+   "ru": "БРОТ",
+   "src": "rules",
+   "syl": "Brot"
+  },
+  "bruder": {
+   "ipa": "bʁʊdɐ",
+   "ru": "БРУ-да",
+   "src": "rules",
+   "syl": "Brud-er"
+  },
+  "brücke": {
+   "ipa": "bʁʏkɛ",
+   "ru": "БРЮ-кЭ",
+   "src": "rules",
+   "syl": "Brüc-ke"
+  },
+  "buch": {
+   "ipa": "buːx",
+   "ru": "БУХ",
+   "src": "seed",
+   "syl": "Buch"
+  },
+  "bus": {
+   "ipa": "bʊz",
+   "ru": "БУЗ",
+   "src": "rules",
+   "syl": "Bus"
+  },
+  "bushaltestelle": {
+   "ipa": "bʊshaltɛstɛllɛ",
+   "ru": "БУС-хал-тэс-тэл-лэ",
+   "src": "rules",
+   "syl": "Bus-hal-tes-tel-le"
+  },
+  "butter": {
+   "ipa": "bʊttɐ",
+   "ru": "БУТ-та",
+   "src": "rules",
+   "syl": "But-ter"
+  },
+  "bäcker": {
+   "ipa": "bɛkɐ",
+   "ru": "БЭ-ка",
+   "src": "rules",
+   "syl": "Bäc-ker"
+  },
+  "bäckerei": {
+   "ipa": "bɛkɛʁaɪ",
+   "ru": "бЭ-КЭ-рай",
+   "src": "rules",
+   "syl": "Bäc-ker-ei"
+  },
+  "chemikalie": {
+   "ipa": "çɛmɪkaliː",
+   "ru": "ХЭ-ми-ка-ли",
+   "src": "rules",
+   "syl": "Chem-ik-al-ie"
+  },
+  "da": {
+   "ipa": "da",
+   "ru": "ДА",
+   "src": "rules",
+   "syl": "da"
+  },
+  "danke": {
+   "ipa": "ˈdaŋkə",
+   "ru": "ДАНГ-ке",
+   "src": "seed",
+   "syl": "Dan-ke"
+  },
+  "danke schön.": {
+   "ipa": "dankɛ ʃœn.",
+   "ru": "ДАНГ-ке-шЁн",
+   "src": "rules",
+   "syl": ""
+  },
+  "darf": {
+   "ipa": "daʁf",
+   "ru": "ДАРФ",
+   "src": "rules",
+   "syl": "Darf"
+  },
+  "darf ich kurz rausgehen?": {
+   "ipa": "daʁf ɪç kʊʁts ʁaʊsɡɛhɛn?",
+   "ru": "ДАРФ-их-курц-рАУс-гэ-хэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "das": {
+   "ipa": "das",
+   "ru": "ДАС",
+   "src": "seed",
+   "syl": "das"
+  },
+  "das amtsgericht": {
+   "ipa": "amtsɡɛʁɪçt",
+   "ru": "дас Амц-гэ-рихт",
+   "src": "rules",
+   "syl": "Amts-ger-icht"
+  },
+  "das ergebnis": {
+   "ipa": "ɛʁɡɛbnɪz",
+   "ru": "дас Эр-гэб-низ",
+   "src": "rules",
+   "syl": "Er-geb-nis"
+  },
+  "das feuer": {
+   "ipa": "ˈfɔʏ̯ɐ",
+   "ru": "дас ФОЙ-а",
+   "src": "seed",
+   "syl": "Feu-er"
+  },
+  "das fitnessstudio": {
+   "ipa": "fɪtnɛsstʊdɪɔ",
+   "ru": "дас ФИТ-нэсс-ту-ди-о",
+   "src": "rules",
+   "syl": "Fit-nesss-tud-i-o"
+  },
+  "das gefahrensymbol": {
+   "ipa": "ɡɛfaʁɛnsymbɔl",
+   "ru": "дас ГЭ-фа-рэн-сюм-бол",
+   "src": "rules",
+   "syl": "Gef-ahr-en-sym-bol"
+  },
+  "das glasgerät": {
+   "ipa": "ɡlasɡɛʁɛt",
+   "ru": "дас ГЛАС-гэ-рэт",
+   "src": "rules",
+   "syl": "Glas-ger-ät"
+  },
+  "das ist": {
+   "ipa": "ɪst",
+   "ru": "дас Ист",
+   "src": "seed",
+   "syl": "ist"
+  },
+  "das ist eine gute idee.": {
+   "ipa": "ɪst aɪnɛ ɡʊtɛ ɪdeː.",
+   "ru": "дас ист-ай-не-гу-тэ-И-дэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "das krankenhaus": {
+   "ipa": "ˈkʁaŋkn̩haʊ̯s",
+   "ru": "дас КРАНГКН-хаус",
+   "src": "seed",
+   "syl": "Kran-ken-haus"
+  },
+  "das kühlpad": {
+   "ipa": "kʏlpat",
+   "ru": "дас КЮЛ-пАт",
+   "src": "rules",
+   "syl": "Kühl-pad"
+  },
+  "das maßband": {
+   "ipa": "massbant",
+   "ru": "дас МАСС-бант",
+   "src": "rules",
+   "syl": "Mass-band"
+  },
+  "das möbelgeschäft": {
+   "ipa": "mœbɛlɡɛʃɛft",
+   "ru": "дас МЁ-бэл-гэ-шэфт",
+   "src": "rules",
+   "syl": "Möb-el-gesch-äft"
+  },
+  "das möbelhaus": {
+   "ipa": "mœbɛlhaʊz",
+   "ru": "дас МЁ-бэл-хауз",
+   "src": "rules",
+   "syl": "Möb-el-haus"
+  },
+  "das pflaster": {
+   "ipa": "pflastɐ",
+   "ru": "дас ПФЛАС-та",
+   "src": "rules",
+   "syl": "Pflas-ter"
+  },
+  "das rathaus": {
+   "ipa": "ʁataʊz",
+   "ru": "дас РА-тауз",
+   "src": "rules",
+   "syl": "Rat-haus"
+  },
+  "das restaurant": {
+   "ipa": "ʁɛstaʊʁant",
+   "ru": "дас РЭС-тау-рант",
+   "src": "rules",
+   "syl": "Res-taur-ant"
+  },
+  "das stimmt.": {
+   "ipa": "ʃtɪmmt.",
+   "ru": "дас ШТИММТ",
+   "src": "rules",
+   "syl": "stimmt."
+  },
+  "das zahnrad": {
+   "ipa": "tsanʁat",
+   "ru": "дас ЦАН-рат",
+   "src": "rules",
+   "syl": "Zahn-rad"
+  },
+  "dein": {
+   "ipa": "daɪn",
+   "ru": "ДАЙН",
+   "src": "rules",
+   "syl": "dein"
+  },
+  "der": {
+   "ipa": "deːɐ̯",
+   "ru": "ДЭР",
+   "src": "seed",
+   "syl": "der"
+  },
+  "der abzug": {
+   "ipa": "abtsʊk",
+   "ru": "дэр Апт-сук",
+   "src": "rules",
+   "syl": "Ab-zug"
+  },
+  "der akkuschrauber": {
+   "ipa": "akkʊʃʁaʊbɐ",
+   "ru": "дэр Ак-куш-рау-ба",
+   "src": "rules",
+   "syl": "Ak-kusch-raub-er"
+  },
+  "der bahnhof": {
+   "ipa": "ˈbaːnhoːf",
+   "ru": "дэр БАН-хоф",
+   "src": "seed",
+   "syl": "Bahn-hof"
+  },
+  "der baumarkt": {
+   "ipa": "baʊmaʁkt",
+   "ru": "дэр БАУ-маркт",
+   "src": "rules",
+   "syl": "Baum-arkt"
+  },
+  "der bäcker": {
+   "ipa": "bɛkɐ",
+   "ru": "дэр БЭ-ка",
+   "src": "rules",
+   "syl": "Bäc-ker"
+  },
+  "der erste-hilfe-kasten": {
+   "ipa": "ɛʁstɛ-hɪlfɛ-kastn̩",
+   "ru": "дэр Эрс-тэ--хил-фэ--кастн",
+   "src": "rules",
+   "syl": "Ers-te--Hil-fe--Kas-ten"
+  },
+  "der fachraum": {
+   "ipa": "faxʁaʊm",
+   "ru": "дэр ФАХ-раум",
+   "src": "rules",
+   "syl": "Fach-raum"
+  },
+  "der feuerlöscher": {
+   "ipa": "fɔʏɛʁlœʃɐ",
+   "ru": "дэр ФОЙ-эр-лё-ша",
+   "src": "rules",
+   "syl": "Feu-er-lösch-er"
+  },
+  "der feuermelder": {
+   "ipa": "fɔʏɛʁmɛldɐ",
+   "ru": "дэр ФОЙ-эр-мэл-да",
+   "src": "rules",
+   "syl": "Feu-er-mel-der"
+  },
+  "der fluchtweg": {
+   "ipa": "flʊxtvɛk",
+   "ru": "дэр ФЛУХТ-вэк",
+   "src": "rules",
+   "syl": "Flucht-weg"
+  },
+  "der fluss": {
+   "ipa": "flʊs",
+   "ru": "дэр ДЭР ФЛУСС",
+   "src": "wiktionary",
+   "syl": "Fluss"
+  },
+  "der friedhof": {
+   "ipa": "fʁiːdhɔf",
+   "ru": "дэр ФРИД-хоф",
+   "src": "rules",
+   "syl": "Fried-hof"
+  },
+  "der friseursalon": {
+   "ipa": "fʁɪzɔʏʁsalɔn",
+   "ru": "дэр ФРИ-зойр-са-лон",
+   "src": "rules",
+   "syl": "Fris-eur-sal-on"
+  },
+  "der gasanschluss": {
+   "ipa": "ɡazanʃlʊss",
+   "ru": "дэр ГА-занш-лусс",
+   "src": "rules",
+   "syl": "Gas-ansch-luss"
+  },
+  "der globus": {
+   "ipa": "ɡlɔbʊz",
+   "ru": "дэр ГЛО-буз",
+   "src": "rules",
+   "syl": "Glob-us"
+  },
+  "der hammer": {
+   "ipa": "ˈhamɐ",
+   "ru": "дэр ХА-ма",
+   "src": "seed",
+   "syl": "Ham-mer"
+  },
+  "der hobel": {
+   "ipa": "hɔbɛl",
+   "ru": "дэр ХО-бэл",
+   "src": "rules",
+   "syl": "Hob-el"
+  },
+  "der kompass": {
+   "ipa": "kɔmpass",
+   "ru": "дэр КОМ-пасс",
+   "src": "rules",
+   "syl": "Kom-pass"
+  },
+  "der kreisverkehr": {
+   "ipa": "kʁaɪsfɛʁkɛɐ̯",
+   "ru": "дэр КРАЙС-фэр-кэр",
+   "src": "rules",
+   "syl": "Kreis-ver-kehr"
+  },
+  "der löschsand": {
+   "ipa": "lœʃsant",
+   "ru": "дэр ЛЁШ-сант",
+   "src": "rules",
+   "syl": "Lösch-sand"
+  },
+  "der maulschlüssel": {
+   "ipa": "maʊlʃlʏssɛl",
+   "ru": "дэр МАУЛШ-люс-сэл",
+   "src": "rules",
+   "syl": "Maulsch-lüs-sel"
+  },
+  "der meißel": {
+   "ipa": "maɪssɛl",
+   "ru": "дэр МАЙС-сэл",
+   "src": "rules",
+   "syl": "Meis-sel"
+  },
+  "der messbecher": {
+   "ipa": "mɛssbɛçɐ",
+   "ru": "дэр МЭСС-бэ-ха",
+   "src": "rules",
+   "syl": "Mess-bech-er"
+  },
+  "der norden": {
+   "ipa": "nɔʁdn̩",
+   "ru": "дэр НОРДН",
+   "src": "rules",
+   "syl": "Nor-den"
+  },
+  "der nordosten": {
+   "ipa": "nɔʁdɔstn̩",
+   "ru": "дэр НОР-достн",
+   "src": "rules",
+   "syl": "Nor-dos-ten"
+  },
+  "der nordwesten": {
+   "ipa": "nɔʁdvɛstn̩",
+   "ru": "дэр НОРД-вэстн",
+   "src": "rules",
+   "syl": "Nord-wes-ten"
+  },
+  "der not-aus-knopf": {
+   "ipa": "nɔt-aʊs-knɔpf",
+   "ru": "дэр НОТ--аус-к-нопф",
+   "src": "rules",
+   "syl": "Not--Aus-K-nopf"
+  },
+  "der not-aus-schalter": {
+   "ipa": "nɔt-aʊs-ʃaltɐ",
+   "ru": "дэр НОТ--аус--шал-та",
+   "src": "rules",
+   "syl": "Not--Aus-Sch-al-ter"
+  },
+  "der notausgang": {
+   "ipa": "nɔtaʊsɡaŋ",
+   "ru": "дэр НО-таус-ганг",
+   "src": "rules",
+   "syl": "Not-aus-gang"
+  },
+  "der ort": {
+   "ipa": "ɔʁt",
+   "ru": "дэр ДЭР ОРТ",
+   "src": "wiktionary",
+   "syl": "Ort"
+  },
+  "der osten": {
+   "ipa": "ɔstn̩",
+   "ru": "дэр Остн",
+   "src": "rules",
+   "syl": "Os-ten"
+  },
+  "der pfannenwender": {
+   "ipa": "pfannɛnvɛndɐ",
+   "ru": "дэр ПФАН-нэн-вэн-да",
+   "src": "rules",
+   "syl": "Pfan-nen-wen-der"
+  },
+  "der rollmeter": {
+   "ipa": "ʁɔllmɛtɐ",
+   "ru": "дэр РОЛЛ-мэ-та",
+   "src": "rules",
+   "syl": "Roll-met-er"
+  },
+  "der schraubendreher": {
+   "ipa": "ˈʃʁaʊ̯bn̩ˌdʁeːɐ̯",
+   "ru": "дэр ШРАУБНД-рэр",
+   "src": "seed",
+   "syl": "Schraub-end-reh-er"
+  },
+  "der schraubenzieher": {
+   "ipa": "ʃʁaʊbɛntsiːhɐ",
+   "ru": "дэр ШРАУ-бэн-ци-ха",
+   "src": "rules",
+   "syl": "Schraub-en-zieh-er"
+  },
+  "der schraubstock": {
+   "ipa": "ʃʁaʊbstɔk",
+   "ru": "дэр ШРАУБС-ток",
+   "src": "rules",
+   "syl": "Schraubs-tock"
+  },
+  "der schutzhandschuh": {
+   "ipa": "ʃʊtshandʒʊ",
+   "ru": "дэр ШУЦ-хан-джу",
+   "src": "rules",
+   "syl": "Schutz-handsch-uh"
+  },
+  "der schutzkittel": {
+   "ipa": "ʃʊtskɪttɛl",
+   "ru": "дэр ШУЦ-кит-тэл",
+   "src": "rules",
+   "syl": "Schutz-kit-tel"
+  },
+  "der see": {
+   "ipa": "zeː",
+   "ru": "дэр ЗЭ",
+   "src": "rules",
+   "syl": "See"
+  },
+  "der seiher": {
+   "ipa": "zaɪhɐ",
+   "ru": "дэр ЗАЙ-ха",
+   "src": "rules",
+   "syl": "Seih-er"
+  },
+  "der seitenschneider": {
+   "ipa": "zaɪtɛnʃnaɪdɐ",
+   "ru": "дэр ЗАЙ-тэнш-най-да",
+   "src": "rules",
+   "syl": "Seit-ensch-neid-er"
+  },
+  "der sparschäler": {
+   "ipa": "ʃpaʁʃɛlɐ",
+   "ru": "дэр ШПАР-шэ-ла",
+   "src": "rules",
+   "syl": "Sparsch-äl-er"
+  },
+  "der spülschwamm": {
+   "ipa": "ʃpʏlʃvamm",
+   "ru": "дэр ШПЮЛШ-вАмм",
+   "src": "rules",
+   "syl": "Spülsch-wamm"
+  },
+  "der stechbeitel": {
+   "ipa": "ʃtɛçbaɪtɛl",
+   "ru": "дэр ШТЭХ-бай-тэл",
+   "src": "rules",
+   "syl": "Stech-beit-el"
+  },
+  "der strom": {
+   "ipa": "ʃtʁoːm",
+   "ru": "дэр ШТРОМ",
+   "src": "seed",
+   "syl": "Strom"
+  },
+  "der süden": {
+   "ipa": "ˈzyːdən",
+   "ru": "дэр ДЭР З-юдн",
+   "src": "wiktionary",
+   "syl": "Süd-en"
+  },
+  "der südosten": {
+   "ipa": "zʏdɔstn̩",
+   "ru": "дэр ЗЮ-дОстн",
+   "src": "rules",
+   "syl": "Süd-os-ten"
+  },
+  "der südwesten": {
+   "ipa": "zʏdvɛstn̩",
+   "ru": "дэр ЗЮД-вЭстн",
+   "src": "rules",
+   "syl": "Süd-wes-ten"
+  },
+  "der topf": {
+   "ipa": "tɔpf",
+   "ru": "дэр ТОПФ",
+   "src": "rules",
+   "syl": "Topf"
+  },
+  "der topfdeckel": {
+   "ipa": "tɔpfdɛkɛl",
+   "ru": "дэр ТОПФ-дэ-кэл",
+   "src": "rules",
+   "syl": "Topf-dec-kel"
+  },
+  "der topflappen": {
+   "ipa": "tɔpflappn̩",
+   "ru": "дэр ТОПФ-лаппн",
+   "src": "rules",
+   "syl": "Topf-lap-pen"
+  },
+  "der tunnel": {
+   "ipa": "tʊnnɛl",
+   "ru": "дэр ТУН-нэл",
+   "src": "rules",
+   "syl": "Tun-nel"
+  },
+  "der verbandskasten": {
+   "ipa": "fɛʁbandskastn̩",
+   "ru": "дэр фЭр-БАНДС-кастн",
+   "src": "rules",
+   "syl": "Ver-bands-kas-ten"
+  },
+  "der wald": {
+   "ipa": "valt",
+   "ru": "дэр ДЭР ВАЛТ",
+   "src": "wiktionary",
+   "syl": "Wald"
+  },
+  "der westen": {
+   "ipa": "vɛstn̩",
+   "ru": "дэр ВЭСТН",
+   "src": "rules",
+   "syl": "Wes-ten"
+  },
+  "deutsch": {
+   "ipa": "dɔʏtʃ",
+   "ru": "ДОЙЧ",
+   "src": "rules",
+   "syl": "Deutsch"
+  },
+  "die": {
+   "ipa": "diː",
+   "ru": "ДИ",
+   "src": "seed",
+   "syl": "die"
+  },
+  "die ampel": {
+   "ipa": "ampɛl",
+   "ru": "ди Ам-пэл",
+   "src": "rules",
+   "syl": "Am-pel"
+  },
+  "die apotheke": {
+   "ipa": "apoˈteːkə",
+   "ru": "ди А-по-тЭ-ке",
+   "src": "seed",
+   "syl": "Ap-ot-hek-e"
+  },
+  "die augendusche": {
+   "ipa": "aʊɡɛndʊʃɛ",
+   "ru": "ди АУ-гэн-ду-шэ",
+   "src": "rules",
+   "syl": "Aug-en-dusch-e"
+  },
+  "die autobahn": {
+   "ipa": "aʊtɔban",
+   "ru": "ди АУ-то-бан",
+   "src": "rules",
+   "syl": "Aut-ob-ahn"
+  },
+  "die bohrmaschine": {
+   "ipa": "bɔʁmaʃɪnɛ",
+   "ru": "ди БОР-ма-ши-нэ",
+   "src": "rules",
+   "syl": "Bohr-masch-in-e"
+  },
+  "die brücke": {
+   "ipa": "bʁʏkɛ",
+   "ru": "ди БРЮ-кЭ",
+   "src": "rules",
+   "syl": "Brüc-ke"
+  },
+  "die bushaltestelle": {
+   "ipa": "bʊshaltɛstɛllɛ",
+   "ru": "ди БУС-хал-тэс-тэл-лэ",
+   "src": "rules",
+   "syl": "Bus-hal-tes-tel-le"
+  },
+  "die bäckerei": {
+   "ipa": "bɛkɛʁaɪ",
+   "ru": "ди бЭ-КЭ-рай",
+   "src": "rules",
+   "syl": "Bäc-ker-ei"
+  },
+  "die chemikalie": {
+   "ipa": "çɛmɪkaliː",
+   "ru": "ди ХЭ-ми-ка-ли",
+   "src": "rules",
+   "syl": "Chem-ik-al-ie"
+  },
+  "die feile": {
+   "ipa": "ˈfaɪ̯lə",
+   "ru": "ди ФАЙ-ле",
+   "src": "seed",
+   "syl": "Feil-e"
+  },
+  "die feuerwehr": {
+   "ipa": "fɔʏɛʁvɛɐ̯",
+   "ru": "ди ФОЙ-эр-вэр",
+   "src": "rules",
+   "syl": "Feu-er-wehr"
+  },
+  "die feuerwehrstation": {
+   "ipa": "fɔʏɛʁvɛʁstatɪɔn",
+   "ru": "ди ФОЙ-эр-вэрс-та-ти-он",
+   "src": "rules",
+   "syl": "Feu-er-wehrs-tat-i-on"
+  },
+  "die flamme": {
+   "ipa": "flammɛ",
+   "ru": "ди ФЛАМ-мэ",
+   "src": "rules",
+   "syl": "Flam-me"
+  },
+  "die gasanlage": {
+   "ipa": "ɡazanlaɡɛ",
+   "ru": "ди ГА-зан-ла-гэ",
+   "src": "rules",
+   "syl": "Gas-an-lag-e"
+  },
+  "die gasflasche": {
+   "ipa": "ɡasflaʃɛ",
+   "ru": "ди ГАСФ-ла-шэ",
+   "src": "rules",
+   "syl": "Gasf-lasch-e"
+  },
+  "die karte": {
+   "ipa": "kaʁtɛ",
+   "ru": "ди КАР-тэ",
+   "src": "rules",
+   "syl": "Kar-te"
+  },
+  "die kombizange": {
+   "ipa": "kɔmbɪtsaŋɛ",
+   "ru": "ди КОМ-би-ца-нгэ",
+   "src": "rules",
+   "syl": "Kom-biz-an-ge"
+  },
+  "die kreuzung": {
+   "ipa": "kʁɔʏtsʊŋ",
+   "ru": "ди КРОЙ-цунг",
+   "src": "rules",
+   "syl": "Kreuz-ung"
+  },
+  "die löschdecke": {
+   "ipa": "lœʃdɛkɛ",
+   "ru": "ди ЛЁШ-дэ-кэ",
+   "src": "rules",
+   "syl": "Lösch-dec-ke"
+  },
+  "die pfanne": {
+   "ipa": "pfannɛ",
+   "ru": "ди ПФАН-нэ",
+   "src": "rules",
+   "syl": "Pfan-ne"
+  },
+  "die polizeistation": {
+   "ipa": "pɔlɪtsaɪstatɪɔn",
+   "ru": "ди ПО-ли-цайс-та-ти-он",
+   "src": "rules",
+   "syl": "Pol-iz-eis-tat-i-on"
+  },
+  "die polizeiwache": {
+   "ipa": "pɔlɪtsaɪvaxɛ",
+   "ru": "ди ПО-ли-цай-ва-хэ",
+   "src": "rules",
+   "syl": "Pol-iz-eiw-ach-e"
+  },
+  "die rechunung": {
+   "ipa": "ʁɛçʊnʊŋ",
+   "ru": "ди рЭ-ХУ-нунг",
+   "src": "rules",
+   "syl": "Rech-un-ung"
+  },
+  "die regel": {
+   "ipa": "ʁɛɡɛl",
+   "ru": "ди РЭ-гэл",
+   "src": "rules",
+   "syl": "Reg-el"
+  },
+  "die richtung": {
+   "ipa": "ʁɪçtʊŋ",
+   "ru": "ди РИХ-тунг",
+   "src": "rules",
+   "syl": "Rich-tung"
+  },
+  "die rohrzange": {
+   "ipa": "ʁɔʁtsaŋɛ",
+   "ru": "ди РОР-ца-нгэ",
+   "src": "rules",
+   "syl": "Rohr-zan-ge"
+  },
+  "die schere": {
+   "ipa": "ʃɛʁɛ",
+   "ru": "ди ШЭ-рэ",
+   "src": "rules",
+   "syl": "Scher-e"
+  },
+  "die schraube": {
+   "ipa": "ˈʃʁaʊ̯bə",
+   "ru": "ди ШРАУ-бе",
+   "src": "seed",
+   "syl": "Schraub-e"
+  },
+  "die schraubzwinge": {
+   "ipa": "ʃʁaʊbtsvɪŋɛ",
+   "ru": "ди ШРАУБЦ-ви-нгэ",
+   "src": "rules",
+   "syl": "Schraubz-win-ge"
+  },
+  "die schutzbrille": {
+   "ipa": "ˈʃʊtsˌbʁɪlə",
+   "ru": "ди ШУЦБ-ри-ле",
+   "src": "seed",
+   "syl": "Schutzb-ril-le"
+  },
+  "die sicherheit": {
+   "ipa": "ˈzɪçɐhaɪ̯t",
+   "ru": "ди зИ-ХА-хайт",
+   "src": "seed",
+   "syl": "Sich-er-heit"
+  },
+  "die steckdose": {
+   "ipa": "ʃtɛkdɔzɛ",
+   "ru": "ди ШТЭК-до-зэ",
+   "src": "rules",
+   "syl": "Steck-dos-e"
+  },
+  "die suche": {
+   "ipa": "ˈzuːxə",
+   "ru": "ди ДИ З-ухэ",
+   "src": "wiktionary",
+   "syl": "Su"
+  },
+  "die säge": {
+   "ipa": "ˈzɛːɡə",
+   "ru": "ди ЗЭ-ге",
+   "src": "seed",
+   "syl": "Säg-e"
+  },
+  "die unterführung": {
+   "ipa": "ʊntɛʁfʏʁʊŋ",
+   "ru": "ди Ун-тэр-фю-рунг",
+   "src": "rules",
+   "syl": "Un-ter-führ-ung"
+  },
+  "die verletzung": {
+   "ipa": "fɛɐ̯ˈlɛtsʊŋ",
+   "ru": "ди фэр-ЛЭ-цунг",
+   "src": "seed",
+   "syl": "Ver-let-zung"
+  },
+  "die wasserwaage": {
+   "ipa": "vassɛʁvaːɡɛ",
+   "ru": "ди ВАС-сэр-ва-гэ",
+   "src": "rules",
+   "syl": "Was-ser-waag-e"
+  },
+  "die werkstatt": {
+   "ipa": "vɛʁkstatt",
+   "ru": "ди ВЭРКС-татт",
+   "src": "rules",
+   "syl": "Werks-tatt"
+  },
+  "die zahl": {
+   "ipa": "tsal",
+   "ru": "ди ЦАЛ",
+   "src": "rules",
+   "syl": "Zahl"
+  },
+  "die zange": {
+   "ipa": "ˈtsaŋə",
+   "ru": "ди ЦА-нге",
+   "src": "seed",
+   "syl": "Zan-ge"
+  },
+  "dividiert": {
+   "ipa": "dɪfɪdiːʁt",
+   "ru": "ДИ-фи-дирт",
+   "src": "rules",
+   "syl": "div-id-iert"
+  },
+  "dividiert durh": {
+   "ipa": "dɪfɪdiːʁt dʊʁh",
+   "ru": "ДИ-фи-дирт-дУрх",
+   "src": "rules",
+   "syl": ""
+  },
+  "dokumente": {
+   "ipa": "dɔkʊmɛntɛ",
+   "ru": "ДО-ку-мэн-тэ",
+   "src": "rules",
+   "syl": "Dok-um-en-te"
+  },
+  "du": {
+   "ipa": "duː",
+   "ru": "ДУ",
+   "src": "seed",
+   "syl": "du"
+  },
+  "durh": {
+   "ipa": "dʊʁh",
+   "ru": "ДУРХ",
+   "src": "rules",
+   "syl": "durh"
+  },
+  "ei": {
+   "ipa": "aɪ",
+   "ru": "АЙ",
+   "src": "rules",
+   "syl": "Ei"
+  },
+  "eine": {
+   "ipa": "ˈaɪ̯nə",
+   "ru": "АЙ-не",
+   "src": "seed",
+   "syl": "ein-e"
+  },
+  "einen": {
+   "ipa": "aɪnn̩",
+   "ru": "АЙнн",
+   "src": "rules",
+   "syl": "ein-en"
+  },
+  "einen moment, bitte.": {
+   "ipa": "aɪnɛn mɔmɛnt, bɪttɛ.",
+   "ru": "АЙНН-мо-мэнт-бИт-тэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "einen schönen tag noch!": {
+   "ipa": "aɪnɛn ʃœnɛn taɡ nɔx!",
+   "ru": "АЙНН-шённ-так-нОх",
+   "src": "rules",
+   "syl": ""
+  },
+  "englisch": {
+   "ipa": "ɛŋlɪʃ",
+   "ru": "Энг-лиш",
+   "src": "rules",
+   "syl": "Eng-lisch"
+  },
+  "entschuldigung": {
+   "ipa": "ɛntˈʃʊldɪɡʊŋ",
+   "ru": "энт-шУл-ДИ-гунг",
+   "src": "seed",
+   "syl": "Entsch-ul-dig-ung"
+  },
+  "entschuldigung, wie komme ich zum bahnhof?": {
+   "ipa": "ɛntʃʊldɪɡʊŋ, viː kɔmmɛ ɪç tsʊm banhɔf?",
+   "ru": "ЭН-чул-ди-гунг-ви-ком-мэ-их-цум-бАн-хоф",
+   "src": "rules",
+   "syl": ""
+  },
+  "entschuldigung.": {
+   "ipa": "ɛntʃʊldɪɡʊŋ.",
+   "ru": "Эн-чул-ди-гунг",
+   "src": "rules",
+   "syl": "Entsch-ul-dig-ung."
+  },
+  "ergebnis": {
+   "ipa": "ɛʁɡɛbnɪz",
+   "ru": "Эр-гэб-низ",
+   "src": "rules",
+   "syl": "Er-geb-nis"
+  },
+  "erklären": {
+   "ipa": "ɛʁklɛʁn̩",
+   "ru": "Эрк-лэрн",
+   "src": "rules",
+   "syl": "erk-lär-en"
+  },
+  "erst": {
+   "ipa": "ɛʁst",
+   "ru": "Эрст",
+   "src": "rules",
+   "syl": "erst"
+  },
+  "erste-hilfe-kasten": {
+   "ipa": "ɛʁstɛ-hɪlfɛ-kastn̩",
+   "ru": "Эрс-тэ--хил-фэ--кастн",
+   "src": "rules",
+   "syl": "Ers-te--Hil-fe--Kas-ten"
+  },
+  "es": {
+   "ipa": "ɛz",
+   "ru": "Эз",
+   "src": "rules",
+   "syl": "es"
+  },
+  "es tut mir leid.": {
+   "ipa": "ɛs tʊt mɪʁ laɪd.",
+   "ru": "ЭЗ-тут-мир-лАЙд",
+   "src": "rules",
+   "syl": ""
+  },
+  "essen": {
+   "ipa": "ˈɛsn̩",
+   "ru": "Эсн",
+   "src": "seed",
+   "syl": "Es-sen"
+  },
+  "etwas": {
+   "ipa": "ɛtvaz",
+   "ru": "Эт-ваз",
+   "src": "rules",
+   "syl": "et-was"
+  },
+  "fachraum": {
+   "ipa": "faxʁaʊm",
+   "ru": "ФАХ-раум",
+   "src": "rules",
+   "syl": "Fach-raum"
+  },
+  "falsch": {
+   "ipa": "falʃ",
+   "ru": "ФАЛШ",
+   "src": "wiktionary",
+   "syl": "falsch"
+  },
+  "familie": {
+   "ipa": "faˈmiːli̯ə",
+   "ru": "ФА-мИ-ли-е",
+   "src": "seed",
+   "syl": "Fam-il-ie"
+  },
+  "feile": {
+   "ipa": "ˈfaɪ̯lə",
+   "ru": "ФАЙ-ле",
+   "src": "seed",
+   "syl": "Feil-e"
+  },
+  "fenster": {
+   "ipa": "ˈfɛnstɐ",
+   "ru": "ФЭНС-та",
+   "src": "seed",
+   "syl": "Fens-ter"
+  },
+  "feuer": {
+   "ipa": "ˈfɔʏ̯ɐ",
+   "ru": "ФОЙ-а",
+   "src": "seed",
+   "syl": "Feu-er"
+  },
+  "feuerlöscher": {
+   "ipa": "fɔʏɛʁlœʃɐ",
+   "ru": "ФОЙ-эр-лё-ша",
+   "src": "rules",
+   "syl": "Feu-er-lösch-er"
+  },
+  "feuermelder": {
+   "ipa": "fɔʏɛʁmɛldɐ",
+   "ru": "ФОЙ-эр-мэл-да",
+   "src": "rules",
+   "syl": "Feu-er-mel-der"
+  },
+  "feuerwehr": {
+   "ipa": "fɔʏɛʁvɛɐ̯",
+   "ru": "ФОЙ-эр-вэр",
+   "src": "rules",
+   "syl": "Feu-er-wehr"
+  },
+  "feuerwehrstation": {
+   "ipa": "fɔʏɛʁvɛʁstatɪɔn",
+   "ru": "ФОЙ-эр-вэрс-та-ти-он",
+   "src": "rules",
+   "syl": "Feu-er-wehrs-tat-i-on"
+  },
+  "finden": {
+   "ipa": "fɪndn̩",
+   "ru": "ФИНДН",
+   "src": "rules",
+   "syl": "fin-den"
+  },
+  "fisch": {
+   "ipa": "fɪʃ",
+   "ru": "ФИШ",
+   "src": "rules",
+   "syl": "Fisch"
+  },
+  "fitnessstudio": {
+   "ipa": "fɪtnɛsstʊdɪɔ",
+   "ru": "ФИТ-нэсс-ту-ди-о",
+   "src": "rules",
+   "syl": "Fit-nesss-tud-i-o"
+  },
+  "flamme": {
+   "ipa": "flammɛ",
+   "ru": "ФЛАМ-мэ",
+   "src": "rules",
+   "syl": "Flam-me"
+  },
+  "fleisch": {
+   "ipa": "flaɪʃ",
+   "ru": "ФЛАЙШ",
+   "src": "rules",
+   "syl": "Fleisch"
+  },
+  "fluchtweg": {
+   "ipa": "flʊxtvɛk",
+   "ru": "ФЛУХТ-вэк",
+   "src": "rules",
+   "syl": "Flucht-weg"
+  },
+  "fluss": {
+   "ipa": "flʊss",
+   "ru": "ФЛУСС",
+   "src": "rules",
+   "syl": "Fluss"
+  },
+  "frage": {
+   "ipa": "fʁaɡɛ",
+   "ru": "ФРА-гэ",
+   "src": "rules",
+   "syl": "Frag-e"
+  },
+  "fragen": {
+   "ipa": "fʁaɡn̩",
+   "ru": "ФРАГН",
+   "src": "rules",
+   "syl": "frag-en"
+  },
+  "frau": {
+   "ipa": "fʁaʊ̯",
+   "ru": "ФРАУ",
+   "src": "seed",
+   "syl": "Frau"
+  },
+  "freund": {
+   "ipa": "fʁɔʏ̯nt",
+   "ru": "ФРОЙНТ",
+   "src": "seed",
+   "syl": "Freund"
+  },
+  "freut": {
+   "ipa": "fʁɔʏt",
+   "ru": "ФРОЙТ",
+   "src": "rules",
+   "syl": "Freut"
+  },
+  "freut mich": {
+   "ipa": "fʁɔʏt mɪç",
+   "ru": "ФРОЙТ-мИх",
+   "src": "rules",
+   "syl": ""
+  },
+  "friedhof": {
+   "ipa": "fʁiːdhɔf",
+   "ru": "ФРИД-хоф",
+   "src": "rules",
+   "syl": "Fried-hof"
+  },
+  "frisch": {
+   "ipa": "fʁɪʃ",
+   "ru": "ФРИШ",
+   "src": "rules",
+   "syl": "frisch"
+  },
+  "friseursalon": {
+   "ipa": "fʁɪzɔʏʁsalɔn",
+   "ru": "ФРИ-зойр-са-лон",
+   "src": "rules",
+   "syl": "Fris-eur-sal-on"
+  },
+  "früh": {
+   "ipa": "fʁyː",
+   "ru": "ФРЮ",
+   "src": "wiktionary",
+   "syl": "früh"
+  },
+  "gasanlage": {
+   "ipa": "ɡazanlaɡɛ",
+   "ru": "ГА-зан-ла-гэ",
+   "src": "rules",
+   "syl": "Gas-an-lag-e"
+  },
+  "gasanschluss": {
+   "ipa": "ɡazanʃlʊss",
+   "ru": "ГА-занш-лусс",
+   "src": "rules",
+   "syl": "Gas-ansch-luss"
+  },
+  "gasflasche": {
+   "ipa": "ɡasflaʃɛ",
+   "ru": "ГАСФ-ла-шэ",
+   "src": "rules",
+   "syl": "Gasf-lasch-e"
+  },
+  "geben": {
+   "ipa": "ɡɛbn̩",
+   "ru": "ГЭБН",
+   "src": "rules",
+   "syl": "geb-en"
+  },
+  "gefahrensymbol": {
+   "ipa": "ɡɛfaʁɛnsymbɔl",
+   "ru": "ГЭ-фа-рэн-сюм-бол",
+   "src": "rules",
+   "syl": "Gef-ahr-en-sym-bol"
+  },
+  "gehen": {
+   "ipa": "ˈɡeːən",
+   "ru": "ГЭ-ен",
+   "src": "seed",
+   "syl": "geh-en"
+  },
+  "geld": {
+   "ipa": "ɡɛlt",
+   "ru": "ГЭЛТ",
+   "src": "wiktionary",
+   "syl": "Geld"
+  },
+  "gemüse": {
+   "ipa": "ɡɛmʏzɛ",
+   "ru": "ГЭ-мю-зэ",
+   "src": "rules",
+   "syl": "Gem-üs-e"
+  },
+  "genau": {
+   "ipa": "ɡɛnaʊ",
+   "ru": "ГЭ-нау",
+   "src": "rules",
+   "syl": "gen-au"
+  },
+  "geradeaus": {
+   "ipa": "ɡɛʁadɛaʊz",
+   "ru": "ГЭ-ра-дэ-ауз",
+   "src": "rules",
+   "syl": "ger-ad-e-aus"
+  },
+  "gerne": {
+   "ipa": "ɡɛʁnɛ",
+   "ru": "ГЭР-нэ",
+   "src": "rules",
+   "syl": "ger-ne"
+  },
+  "gestern": {
+   "ipa": "ˈɡɛstɐn",
+   "ru": "ГЭС-тан",
+   "src": "seed",
+   "syl": "ges-tern"
+  },
+  "gesund": {
+   "ipa": "ɡɛzʊnt",
+   "ru": "ГЭ-зунт",
+   "src": "rules",
+   "syl": "ges-und"
+  },
+  "glasgerät": {
+   "ipa": "ɡlasɡɛʁɛt",
+   "ru": "ГЛАС-гэ-рэт",
+   "src": "rules",
+   "syl": "Glas-ger-ät"
+  },
+  "gleich": {
+   "ipa": "ɡlaɪ̯ç",
+   "ru": "ГЛАЙХ",
+   "src": "seed",
+   "syl": "gleich"
+  },
+  "globus": {
+   "ipa": "ɡlɔbʊz",
+   "ru": "ГЛО-буз",
+   "src": "rules",
+   "syl": "Glob-us"
+  },
+  "glücklich": {
+   "ipa": "ɡlʏklɪç",
+   "ru": "ГЛЮК-лИх",
+   "src": "rules",
+   "syl": "glück-lich"
+  },
+  "groß": {
+   "ipa": "ɡʁɔss",
+   "ru": "ГРОСС",
+   "src": "rules",
+   "syl": "groß"
+  },
+  "größer": {
+   "ipa": "ɡʁœssɐ",
+   "ru": "ГРЁС-са",
+   "src": "rules",
+   "syl": "grös-ser"
+  },
+  "gut": {
+   "ipa": "ɡʊt",
+   "ru": "ГУТ",
+   "src": "rules",
+   "syl": "gut"
+  },
+  "gute": {
+   "ipa": "ɡʊtɛ",
+   "ru": "ГУ-тэ",
+   "src": "rules",
+   "syl": "gut-e"
+  },
+  "habe": {
+   "ipa": "ˈhaːbə",
+   "ru": "ХА-бе",
+   "src": "seed",
+   "syl": "hab-e"
+  },
+  "haben": {
+   "ipa": "ˈhaːbn̩",
+   "ru": "ХАБН",
+   "src": "seed",
+   "syl": "hab-en"
+  },
+  "hallo": {
+   "ipa": "haˈloː",
+   "ru": "ХА-лО",
+   "src": "seed",
+   "syl": "Hal-lo"
+  },
+  "hallo, ich heiße vitali.": {
+   "ipa": "hallɔ, ɪç haɪssɛ fɪtalɪ.",
+   "ru": "ХАЛ-ло-их-хайс-сэ-фИ-та-ли",
+   "src": "rules",
+   "syl": ""
+  },
+  "hammer": {
+   "ipa": "ˈhamɐ",
+   "ru": "ХА-ма",
+   "src": "seed",
+   "syl": "Ham-mer"
+  },
+  "haus": {
+   "ipa": "haʊ̯s",
+   "ru": "ХАУС",
+   "src": "seed",
+   "syl": "Haus"
+  },
+  "heidenheim": {
+   "ipa": "haɪdɛnhaɪm",
+   "ru": "ХАЙ-дэн-хайм",
+   "src": "rules",
+   "syl": "Heid-en-heim"
+  },
+  "heiß": {
+   "ipa": "haɪss",
+   "ru": "ХАЙСС",
+   "src": "rules",
+   "syl": "heiß"
+  },
+  "heiße": {
+   "ipa": "haɪssɛ",
+   "ru": "ХАЙС-сэ",
+   "src": "rules",
+   "syl": "heis-se"
+  },
+  "heißt": {
+   "ipa": "haɪsst",
+   "ru": "ХАЙССТ",
+   "src": "rules",
+   "syl": "heißt"
+  },
+  "helfen": {
+   "ipa": "hɛlfn̩",
+   "ru": "ХЭЛФН",
+   "src": "rules",
+   "syl": "hel-fen"
+  },
+  "heute": {
+   "ipa": "ˈhɔʏ̯tə",
+   "ru": "ХОЙ-те",
+   "src": "seed",
+   "syl": "heut-e"
+  },
+  "hier": {
+   "ipa": "hiːɐ̯",
+   "ru": "ХИР",
+   "src": "rules",
+   "syl": "hier"
+  },
+  "hilfe": {
+   "ipa": "hɪlfɛ",
+   "ru": "ХИЛ-фэ",
+   "src": "rules",
+   "syl": "Hil-fe"
+  },
+  "hobel": {
+   "ipa": "hɔbɛl",
+   "ru": "ХО-бэл",
+   "src": "rules",
+   "syl": "Hob-el"
+  },
+  "hungrig": {
+   "ipa": "hʊŋʁɪç",
+   "ru": "ХУНГ-рих",
+   "src": "rules",
+   "syl": "hung-rig"
+  },
+  "hätte": {
+   "ipa": "hɛttɛ",
+   "ru": "ХЭТ-тэ",
+   "src": "rules",
+   "syl": "hät-te"
+  },
+  "hören": {
+   "ipa": "hœʁn̩",
+   "ru": "ХЁРН",
+   "src": "rules",
+   "syl": "hör-en"
+  },
+  "ich": {
+   "ipa": "ɪç",
+   "ru": "Их",
+   "src": "seed",
+   "syl": "ich"
+  },
+  "ich bin 17 jahre alt.": {
+   "ipa": "ɪç bɪn 17 jaʁɛ alt.",
+   "ru": "их-бин-йа-рэ-Алт",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich bin gleich wieder da.": {
+   "ipa": "ɪç bɪn ɡlaɪç viːdɛʁ da.",
+   "ru": "ИХ-бин-глайх-ви-да-дА",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich bin müde.": {
+   "ipa": "ɪç bɪn mʏdɛ.",
+   "ru": "ИХ-бин-мю-дЭ",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich brauche einen stift.": {
+   "ipa": "ɪç bʁaʊxɛ aɪnɛn ʃtɪft.",
+   "ru": "ИХ-брау-хэ-айнн-штИфт",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich habe eine frage.": {
+   "ipa": "ɪç habɛ aɪnɛ fʁaɡɛ.",
+   "ru": "ИХ-ха-бе-ай-не-фрА-гэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich habe keine ahnung.": {
+   "ipa": "ɪç habɛ kaɪnɛ anʊŋ.",
+   "ru": "их-ха-бе-кай-нэ-А-нунг",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich hätte gerne einen kaffee, bitte.": {
+   "ipa": "ɪç hɛttɛ ɡɛʁnɛ aɪnɛn kaffeː, bɪttɛ.",
+   "ru": "ИХ-хэт-тэ-гэр-нэ-айнн-каф-фэ-бИт-тэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich komme aus": {
+   "ipa": "ɪç kɔmmɛ aʊz",
+   "ru": "их-ком-мэ-АУс",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich komme aus der ukraine.": {
+   "ipa": "ɪç kɔmmɛ aʊs dɛʁ ʊkʁaɪnɛ.",
+   "ru": "их-ком-мэ-аус-дэр-Ук-рай-нэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich lerne deutsch erst seit kurzem.": {
+   "ipa": "ɪç lɛʁnɛ dɔʏtʃ ɛʁst saɪt kʊʁtsɛm.",
+   "ru": "ИХ-лэр-нэ-дойч-эрст-зайт-кУр-цэм",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich spreche noch nicht so gut deutsch.": {
+   "ipa": "ɪç ʃpʁɛçɛ nɔx nɪçt sɔ ɡʊt dɔʏtʃ.",
+   "ru": "ИХ-шпрэ-хэ-нох-нихт-зо-гут-дОЙч",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich suche eine arbeit.": {
+   "ipa": "ɪç sʊxɛ aɪnɛ aʁbaɪt.",
+   "ru": "их-зу-хе-ай-не-Ар-байт",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich verstehe nicht.": {
+   "ipa": "ɪç fɛʁstɛhɛ nɪçt.",
+   "ru": "ИХ-фэрш-тэ-е-нИхт",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich warte auf die bestätigung.": {
+   "ipa": "ɪç vaʁtɛ aʊf diː bɛstɛtɪɡʊŋ.",
+   "ru": "ИХ-вар-тэ-ауф-ди-бЭс-тэ-ти-гунг",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich weiß es nicht.": {
+   "ipa": "ɪç vaɪss ɛs nɪçt.",
+   "ru": "ИХ-вайсс-эз-нИхт",
+   "src": "rules",
+   "syl": ""
+  },
+  "ich wohne in heidenheim.": {
+   "ipa": "ɪç vɔnɛ ɪn haɪdɛnhaɪm.",
+   "ru": "ИХ-во-нэ-ин-хАЙ-дэн-хайм",
+   "src": "rules",
+   "syl": ""
+  },
+  "idee": {
+   "ipa": "ɪdeː",
+   "ru": "И-дэ",
+   "src": "rules",
+   "syl": "Id-ee"
+  },
+  "immer": {
+   "ipa": "ˈɪmɐ",
+   "ru": "ИММ-а",
+   "src": "wiktionary",
+   "syl": "im-mer"
+  },
+  "in": {
+   "ipa": "ɪn",
+   "ru": "Ин",
+   "src": "rules",
+   "syl": "in"
+  },
+  "ist": {
+   "ipa": "ɪst",
+   "ru": "Ист",
+   "src": "seed",
+   "syl": "ist"
+  },
+  "ist gleich": {
+   "ipa": "ɪst ɡlaɪç",
+   "ru": "ИСТ-глАЙх",
+   "src": "rules",
+   "syl": ""
+  },
+  "ist größer als": {
+   "ipa": "ɪst ɡʁœssɛʁ als",
+   "ru": "ист-грёс-са-Алс",
+   "src": "rules",
+   "syl": ""
+  },
+  "ist kleiner als": {
+   "ipa": "ɪst klaɪnɛʁ als",
+   "ru": "ист-клай-на-Алс",
+   "src": "rules",
+   "syl": ""
+  },
+  "ja": {
+   "ipa": "jaː",
+   "ru": "ЙА",
+   "src": "seed",
+   "syl": "Ja"
+  },
+  "ja, genau.": {
+   "ipa": "ja, ɡɛnaʊ.",
+   "ru": "ЙА-гЭ-нау",
+   "src": "rules",
+   "syl": ""
+  },
+  "jahre": {
+   "ipa": "jaʁɛ",
+   "ru": "ЙА-рэ",
+   "src": "rules",
+   "syl": "Jahr-e"
+  },
+  "jetzt": {
+   "ipa": "jɛtst",
+   "ru": "ЙЭЦТ",
+   "src": "wiktionary",
+   "syl": "jetzt"
+  },
+  "kaffee": {
+   "ipa": "kaffeː",
+   "ru": "КАФ-фэ",
+   "src": "rules",
+   "syl": "Kaf-fee"
+  },
+  "kalt": {
+   "ipa": "kalt",
+   "ru": "КАЛТ",
+   "src": "rules",
+   "syl": "kalt"
+  },
+  "kann": {
+   "ipa": "kann",
+   "ru": "КАНН",
+   "src": "rules",
+   "syl": "kann"
+  },
+  "kannst": {
+   "ipa": "kannst",
+   "ru": "КАННСТ",
+   "src": "rules",
+   "syl": "Kannst"
+  },
+  "kannst du mir das erklären?": {
+   "ipa": "kannst dʊ mɪʁ das ɛʁklɛʁɛn?",
+   "ru": "каннст-ду-мир-дас-Эрк-лэ-рэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "kannst du mir helfen?": {
+   "ipa": "kannst dʊ mɪʁ hɛlfɛn?",
+   "ru": "КАННСТ-ду-мир-хЭл-фэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "karte": {
+   "ipa": "kaʁtɛ",
+   "ru": "КАР-тэ",
+   "src": "rules",
+   "syl": "Kar-te"
+  },
+  "kaufen": {
+   "ipa": "kaʊfn̩",
+   "ru": "КАУФН",
+   "src": "rules",
+   "syl": "kauf-en"
+  },
+  "kein": {
+   "ipa": "kaɪn",
+   "ru": "КАЙН",
+   "src": "rules",
+   "syl": "Kein"
+  },
+  "kein problem.": {
+   "ipa": "kaɪn pʁɔblɛm.",
+   "ru": "КАЙН-прОб-лэм",
+   "src": "rules",
+   "syl": ""
+  },
+  "keine": {
+   "ipa": "kaɪnɛ",
+   "ru": "КАЙ-нэ",
+   "src": "rules",
+   "syl": "kein-e"
+  },
+  "kekse": {
+   "ipa": "ˈkɛksə",
+   "ru": "КЭК-се",
+   "src": "seed",
+   "syl": "Kek-se"
+  },
+  "kind": {
+   "ipa": "kɪnt",
+   "ru": "КИНТ",
+   "src": "seed",
+   "syl": "Kind"
+  },
+  "klar": {
+   "ipa": "klaɐ̯",
+   "ru": "КЛАР",
+   "src": "rules",
+   "syl": "klar"
+  },
+  "klein": {
+   "ipa": "klaɪn",
+   "ru": "КЛАЙН",
+   "src": "rules",
+   "syl": "klein"
+  },
+  "kleiner": {
+   "ipa": "klaɪnɐ",
+   "ru": "КЛАЙ-на",
+   "src": "rules",
+   "syl": "klein-er"
+  },
+  "kochen": {
+   "ipa": "kɔxn̩",
+   "ru": "КОХН",
+   "src": "rules",
+   "syl": "koch-en"
+  },
+  "kombizange": {
+   "ipa": "kɔmbɪtsaŋɛ",
+   "ru": "КОМ-би-ца-нгэ",
+   "src": "rules",
+   "syl": "Kom-biz-an-ge"
+  },
+  "komme": {
+   "ipa": "kɔmmɛ",
+   "ru": "КОМ-мэ",
+   "src": "rules",
+   "syl": "kom-me"
+  },
+  "kommen": {
+   "ipa": "ˈkɔmən",
+   "ru": "КО-мен",
+   "src": "seed",
+   "syl": "kom-men"
+  },
+  "kompass": {
+   "ipa": "kɔmpass",
+   "ru": "КОМ-пасс",
+   "src": "rules",
+   "syl": "Kom-pass"
+  },
+  "kostet": {
+   "ipa": "kɔstɛt",
+   "ru": "КОС-тэт",
+   "src": "rules",
+   "syl": "kos-tet"
+  },
+  "krank": {
+   "ipa": "kʁank",
+   "ru": "КРАНК",
+   "src": "rules",
+   "syl": "krank"
+  },
+  "krankenhaus": {
+   "ipa": "ˈkʁaŋkn̩haʊ̯s",
+   "ru": "КРАНГКН-хаус",
+   "src": "seed",
+   "syl": "Kran-ken-haus"
+  },
+  "kreisverkehr": {
+   "ipa": "kʁaɪsfɛʁkɛɐ̯",
+   "ru": "КРАЙС-фэр-кэр",
+   "src": "rules",
+   "syl": "Kreis-ver-kehr"
+  },
+  "kreuzung": {
+   "ipa": "kʁɔʏtsʊŋ",
+   "ru": "КРОЙ-цунг",
+   "src": "rules",
+   "syl": "Kreuz-ung"
+  },
+  "kuchen": {
+   "ipa": "kʊxn̩",
+   "ru": "КУХН",
+   "src": "rules",
+   "syl": "Kuch-en"
+  },
+  "kurz": {
+   "ipa": "kʊʁt͡s",
+   "ru": "КУРЦ",
+   "src": "wiktionary",
+   "syl": "kurz"
+  },
+  "kurzem": {
+   "ipa": "kʊʁtsɛm",
+   "ru": "КУР-цэм",
+   "src": "rules",
+   "syl": "Kur-zem"
+  },
+  "käse": {
+   "ipa": "kɛzɛ",
+   "ru": "КЭ-зэ",
+   "src": "rules",
+   "syl": "Käs-e"
+  },
+  "können": {
+   "ipa": "ˈkœnən",
+   "ru": "КЁ-нен",
+   "src": "seed",
+   "syl": "kön-nen"
+  },
+  "können sie das bitte wiederholen?": {
+   "ipa": "kœnnɛn siː das bɪttɛ viːdɛʁhɔlɛn?",
+   "ru": "КЁ-нен-зи-дас-би-те-вИ-дэр-хо-лэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "können sie etwas langsamer sprechen?": {
+   "ipa": "kœnnɛn siː ɛtvas laŋsamɛʁ ʃpʁɛçɛn?",
+   "ru": "КЁ-нен-зи-эт-ваз-ланг-са-ма-шпрЭ-хэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "kühlpad": {
+   "ipa": "kʏlpat",
+   "ru": "КЮЛ-пАт",
+   "src": "rules",
+   "syl": "Kühl-pad"
+  },
+  "laden": {
+   "ipa": "ˈlaːdən",
+   "ru": "Л-адн",
+   "src": "wiktionary",
+   "syl": "La"
+  },
+  "langsam": {
+   "ipa": "laŋsam",
+   "ru": "ЛАНГ-сам",
+   "src": "rules",
+   "syl": "lang-sam"
+  },
+  "langsamer": {
+   "ipa": "laŋsamɐ",
+   "ru": "ЛАНГ-са-ма",
+   "src": "rules",
+   "syl": "lang-sam-er"
+  },
+  "leben": {
+   "ipa": "lɛbn̩",
+   "ru": "ЛЭБН",
+   "src": "rules",
+   "syl": "leb-en"
+  },
+  "lecker": {
+   "ipa": "ˈlɛkɐ",
+   "ru": "ЛЭ-ка",
+   "src": "wiktionary",
+   "syl": "lec-ker"
+  },
+  "lehrer": {
+   "ipa": "ˈleːʁɐ",
+   "ru": "ЛЭ-ра",
+   "src": "seed",
+   "syl": "Lehr-er"
+  },
+  "leid": {
+   "ipa": "laɪt",
+   "ru": "ЛАЙТ",
+   "src": "rules",
+   "syl": "leid"
+  },
+  "lerne": {
+   "ipa": "lɛʁnɛ",
+   "ru": "ЛЭР-нэ",
+   "src": "rules",
+   "syl": "ler-ne"
+  },
+  "lernen": {
+   "ipa": "ˈlɛrnən",
+   "ru": "ЛЭРНН",
+   "src": "wiktionary",
+   "syl": "ler-nen"
+  },
+  "leute": {
+   "ipa": "ˈlɔɪ.tə/ [ˈlɔe̠.t(ʰ)ə",
+   "ru": "Л-ойтэ",
+   "src": "wiktionary",
+   "syl": "Leu"
+  },
+  "lieben": {
+   "ipa": "liːbn̩",
+   "ru": "ЛИБН",
+   "src": "rules",
+   "syl": "lieb-en"
+  },
+  "links": {
+   "ipa": "lɪnks",
+   "ru": "ЛИНКС",
+   "src": "rules",
+   "syl": "links"
+  },
+  "lustig": {
+   "ipa": "lʊstɪç",
+   "ru": "ЛУС-тих",
+   "src": "rules",
+   "syl": "lus-tig"
+  },
+  "löschdecke": {
+   "ipa": "lœʃdɛkɛ",
+   "ru": "ЛЁШ-дэ-кэ",
+   "src": "rules",
+   "syl": "Lösch-dec-ke"
+  },
+  "löschsand": {
+   "ipa": "lœʃsant",
+   "ru": "ЛЁШ-сант",
+   "src": "rules",
+   "syl": "Lösch-sand"
+  },
+  "mache": {
+   "ipa": "maxɛ",
+   "ru": "МА-хэ",
+   "src": "rules",
+   "syl": "mach-e"
+  },
+  "machst": {
+   "ipa": "makst",
+   "ru": "МАКСТ",
+   "src": "rules",
+   "syl": "machst"
+  },
+  "macht": {
+   "ipa": "maxt",
+   "ru": "МАХТ",
+   "src": "rules",
+   "syl": "Macht"
+  },
+  "macht nichts.": {
+   "ipa": "maxt nɪçts.",
+   "ru": "МАХТ-нИхц",
+   "src": "rules",
+   "syl": ""
+  },
+  "magst": {
+   "ipa": "maɡst",
+   "ru": "МАГСТ",
+   "src": "rules",
+   "syl": "Magst"
+  },
+  "magst du": {
+   "ipa": "maɡst dʊ",
+   "ru": "МАГСТ-дУ",
+   "src": "rules",
+   "syl": ""
+  },
+  "mal": {
+   "ipa": "mal",
+   "ru": "МАЛ",
+   "src": "rules",
+   "syl": "mal"
+  },
+  "mama": {
+   "ipa": "mama",
+   "ru": "МА-ма",
+   "src": "rules",
+   "syl": "Mam-a"
+  },
+  "man": {
+   "ipa": "man",
+   "ru": "МАН",
+   "src": "rules",
+   "syl": "man"
+  },
+  "manchmal": {
+   "ipa": "ˈmançmaːl",
+   "ru": "МАНХ-мал",
+   "src": "seed",
+   "syl": "manch-mal"
+  },
+  "mann": {
+   "ipa": "man",
+   "ru": "МАН",
+   "src": "seed",
+   "syl": "Mann"
+  },
+  "maulschlüssel": {
+   "ipa": "maʊlʃlʏssɛl",
+   "ru": "МАУЛШ-люс-сэл",
+   "src": "rules",
+   "syl": "Maulsch-lüs-sel"
+  },
+  "maßband": {
+   "ipa": "massbant",
+   "ru": "МАСС-бант",
+   "src": "rules",
+   "syl": "Mass-band"
+  },
+  "mein": {
+   "ipa": "maɪn",
+   "ru": "МАЙН",
+   "src": "rules",
+   "syl": "mein"
+  },
+  "meine": {
+   "ipa": "maɪnɛ",
+   "ru": "МАЙ-нэ",
+   "src": "rules",
+   "syl": "Mein-e"
+  },
+  "meine dokumente sind noch beim schulamt.": {
+   "ipa": "maɪnɛ dɔkʊmɛntɛ sɪnd nɔx baɪm ʃʊlamt.",
+   "ru": "МАЙ-нэ-до-ку-мэн-тэ-зинт-нох-байм-шУ-ламт",
+   "src": "rules",
+   "syl": ""
+  },
+  "meißel": {
+   "ipa": "maɪssɛl",
+   "ru": "МАЙС-сэл",
+   "src": "rules",
+   "syl": "Meis-sel"
+  },
+  "mensch": {
+   "ipa": "mɛnʃ",
+   "ru": "МЭНШ",
+   "src": "wiktionary",
+   "syl": "Mensch"
+  },
+  "messbecher": {
+   "ipa": "mɛssbɛçɐ",
+   "ru": "МЭСС-бэ-ха",
+   "src": "rules",
+   "syl": "Mess-bech-er"
+  },
+  "mich": {
+   "ipa": "mɪç",
+   "ru": "МИХ",
+   "src": "rules",
+   "syl": "mich"
+  },
+  "milch": {
+   "ipa": "mɪlç",
+   "ru": "МИЛХ",
+   "src": "seed",
+   "syl": "Milch"
+  },
+  "minus": {
+   "ipa": "ˈmiːnʊs",
+   "ru": "МИ-нус",
+   "src": "seed",
+   "syl": "min-us"
+  },
+  "mir": {
+   "ipa": "mɪɐ̯",
+   "ru": "МИР",
+   "src": "rules",
+   "syl": "mir"
+  },
+  "mit": {
+   "ipa": "mɪt",
+   "ru": "МИТ",
+   "src": "seed",
+   "syl": "mit"
+  },
+  "moment": {
+   "ipa": "mɔmɛnt",
+   "ru": "МО-мэнт",
+   "src": "rules",
+   "syl": "Mom-ent"
+  },
+  "morgen": {
+   "ipa": "ˈmɔʁɡn̩",
+   "ru": "МОРГН",
+   "src": "seed",
+   "syl": "Mor-gen"
+  },
+  "möbelgeschäft": {
+   "ipa": "mœbɛlɡɛʃɛft",
+   "ru": "МЁ-бэл-гэ-шэфт",
+   "src": "rules",
+   "syl": "Möb-el-gesch-äft"
+  },
+  "möbelhaus": {
+   "ipa": "mœbɛlhaʊz",
+   "ru": "МЁ-бэл-хауз",
+   "src": "rules",
+   "syl": "Möb-el-haus"
+  },
+  "müde": {
+   "ipa": "ˈmyːdə",
+   "ru": "МЮ-де",
+   "src": "seed",
+   "syl": "müd-e"
+  },
+  "müssen": {
+   "ipa": "ˈmʏsn̩",
+   "ru": "МЮСН",
+   "src": "seed",
+   "syl": "müs-sen"
+  },
+  "nacht": {
+   "ipa": "naxt",
+   "ru": "НАХТ",
+   "src": "seed",
+   "syl": "Nacht"
+  },
+  "nehmen": {
+   "ipa": "nɛmn̩",
+   "ru": "НЭМН",
+   "src": "rules",
+   "syl": "nehm-en"
+  },
+  "nett": {
+   "ipa": "nɛtt",
+   "ru": "НЭТТ",
+   "src": "rules",
+   "syl": "nett"
+  },
+  "neu": {
+   "ipa": "nɔʏ",
+   "ru": "НОЙ",
+   "src": "rules",
+   "syl": "neu"
+  },
+  "nicht": {
+   "ipa": "nɪçt",
+   "ru": "НИХТ",
+   "src": "seed",
+   "syl": "nicht"
+  },
+  "nichts": {
+   "ipa": "nɪçts",
+   "ru": "НИХЦ",
+   "src": "rules",
+   "syl": "nichts"
+  },
+  "nie": {
+   "ipa": "niː",
+   "ru": "НИ",
+   "src": "wiktionary",
+   "syl": "nie"
+  },
+  "noch": {
+   "ipa": "nɔx",
+   "ru": "НОХ",
+   "src": "seed",
+   "syl": "noch"
+  },
+  "norden": {
+   "ipa": "nɔʁdn̩",
+   "ru": "НОРДН",
+   "src": "rules",
+   "syl": "Nor-den"
+  },
+  "nordosten": {
+   "ipa": "nɔʁdɔstn̩",
+   "ru": "НОР-достн",
+   "src": "rules",
+   "syl": "Nor-dos-ten"
+  },
+  "nordwesten": {
+   "ipa": "nɔʁdvɛstn̩",
+   "ru": "НОРД-вэстн",
+   "src": "rules",
+   "syl": "Nord-wes-ten"
+  },
+  "not-aus-knopf": {
+   "ipa": "nɔt-aʊs-knɔpf",
+   "ru": "НОТ--аус-к-нопф",
+   "src": "rules",
+   "syl": "Not--Aus-K-nopf"
+  },
+  "not-aus-schalter": {
+   "ipa": "nɔt-aʊs-ʃaltɐ",
+   "ru": "НОТ--аус--шал-та",
+   "src": "rules",
+   "syl": "Not--Aus-Sch-al-ter"
+  },
+  "notausgang": {
+   "ipa": "nɔtaʊsɡaŋ",
+   "ru": "НО-таус-ганг",
+   "src": "rules",
+   "syl": "Not-aus-gang"
+  },
+  "nächste": {
+   "ipa": "nɛkstɛ",
+   "ru": "НЭКС-тэ",
+   "src": "rules",
+   "syl": "nächs-te"
+  },
+  "obst": {
+   "ipa": "ɔbst",
+   "ru": "Обст",
+   "src": "rules",
+   "syl": "Obst"
+  },
+  "oft": {
+   "ipa": "ɔft",
+   "ru": "ОФТ",
+   "src": "wiktionary",
+   "syl": "oft"
+  },
+  "ort": {
+   "ipa": "ɔʁt",
+   "ru": "Орт",
+   "src": "rules",
+   "syl": "Ort"
+  },
+  "osten": {
+   "ipa": "ɔstn̩",
+   "ru": "Остн",
+   "src": "rules",
+   "syl": "Os-ten"
+  },
+  "papa": {
+   "ipa": "papa",
+   "ru": "ПА-па",
+   "src": "rules",
+   "syl": "Pap-a"
+  },
+  "pfanne": {
+   "ipa": "pfannɛ",
+   "ru": "ПФАН-нэ",
+   "src": "rules",
+   "syl": "Pfan-ne"
+  },
+  "pfannenwender": {
+   "ipa": "pfannɛnvɛndɐ",
+   "ru": "ПФАН-нэн-вэн-да",
+   "src": "rules",
+   "syl": "Pfan-nen-wen-der"
+  },
+  "pflaster": {
+   "ipa": "pflastɐ",
+   "ru": "ПФЛАС-та",
+   "src": "rules",
+   "syl": "Pflas-ter"
+  },
+  "pizza": {
+   "ipa": "pɪtstsa",
+   "ru": "ПИЦ-ца",
+   "src": "rules",
+   "syl": "Piz-za"
+  },
+  "platz": {
+   "ipa": "plats",
+   "ru": "ПЛАЦ",
+   "src": "rules",
+   "syl": "Platz"
+  },
+  "plus": {
+   "ipa": "plʊs",
+   "ru": "ПЛУС",
+   "src": "seed",
+   "syl": "plus"
+  },
+  "polizeistation": {
+   "ipa": "pɔlɪtsaɪstatɪɔn",
+   "ru": "ПО-ли-цайс-та-ти-он",
+   "src": "rules",
+   "syl": "Pol-iz-eis-tat-i-on"
+  },
+  "polizeiwache": {
+   "ipa": "pɔlɪtsaɪvaxɛ",
+   "ru": "ПО-ли-цай-ва-хэ",
+   "src": "rules",
+   "syl": "Pol-iz-eiw-ach-e"
+  },
+  "preis": {
+   "ipa": "pʁaɪz",
+   "ru": "ПРАЙЗ",
+   "src": "rules",
+   "syl": "Preis"
+  },
+  "problem": {
+   "ipa": "pʁɔblɛm",
+   "ru": "ПРОБ-лэм",
+   "src": "rules",
+   "syl": "Prob-lem"
+  },
+  "rathaus": {
+   "ipa": "ʁataʊz",
+   "ru": "РА-тауз",
+   "src": "rules",
+   "syl": "Rat-haus"
+  },
+  "rausgehen": {
+   "ipa": "ˈʁaʊ̯sˌɡeːən",
+   "ru": "РА-усг-эхн",
+   "src": "wiktionary",
+   "syl": "raus-geh-en"
+  },
+  "rechts": {
+   "ipa": "ʁɛçts",
+   "ru": "РЭХЦ",
+   "src": "rules",
+   "syl": "rechts"
+  },
+  "rechunung": {
+   "ipa": "ʁɛçʊnʊŋ",
+   "ru": "рЭ-ХУ-нунг",
+   "src": "rules",
+   "syl": "Rech-un-ung"
+  },
+  "regel": {
+   "ipa": "ʁɛɡɛl",
+   "ru": "РЭ-гэл",
+   "src": "rules",
+   "syl": "Reg-el"
+  },
+  "restaurant": {
+   "ipa": "ʁɛstaʊʁant",
+   "ru": "РЭС-тау-рант",
+   "src": "rules",
+   "syl": "Res-taur-ant"
+  },
+  "richtig": {
+   "ipa": "ʁɪçtɪç",
+   "ru": "РИХ-тих",
+   "src": "rules",
+   "syl": "rich-tig"
+  },
+  "richtung": {
+   "ipa": "ʁɪçtʊŋ",
+   "ru": "РИХ-тунг",
+   "src": "rules",
+   "syl": "Rich-tung"
+  },
+  "rohrzange": {
+   "ipa": "ʁɔʁtsaŋɛ",
+   "ru": "РОР-ца-нгэ",
+   "src": "rules",
+   "syl": "Rohr-zan-ge"
+  },
+  "rollmeter": {
+   "ipa": "ʁɔllmɛtɐ",
+   "ru": "РОЛЛ-мэ-та",
+   "src": "rules",
+   "syl": "Roll-met-er"
+  },
+  "sagen": {
+   "ipa": "zaɡn̩",
+   "ru": "ЗАГН",
+   "src": "rules",
+   "syl": "sag-en"
+  },
+  "salat": {
+   "ipa": "zalat",
+   "ru": "ЗА-лат",
+   "src": "rules",
+   "syl": "Sal-at"
+  },
+  "salz": {
+   "ipa": "zalts",
+   "ru": "ЗАЛЦ",
+   "src": "rules",
+   "syl": "Salz"
+  },
+  "satt": {
+   "ipa": "zatt",
+   "ru": "ЗАТТ",
+   "src": "rules",
+   "syl": "satt"
+  },
+  "schere": {
+   "ipa": "ʃɛʁɛ",
+   "ru": "ШЭ-рэ",
+   "src": "rules",
+   "syl": "Scher-e"
+  },
+  "schlecht": {
+   "ipa": "ʃlɛçt",
+   "ru": "ШЛЭХТ",
+   "src": "rules",
+   "syl": "schlecht"
+  },
+  "schnell": {
+   "ipa": "ʃnɛll",
+   "ru": "ШНЭЛЛ",
+   "src": "rules",
+   "syl": "schnell"
+  },
+  "schnitzel": {
+   "ipa": "ʃnɪtsɛl",
+   "ru": "ШНИ-цэл",
+   "src": "rules",
+   "syl": "Schnit-zel"
+  },
+  "schraube": {
+   "ipa": "ˈʃʁaʊ̯bə",
+   "ru": "ШРАУ-бе",
+   "src": "seed",
+   "syl": "Schraub-e"
+  },
+  "schraubendreher": {
+   "ipa": "ˈʃʁaʊ̯bn̩ˌdʁeːɐ̯",
+   "ru": "ШРАУБНД-рэр",
+   "src": "seed",
+   "syl": "Schraub-end-reh-er"
+  },
+  "schraubenzieher": {
+   "ipa": "ʃʁaʊbɛntsiːhɐ",
+   "ru": "ШРАУ-бэн-ци-ха",
+   "src": "rules",
+   "syl": "Schraub-en-zieh-er"
+  },
+  "schraubstock": {
+   "ipa": "ʃʁaʊbstɔk",
+   "ru": "ШРАУБС-ток",
+   "src": "rules",
+   "syl": "Schraubs-tock"
+  },
+  "schraubzwinge": {
+   "ipa": "ʃʁaʊbtsvɪŋɛ",
+   "ru": "ШРАУБЦ-ви-нгэ",
+   "src": "rules",
+   "syl": "Schraubz-win-ge"
+  },
+  "schreibt": {
+   "ipa": "ʃʁaɪ̯pt",
+   "ru": "ШРАЙБТ",
+   "src": "wiktionary",
+   "syl": "schreibt"
+  },
+  "schulamt": {
+   "ipa": "ʃʊlamt",
+   "ru": "ШУ-ламт",
+   "src": "rules",
+   "syl": "Schul-amt"
+  },
+  "schule": {
+   "ipa": "ˈʃuːlə",
+   "ru": "ШУ-ле",
+   "src": "seed",
+   "syl": "Schul-e"
+  },
+  "schutzbrille": {
+   "ipa": "ˈʃʊtsˌbʁɪlə",
+   "ru": "ШУЦБ-ри-ле",
+   "src": "seed",
+   "syl": "Schutzb-ril-le"
+  },
+  "schutzhandschuh": {
+   "ipa": "ʃʊtshandʒʊ",
+   "ru": "ШУЦ-хан-джу",
+   "src": "rules",
+   "syl": "Schutz-handsch-uh"
+  },
+  "schutzkittel": {
+   "ipa": "ʃʊtskɪttɛl",
+   "ru": "ШУЦ-кит-тэл",
+   "src": "rules",
+   "syl": "Schutz-kit-tel"
+  },
+  "schwester": {
+   "ipa": "ʃvɛstɐ",
+   "ru": "ШВЭС-та",
+   "src": "rules",
+   "syl": "Schwes-ter"
+  },
+  "schön": {
+   "ipa": "ʃøːn",
+   "ru": "ШЁН",
+   "src": "seed",
+   "syl": "schön"
+  },
+  "schönen": {
+   "ipa": "ˈʃøːnən",
+   "ru": "ШЁНН",
+   "src": "wiktionary",
+   "syl": "schön-en"
+  },
+  "schüler": {
+   "ipa": "ˈʃyːlɐ",
+   "ru": "ШЮ-ла",
+   "src": "seed",
+   "syl": "Schül-er"
+  },
+  "see": {
+   "ipa": "zeː",
+   "ru": "ЗЭ",
+   "src": "rules",
+   "syl": "See"
+  },
+  "sehen": {
+   "ipa": "zɛhn̩",
+   "ru": "ЗЭХН",
+   "src": "rules",
+   "syl": "seh-en"
+  },
+  "seiher": {
+   "ipa": "zaɪhɐ",
+   "ru": "ЗАЙ-ха",
+   "src": "rules",
+   "syl": "Seih-er"
+  },
+  "sein": {
+   "ipa": "zaɪn",
+   "ru": "ЗАЙН",
+   "src": "rules",
+   "syl": "sein"
+  },
+  "seit": {
+   "ipa": "zaɪt",
+   "ru": "ЗАЙТ",
+   "src": "rules",
+   "syl": "seit"
+  },
+  "seitenschneider": {
+   "ipa": "zaɪtɛnʃnaɪdɐ",
+   "ru": "ЗАЙ-тэнш-най-да",
+   "src": "rules",
+   "syl": "Seit-ensch-neid-er"
+  },
+  "sicherheit": {
+   "ipa": "ˈzɪçɐhaɪ̯t",
+   "ru": "зИ-ХА-хайт",
+   "src": "seed",
+   "syl": "Sich-er-heit"
+  },
+  "sie": {
+   "ipa": "ziː",
+   "ru": "ЗИ",
+   "src": "rules",
+   "syl": "Sie"
+  },
+  "sind": {
+   "ipa": "zɪnt",
+   "ru": "ЗИНТ",
+   "src": "seed",
+   "syl": "sind"
+  },
+  "so": {
+   "ipa": "zɔ",
+   "ru": "ЗО",
+   "src": "rules",
+   "syl": "so"
+  },
+  "sohn": {
+   "ipa": "zɔn",
+   "ru": "ЗОН",
+   "src": "rules",
+   "syl": "Sohn"
+  },
+  "sparschäler": {
+   "ipa": "ʃpaʁʃɛlɐ",
+   "ru": "ШПАР-шэ-ла",
+   "src": "rules",
+   "syl": "Sparsch-äl-er"
+  },
+  "spielen": {
+   "ipa": "ʃpiːln̩",
+   "ru": "ШПИЛН",
+   "src": "rules",
+   "syl": "spiel-en"
+  },
+  "spreche": {
+   "ipa": "ʃpʁɛçɛ",
+   "ru": "ШПРЭ-хэ",
+   "src": "rules",
+   "syl": "sprech-e"
+  },
+  "sprechen": {
+   "ipa": "ˈʃpʁɛçn̩",
+   "ru": "ШПРЭХН",
+   "src": "seed",
+   "syl": "sprech-en"
+  },
+  "sprechen sie englisch?": {
+   "ipa": "ʃpʁɛçɛn siː ɛŋlɪʃ?",
+   "ru": "шпрэхн-зи-Энг-лиш",
+   "src": "rules",
+   "syl": ""
+  },
+  "spät": {
+   "ipa": "ʃpɛːt",
+   "ru": "ШПЭТ",
+   "src": "wiktionary",
+   "syl": "spät"
+  },
+  "später": {
+   "ipa": "ˈʃpɛːtɐ",
+   "ru": "ШП-эта",
+   "src": "wiktionary",
+   "syl": "spät-er"
+  },
+  "spülschwamm": {
+   "ipa": "ʃpʏlʃvamm",
+   "ru": "ШПЮЛШ-вАмм",
+   "src": "rules",
+   "syl": "Spülsch-wamm"
+  },
+  "stadt": {
+   "ipa": "ʃtat",
+   "ru": "ШТАТ",
+   "src": "seed",
+   "syl": "Stadt"
+  },
+  "stechbeitel": {
+   "ipa": "ʃtɛçbaɪtɛl",
+   "ru": "ШТЭХ-бай-тэл",
+   "src": "rules",
+   "syl": "Stech-beit-el"
+  },
+  "steckdose": {
+   "ipa": "ʃtɛkdɔzɛ",
+   "ru": "ШТЭК-до-зэ",
+   "src": "rules",
+   "syl": "Steck-dos-e"
+  },
+  "stift": {
+   "ipa": "ʃtɪft",
+   "ru": "ШТИФТ",
+   "src": "rules",
+   "syl": "Stift"
+  },
+  "stimmt": {
+   "ipa": "ʃtɪmmt",
+   "ru": "ШТИММТ",
+   "src": "rules",
+   "syl": "stimmt"
+  },
+  "straße": {
+   "ipa": "ˈʃtʁaːsə",
+   "ru": "ШТРАС-сэ",
+   "src": "seed",
+   "syl": "Stras-se"
+  },
+  "strom": {
+   "ipa": "ʃtʁoːm",
+   "ru": "ШТРОМ",
+   "src": "seed",
+   "syl": "Strom"
+  },
+  "stuhl": {
+   "ipa": "ʃtuːl",
+   "ru": "ШТУЛ",
+   "src": "seed",
+   "syl": "Stuhl"
+  },
+  "suche": {
+   "ipa": "ˈzuːxə",
+   "ru": "ЗУХ-э",
+   "src": "wiktionary",
+   "syl": "Su"
+  },
+  "supermarkt": {
+   "ipa": "ˈzuːpɐmaʁkt",
+   "ru": "ЗУ-па-маркт",
+   "src": "seed",
+   "syl": "Sup-er-markt"
+  },
+  "suppe": {
+   "ipa": "zʊppɛ",
+   "ru": "ЗУП-пэ",
+   "src": "rules",
+   "syl": "Sup-pe"
+  },
+  "säge": {
+   "ipa": "ˈzɛːɡə",
+   "ru": "ЗЭ-ге",
+   "src": "seed",
+   "syl": "Säg-e"
+  },
+  "süden": {
+   "ipa": "zʏdn̩",
+   "ru": "ЗЮДН",
+   "src": "rules",
+   "syl": "Süd-en"
+  },
+  "südosten": {
+   "ipa": "zʏdɔstn̩",
+   "ru": "ЗЮ-дОстн",
+   "src": "rules",
+   "syl": "Süd-os-ten"
+  },
+  "südwesten": {
+   "ipa": "zʏdvɛstn̩",
+   "ru": "ЗЮД-вЭстн",
+   "src": "rules",
+   "syl": "Süd-wes-ten"
+  },
+  "tag": {
+   "ipa": "taːk",
+   "ru": "ТАК",
+   "src": "seed",
+   "syl": "Tag"
+  },
+  "tee": {
+   "ipa": "teː",
+   "ru": "ТЭ",
+   "src": "rules",
+   "syl": "Tee"
+  },
+  "teuer": {
+   "ipa": "tɔʏɐ",
+   "ru": "ТОЙ-а",
+   "src": "rules",
+   "syl": "teu-er"
+  },
+  "ticket": {
+   "ipa": "tɪkɛt",
+   "ru": "ТИ-кэт",
+   "src": "rules",
+   "syl": "Tic-ket"
+  },
+  "tickets": {
+   "ipa": "tɪkɛts",
+   "ru": "ТИ-кэц",
+   "src": "rules",
+   "syl": "Tic-kets"
+  },
+  "tisch": {
+   "ipa": "tɪʃ",
+   "ru": "ТИШ",
+   "src": "seed",
+   "syl": "Tisch"
+  },
+  "tochter": {
+   "ipa": "tɔxtɐ",
+   "ru": "ТОХ-та",
+   "src": "rules",
+   "syl": "Toch-ter"
+  },
+  "toilette": {
+   "ipa": "tɔɪlɛttɛ",
+   "ru": "ТО-и-лэт-тэ",
+   "src": "rules",
+   "syl": "To-il-et-te"
+  },
+  "topf": {
+   "ipa": "tɔpf",
+   "ru": "ТОПФ",
+   "src": "rules",
+   "syl": "Topf"
+  },
+  "topfdeckel": {
+   "ipa": "tɔpfdɛkɛl",
+   "ru": "ТОПФ-дэ-кэл",
+   "src": "rules",
+   "syl": "Topf-dec-kel"
+  },
+  "topflappen": {
+   "ipa": "tɔpflappn̩",
+   "ru": "ТОПФ-лаппн",
+   "src": "rules",
+   "syl": "Topf-lap-pen"
+  },
+  "trinken": {
+   "ipa": "ˈtʁɪŋkn̩",
+   "ru": "ТРИНГКН",
+   "src": "seed",
+   "syl": "Trin-ken"
+  },
+  "trinkst": {
+   "ipa": "tʁɪnkst",
+   "ru": "ТРИНКСТ",
+   "src": "rules",
+   "syl": "Trinkst"
+  },
+  "trinkst du": {
+   "ipa": "tʁɪnkst dʊ",
+   "ru": "ТРИНКСТ-дУ",
+   "src": "rules",
+   "syl": ""
+  },
+  "tschüss": {
+   "ipa": "tʃʏs",
+   "ru": "ЧЮС",
+   "src": "seed",
+   "syl": "Tschüss"
+  },
+  "tunnel": {
+   "ipa": "tʊnnɛl",
+   "ru": "ТУН-нэл",
+   "src": "rules",
+   "syl": "Tun-nel"
+  },
+  "tut": {
+   "ipa": "tʊt",
+   "ru": "ТУТ",
+   "src": "rules",
+   "syl": "tut"
+  },
+  "tür": {
+   "ipa": "tyːɐ̯",
+   "ru": "ТЮР",
+   "src": "seed",
+   "syl": "Tür"
+  },
+  "ukraine": {
+   "ipa": "ʊkʁaɪnɛ",
+   "ru": "Ук-рай-нэ",
+   "src": "rules",
+   "syl": "Uk-rain-e"
+  },
+  "und": {
+   "ipa": "ʊnt",
+   "ru": "Унт",
+   "src": "seed",
+   "syl": "und"
+  },
+  "und du": {
+   "ipa": "ʊnd dʊ",
+   "ru": "УНТ-дУ",
+   "src": "rules",
+   "syl": ""
+  },
+  "unterführung": {
+   "ipa": "ʊntɛʁfʏʁʊŋ",
+   "ru": "Ун-тэр-фю-рунг",
+   "src": "rules",
+   "syl": "Un-ter-führ-ung"
+  },
+  "verbandskasten": {
+   "ipa": "fɛʁbandskastn̩",
+   "ru": "фЭр-БАНДС-кастн",
+   "src": "rules",
+   "syl": "Ver-bands-kas-ten"
+  },
+  "verletzung": {
+   "ipa": "fɛɐ̯ˈlɛtsʊŋ",
+   "ru": "фэр-ЛЭ-цунг",
+   "src": "seed",
+   "syl": "Ver-let-zung"
+  },
+  "verstehe": {
+   "ipa": "fɛɐ̯ˈʃteːə",
+   "ru": "ФЭРШ-тЭ-е",
+   "src": "seed",
+   "syl": "vers-teh-e"
+  },
+  "verstehen": {
+   "ipa": "fɛɐ̯ˈʃteːən",
+   "ru": "ФЭРШ-тЭ-ен",
+   "src": "seed",
+   "syl": "vers-teh-en"
+  },
+  "viel": {
+   "ipa": "fiːl",
+   "ru": "ФИЛ",
+   "src": "rules",
+   "syl": "viel"
+  },
+  "vitali": {
+   "ipa": "fɪtalɪ",
+   "ru": "ФИ-та-ли",
+   "src": "rules",
+   "syl": "Vit-al-i"
+  },
+  "wald": {
+   "ipa": "valt",
+   "ru": "ВАЛТ",
+   "src": "rules",
+   "syl": "Wald"
+  },
+  "war": {
+   "ipa": "vaɐ̯",
+   "ru": "ВАР",
+   "src": "rules",
+   "syl": "war"
+  },
+  "warm": {
+   "ipa": "vaʁm",
+   "ru": "ВАРМ",
+   "src": "rules",
+   "syl": "warm"
+  },
+  "warte": {
+   "ipa": "vaʁtɛ",
+   "ru": "ВАР-тэ",
+   "src": "rules",
+   "syl": "war-te"
+  },
+  "was": {
+   "ipa": "vaz",
+   "ru": "ВАЗ",
+   "src": "rules",
+   "syl": "Was"
+  },
+  "was bedeutet das?": {
+   "ipa": "vas bɛdɔʏtɛt das?",
+   "ru": "ВАЗ-бэ-дой-тэт-дАс",
+   "src": "rules",
+   "syl": ""
+  },
+  "was machst du heute abend?": {
+   "ipa": "vas makst dʊ hɔʏtɛ abɛnd?",
+   "ru": "ваз-макст-ду-хой-те-А-бэнд",
+   "src": "rules",
+   "syl": ""
+  },
+  "wasser": {
+   "ipa": "ˈvasɐ",
+   "ru": "ВА-са",
+   "src": "seed",
+   "syl": "Was-ser"
+  },
+  "wasserwaage": {
+   "ipa": "vassɛʁvaːɡɛ",
+   "ru": "ВАС-сэр-ва-гэ",
+   "src": "rules",
+   "syl": "Was-ser-waag-e"
+  },
+  "weg": {
+   "ipa": "vɛk",
+   "ru": "ВЭК",
+   "src": "rules",
+   "syl": "Weg"
+  },
+  "weiß": {
+   "ipa": "vaɪss",
+   "ru": "ВАЙСС",
+   "src": "rules",
+   "syl": "weiß"
+  },
+  "werden": {
+   "ipa": "vɛʁdn̩",
+   "ru": "ВЭРДН",
+   "src": "rules",
+   "syl": "wer-den"
+  },
+  "werkstatt": {
+   "ipa": "vɛʁkstatt",
+   "ru": "ВЭРКС-татт",
+   "src": "rules",
+   "syl": "Werks-tatt"
+  },
+  "westen": {
+   "ipa": "vɛstn̩",
+   "ru": "ВЭСТН",
+   "src": "rules",
+   "syl": "Wes-ten"
+  },
+  "wie": {
+   "ipa": "viː",
+   "ru": "ВИ",
+   "src": "rules",
+   "syl": "Wie"
+  },
+  "wie heißt das auf deutsch?": {
+   "ipa": "viː haɪsst das aʊf dɔʏtʃ?",
+   "ru": "ВИ-хайсст-дас-ауф-дОЙч",
+   "src": "rules",
+   "syl": ""
+  },
+  "wie schreibt man das?": {
+   "ipa": "viː ʃʁaɪbt man das?",
+   "ru": "ВИ-шрайпт-ман-дАс",
+   "src": "rules",
+   "syl": ""
+  },
+  "wie viel kostet das?": {
+   "ipa": "viː fiːl kɔstɛt das?",
+   "ru": "ВИ-фил-кос-тэт-дАс",
+   "src": "rules",
+   "syl": ""
+  },
+  "wie war dein tag?": {
+   "ipa": "viː vaʁ daɪn taɡ?",
+   "ru": "ВИ-вар-дайн-тАг",
+   "src": "rules",
+   "syl": ""
+  },
+  "wieder": {
+   "ipa": "viːdɐ",
+   "ru": "ВИ-да",
+   "src": "rules",
+   "syl": "wied-er"
+  },
+  "wiederholen": {
+   "ipa": "viːdɐˈhoːlən",
+   "ru": "ВИ-да-хО-лен",
+   "src": "seed",
+   "syl": "wied-er-hol-en"
+  },
+  "wiedersehen": {
+   "ipa": "viːdɛʁsɛhn̩",
+   "ru": "ВИ-дэр-сэхн",
+   "src": "rules",
+   "syl": "Wied-er-seh-en"
+  },
+  "wissen": {
+   "ipa": "vɪssn̩",
+   "ru": "ВИССН",
+   "src": "rules",
+   "syl": "wis-sen"
+  },
+  "wo": {
+   "ipa": "vɔ",
+   "ru": "ВО",
+   "src": "rules",
+   "syl": "Wo"
+  },
+  "wo ist der nächste supermarkt?": {
+   "ipa": "vɔ ɪst dɛʁ nɛkstɛ sʊpɛʁmaʁkt?",
+   "ru": "ВО-ист-дэр-нэкс-тэ-зУ-пэр-маркт",
+   "src": "rules",
+   "syl": ""
+  },
+  "wo ist die toilette?": {
+   "ipa": "vɔ ɪst diː tɔɪlɛttɛ?",
+   "ru": "ВО-ист-ди-тО-и-лэт-тэ",
+   "src": "rules",
+   "syl": ""
+  },
+  "wo kann man hier tickets kaufen?": {
+   "ipa": "vɔ kann man hiːʁ tɪkɛts kaʊfɛn?",
+   "ru": "ВО-канн-ман-хир-ти-кэц-кАУ-фэн",
+   "src": "rules",
+   "syl": ""
+  },
+  "wohne": {
+   "ipa": "vɔnɛ",
+   "ru": "ВО-нэ",
+   "src": "rules",
+   "syl": "wohn-e"
+  },
+  "wollen": {
+   "ipa": "ˈvɔlən",
+   "ru": "ВО-лен",
+   "src": "seed",
+   "syl": "wol-len"
+  },
+  "wurst": {
+   "ipa": "vʊʁst",
+   "ru": "ВУРСТ",
+   "src": "rules",
+   "syl": "Wurst"
+  },
+  "zahl": {
+   "ipa": "tsal",
+   "ru": "ЦАЛ",
+   "src": "rules",
+   "syl": "Zahl"
+  },
+  "zahnrad": {
+   "ipa": "tsanʁat",
+   "ru": "ЦАН-рат",
+   "src": "rules",
+   "syl": "Zahn-rad"
+  },
+  "zange": {
+   "ipa": "ˈtsaŋə",
+   "ru": "ЦА-нге",
+   "src": "seed",
+   "syl": "Zan-ge"
+  },
+  "zimmer": {
+   "ipa": "tsɪmmɐ",
+   "ru": "ЦИМ-ма",
+   "src": "rules",
+   "syl": "Zim-mer"
+  },
+  "zucker": {
+   "ipa": "ˈtsʊkɐ",
+   "ru": "ЦУ-ка",
+   "src": "seed",
+   "syl": "Zuc-ker"
+  },
+  "zug": {
+   "ipa": "t͡suːk",
+   "ru": "ЦУК",
+   "src": "wiktionary",
+   "syl": "Zug"
+  },
+  "zum": {
+   "ipa": "tsʊm",
+   "ru": "ЦУМ",
+   "src": "rules",
+   "syl": "zum"
+  }
+ }
+}

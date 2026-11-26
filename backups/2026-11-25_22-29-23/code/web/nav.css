@@ -1,0 +1,441 @@
+﻿/* ============================================================
+   Deutsch Quest — стили верхнего меню (.dq-nav, создаётся nav.js).
+   Три группы с выпадающими списками + «Статистика» справа.
+   ============================================================ */
+
+.topbar {
+  gap: 14px;
+}
+
+.dq-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1 1 auto;
+  min-width: 0;
+  position: relative;
+}
+
+/* ---------- группа ---------- */
+.nav-group {
+  position: relative;
+}
+
+.nav-trigger {
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--dim);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 11px;
+  white-space: nowrap;
+  transition: background .18s, color .18s;
+}
+
+.nav-trigger svg {
+  opacity: .55;
+  transition: transform .2s;
+}
+
+.nav-trigger:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+}
+
+.nav-group.open>.nav-trigger {
+  color: var(--text);
+  background: var(--card2);
+}
+
+.nav-group.open>.nav-trigger svg {
+  transform: rotate(180deg);
+}
+
+.nav-group.has-active>.nav-trigger {
+  color: var(--text);
+}
+
+.nav-group.has-active>.nav-trigger::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+/* ---------- выпадающий список ---------- */
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 60;
+  min-width: 236px;
+  padding: 6px;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  background: color-mix(in srgb, var(--bg2) 94%, transparent);
+  border: 1px solid var(--hairline);
+  border-radius: 16px;
+  box-shadow: 0 24px 50px -26px rgba(0, 0, 0, .85);
+  /* выпадающее меню всегда «поверх» контента и собственной шапки;
+     фон непрозрачнее, чтобы читалось на пятнах страницы */
+  z-index: 95 !important;
+  background: #121419 !important;
+  border-color: rgba(255, 255, 255, .14) !important;
+}
+body[data-theme="light"] .nav-menu,
+body[data-theme="sand"] .nav-menu {
+  background: #f7f7fa !important;
+  border-color: rgba(0, 0, 0, .12) !important;
+}
+
+.nav-group.open .nav-menu {
+  display: flex;
+  animation: navIn .14s ease;
+}
+
+@keyframes navIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.nav-menu-item {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  border: 0;
+  border-radius: 11px;
+  padding: 9px 11px;
+  color: var(--text);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1px 8px;
+  align-items: center;
+}
+
+.nav-item-t {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.nav-item-s {
+  grid-column: 1 / -1;
+  font-size: 11.5px;
+  color: var(--faint);
+}
+
+.nav-menu-item .badge {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.nav-menu-item:hover {
+  background: color-mix(in srgb, var(--text) 7%, transparent);
+}
+.nav-menu-item:hover .nav-item-s {
+  color: var(--dim);
+}
+
+.nav-menu-item.active {
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.nav-menu-item.active .nav-item-t {
+  color: var(--text);
+}
+
+.nav-menu-item.active::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* ---------- хвост: статистика + «Ещё» ---------- */
+.nav-tail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.nav-stat {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--dim);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 11px;
+  white-space: nowrap;
+}
+
+.nav-stat .ico {
+  color: var(--faint);
+  font-size: 13px;
+}
+
+.nav-stat:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+}
+
+.nav-stat.active {
+  color: var(--text);
+  background: var(--card2);
+}
+
+.nav-stat.active .ico {
+  color: var(--accent);
+}
+
+.nav-more {
+  display: none;
+}
+
+/* на узких экранах лишние группы прячет nav.js (класс .nav-hidden) */
+.nav-more { display: none; }
+.dq-nav.is-narrow .nav-more { display: inline-flex; }
+.dq-nav.is-narrow .nav-group.nav-hidden { display: none; }
+.dq-nav.more-open .nav-menu { display: flex; }
+
+@media (max-width: 900px) {
+  .brand { min-width: 0; }
+  .brand-sub { display: none; }
+  .dq-nav { gap: 0; }
+  .nav-trigger { padding: 8px 9px; font-size: 13px; }
+}
+
+article, aside, header, footer, section { overflow-wrap: anywhere; }
+/* …но header-шапка должна оставаться flex-контейнером, иначе она
+   становится interrupting-флексом и position: sticky не работает */
+header.topbar { display: flex; }
+
+/* новая навигация и шапка: аккуратнее тени и кнопки */
+.topbar { border-bottom: 1px solid var(--line); }
+
+/* иконки: делаем выразительнее в мелком размере (используется только в наших .ico) */
+.nav-stat .ico { font-size: 13px; opacity: .8; }
+#nav.dq-nav {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* ============================================================
+   Слой наложения: меню поверх контента
+   Шапка — родитель выпадающих меню. Раньше она лежала в том же корневом
+   слое (z-index: 2), что и .wrap с контентом, а .wrap идёт в DOM ниже →
+   карточки страницы перекрывали открытое меню (и пункты не нажимались).
+   Собственный слой у шапки (z-index + backdrop-filter) это решает.
+   ============================================================ */
+/* sticky (как в style.css) + свой слой: шапка остаётся прилипшей
+   при прокрутке и всё равно лежит поверх .wrap */
+.topbar {
+  position: sticky !important;
+  top: 0;
+  z-index: 40 !important;
+}
+
+/* пункты меню: сами кнопки нейтральные, выделяется только активный */
+.dq-nav .nav-menu-item,
+.dq-nav .nav-menu-item.active {
+  background: transparent !important;
+  background-image: none !important;
+  color: var(--text) !important;
+}
+
+.dq-nav .nav-menu-item:hover {
+  background: color-mix(in srgb, var(--text) 8%, transparent) !important;
+}
+
+.dq-nav .nav-menu-item.active,
+.dq-nav .nav-menu-item.active:hover {
+  background: color-mix(in srgb, var(--accent) 22%, transparent) !important;
+}
+
+body[data-theme="light"] .dq-nav .nav-menu-item:hover,
+body[data-theme="sand"] .dq-nav .nav-menu-item:hover {
+  background: rgba(0, 0, 0, .05) !important;
+}
+
+body[data-theme="light"] .dq-nav .nav-menu-item.active,
+body[data-theme="sand"] .dq-nav .nav-menu-item.active {
+  background: color-mix(in srgb, var(--accent) 26%, transparent) !important;
+}
+
+/* ============================================================
+   BOTTOM NAVIGATION (Mobile)
+   ============================================================ */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: color-mix(in srgb, var(--bg2) 90%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid var(--hairline);
+  z-index: 50;
+  justify-content: space-around;
+}
+.bottom-nav button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--dim);
+  font-size: 10px;
+  font-weight: 600;
+  min-width: 44px;
+  min-height: 44px;
+}
+.bottom-nav button.active { color: var(--accent); }
+.bottom-nav button .ico { font-size: 20px; line-height: 1; }
+
+@media (max-width: 768px) {
+  .bottom-nav { display: flex; }
+  .topbar .segmented { display: none; }
+  .topbar .brand-sub { display: none; }
+  .brand-title { font-size: 15px !important; }
+  main.wrap { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+  .dq-nav { display: none; }
+}
+
+/* Hide horizontal nav on mobile, show bottom nav instead */
+@media (min-width: 769px) {
+  .bottom-nav { display: none !important; }
+  .dq-nav { display: flex !important; }
+}
+
+/* ============================================================
+   MORE DRAWER (Mobile)
+   ============================================================ */
+.more-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.more-drawer.open {
+  display: flex;
+  opacity: 1;
+}
+.more-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.more-drawer-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 env(safe-area-inset-left) env(safe-area-inset-bottom) env(safe-area-inset-right);
+  background: var(--bg2);
+  border-radius: 24px 24px 0 0;
+  border: 1px solid var(--hairline);
+  border-bottom: none;
+  box-shadow: 0 -20px 40px -20px rgba(0, 0, 0, 0.5);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.more-drawer.open .more-drawer-content {
+  transform: translateY(0);
+}
+.more-drawer-handle {
+  width: 36px;
+  height: 5px;
+  margin: 12px auto 8px;
+  background: var(--hairline);
+  border-radius: 999px;
+}
+.more-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+.more-drawer-header span {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+.more-drawer-close {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: var(--card2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 18px;
+}
+.more-drawer-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.more-drawer-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 0;
+  background: var(--card2);
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  min-height: 44px;
+}
+.more-drawer-item .ico { font-size: 22px; color: var(--dim); }
+.more-drawer-item:active { background: color-mix(in srgb, var(--text) 10%, transparent); }

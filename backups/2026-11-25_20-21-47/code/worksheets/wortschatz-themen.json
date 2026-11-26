@@ -1,0 +1,74 @@
+{
+  "id": "wortschatz-themen",
+  "title": "Wortschatz: тематические задания",
+  "level": "A1",
+  "subtitle": "Пример второго набора: лексика и короткие фразы. Скопируйте этот файл, чтобы добавить свои задания.",
+  "order": 20,
+  "variants": [
+    {
+      "name": "Тема: работа и время",
+      "vocab": [
+        {
+          "de": "der Termin",
+          "ru": "встреча / запись"
+        },
+        {
+          "de": "heute",
+          "ru": "сегодня"
+        },
+        {
+          "de": "morgen",
+          "ru": "завтра"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "choice",
+          "title": "Wählen Sie die richtige Form",
+          "instruction": "Выберите верный вариант.",
+          "badge": "2 пункта",
+          "items": [
+            { "before": "Ich", "after": "einen Termin heute.", "options": ["habe", "hat", "hast"], "answers": ["habe"], "explanation": "ich → форма habe." },
+            { "before": "Wann", "after": "du morgen?", "options": ["kommt", "kommst", "kommen"], "answers": ["kommst"], "explanation": "du → окончание -st: kommst." }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Verben im Präsens",
+          "instruction": "Setzen Sie das Verb in der richtigen Form ein.",
+          "badge": "3 пункта",
+          "help": {
+            "summary": "Алгоритм решения",
+            "text": "<p>Найдите подлежащее и подставьте окончание: <em>ich -e, du -st, er/sie/es -t, wir/sie -en, ihr -t</em>.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Ich",
+              "after": "heute einen Termin. (haben)",
+              "answers": [
+                "habe"
+              ],
+              "explanation": "ich → окончание -e: habe."
+            },
+            {
+              "before": "2. Wann",
+              "after": "du morgen? (kommen)",
+              "answers": [
+                "kommst"
+              ],
+              "explanation": "du → окончание -st: kommst."
+            },
+            {
+              "before": "3. Wir",
+              "after": "heute keine Zeit. (haben)",
+              "answers": [
+                "haben"
+              ],
+              "explanation": "wir → форма совпадает с инфинитивом: haben."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

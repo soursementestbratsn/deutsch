@@ -1,0 +1,1156 @@
+{
+ "id": "zeitformen-6",
+ "title": "Deutsch: Zeitformen (времена)",
+ "level": "A1–B1",
+ "subtitle": "Präsens, Perfekt, Präteritum, Plusquamperfekt, Futur I и Futur II — 3 варианта по 6 блоков",
+ "order": 15,
+ "variants": [
+  {
+   "name": "Вариант 1",
+   "vocab": [],
+   "tasks": [
+    {
+     "type": "gap",
+     "title": "Präsens (Настоящее время)",
+     "instruction": "Обращай внимание на лицо/число, смену корневой гласной у сильных глаголов (e→i/ie, a→ä) и отделяемые приставки.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> действие происходит сейчас, регулярно (<em>jeden Tag, oft</em>) или по расписанию.</p> <p><strong>2. Формула:</strong> основа глагола + личное окончание (<em>ich -e, du -st, er/sie/es -t, wir/sie/Sie -en, ihr -t</em>).</p> <p><strong>3. Ловушки:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li>У сильных глаголов в <strong>du</strong> и <strong>er/sie/es</strong> меняется гласная: <em>fahren → fährt</em>, <em>lesen → liest</em>, <em>sprechen → spricht</em>.</li> <li>Если есть отделяемая приставка (<em>an-, auf-, ein-, mit-, fern-</em>), она отрывается и улетает в самый конец предложения.</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "steht",
+        "auf"
+       ],
+       "before": "1. Mein Bruder",
+       "mid": "jeden Morgen um 6 Uhr",
+       "after": ". (aufstehen)",
+       "hint": "Мой брат встаёт каждое утро в 6 часов.",
+       "explanation": "Mein Bruder = er (он) → окончание -t (steht). Отделяемая приставка auf- уходит в конец предложения."
+      },
+      {
+       "answers": [
+        "sprichst"
+       ],
+       "before": "2. Welche Sprachen",
+       "after": "du fließend? (sprechen)",
+       "hint": "На каких языках ты говоришь свободно?",
+       "explanation": "Сильный глагол sprechen в форме du меняет корневую e на i и получает окончание -st: sprichst."
+      },
+      {
+       "answers": [
+        "besuchen"
+       ],
+       "before": "3. Am Wochenende",
+       "after": "wir oft unsere Großeltern. (besuchen)",
+       "hint": "На выходных мы часто навещаем наших бабушку и дедушку.",
+       "explanation": "Подлежащее wir (мы) → окончание -en (besuchen). Приставка be- неотделяемая, остаётся с корнем."
+      },
+      {
+       "answers": [
+        "kommt",
+        "an"
+       ],
+       "before": "4. Der Schnellzug",
+       "mid": "um 14:20 Uhr in Hamburg",
+       "after": ". (ankommen)",
+       "hint": "Скорый поезд прибывает в Гамбург в 14:20.",
+       "explanation": "Der Schnellzug = er (он) → kommt. Отделяемая приставка an- улетает в самый конец."
+      },
+      {
+       "answers": [
+        "lauft"
+       ],
+       "before": "5. Warum",
+       "after": "ihr so schnell nach Hause? (laufen)",
+       "hint": "Почему вы так быстро бежите домой?",
+       "explanation": "У сильного глагола laufen умлаут появляется только в du и er/sie/es, а для ihr (вы) гласная не меняется: lauft."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Perfekt (Разговорное прошедшее время)",
+     "instruction": "Вставь вспомогательный глагол (haben или sein) на 2-е место и Partizip II в конец предложения.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> устная речь, переписка, рассказ о завершённом событии в прошлом (<em>gestern, schon, letzte Woche</em>).</p> <p><strong>2. Формула:</strong> <strong>haben / sein</strong> (в Präsens на 2-м месте) + ... + <strong>Partizip II</strong> (в конце).</p> <p><strong>3. Выбор haben или sein:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>sein</strong> — только для движения из А в Б (<em>fahren, gehen, fliegen, kommen, laufen</em>) и смены состояния (<em>aufstehen, einschlafen</em>) + глагол <em>sein/bleiben</em>.</li> <li><strong>haben</strong> — для всех остальных глаголов (даже если там есть движение руками, например <em>arbeiten, spielen, essen</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "habe",
+        "gelernt"
+       ],
+       "before": "1. Gestern",
+       "mid": "ich den ganzen Abend für die Prüfung",
+       "after": ". (lernen)",
+       "hint": "Вчера я весь вечер учился к экзамену.",
+       "explanation": "Глагол lernen не означает перемещение из А в Б, поэтому берём haben (ich habe) + слабый Partizip II (gelernt)."
+      },
+      {
+       "answers": [
+        "seid",
+        "zurückgekommen"
+       ],
+       "before": "2. Wann",
+       "mid": "ihr gestern aus dem Urlaub",
+       "after": "? (zurückkommen)",
+       "hint": "Когда вы вчера вернулись из отпуска?",
+       "explanation": "zurückkommen — глагол движения → sein для ihr (ihr seid). Приставка zurück- отделяемая, поэтому ge- встаёт посередине: zurückgekommen."
+      },
+      {
+       "answers": [
+        "hat",
+        "vergessen"
+       ],
+       "before": "3. Lisa",
+       "mid": "ihren Regenschirm im Bus",
+       "after": ". (vergessen)",
+       "hint": "Лиза забыла свой зонт в автобусе.",
+       "explanation": "Lisa = sie (она) → hat. У глагола vergessen неотделяемая приставка ver-, поэтому ge- не добавляется (vergessen)."
+      },
+      {
+       "answers": [
+        "sind",
+        "gefahren"
+       ],
+       "before": "4. Wir",
+       "mid": "am Sonntag mit dem Fahrrad an den See",
+       "after": ". (fahren)",
+       "hint": "В воскресенье мы поехали на велосипеде на озеро.",
+       "explanation": "fahren означает перемещение из А в Б → sein для wir (wir sind) + сильный Partizip II (gefahren)."
+      },
+      {
+       "answers": [
+        "hast",
+        "geschenkt"
+       ],
+       "before": "5. Was",
+       "mid": "du deiner Mutter zum Geburtstag",
+       "after": "? (schenken)",
+       "hint": "Что ты подарил своей маме на день рождения?",
+       "explanation": "schenken требует haben (du hast) + регулярный Partizip II (geschenkt)."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Präteritum (Письменное прошедшее время)",
+     "instruction": "Поставь глагол в форму Präteritum (одно слово на 2-м месте).",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> книги, новости, истории, а в обычной речи — для <strong>sein</strong> (<em>war</em>), <strong>haben</strong> (<em>hatte</em>) и <strong>модальных глаголов</strong> (<em>musste, konnte, wollte, durfte, sollte</em>).</p> <p><strong>2. Формула:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>Слабые глаголы:</strong> основа + <strong>-te</strong> (<em>ich/er machte, du machtest, wir/sie machten, ihr machtet</em>).</li> <li><strong>Сильные глаголы:</strong> меняется гласная в корне, а у <em>ich</em> и <em>er/sie/es</em> <strong>нет окончания</strong> (<em>ich/er ging, kam, sah, schrieb</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "wohnten"
+       ],
+       "before": "1. Früher",
+       "after": "wir in einer kleinen Wohnung im Zentrum. (wohnen)",
+       "hint": "Раньше мы жили в маленькой квартире в центре.",
+       "explanation": "Слабый глагол wohnen в Präteritum для wir: основа wohn + -ten = wohnten."
+      },
+      {
+       "answers": [
+        "hatte"
+       ],
+       "before": "2. Gestern Abend",
+       "after": "ich leider keine Zeit für dich. (haben)",
+       "hint": "Вчера вечером у меня, к сожалению, не было времени для тебя.",
+       "explanation": "Форма Präteritum от глагола haben для ich — hatte."
+      },
+      {
+       "answers": [
+        "aß"
+       ],
+       "before": "3. Als Kind",
+       "mid": "Max nicht gerne Spinat",
+       "after": ". (essen)",
+       "hint": "В детстве Макс не любил есть шпинат.",
+       "explanation": "Сильный глагол essen в Präteritum имеет корень aß-. Для Max (er) окончания нет: aß."
+      },
+      {
+       "answers": [
+        "mussten"
+       ],
+       "before": "4. Wegen des Regens",
+       "after": "wir gestern zu Hause bleiben. (müssen)",
+       "hint": "Из-за дождя нам пришлось вчера остаться дома.",
+       "explanation": "Модальный глагол müssen в Präteritum теряет умлаут (muss-) + окончание -ten для wir: mussten."
+      },
+      {
+       "answers": [
+        "war"
+       ],
+       "before": "5. Im Sommer 2022",
+       "after": "das Wetter extrem heiß. (sein)",
+       "hint": "Летом 2022 года погода была экстремально жаркой.",
+       "explanation": "Das Wetter = es (оно). Форма Präteritum от sein для es — war."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Plusquamperfekt (Предпрошедшее время)",
+     "instruction": "Действие произошло РАНЬШЕ другого действия в прошлом. Вставь hatte/war и Partizip II.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> в прошлом было два события — то, что случилось <strong>раньше</strong>, ставим в Plusquamperfekt, а более позднее — в Präteritum. Главные маркеры: <strong>nachdem</strong> (после того как), <strong>bevor</strong> (прежде чем), <strong>als</strong> (когда).</p> <p><strong>2. Формула:</strong> <strong>hatte / war</strong> (Präteritum от haben/sein) + ... + <strong>Partizip II</strong> в конце.</p> <p><strong>3. Внимание на порядок слов:</strong> после союза <em>nachdem</em> глагол <strong>hatte / war</strong> уходит в самый конец придаточного предложения (после Partizip II)!</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "gemacht",
+        "hatte"
+       ],
+       "before": "1. Nachdem er seine Hausaufgaben",
+       "mid": "",
+       "after": ", spielte er Videospiele. (machen)",
+       "hint": "После того как он сделал домашнее задание, он играл в видеоигры.",
+       "explanation": "После союза nachdem вспомогательный глагол уходит в самый конец! Сначала Partizip II (gemacht), потом hatte."
+      },
+      {
+       "answers": [
+        "war",
+        "abgefahren"
+       ],
+       "before": "2. Als wir am Bahnhof ankamen,",
+       "mid": "der Zug schon",
+       "after": ". (abfahren)",
+       "hint": "Когда мы прибыли на вокзал, поезд уже уехал.",
+       "explanation": "abfahren — движение → war (для der Zug). Отделяемая приставка ab- принимает ge- внутрь: abgefahren."
+      },
+      {
+       "answers": [
+        "hatte",
+        "gesehen"
+       ],
+       "before": "3. Sie",
+       "mid": "den Film schon zweimal",
+       "after": ", bevor wir ins Kino gingen. (sehen)",
+       "hint": "Она уже дважды видела этот фильм до того, как мы пошли в кино.",
+       "explanation": "Главное предложение (обычный порядок слов): hatte на 2-м месте (для sie — она), gesehen в конце."
+      },
+      {
+       "answers": [
+        "gegangen",
+        "waren"
+       ],
+       "before": "4. Nachdem die Gäste nach Hause",
+       "mid": "",
+       "after": ", räumten wir die Küche auf. (gehen)",
+       "hint": "После того как гости ушли домой, мы убрали кухню.",
+       "explanation": "gehen требует sein → waren (множ. число die Gäste). После nachdem глагол waren стоит в самом конце после gegangen."
+      },
+      {
+       "answers": [
+        "hatte",
+        "vergessen"
+       ],
+       "before": "5. Ich",
+       "mid": "mein Portemonnaie zu Hause",
+       "after": ", deshalb konnte ich nicht bezahlen. (vergessen)",
+       "hint": "Я забыл свой кошелёк дома, поэтому не смог заплатить.",
+       "explanation": "Забыл раньше, чем не смог заплатить → Plusquamperfekt: hatte (для ich) + vergessen."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur I (Будущее время и предположение)",
+     "instruction": "Вставь спрягаемую форму глагола werden на 2-е место и начальную форму (Infinitiv) в конец.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> планы, намерения, обещания, прогнозы (<em>morgen, bald, nächstes Jahr</em>) или предположение о настоящем (<em>wohl, bestimmt</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (<em>ich werde, du wirst, er/sie/es wird, wir/sie/Sie werden, ihr werdet</em>) + ... + <strong>Infinitiv</strong> в конце.</p> <p><strong>3. Ловушка:</strong> в форме <em>du</em> и <em>er/sie/es</em> у <em>werden</em> меняется гласная и выпадает <em>d</em>: <strong>du wirst</strong>, <strong>er wird</strong> (не <em>werdet</em>!).</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "werde",
+        "besuchen"
+       ],
+       "before": "1. Nächstes Jahr",
+       "mid": "ich einen Intensivkurs in München",
+       "after": ". (besuchen)",
+       "hint": "В следующем году я буду посещать интенсивный курс в Мюнхене.",
+       "explanation": "Для ich форма werden — werde (2-е место), а инфинитив besuchen уходит в конец предложения."
+      },
+      {
+       "answers": [
+        "wird",
+        "klappen"
+       ],
+       "before": "2. Keine Sorge, alles",
+       "mid": "gut",
+       "after": "! (klappen)",
+       "hint": "Не переживай, всё получится!",
+       "explanation": "alles = es (оно) → форма werden для es — wird, в конце ставим инфинитив klappen."
+      },
+      {
+       "answers": [
+        "wirst",
+        "aufräumen"
+       ],
+       "before": "3. Wann",
+       "mid": "du endlich dein Zimmer",
+       "after": "? (aufräumen)",
+       "hint": "Когда ты наконец уберёшь свою комнату?",
+       "explanation": "Для du форма werden — wirst. В Futur I смысловой глагол стоит в инфинитиве в конце целиком (aufräumen)."
+      },
+      {
+       "answers": [
+        "werden",
+        "abholen"
+       ],
+       "before": "4. Wir",
+       "mid": "euch morgen vom Flughafen",
+       "after": ". (abholen)",
+       "hint": "Мы заберём вас завтра из аэропорта.",
+       "explanation": "Для wir → werden на 2-м месте, инфинитив abholen в конце."
+      },
+      {
+       "answers": [
+        "werdet",
+        "anfangen"
+       ],
+       "before": "5. Wann",
+       "mid": "ihr mit dem Projekt",
+       "after": "? (anfangen)",
+       "hint": "Когда вы начнёте проект?",
+       "explanation": "Для ihr форма werden — werdet (гласная не меняется), в конце инфинитив anfangen."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur II (Завершённое будущее / предположение о прошлом)",
+     "instruction": "Собери конструкцию: werden на 2-м месте + связка «Partizip II + haben/sein» в конце предложения.",
+     "badge": "4 пункта",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> 1) действие уже закончится к какому-то моменту в будущем (<em>bis morgen, bis Freitag</em>); 2) уверенное предположение о том, что уже произошло в прошлом (<em>wohl, bestimmt, sicher</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (на 2-м месте) + ... + <strong>Partizip II + haben / sein</strong> (в конце, причём <em>haben/sein</em> стоит в инфинитиве после Partizip II!).</p> <p><strong>3. Пример:</strong> <em>Bis morgen <strong>werde</strong> ich das Buch <strong>gelesen haben</strong>.</em> / <em>Er <strong>wird</strong> schon <strong>angekommen sein</strong>.</em></p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "werde",
+        "beantwortet haben"
+       ],
+       "before": "1. Bis Freitag",
+       "mid": "ich alle E-Mails",
+       "after": ". (beantworten – в конце: Partizip II + haben)",
+       "hint": "К пятнице я уже отвечу на все электронные письма.",
+       "explanation": "ich → werde. Глагол beantworten требует haben (неотделяемая приставка be-, поэтому без ge-): beantwortet haben."
+      },
+      {
+       "answers": [
+        "wird",
+        "gegangen sein"
+       ],
+       "before": "2. Er ist nicht mehr im Büro. Er",
+       "mid": "wohl schon nach Hause",
+       "after": ". (gehen – в конце: Partizip II + sein)",
+       "hint": "Его уже нет в офисе. Он, вероятно, уже ушёл домой.",
+       "explanation": "Предположение о прошлом. Er → wird. Глагол движения gehen требует sein: gegangen sein."
+      },
+      {
+       "answers": [
+        "werden",
+        "gekauft haben"
+       ],
+       "before": "3. Bis nächste Woche",
+       "mid": "wir das neue Haus",
+       "after": ". (kaufen – в конце: Partizip II + haben)",
+       "hint": "К следующей неделе мы уже купим новый дом.",
+       "explanation": "wir → werden. Глагол kaufen образует Perfekt с haben → в конце ставим gekauft haben."
+      },
+      {
+       "answers": [
+        "wirst",
+        "geschlafen haben"
+       ],
+       "before": "4. Du siehst sehr müde aus. Du",
+       "mid": "bestimmt schlecht",
+       "after": ". (schlafen – в конце: Partizip II + haben)",
+       "hint": "Ты выглядишь очень уставшим. Ты, наверняка, плохо спал.",
+       "explanation": "du → wirst. Сильный глагол schlafen требует haben → geschlafen haben."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Вариант 2",
+   "vocab": [],
+   "tasks": [
+    {
+     "type": "gap",
+     "title": "Präsens (Настоящее время)",
+     "instruction": "Обращай внимание на лицо/число, смену корневой гласной у сильных глаголов (e→i/ie, a→ä) и отделяемые приставки.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> действие происходит сейчас, регулярно (<em>jeden Tag, oft</em>) или по расписанию.</p> <p><strong>2. Формула:</strong> основа глагола + личное окончание (<em>ich -e, du -st, er/sie/es -t, wir/sie/Sie -en, ihr -t</em>).</p> <p><strong>3. Ловушки:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li>У сильных глаголов в <strong>du</strong> и <strong>er/sie/es</strong> меняется гласная: <em>fahren → fährt</em>, <em>lesen → liest</em>, <em>sprechen → spricht</em>.</li> <li>Если есть отделяемая приставка (<em>an-, auf-, ein-, mit-, fern-</em>), она отрывается и улетает в самый конец предложения.</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "liest"
+       ],
+       "before": "1. Meine Mutter",
+       "after": "jeden Abend ein spannendes Buch. (lesen)",
+       "hint": "Моя мама каждый вечер читает увлекательную книгу.",
+       "explanation": "Meine Mutter = sie (она) → у сильного глагола lesen корневая e меняется на ie: liest."
+      },
+      {
+       "answers": [
+        "gehst",
+        "aus"
+       ],
+       "before": "2. Wann",
+       "mid": "du heute Abend mit deinen Freunden",
+       "after": "? (ausgehen)",
+       "hint": "Во сколько ты сегодня вечером идёшь гулять со своими друзьями?",
+       "explanation": "Для du глагол gehen получает окончание -st (gehst), а отделяемая приставка aus- уходит в конец."
+      },
+      {
+       "answers": [
+        "arbeiten"
+       ],
+       "before": "3. Viele Studenten",
+       "after": "neben dem Studium in Cafés. (arbeiten)",
+       "hint": "Многие студенты подрабатывают в кафе во время учёбы.",
+       "explanation": "Viele Studenten = sie (множ. число) → окончание -en: arbeiten."
+      },
+      {
+       "answers": [
+        "spricht"
+       ],
+       "before": "4. Herr Weber",
+       "after": "sehr gut Italienisch und Spanisch. (sprechen)",
+       "hint": "Господин Вебер очень хорошо говорит по-итальянски и по-испански.",
+       "explanation": "Herr Weber = er (он) → сильный глагол sprechen меняет e на i: spricht."
+      },
+      {
+       "answers": [
+        "schließe",
+        "ab"
+       ],
+       "before": "5. Ich",
+       "mid": "immer die Tür",
+       "after": ", wenn ich das Haus verlasse. (abschließen)",
+       "hint": "Я всегда запираю дверь, когда выхожу из дома.",
+       "explanation": "Для ich окончание -e (schließe), отделяемая приставка ab- уходит в конец перед запятой."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Perfekt (Разговорное прошедшее время)",
+     "instruction": "Вставь вспомогательный глагол (haben или sein) на 2-е место и Partizip II в конец предложения.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> устная речь, переписка, рассказ о завершённом событии в прошлом (<em>gestern, schon, letzte Woche</em>).</p> <p><strong>2. Формула:</strong> <strong>haben / sein</strong> (в Präsens на 2-м месте) + ... + <strong>Partizip II</strong> (в конце).</p> <p><strong>3. Выбор haben или sein:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>sein</strong> — только для движения из А в Б (<em>fahren, gehen, fliegen, kommen, laufen</em>) и смены состояния (<em>aufstehen, einschlafen</em>) + глагол <em>sein/bleiben</em>.</li> <li><strong>haben</strong> — для всех остальных глаголов (даже если там есть движение руками, например <em>arbeiten, spielen, essen</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "sind",
+        "geblieben"
+       ],
+       "before": "1. Letzten Sommer",
+       "mid": "wir drei Wochen in Italien",
+       "after": ". (bleiben)",
+       "hint": "Прошлым летом мы оставались в Италии три недели.",
+       "explanation": "Глагол bleiben (оставаться) — исключение, он всегда образует Perfekt с sein (wir sind) + geblieben."
+      },
+      {
+       "answers": [
+        "hat",
+        "gebacken"
+       ],
+       "before": "2. Wer",
+       "mid": "den Kuchen für die Party",
+       "after": "? (backen)",
+       "hint": "Кто испёк торт для вечеринки?",
+       "explanation": "Вопросительное слово Wer (кто) согласуется как 3-е лицо ед.ч. (hat) + сильный Partizip II gebacken."
+      },
+      {
+       "answers": [
+        "bin",
+        "aufgewacht"
+       ],
+       "before": "3. Ich",
+       "mid": "heute Morgen erst um 9 Uhr",
+       "after": ". (aufwachen)",
+       "hint": "Сегодня утром я проснулся только в 9 часов.",
+       "explanation": "aufwachen (проснуться) означает смену состояния → sein (ich bin). Приставка auf- отделяемая → aufgewacht."
+      },
+      {
+       "answers": [
+        "Bist",
+        "gewesen"
+       ],
+       "before": "4.",
+       "mid": "du schon einmal in der Schweiz",
+       "after": "? (sein)",
+       "hint": "Ты уже бывал когда-нибудь в Швейцарии?",
+       "explanation": "Глагол sein в Perfekt используется сам с собой: Bist (для du) + gewesen."
+      },
+      {
+       "answers": [
+        "haben",
+        "gespielt"
+       ],
+       "before": "5. Die Kinder",
+       "mid": "im Garten Fußball",
+       "after": ". (spielen)",
+       "hint": "Дети играли в саду в футбол.",
+       "explanation": "spielen не означает перемещение из А в Б → haben (множ. число haben) + gespielt."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Präteritum (Письменное прошедшее время)",
+     "instruction": "Поставь глагол в форму Präteritum (одно слово на 2-м месте).",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> книги, новости, истории, а в обычной речи — для <strong>sein</strong> (<em>war</em>), <strong>haben</strong> (<em>hatte</em>) и <strong>модальных глаголов</strong> (<em>musste, konnte, wollte, durfte, sollte</em>).</p> <p><strong>2. Формула:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>Слабые глаголы:</strong> основа + <strong>-te</strong> (<em>ich/er machte, du machtest, wir/sie machten, ihr machtet</em>).</li> <li><strong>Сильные глаголы:</strong> меняется гласная в корне, а у <em>ich</em> и <em>er/sie/es</em> <strong>нет окончания</strong> (<em>ich/er ging, kam, sah, schrieb</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "spielte"
+       ],
+       "before": "1. Als Teenager",
+       "after": "ich jeden Tag zwei Stunden Klavier. (spielen)",
+       "hint": "Когда я был подростком, я каждый день играл на пианино по два часа.",
+       "explanation": "Слабый глагол spielen в Präteritum для ich: основа spiel + -te = spielte."
+      },
+      {
+       "answers": [
+        "gingen"
+       ],
+       "before": "2. Am Sonntag",
+       "after": "wir zusammen ins Museum. (gehen)",
+       "hint": "В воскресенье мы вместе ходили в музей.",
+       "explanation": "Сильный глагол gehen в Präteritum меняет корень на ging- + окончание -en для wir: gingen."
+      },
+      {
+       "answers": [
+        "durfte"
+       ],
+       "before": "3. Früher",
+       "after": "man hier nicht parken. (dürfen)",
+       "hint": "Раньше здесь нельзя было парковаться.",
+       "explanation": "Модальный глагол dürfen в Präteritum теряет умлаут (durf-) + -te для man: durfte."
+      },
+      {
+       "answers": [
+        "schrieb"
+       ],
+       "before": "4. Er",
+       "after": "mir gestern eine lange Nachricht. (schreiben)",
+       "hint": "Вчера он написал мне длинное сообщение.",
+       "explanation": "Сильный глагол schreiben в Präteritum: корень schrieb-, для er окончания нет → schrieb."
+      },
+      {
+       "answers": [
+        "wart"
+       ],
+       "before": "5. Wo",
+       "after": "ihr gestern Abend so lange? (sein)",
+       "hint": "Где вы были так долго вчера вечером?",
+       "explanation": "Форма Präteritum от sein для ihr (вы) — wart."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Plusquamperfekt (Предпрошедшее время)",
+     "instruction": "Действие произошло РАНЬШЕ другого действия в прошлом. Вставь hatte/war и Partizip II.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> в прошлом было два события — то, что случилось <strong>раньше</strong>, ставим в Plusquamperfekt, а более позднее — в Präteritum. Главные маркеры: <strong>nachdem</strong> (после того как), <strong>bevor</strong> (прежде чем), <strong>als</strong> (когда).</p> <p><strong>2. Формула:</strong> <strong>hatte / war</strong> (Präteritum от haben/sein) + ... + <strong>Partizip II</strong> в конце.</p> <p><strong>3. Внимание на порядок слов:</strong> после союза <em>nachdem</em> глагол <strong>hatte / war</strong> уходит в самый конец придаточного предложения (после Partizip II)!</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "unterschrieben",
+        "hatten"
+       ],
+       "before": "1. Nachdem sie den Vertrag",
+       "mid": "",
+       "after": ", tranken alle Sekt. (unterschreiben)",
+       "hint": "После того как они подписали договор, все пили шампанское.",
+       "explanation": "sie (они) → hatten в самом конце после nachdem. У unterschreiben приставка unter- здесь неотделяемая → unterschrieben."
+      },
+      {
+       "answers": [
+        "hatte",
+        "gelassen"
+       ],
+       "before": "2. Er",
+       "mid": "sein Handy im Taxi",
+       "after": ", deshalb rief er von zu Hause an. (liegen lassen / lassen)",
+       "hint": "Он оставил свой телефон в такси, поэтому позвонил из дома.",
+       "explanation": "Er → hatte (2-е место), Partizip II от lassen → gelassen."
+      },
+      {
+       "answers": [
+        "hatte",
+        "gelernt"
+       ],
+       "before": "3. Bevor ich nach Deutschland zog,",
+       "mid": "ich zwei Jahre Deutsch",
+       "after": ". (lernen)",
+       "hint": "Прежде чем я переехал в Германию, я два года учил немецкий.",
+       "explanation": "Учил немецкий раньше, чем переехал → Plusquamperfekt: hatte (для ich) + gelernt."
+      },
+      {
+       "answers": [
+        "hatten",
+        "bestellt"
+       ],
+       "before": "4. Als wir im Restaurant ankamen,",
+       "mid": "unsere Freunde schon",
+       "after": ". (bestellen)",
+       "hint": "Когда мы пришли в ресторан, наши друзья уже сделали заказ.",
+       "explanation": "unsere Freunde (множ. число) → hatten. У bestellen неотделяемая приставка be-, поэтому без ge-: bestellt."
+      },
+      {
+       "answers": [
+        "untersucht",
+        "hatte"
+       ],
+       "before": "5. Nachdem der Arzt den Patienten",
+       "mid": "",
+       "after": ", verschrieb er ein Medikament. (untersuchen)",
+       "hint": "После того как врач осмотрел пациента, он выписал лекарство.",
+       "explanation": "der Arzt (er) → hatte в конце придаточного после nachdem. untersuchen без ge-: untersucht."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur I (Будущее время и предположение)",
+     "instruction": "Вставь спрягаемую форму глагола werden на 2-е место и начальную форму (Infinitiv) в конец.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> планы, намерения, обещания, прогнозы (<em>morgen, bald, nächstes Jahr</em>) или предположение о настоящем (<em>wohl, bestimmt</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (<em>ich werde, du wirst, er/sie/es wird, wir/sie/Sie werden, ihr werdet</em>) + ... + <strong>Infinitiv</strong> в конце.</p> <p><strong>3. Ловушка:</strong> в форме <em>du</em> и <em>er/sie/es</em> у <em>werden</em> меняется гласная и выпадает <em>d</em>: <strong>du wirst</strong>, <strong>er wird</strong> (не <em>werdet</em>!).</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "wird",
+        "regnen"
+       ],
+       "before": "1. Morgen",
+       "mid": "es den ganzen Tag",
+       "after": ". (regnen)",
+       "hint": "Завтра весь день будет идти дождь.",
+       "explanation": "Для es форма werden — wird, в конце инфинитив regnen."
+      },
+      {
+       "answers": [
+        "werde",
+        "schreiben"
+       ],
+       "before": "2. Ich verspreche dir, ich",
+       "mid": "dir bald",
+       "after": ". (schreiben)",
+       "hint": "Я обещаю тебе, я скоро тебе напишу.",
+       "explanation": "Обещание → Futur I: ich werde на 2-м месте, schreiben в конце."
+      },
+      {
+       "answers": [
+        "wirst",
+        "machen"
+       ],
+       "before": "3. Was",
+       "mid": "du nach dem Studium",
+       "after": "? (machen)",
+       "hint": "Что ты будешь делать после учёбы?",
+       "explanation": "Планы на будущее: du wirst + machen в конце."
+      },
+      {
+       "answers": [
+        "werden",
+        "umziehen"
+       ],
+       "before": "4. Unsere Nachbarn",
+       "mid": "nächsten Monat nach Wien",
+       "after": ". (umziehen)",
+       "hint": "Наши соседи в следующем месяце переедут в Вену.",
+       "explanation": "Unsere Nachbarn (множ. число) → werden, в конце инфинитив umziehen."
+      },
+      {
+       "answers": [
+        "wird",
+        "sein"
+       ],
+       "before": "5. Er",
+       "mid": "wahrscheinlich erst um 20 Uhr zu Hause",
+       "after": ". (sein)",
+       "hint": "Он, вероятно, будет дома только в 20 часов.",
+       "explanation": "Предположение о будущем/настоящем: Er wird + инфинитив sein в конце."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur II (Завершённое будущее / предположение о прошлом)",
+     "instruction": "Собери конструкцию: werden на 2-м месте + связка «Partizip II + haben/sein» в конце предложения.",
+     "badge": "4 пункта",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> 1) действие уже закончится к какому-то моменту в будущем (<em>bis morgen, bis Freitag</em>); 2) уверенное предположение о том, что уже произошло в прошлом (<em>wohl, bestimmt, sicher</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (на 2-м месте) + ... + <strong>Partizip II + haben / sein</strong> (в конце, причём <em>haben/sein</em> стоит в инфинитиве после Partizip II!).</p> <p><strong>3. Пример:</strong> <em>Bis morgen <strong>werde</strong> ich das Buch <strong>gelesen haben</strong>.</em> / <em>Er <strong>wird</strong> schon <strong>angekommen sein</strong>.</em></p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "werden",
+        "erledigt haben"
+       ],
+       "before": "1. Bis heute Abend",
+       "mid": "wir die ganze Arbeit",
+       "after": ". (erledigen – в конце: Partizip II + haben)",
+       "hint": "К сегодняшнему вечеру мы уже выполним всю работу.",
+       "explanation": "wir → werden. Глагол erledigen имеет неотделяемую приставку er- (без ge-) и требует haben: erledigt haben."
+      },
+      {
+       "answers": [
+        "wird",
+        "geregnet haben"
+       ],
+       "before": "2. Die Straße ist ganz nass. Es",
+       "mid": "in der Nacht",
+       "after": ". (regnen – в конце: Partizip II + haben)",
+       "hint": "Улица совсем мокрая. Ночью, наверное, шёл дождь.",
+       "explanation": "Предположение о прошлом. Es → wird. Глагол regnen образует Perfekt с haben → geregnet haben."
+      },
+      {
+       "answers": [
+        "wird",
+        "abgeschlossen haben"
+       ],
+       "before": "3. Bis zum 1. September",
+       "mid": "meine Schwester ihr Studium",
+       "after": ". (abschließen – в конце: Partizip II + haben)",
+       "hint": "К 1 сентября моя сестра уже закончит учёбу.",
+       "explanation": "meine Schwester (она) → wird. Отделяемая приставка ab- + сильный глагол schließen → abgeschlossen haben."
+      },
+      {
+       "answers": [
+        "wird",
+        "verpasst haben"
+       ],
+       "before": "4. Wo ist Tim? Er",
+       "mid": "wohl den Bus",
+       "after": ". (verpassen – в конце: Partizip II + haben)",
+       "hint": "Где Тим? Он, вероятно, опоздал на автобус.",
+       "explanation": "Er → wird. verpassen с неотделяемой приставкой ver- и haben → verpasst haben."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Вариант 3",
+   "vocab": [],
+   "tasks": [
+    {
+     "type": "gap",
+     "title": "Präsens (Настоящее время)",
+     "instruction": "Обращай внимание на лицо/число, смену корневой гласной у сильных глаголов (e→i/ie, a→ä) и отделяемые приставки.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> действие происходит сейчас, регулярно (<em>jeden Tag, oft</em>) или по расписанию.</p> <p><strong>2. Формула:</strong> основа глагола + личное окончание (<em>ich -e, du -st, er/sie/es -t, wir/sie/Sie -en, ihr -t</em>).</p> <p><strong>3. Ловушки:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li>У сильных глаголов в <strong>du</strong> и <strong>er/sie/es</strong> меняется гласная: <em>fahren → fährt</em>, <em>lesen → liest</em>, <em>sprechen → spricht</em>.</li> <li>Если есть отделяемая приставка (<em>an-, auf-, ein-, mit-, fern-</em>), она отрывается и улетает в самый конец предложения.</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "fängt",
+        "an"
+       ],
+       "before": "1. Der Film",
+       "mid": "um 20:15 Uhr",
+       "after": ". (anfangen)",
+       "hint": "Фильм начинается в 20:15.",
+       "explanation": "Der Film = er (он) → сильный глагол anfangen получает умлаут (fängt), а приставка an- уходит в конец."
+      },
+      {
+       "answers": [
+        "besuchst"
+       ],
+       "before": "2. Wie oft",
+       "after": "du deine Eltern in Berlin? (besuchen)",
+       "hint": "Как часто ты навещаешь своих родителей в Берлине?",
+       "explanation": "Для du окончание -st: besuchst. Приставка be- неотделяемая."
+      },
+      {
+       "answers": [
+        "fährt"
+       ],
+       "before": "3. Mein Vater",
+       "after": "jeden Tag 40 Kilometer zur Arbeit. (fahren)",
+       "hint": "Мой отец каждый день ездит 40 километров на работу.",
+       "explanation": "Mein Vater = er (он) → у глагола fahren корневая a меняется на ä: fährt."
+      },
+      {
+       "answers": [
+        "kaufen",
+        "ein"
+       ],
+       "before": "4. Wir",
+       "mid": "am Samstag zusammen im Supermarkt",
+       "after": ". (einkaufen)",
+       "hint": "В субботу мы вместе закупаемся продуктами в супермаркете.",
+       "explanation": "Для wir окончание -en (kaufen), отделяемая приставка ein- улетает в конец."
+      },
+      {
+       "answers": [
+        "fliegst",
+        "ab"
+       ],
+       "before": "5. Wann",
+       "mid": "du morgen",
+       "after": "? (abfliegen)",
+       "hint": "Во сколько ты завтра вылетаешь?",
+       "explanation": "Для du → fliegst, отделяемая приставка ab- уходит в конец вопроса."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Perfekt (Разговорное прошедшее время)",
+     "instruction": "Вставь вспомогательный глагол (haben или sein) на 2-е место и Partizip II в конец предложения.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> устная речь, переписка, рассказ о завершённом событии в прошлом (<em>gestern, schon, letzte Woche</em>).</p> <p><strong>2. Формула:</strong> <strong>haben / sein</strong> (в Präsens на 2-м месте) + ... + <strong>Partizip II</strong> (в конце).</p> <p><strong>3. Выбор haben или sein:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>sein</strong> — только для движения из А в Б (<em>fahren, gehen, fliegen, kommen, laufen</em>) и смены состояния (<em>aufstehen, einschlafen</em>) + глагол <em>sein/bleiben</em>.</li> <li><strong>haben</strong> — для всех остальных глаголов (даже если там есть движение руками, например <em>arbeiten, spielen, essen</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "habe",
+        "getroffen"
+       ],
+       "before": "1. Gestern",
+       "mid": "ich meinen alten Schulfreund in der Stadt",
+       "after": ". (treffen)",
+       "hint": "Вчера я встретил в городе своего старого школьного друга.",
+       "explanation": "treffen требует haben (ich habe) + сильный Partizip II getroffen."
+      },
+      {
+       "answers": [
+        "ist",
+        "gelandet"
+       ],
+       "before": "2. Wann",
+       "mid": "das Flugzeug aus London",
+       "after": "? (landen)",
+       "hint": "Когда приземлился самолёт из Лондона?",
+       "explanation": "landen означает прибытие/движение в точку → sein (das Flugzeug = es → ist) + gelandet."
+      },
+      {
+       "answers": [
+        "haben",
+        "gegessen"
+       ],
+       "before": "3. Wir",
+       "mid": "gestern Abend zusammen Pizza",
+       "after": ". (essen)",
+       "hint": "Вчера вечером мы вместе ели пиццу.",
+       "explanation": "essen требует haben (wir haben). Обрати внимание на лишнюю g в Partizip II: gegessen."
+      },
+      {
+       "answers": [
+        "bist",
+        "aufgestanden"
+       ],
+       "before": "4. Warum",
+       "mid": "du so spät",
+       "after": "? (aufstehen)",
+       "hint": "Почему ты так поздно встал?",
+       "explanation": "aufstehen (вставать) означает смену положения/состояния → sein для du (bist) + aufgestanden."
+      },
+      {
+       "answers": [
+        "hat",
+        "gearbeitet"
+       ],
+       "before": "5. Er",
+       "mid": "den ganzen Tag im Büro",
+       "after": ". (arbeiten)",
+       "hint": "Он весь день работал в офисе.",
+       "explanation": "arbeiten требует haben (er hat) + слабый Partizip II gearbeitet."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Präteritum (Письменное прошедшее время)",
+     "instruction": "Поставь глагол в форму Präteritum (одно слово на 2-м месте).",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> книги, новости, истории, а в обычной речи — для <strong>sein</strong> (<em>war</em>), <strong>haben</strong> (<em>hatte</em>) и <strong>модальных глаголов</strong> (<em>musste, konnte, wollte, durfte, sollte</em>).</p> <p><strong>2. Формула:</strong></p> <ul class=\"list-disc pl-5 space-y-1\"> <li><strong>Слабые глаголы:</strong> основа + <strong>-te</strong> (<em>ich/er machte, du machtest, wir/sie machten, ihr machtet</em>).</li> <li><strong>Сильные глаголы:</strong> меняется гласная в корне, а у <em>ich</em> и <em>er/sie/es</em> <strong>нет окончания</strong> (<em>ich/er ging, kam, sah, schrieb</em>).</li> </ul>"
+     },
+     "items": [
+      {
+       "answers": [
+        "regnete"
+       ],
+       "before": "1. Gestern",
+       "after": "es den ganzen Nachmittag. (regnen)",
+       "hint": "Вчера шёл дождь весь день после обеда.",
+       "explanation": "Основа regn- заканчивается на -n, поэтому для удобства произношения добавляется -ete: regnete."
+      },
+      {
+       "answers": [
+        "konnten"
+       ],
+       "before": "2. Wir",
+       "after": "gestern leider nicht zum Konzert kommen. (können)",
+       "hint": "Вчера мы, к сожалению, не смогли прийти на концерт.",
+       "explanation": "Модальный глагол können в Präteritum теряет умлаут (konn-) + -ten для wir: konnten."
+      },
+      {
+       "answers": [
+        "kam"
+       ],
+       "before": "3. Der Zug",
+       "mid": "gestern mit 30 Minuten Verspätung",
+       "after": ". (kommen)",
+       "hint": "Поезд прибыл вчера с опозданием на 30 минут.",
+       "explanation": "Сильный глагол kommen в Präteritum меняет корень на kam-. Для der Zug (er) окончания нет: kam."
+      },
+      {
+       "answers": [
+        "hatte"
+       ],
+       "before": "4. Im letzten Jahr",
+       "after": "ich viel Stress bei der Arbeit. (haben)",
+       "hint": "В прошлом году у меня было много стресса на работе.",
+       "explanation": "Форма Präteritum от haben для ich — hatte."
+      },
+      {
+       "answers": [
+        "waren"
+       ],
+       "before": "5. Die Kinder",
+       "after": "sehr glücklich über die Geschenke. (sein)",
+       "hint": "Дети были очень счастливы из-за подарков.",
+       "explanation": "Die Kinder (множ. число) → форма Präteritum от sein — waren."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Plusquamperfekt (Предпрошедшее время)",
+     "instruction": "Действие произошло РАНЬШЕ другого действия в прошлом. Вставь hatte/war и Partizip II.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> в прошлом было два события — то, что случилось <strong>раньше</strong>, ставим в Plusquamperfekt, а более позднее — в Präteritum. Главные маркеры: <strong>nachdem</strong> (после того как), <strong>bevor</strong> (прежде чем), <strong>als</strong> (когда).</p> <p><strong>2. Формула:</strong> <strong>hatte / war</strong> (Präteritum от haben/sein) + ... + <strong>Partizip II</strong> в конце.</p> <p><strong>3. Внимание на порядок слов:</strong> после союза <em>nachdem</em> глагол <strong>hatte / war</strong> уходит в самый конец придаточного предложения (после Partizip II)!</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "besucht",
+        "hatten"
+       ],
+       "before": "1. Nachdem wir das Museum",
+       "mid": "",
+       "after": ", gingen wir in ein Café. (besuchen)",
+       "hint": "После того как мы посетили музей, мы пошли в кафе.",
+       "explanation": "После nachdem вспомогательный глагол hatten (для wir) стоит в самом конце после besucht."
+      },
+      {
+       "answers": [
+        "waren",
+        "eingeschlafen"
+       ],
+       "before": "2. Als ich nach Hause kam,",
+       "mid": "meine Eltern schon",
+       "after": ". (einschlafen)",
+       "hint": "Когда я пришёл домой, мои родители уже уснули.",
+       "explanation": "einschlafen (уснуть) — смена состояния → sein (waren для meine Eltern) + eingeschlafen."
+      },
+      {
+       "answers": [
+        "hatte",
+        "probiert"
+       ],
+       "before": "3. Sie",
+       "mid": "noch nie zuvor Sushi",
+       "after": ", bevor sie nach Japan reiste. (probieren)",
+       "hint": "Она никогда раньше не пробовала суши до того, как поехала в Японию.",
+       "explanation": "Глаголы на -ieren образуют Partizip II без приставки ge-: hatte (для sie — она) + probiert."
+      },
+      {
+       "answers": [
+        "geschlossen",
+        "hatte"
+       ],
+       "before": "4. Nachdem er das Fenster",
+       "mid": "",
+       "after": ", wurde es im Zimmer warm. (schließen)",
+       "hint": "После того как он закрыл окно, в комнате стало тепло.",
+       "explanation": "После nachdem глагол hatte (для er) уходит в самый конец после сильного Partizip II geschlossen."
+      },
+      {
+       "answers": [
+        "hatten",
+        "reserviert"
+       ],
+       "before": "5. Wir",
+       "mid": "die Tickets schon vor zwei Monaten",
+       "after": ". (reservieren)",
+       "hint": "Мы забронировали билеты ещё два месяца назад.",
+       "explanation": "Глагол на -ieren без ge-: hatten (для wir) + reserviert."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur I (Будущее время и предположение)",
+     "instruction": "Вставь спрягаемую форму глагола werden на 2-е место и начальную форму (Infinitiv) в конец.",
+     "badge": "5 пунктов",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> планы, намерения, обещания, прогнозы (<em>morgen, bald, nächstes Jahr</em>) или предположение о настоящем (<em>wohl, bestimmt</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (<em>ich werde, du wirst, er/sie/es wird, wir/sie/Sie werden, ihr werdet</em>) + ... + <strong>Infinitiv</strong> в конце.</p> <p><strong>3. Ловушка:</strong> в форме <em>du</em> и <em>er/sie/es</em> у <em>werden</em> меняется гласная и выпадает <em>d</em>: <strong>du wirst</strong>, <strong>er wird</strong> (не <em>werdet</em>!).</p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "werden",
+        "machen"
+       ],
+       "before": "1. Im Sommer",
+       "mid": "wir eine Rundreise durch Spanien",
+       "after": ". (machen)",
+       "hint": "Летом мы совершим путешествие по Испании.",
+       "explanation": "wir → werden на 2-м месте, инфинитив machen в конце."
+      },
+      {
+       "answers": [
+        "wirst",
+        "bestehen"
+       ],
+       "before": "2. Ich bin sicher, du",
+       "mid": "die Prüfung problemlos",
+       "after": ". (bestehen)",
+       "hint": "Я уверен, ты сдашь экзамен без проблем.",
+       "explanation": "du → wirst, в конце инфинитив bestehen."
+      },
+      {
+       "answers": [
+        "wird",
+        "eröffnen"
+       ],
+       "before": "3. Wann",
+       "mid": "der neue Supermarkt endlich",
+       "after": "? (eröffnen)",
+       "hint": "Когда наконец откроется новый супермаркет?",
+       "explanation": "der neue Supermarkt (er) → wird, инфинитив eröffnen в конце."
+      },
+      {
+       "answers": [
+        "werde",
+        "anrufen"
+       ],
+       "before": "4. Ich",
+       "mid": "dir morgen sofort",
+       "after": ", wenn ich etwas weiß. (anrufen)",
+       "hint": "Я тебе завтра сразу позвоню, как только что-то узнаю.",
+       "explanation": "ich → werde, инфинитив anrufen в конце перед запятой."
+      },
+      {
+       "answers": [
+        "werdet",
+        "gewöhnen"
+       ],
+       "before": "5. Ihr",
+       "mid": "euch bestimmt schnell an die neue Stadt",
+       "after": ". (gewöhnen)",
+       "hint": "Вы наверняка быстро привыкнете к новому городу.",
+       "explanation": "ihr → werdet, инфинитив gewöhnen в конце."
+      }
+     ]
+    },
+    {
+     "type": "gap",
+     "title": "Futur II (Завершённое будущее / предположение о прошлом)",
+     "instruction": "Собери конструкцию: werden на 2-м месте + связка «Partizip II + haben/sein» в конце предложения.",
+     "badge": "4 пункта",
+     "help": {
+      "summary": "Алгоритм решения",
+      "text": "<p><strong>1. Когда юзать:</strong> 1) действие уже закончится к какому-то моменту в будущем (<em>bis morgen, bis Freitag</em>); 2) уверенное предположение о том, что уже произошло в прошлом (<em>wohl, bestimmt, sicher</em>).</p> <p><strong>2. Формула:</strong> <strong>werden</strong> (на 2-м месте) + ... + <strong>Partizip II + haben / sein</strong> (в конце, причём <em>haben/sein</em> стоит в инфинитиве после Partizip II!).</p> <p><strong>3. Пример:</strong> <em>Bis morgen <strong>werde</strong> ich das Buch <strong>gelesen haben</strong>.</em> / <em>Er <strong>wird</strong> schon <strong>angekommen sein</strong>.</em></p>"
+     },
+     "items": [
+      {
+       "answers": [
+        "wird",
+        "repariert haben"
+       ],
+       "before": "1. Bis morgen Mittag",
+       "mid": "der Mechaniker das Auto",
+       "after": ". (reparieren – в конце: Partizip II + haben)",
+       "hint": "К завтрашнему обеду механик уже починит машину.",
+       "explanation": "der Mechaniker (er) → wird. Глагол на -ieren (без ge-) с haben → repariert haben."
+      },
+      {
+       "answers": [
+        "werden",
+        "abgefahren sein"
+       ],
+       "before": "2. Niemand öffnet die Tür. Sie",
+       "mid": "wohl schon",
+       "after": ". (abfahren – в конце: Partizip II + sein)",
+       "hint": "Никто не открывает дверь. Они, вероятно, уже уехали.",
+       "explanation": "Sie (они) → werden. Глагол движения abfahren требует sein → abgefahren sein."
+      },
+      {
+       "answers": [
+        "werde",
+        "gelernt haben"
+       ],
+       "before": "3. Bis Ende des Monats",
+       "mid": "ich 500 neue Wörter",
+       "after": ". (lernen – в конце: Partizip II + haben)",
+       "hint": "К концу месяца я уже выучу 500 новых слов.",
+       "explanation": "ich → werde. lernen образует Perfekt с haben → gelernt haben."
+      },
+      {
+       "answers": [
+        "wirst",
+        "erzählt haben"
+       ],
+       "before": "4. Er kennt die ganze Geschichte. Du",
+       "mid": "ihm bestimmt alles",
+       "after": ". (erzählen – в конце: Partizip II + haben)",
+       "hint": "Он знает всю историю. Ты, наверняка, уже всё ему рассказал.",
+       "explanation": "du → wirst. erzählen (неотделяемая приставка er-, без ge-) + haben → erzählt haben."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

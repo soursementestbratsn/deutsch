@@ -1,0 +1,674 @@
+{
+ "words": {
+  "deutsch": {
+   "text": "Deutsch",
+   "hits": 1,
+   "last": "2026-11-21T17:48:51",
+   "first": "2026-11-21T17:48:51",
+   "ru": "немецкий язык",
+   "source": "wiktionary",
+   "lemma": "Deutsch",
+   "kind": "word"
+  },
+  "die": {
+   "text": "die",
+   "hits": 1,
+   "last": "2026-11-21T18:02:53",
+   "first": "2026-11-21T18:02:53",
+   "ru": "эта; эти",
+   "source": "dict",
+   "lemma": "die",
+   "kind": "word"
+  },
+  "lippe": {
+   "text": "Lippe",
+   "hits": 1,
+   "last": "2026-11-21T18:02:54",
+   "first": "2026-11-21T18:02:54",
+   "ru": "губа",
+   "source": "dict",
+   "lemma": "die Lippe",
+   "kind": "word"
+  },
+  "ich": {
+   "text": "Ich",
+   "hits": 1,
+   "last": "2026-11-21T18:05:42",
+   "first": "2026-11-21T18:05:42",
+   "ru": "я",
+   "source": "dict",
+   "lemma": "ich",
+   "kind": "word"
+  },
+  "in": {
+   "text": "in",
+   "hits": 1,
+   "last": "2026-11-21T18:05:43",
+   "first": "2026-11-21T18:05:43",
+   "ru": "в",
+   "source": "dict",
+   "lemma": "in",
+   "kind": "word"
+  },
+  "frühstücke": {
+   "text": "frühstücke",
+   "hits": 1,
+   "last": "2026-11-21T18:06:43",
+   "first": "2026-11-21T18:06:43",
+   "ru": "завтракаю",
+   "source": "mymemory",
+   "lemma": "frühstücke",
+   "kind": "word"
+  },
+  "tag": {
+   "text": "Tag",
+   "hits": 1,
+   "last": "2026-11-21T18:06:45",
+   "first": "2026-11-21T18:06:45",
+   "ru": "день",
+   "source": "dict",
+   "lemma": "Tag",
+   "kind": "word"
+  },
+  "stehe": {
+   "text": "stehe",
+   "hits": 1,
+   "last": "2026-11-21T18:06:51",
+   "first": "2026-11-21T18:06:51",
+   "ru": "стою",
+   "source": "mymemory",
+   "lemma": "stehe",
+   "kind": "word"
+  },
+  "dann": {
+   "text": "Dann",
+   "hits": 1,
+   "last": "2026-11-21T18:07:01",
+   "first": "2026-11-21T18:07:01",
+   "ru": "потом",
+   "source": "dict",
+   "lemma": "dann",
+   "kind": "word"
+  },
+  "um": {
+   "text": "Um",
+   "hits": 1,
+   "last": "2026-11-21T18:07:17",
+   "first": "2026-11-21T18:07:17",
+   "ru": "вокруг; чтобы; для того чтобы; затем чтобы",
+   "source": "wiktionary",
+   "lemma": "Um",
+   "kind": "word"
+  },
+  "acht": {
+   "text": "acht",
+   "hits": 1,
+   "last": "2026-11-21T18:07:23",
+   "first": "2026-11-21T18:07:23",
+   "ru": "восьмёрка; наручень; наручник",
+   "source": "wiktionary",
+   "lemma": "acht",
+   "kind": "word"
+  },
+  "bleibt": {
+   "text": "bleibt",
+   "hits": 1,
+   "last": "2026-11-21T18:12:40",
+   "first": "2026-11-21T18:12:40",
+   "ru": "остается",
+   "source": "mymemory",
+   "lemma": "bleibt",
+   "kind": "word"
+  },
+  "heute": {
+   "text": "Heute",
+   "hits": 1,
+   "last": "2026-11-21T18:12:44",
+   "first": "2026-11-21T18:12:44",
+   "ru": "сегодня",
+   "source": "dict",
+   "lemma": "heute",
+   "kind": "word"
+  },
+  "praxis": {
+   "text": "Praxis",
+   "hits": 1,
+   "last": "2026-11-21T18:12:55",
+   "first": "2026-11-21T18:12:55",
+   "ru": "практика; кабинет",
+   "source": "wiktionary",
+   "lemma": "Praxis",
+   "kind": "word"
+  },
+  "halb": {
+   "text": "halb",
+   "hits": 1,
+   "last": "2026-11-21T18:13:12",
+   "first": "2026-11-21T18:13:12",
+   "ru": "пол-; наполовину",
+   "source": "wiktionary",
+   "lemma": "halb",
+   "kind": "word"
+  },
+  "quest": {
+   "text": "Quest",
+   "hits": 1,
+   "last": "2026-11-21T19:02:22",
+   "first": "2026-11-21T19:02:22",
+   "ru": "Квест",
+   "source": "mymemory",
+   "lemma": "Quest",
+   "kind": "word"
+  },
+  "dq": {
+   "text": "DQ",
+   "hits": 1,
+   "last": "2026-11-21T19:02:23",
+   "first": "2026-11-21T19:02:23",
+   "ru": "",
+   "source": "none",
+   "kind": "word"
+  },
+  "zähne": {
+   "text": "Zähne",
+   "hits": 1,
+   "last": "2026-11-21T20:44:30",
+   "first": "2026-11-21T20:44:30",
+   "ru": "зубы",
+   "source": "dict",
+   "lemma": "die Zähne",
+   "kind": "word"
+  },
+  "pflaster": {
+   "text": "Pflaster",
+   "hits": 1,
+   "last": "2026-11-21T20:45:05",
+   "first": "2026-11-21T20:45:05",
+   "ru": "пластырь",
+   "source": "dict",
+   "lemma": "das Pflaster",
+   "kind": "word"
+  },
+  "haltestelle": {
+   "text": "Haltestelle",
+   "hits": 1,
+   "last": "2026-11-22T15:15:09",
+   "first": "2026-11-22T15:15:09",
+   "ru": "остановка",
+   "source": "wiktionary",
+   "lemma": "Haltestelle",
+   "kind": "word"
+  },
+  "ab": {
+   "text": "ab",
+   "hits": 1,
+   "last": "2026-11-22T15:15:13",
+   "first": "2026-11-22T15:15:13",
+   "ru": "из; от; с",
+   "source": "wiktionary",
+   "lemma": "ab",
+   "kind": "word"
+  },
+  "von": {
+   "text": "von",
+   "hits": 1,
+   "last": "2026-11-22T15:15:13",
+   "first": "2026-11-22T15:15:13",
+   "ru": "от",
+   "source": "dict",
+   "lemma": "von",
+   "kind": "word"
+  },
+  "fährt": {
+   "text": "fährt",
+   "hits": 1,
+   "last": "2026-11-22T15:15:15",
+   "first": "2026-11-22T15:15:15",
+   "ru": "движется",
+   "source": "mymemory",
+   "lemma": "fährt",
+   "kind": "word"
+  },
+  "durch": {
+   "text": "durch",
+   "hits": 1,
+   "last": "2026-11-22T18:48:55",
+   "first": "2026-11-22T18:48:55",
+   "ru": "сквозь; через; при помощи",
+   "source": "wiktionary",
+   "lemma": "durch",
+   "kind": "word"
+  },
+  "der": {
+   "text": "der",
+   "hits": 1,
+   "last": "2026-11-22T18:49:10",
+   "first": "2026-11-22T18:49:10",
+   "ru": "определённый артикль (м. р.)",
+   "source": "dict",
+   "lemma": "der",
+   "kind": "word"
+  },
+  "luchtweg": {
+   "text": "luchtweg",
+   "hits": 1,
+   "last": "2026-11-22T18:57:13",
+   "first": "2026-11-22T18:57:13",
+   "ru": "Дыхательные пути",
+   "source": "mymemory",
+   "lemma": "luchtweg",
+   "kind": "word"
+  },
+  "als": {
+   "text": "als",
+   "hits": 1,
+   "last": "2026-11-22T18:57:52",
+   "first": "2026-11-22T18:57:52",
+   "ru": "в качестве",
+   "source": "mymemory",
+   "lemma": "als",
+   "kind": "word"
+  },
+  "verkäufer": {
+   "text": "Verkäufer",
+   "hits": 1,
+   "last": "2026-11-22T18:57:59",
+   "first": "2026-11-22T18:57:59",
+   "ru": "продавец",
+   "source": "wiktionary",
+   "lemma": "Verkäufer",
+   "kind": "word"
+  },
+  "ersten": {
+   "text": "ersten",
+   "hits": 1,
+   "last": "2026-11-22T18:58:13",
+   "first": "2026-11-22T18:58:13",
+   "ru": "Первое",
+   "source": "mymemory",
+   "lemma": "ersten",
+   "kind": "word"
+  },
+  "zahl": {
+   "text": "Zahl",
+   "hits": 1,
+   "last": "2026-11-23T15:23:04",
+   "first": "2026-11-23T15:23:04",
+   "ru": "число",
+   "source": "dict",
+   "lemma": "die Zahl",
+   "kind": "word"
+  },
+  "frisch": {
+   "text": "frisch",
+   "hits": 1,
+   "last": "2026-11-23T15:25:06",
+   "first": "2026-11-23T15:25:06",
+   "ru": "свежий",
+   "source": "dict",
+   "lemma": "frisch",
+   "kind": "word"
+  },
+  "billig": {
+   "text": "billig",
+   "hits": 1,
+   "last": "2026-11-23T15:26:29",
+   "first": "2026-11-23T15:26:29",
+   "ru": "дешёвый",
+   "source": "dict",
+   "lemma": "billig",
+   "kind": "word"
+  },
+  "bestelle": {
+   "text": "bestelle",
+   "hits": 1,
+   "last": "2026-11-23T15:26:36",
+   "first": "2026-11-23T15:26:36",
+   "ru": "заказываю",
+   "source": "dict",
+   "lemma": "bestelle",
+   "kind": "word"
+  },
+  "preis": {
+   "text": "Preis",
+   "hits": 1,
+   "last": "2026-11-23T15:26:41",
+   "first": "2026-11-23T15:26:41",
+   "ru": "цена",
+   "source": "dict",
+   "lemma": "Preis",
+   "kind": "word"
+  },
+  "bezahlen": {
+   "text": "bezahlen",
+   "hits": 1,
+   "last": "2026-11-23T15:26:44",
+   "first": "2026-11-23T15:26:44",
+   "ru": "платить",
+   "source": "dict",
+   "lemma": "bezahlen",
+   "kind": "word"
+  },
+  "gestern": {
+   "text": "gestern",
+   "hits": 1,
+   "last": "2026-11-23T15:26:49",
+   "first": "2026-11-23T15:26:49",
+   "ru": "вчера",
+   "source": "dict",
+   "lemma": "gestern",
+   "kind": "word"
+  },
+  "wann": {
+   "text": "Wann",
+   "hits": 1,
+   "last": "2026-11-23T15:27:37",
+   "first": "2026-11-23T15:27:37",
+   "ru": "когда",
+   "source": "wiktionary",
+   "lemma": "Wann",
+   "kind": "word"
+  },
+  "machst": {
+   "text": "machst",
+   "hits": 1,
+   "last": "2026-11-23T15:27:42",
+   "first": "2026-11-23T15:27:42",
+   "ru": "делаю",
+   "source": "dict",
+   "lemma": "mache",
+   "kind": "word"
+  },
+  "schule": {
+   "text": "Schule",
+   "hits": 1,
+   "last": "2026-11-23T15:28:38",
+   "first": "2026-11-23T15:28:38",
+   "ru": "школа",
+   "source": "dict",
+   "lemma": "Schule",
+   "kind": "word"
+  },
+  "zimmer": {
+   "text": "Zimmer",
+   "hits": 1,
+   "last": "2026-11-23T15:28:57",
+   "first": "2026-11-23T15:28:57",
+   "ru": "комната",
+   "source": "dict",
+   "lemma": "Zimmer",
+   "kind": "word"
+  },
+  "später": {
+   "text": "später",
+   "hits": 1,
+   "last": "2026-11-23T15:30:09",
+   "first": "2026-11-23T15:30:09",
+   "ru": "позже",
+   "source": "dict",
+   "lemma": "später",
+   "kind": "word"
+  },
+  "früh": {
+   "text": "früh",
+   "hits": 1,
+   "last": "2026-11-23T15:30:12",
+   "first": "2026-11-23T15:30:12",
+   "ru": "рано",
+   "source": "dict",
+   "lemma": "früh",
+   "kind": "word"
+  },
+  "spät": {
+   "text": "spät",
+   "hits": 1,
+   "last": "2026-11-23T15:30:16",
+   "first": "2026-11-23T15:30:16",
+   "ru": "поздно",
+   "source": "dict",
+   "lemma": "spät",
+   "kind": "word"
+  },
+  "oft": {
+   "text": "oft",
+   "hits": 1,
+   "last": "2026-11-23T15:30:19",
+   "first": "2026-11-23T15:30:19",
+   "ru": "часто",
+   "source": "dict",
+   "lemma": "oft",
+   "kind": "word"
+  },
+  "besuchen": {
+   "text": "besuchen",
+   "hits": 1,
+   "last": "2026-11-23T15:31:46",
+   "first": "2026-11-23T15:31:46",
+   "ru": "посещать",
+   "source": "wiktionary",
+   "lemma": "besuchen",
+   "kind": "word"
+  },
+  "anmeldung": {
+   "text": "Anmeldung",
+   "hits": 1,
+   "last": "2026-11-23T15:32:08",
+   "first": "2026-11-23T15:32:08",
+   "ru": "Запись на прием",
+   "source": "mymemory",
+   "lemma": "Anmeldung",
+   "kind": "word"
+  },
+  "дом": {
+   "text": "дом",
+   "hits": 3,
+   "last": "2026-11-24T17:24:03",
+   "first": "2026-11-24T17:23:08",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "учиться": {
+   "text": "Учиться",
+   "hits": 1,
+   "last": "2026-11-24T18:08:47",
+   "first": "2026-11-24T18:08:47",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "день": {
+   "text": "день",
+   "hits": 1,
+   "last": "2026-11-24T18:09:43",
+   "first": "2026-11-24T18:09:43",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "на": {
+   "text": "на",
+   "hits": 1,
+   "last": "2026-11-24T18:09:44",
+   "first": "2026-11-24T18:09:44",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "план": {
+   "text": "План",
+   "hits": 1,
+   "last": "2026-11-24T18:09:45",
+   "first": "2026-11-24T18:09:45",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "открыть": {
+   "text": "открыть",
+   "hits": 1,
+   "last": "2026-11-24T18:09:46",
+   "first": "2026-11-24T18:09:46",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "слов": {
+   "text": "слов",
+   "hits": 1,
+   "last": "2026-11-25T20:11:08",
+   "first": "2026-11-25T20:11:08",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "слова": {
+   "text": "слова",
+   "hits": 1,
+   "last": "2026-11-25T20:11:09",
+   "first": "2026-11-25T20:11:09",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "номера": {
+   "text": "номера",
+   "hits": 1,
+   "last": "2026-11-25T20:11:10",
+   "first": "2026-11-25T20:11:10",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "ärgerlich": {
+   "text": "ärgerlich",
+   "hits": 1,
+   "last": "2026-11-25T21:00:54",
+   "first": "2026-11-25T21:00:54",
+   "ru": "раздражающий",
+   "source": "mymemory",
+   "lemma": "ärgerlich",
+   "kind": "word"
+  },
+  "zug": {
+   "text": "Zug",
+   "hits": 1,
+   "last": "2026-11-25T21:00:54",
+   "first": "2026-11-25T21:00:54",
+   "ru": "поезд",
+   "source": "dict",
+   "lemma": "Zug",
+   "kind": "word"
+  },
+  "активность": {
+   "text": "Активность",
+   "hits": 1,
+   "last": "2026-11-25T23:03:27",
+   "first": "2026-11-25T23:03:27",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "статистика": {
+   "text": "Статистика",
+   "hits": 1,
+   "last": "2026-11-25T23:03:28",
+   "first": "2026-11-25T23:03:28",
+   "kind": "word",
+   "ru": "",
+   "source": "none"
+  },
+  "testwort": {
+   "text": "Testwort",
+   "ru": "???????? ?????",
+   "source": "user",
+   "kind": "word",
+   "hits": 0,
+   "first": "2026-11-25T23:14:04",
+   "last": "2026-11-25T23:14:04",
+   "learned": false
+  }
+ },
+ "phrases": {
+  "stüc": {
+   "text": "stüc",
+   "hits": 1,
+   "last": "2026-11-21T18:06:43",
+   "first": "2026-11-21T18:06:43",
+   "ru": "шт.",
+   "source": "mymemory",
+   "lemma": "stüc",
+   "kind": "phrase"
+  },
+  "um acht uhr": {
+   "text": "Um acht Uhr",
+   "hits": 2,
+   "last": "2026-11-21T18:07:27",
+   "first": "2026-11-21T18:07:27",
+   "ru": "В восемь часов",
+   "source": "mymemory",
+   "lemma": "Um acht Uhr",
+   "kind": "phrase"
+  },
+  "ersten": {
+   "text": "ersten",
+   "hits": 1,
+   "last": "2026-11-22T18:58:27",
+   "first": "2026-11-22T18:58:27",
+   "ru": "Первое",
+   "source": "mymemory",
+   "lemma": "ersten",
+   "kind": "phrase"
+  },
+  "abend": {
+   "text": "Abend",
+   "hits": 1,
+   "last": "2026-11-24T18:09:04",
+   "first": "2026-11-24T18:09:04",
+   "ru": "вечер",
+   "source": "dict",
+   "lemma": "Abend",
+   "kind": "phrase"
+  },
+  "sich": {
+   "text": "sich",
+   "hits": 1,
+   "last": "2026-11-25T20:24:26",
+   "first": "2026-11-25T20:24:26",
+   "ru": "себя; себе",
+   "source": "mymemory",
+   "lemma": "sich",
+   "kind": "phrase"
+  },
+  "sich anmelden": {
+   "text": "sich anmelden",
+   "hits": 2,
+   "last": "2026-11-25T20:24:26",
+   "first": "2026-11-25T20:24:26",
+   "ru": "Зарегистрироваться",
+   "source": "mymemory",
+   "lemma": "sich anmelden",
+   "kind": "phrase"
+  },
+  "anmelden": {
+   "text": "anmelden",
+   "hits": 1,
+   "last": "2026-11-25T20:24:33",
+   "first": "2026-11-25T20:24:33",
+   "ru": "войти",
+   "source": "mymemory",
+   "lemma": "anmelden",
+   "kind": "phrase"
+  },
+  "mein neues wort": {
+   "text": "Mein neues Wort",
+   "ru": "??? ????? ?????",
+   "source": "user",
+   "kind": "phrase",
+   "hits": 0,
+   "first": "2026-11-25T23:17:20",
+   "last": "2026-11-25T23:17:20",
+   "learned": false
+  }
+ }
+}

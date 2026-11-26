@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Deutsch Quest">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="images/icon-192.png">
+<title>Deutsch Quest</title>
+<link rel="stylesheet" href="style.css?v=119">
+<link rel="stylesheet" href="stats.css?v=105">
+<link rel="stylesheet" href="reading.css?v=10">
+<link rel="stylesheet" href="train.css?v=8">
+<link rel="stylesheet" href="nav.css?v=10">
+<link rel="stylesheet" href="glass.css?v=16">
+<link rel="stylesheet" href="mobile.css?v=2">
+<link rel="stylesheet" href="extras.css?v=16">
+<link rel="stylesheet" href="dict.css?v=3">
+<link rel="stylesheet" href="mobile2.css?v=1">
+</head>
+<body data-theme="night" data-accent="mint">
+<div class="app-bg"></div>
+<div class="glow g1"></div>
+<div class="glow" id="glow2"></div>
+
+<!-- ─── Top Navigation Bar ─── -->
+<header class="navbar" role="banner">
+  <div class="navbar-brand">
+    <div class="navbar-logo">DQ</div>
+    <div>
+      <div class="navbar-title" id="navTitle">Deutsch Quest</div>
+      <div class="navbar-subtitle" id="navSubtitle">Тренажёр</div>
+    </div>
+  </div>
+  <div class="navbar-actions">
+    <button class="icon-btn" id="cmdBtn" title="Команды (Ctrl+K)" aria-label="Команды">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+    </button>
+    <button class="icon-btn" id="focusBtn" title="Режим фокуса (F)" aria-label="Фокус">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+    </button>
+    <button class="icon-btn" id="settingsOpen" title="Настройки" aria-label="Настройки">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none"
+           stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- ─── Main Content Area ─── -->
+<main class="wrap" id="mainWrap" style="padding-top: 64px; padding-bottom: calc(90px + env(safe-area-inset-bottom));">
+
+  <!-- ================= SCREEN 1: HOME / DASHBOARD ================= -->
+  <section class="screen active" id="screen-home" data-tab="home">
+    <div class="container">
+      <!-- Quick Stats Bar -->
+      <div class="stat-grid mb-4">
+        <div class="stat-item">
+          <div class="stat-value" id="homeStreak">0</div>
+          <div class="stat-label">Серия</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="homeToday">0</div>
+          <div class="stat-label">Сегодня</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="homeAccuracy">–</div>
+          <div class="stat-label">Точность</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="homeXP">0</div>
+          <div class="stat-label">XP</div>
+        </div>
+      </div>
+
+      <!-- Continue Learning Card -->
+      <div class="card card-glass mb-4" id="continueCard" hidden>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div class="text-sm text-muted mb-1">Продолжить обучение</div>
+              <div id="continueText" class="text-lg font-semibold"></div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="continueBtn">Продолжить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <div class="card-title">Быстрые действия</div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2" id="quickActions">
+            <button class="btn btn-secondary btn-block" data-action="train">
+              <span class="ico ico-train" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Тренажёр</div>
+                <div class="text-xs text-muted">Слова и фразы</div>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-block" data-action="lernen">
+              <span class="ico ico-dumbbell" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Тренировка</div>
+                <div class="text-xs text-muted">A0–B1 · 4 навыка</div>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-block" data-action="games">
+              <span class="ico ico-game" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Игры</div>
+                <div class="text-xs text-muted">16 мини-игр</div>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-block" data-action="reading">
+              <span class="ico ico-reading" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Чтение</div>
+                <div class="text-xs text-muted">Тексты + вопросы</div>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-block" data-action="worksheets">
+              <span class="ico ico-doc" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Задания</div>
+                <div class="text-xs text-muted">Тесты и пропуски</div>
+              </div>
+            </button>
+            <button class="btn btn-secondary btn-block" data-action="course">
+              <span class="ico ico-course" style="font-size:22px;"></span>
+              <div style="text-align:left;margin-top:4px;">
+                <div class="font-semibold">Курс</div>
+                <div class="text-xs text-muted">24 урока</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Due Words Alert -->
+      <div class="card card-glass mb-4" id="dueCard" hidden>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div class="ico ico-repeat" style="font-size:28px;color:var(--accent);"></div>
+            <div style="flex:1;">
+              <div class="font-semibold" id="dueTitle">Есть слова для повтора</div>
+              <div class="text-sm text-muted" id="dueDesc">Повтори их сейчас, чтобы сохранить серию</div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="dueBtn">Повторить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Word of the Day -->
+      <div class="card mb-4" id="wordOfDayCard" hidden>
+        <div class="card-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+              <div class="text-sm text-muted mb-1">Слово дня</div>
+              <div id="wotdWord" class="text-2xl font-bold"></div>
+            </div>
+            <button class="btn btn-primary btn-sm" id="wotdBtn">Учить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCREEN 2: PRACTICE ================= -->
+  <section class="screen" id="screen-practice" data-tab="practice">
+    <div class="container">
+      <header class="mb-4">
+        <h1 class="text-2xl font-bold mb-1">Практика</h1>
+        <p class="text-muted">Выбери режим тренировки</p>
+      </header>
+
+      <!-- Trainer -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="train">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-train"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Тренажёр</div>
+                <div class="text-sm text-muted">Слово за словом · выбор или ввод · озвучка</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Training Modes -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Тренировка навыков</div>
+        </div>
+        <div class="card-body">
+          <div class="list" id="trainingModes">
+            <button class="list-item" data-view="lernen" data-mode="mixed">
+              <div class="list-item-icon"><span class="ico ico-dumbbell"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Смешанная тренировка</div>
+                <div class="list-item-subtitle">Чтение · Аудирование · Письмо · Говорение</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="lernen" data-mode="reading">
+              <div class="list-item-icon" style="background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent);"><span class="ico ico-book"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Чтение</div>
+                <div class="list-item-subtitle">Тексты с вопросами по пониманию</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="lernen" data-mode="listening">
+              <div class="list-item-icon" style="background:color-mix(in srgb,#ffb020 15%,transparent);color:#ffb020;"><span class="ico ico-vol"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Аудирование</div>
+                <div class="list-item-subtitle">Слушай и выбирай правильный ответ</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="lernen" data-mode="writing">
+              <div class="list-item-icon" style="background:color-mix(in srgb,#35d49a 15%,transparent);color:#35d49a;"><span class="ico ico-pen"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Письмо</div>
+                <div class="list-item-subtitle">Печатай слова и фразы на немецком</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="lernen" data-mode="speaking">
+              <div class="list-item-icon" style="background:color-mix(in srgb,#ff6b6b 15%,transparent);color:#ff6b6b;"><span class="ico ico-mic"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Говорение</div>
+                <div class="list-item-subtitle">Проговаривай вслух, проверяй произношение</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Games -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Мини-игры</div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2" id="gameGrid">
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="wordfall">
+              <div class="font-semibold">Слова-падубры</div>
+              <div class="text-xs text-muted">Лови падающие слова</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="audioquiz">
+              <div class="font-semibold">Аудио-викторина</div>
+              <div class="text-xs text-muted">Угадай по звуку</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="anagram">
+              <div class="font-semibold">Анаграммы</div>
+              <div class="text-xs text-muted">Собери слово из букв</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="memory">
+              <div class="font-semibold">Мемори</div>
+              <div class="text-xs text-muted">Найди пары</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="speed">
+              <div class="font-semibold">Спидран</div>
+              <div class="text-xs text-muted">Максимум за минуту</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="games" data-game="truefalse">
+              <div class="font-semibold">Правда/Ложь</div>
+              <div class="text-xs text-muted">Факты о языке</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extras -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Дополнительно</div>
+        </div>
+        <div class="card-body">
+          <div class="list">
+            <button class="list-item" data-view="speech">
+              <div class="list-item-icon"><span class="ico ico-speech"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Разговорник и диалоги</div>
+                <div class="list-item-subtitle">Ситуации, фразы, диалог-симулятор</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="modes">
+              <div class="list-item-icon"><span class="ico ico-modes"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Режимы: 5 минут, Спидран</div>
+                <div class="list-item-subtitle">Быстрые тренировки под таймер</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="dictation">
+              <div class="list-item-icon"><span class="ico ico-dictation"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Диктант</div>
+                <div class="list-item-subtitle">Пиши под диктовку</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="exam">
+              <div class="list-item-icon"><span class="ico ico-exam"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Экзамен</div>
+                <div class="list-item-subtitle">10 вопросов на проверку знаний</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCREEN 3: LIBRARY ================= -->
+  <section class="screen" id="screen-library" data-tab="library">
+    <div class="container">
+      <header class="mb-4">
+        <h1 class="text-2xl font-bold mb-1">Библиотека</h1>
+        <p class="text-muted">Слова, группы, грамматика, чтение</p>
+      </header>
+
+      <!-- Dictionary -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="dict">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-words"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Словарь</div>
+                <div class="text-sm text-muted">Все слова · поиск · фото · выбор для тренажёра</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Groups -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="groups">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-groups"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Группы слов</div>
+                <div class="text-sm text-muted">Выбирай темы · смешивай · учи избранное</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tables / Grammar -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Грамматика и таблицы</div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2">
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="tables">
+              <div class="font-semibold">Таблицы</div>
+              <div class="text-xs text-muted">Артикли · падежи · глаголы</div>
+            </button>
+            <button class="btn btn-secondary btn-block" style="padding:16px;text-align:left;" data-view="grammar">
+              <div class="font-semibold">Грамматика</div>
+              <div class="text-xs text-muted">Упражнения по правилам</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reading -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="reading">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-reading"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Чтение текстов</div>
+                <div class="text-sm text-muted">A0–A2 · новые тексты каждый раз · вопросы</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Course -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="course">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-course"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Курс A0–B1</div>
+                <div class="text-sm text-muted">24 урока · правило → слова → задания</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Materials -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Материалы</div>
+        </div>
+        <div class="card-body">
+          <div class="list">
+            <button class="list-item" data-view="content">
+              <div class="list-item-icon"><span class="ico ico-content"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Песни, рецепты, письма, частицы</div>
+              </div>
+            </button>
+            <button class="list-item" data-view="sounds">
+              <div class="list-item-icon"><span class="ico ico-sounds"></span></div>
+              <div class="list-item-content">
+                <div class="list-item-title">Немецкие звуки</div>
+                <div class="list-item-subtitle">IPA, аудио, тренировка слуха</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCREEN 4: PROFILE ================= -->
+  <section class="screen" id="screen-profile" data-tab="profile">
+    <div class="container">
+      <header class="mb-4">
+        <h1 class="text-2xl font-bold mb-1">Профиль</h1>
+        <p class="text-muted">Твой прогресс и настройки</p>
+      </header>
+
+      <!-- Profile Header -->
+      <div class="card card-glass mb-3">
+        <div class="card-body">
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="width:64px;height:64px;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;color:var(--onAccent);" id="avatarInitials">DQ</div>
+            <div style="flex:1;">
+              <div class="font-semibold text-xl" id="userName">Deutsch Quest</div>
+              <div class="text-sm text-muted">Уровень <b id="userLevel">1</b> · <b id="userXP">0</b> XP</div>
+              <div class="mt-2" style="display:flex;gap:16px;flex-wrap:wrap;">
+                <div><b id="totalAnswered">0</b> ответов</div>
+                <div><b id="totalCorrect">0</b> верно</div>
+                <div><b id="totalLearned">0</b> слов</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Overview -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Статистика</div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2 mb-3">
+            <div class="stat-item">
+              <div class="stat-value" id="statStreak">0</div>
+              <div class="stat-label">Текущая серия</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="statBestStreak">0</div>
+              <div class="stat-label">Рекорд</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="statAccuracy">–</div>
+              <div class="stat-label">Точность</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="statDaily">0</div>
+              <div class="stat-label">Цель дня</div>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-block" data-view="stats">Подробная статистика</button>
+        </div>
+      </div>
+
+      <!-- My Words -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-block" style="text-align:left;padding:16px;background:linear-gradient(135deg,var(--card),var(--card2));" data-view="words">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="list-item-icon"><span class="ico ico-words"></span></div>
+              <div style="flex:1;">
+                <div class="font-semibold text-lg">Мои слова</div>
+                <div class="text-sm text-muted" id="myWordsCount">0 слов в изучении</div>
+              </div>
+              <span class="ico ico-chevron-right" style="font-size:20px;color:var(--dim);"></span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Settings -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <div class="card-title">Быстрые настройки</div>
+        </div>
+        <div class="card-body">
+          <div class="list">
+            <label class="list-item switch-row" style="cursor:pointer;">
+              <div class="list-item-content">
+                <div class="list-item-title">Звуки интерфейса</div>
+                <div class="list-item-subtitle">Клики, уведомления, успех/ошибка</div>
+              </div>
+              <input type="checkbox" class="switch-input" id="toggleSound" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <label class="list-item switch-row" style="cursor:pointer;">
+              <div class="list-item-content">
+                <div class="list-item-title">Вибрация</div>
+                <div class="list-item-subtitle">Тактильная отдача при нажатиях</div>
+              </div>
+              <input type="checkbox" class="switch-input" id="toggleHaptics" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <label class="list-item switch-row" style="cursor:pointer;">
+              <div class="list-item-content">
+                <div class="list-item-title">Авто-озвучка</div>
+                <div class="list-item-subtitle">Читать новые слова автоматически</div>
+              </div>
+              <input type="checkbox" class="switch-input" id="toggleAutoSay" checked>
+              <span class="switch-slider"></span>
+            </label>
+            <label class="list-item switch-row" style="cursor:pointer;">
+              <div class="list-item-content">
+                <div class="list-item-title">Транскрипция</div>
+                <div class="list-item-subtitle">Показывать IPA и русскую транскрипцию</div>
+              </div>
+              <input type="checkbox" class="switch-input" id="togglePron" checked>
+              <span class="switch-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Button -->
+      <div class="card mb-3">
+        <div class="card-body">
+          <button class="btn btn-secondary btn-block" id="openSettings">Все настройки</button>
+        </div>
+      </div>
+
+      <!-- Version Info -->
+      <div class="text-center text-xs text-faint mb-6">
+        Deutsch Quest v2.0 · <a href="/backups" target="_blank" class="text-accent">История версий</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ─── Bottom Tab Bar ─── -->
+<nav class="tab-bar" id="tabBar" role="navigation" aria-label="Основная навигация">
+  <button class="tab-item active" data-tab="home" role="tab" aria-selected="true">
+    <span class="ico ico-home"></span>
+    <span>Главная</span>
+  </button>
+  <button class="tab-item" data-tab="practice" role="tab" aria-selected="false">
+    <span class="ico ico-dumbbell"></span>
+    <span>Практика</span>
+  </button>
+  <button class="tab-item" data-tab="library" role="tab" aria-selected="false">
+    <span class="ico ico-book"></span>
+    <span>Библиотека</span>
+  </button>
+  <button class="tab-item" data-tab="profile" role="tab" aria-selected="false">
+    <span class="ico ico-user"></span>
+    <span>Профиль</span>
+  </button>
+</nav>
+
+<!-- ─── Bottom Sheets (Modals) ─── -->
+
+<!-- Settings Bottom Sheet -->
+<div class="bottom-sheet" id="settingsSheet" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+  <div class="bottom-sheet-backdrop" id="settingsBackdrop"></div>
+  <div class="bottom-sheet-content">
+    <div class="bottom-sheet-handle"></div>
+    <div class="bottom-sheet-header">
+      <h2 class="bottom-sheet-title" id="settingsTitle">Настройки</h2>
+      <button class="bottom-sheet-close" id="settingsClose" aria-label="Закрыть">
+        <span class="ico ico-close" style="font-size:20px;"></span>
+      </button>
+    </div>
+    <div class="bottom-sheet-body" id="settingsBody">
+      <!-- Settings content injected by settings.js -->
+    </div>
+  </div>
+</div>
+
+<!-- More/Overflow Bottom Sheet -->
+<div class="bottom-sheet" id="moreSheet" role="dialog" aria-modal="true" aria-labelledby="moreTitle">
+  <div class="bottom-sheet-backdrop" id="moreBackdrop"></div>
+  <div class="bottom-sheet-content">
+    <div class="bottom-sheet-handle"></div>
+    <div class="bottom-sheet-header">
+      <h2 class="bottom-sheet-title" id="moreTitle">Ещё</h2>
+      <button class="bottom-sheet-close" id="moreClose" aria-label="Закрыть">
+        <span class="ico ico-close" style="font-size:20px;"></span>
+      </button>
+    </div>
+    <div class="bottom-sheet-body" id="moreBody">
+      <div class="list" id="moreList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Generic Bottom Sheet for Views -->
+<div class="bottom-sheet" id="viewSheet" role="dialog" aria-modal="true" aria-labelledby="viewSheetTitle">
+  <div class="bottom-sheet-backdrop" id="viewBackdrop"></div>
+  <div class="bottom-sheet-content" style="max-height:95vh;">
+    <div class="bottom-sheet-handle"></div>
+    <div class="bottom-sheet-header">
+      <h2 class="bottom-sheet-title" id="viewSheetTitle">Раздел</h2>
+      <button class="bottom-sheet-close" id="viewSheetClose" aria-label="Закрыть">
+        <span class="ico ico-close" style="font-size:20px;"></span>
+      </button>
+    </div>
+    <div class="bottom-sheet-body" id="viewSheetBody" style="padding:0;overflow:visible;">
+      <!-- View content injected here -->
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<!-- Command Palette -->
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true" aria-label="Палитра команд">
+  <div class="cmd-card">
+    <input class="cmd-input" id="cmdInput" placeholder="Куда перейти? Наберите раздел…" autocomplete="off">
+    <ul class="cmd-list" id="cmdList"></ul>
+    <div class="cmd-foot"><kbd>↑</kbd><kbd>↓</kbd> выбор · <kbd>Enter</kbd> открыть · <kbd>Esc</kbd> закрыть</div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="theme.js?v=62"></script>
+<script src="fx.js?v=50"></script>
+<script src="sound.js?v=52"></script>
+<script src="phonetics.js?v=4"></script>
+<script src="dq-ui.js?v=3"></script>
+<script src="settings.js?v=64"></script>
+<script src="learn.js?v=5"></script>
+<script src="course/lessons-1.js?v=1"></script>
+<script src="course/lessons-2.js?v=1"></script>
+<script src="course/lessons-3.js?v=1"></script>
+<script src="course.js?v=13"></script>
+<script src="ideas.js?v=3"></script>
+<script src="grammar.js?v=16"></script>
+<script src="speech.js?v=11"></script>
+<script src("modes.js?v=1"></script>
+<script src="content.js?v=1"></script>
+<script src="grammar-view.js?v=28"></script>
+<script src="dq.js?v=136"></script>
+<script src="nav2.js?v=1"></script>
+<script src="glass.js?v=3"></script>
+</body>
+</html>

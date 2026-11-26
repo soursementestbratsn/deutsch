@@ -1,0 +1,655 @@
+/* ============================================================
+   Deutsch Quest — LIQUID GLASS (iOS 26) + вся палитра.
+   ЕДИНСТВЕННЫЙ слой оформления поверх style.css.
+
+   Производительность (важно):
+     • backdrop-filter — только у 4 классов: шапка, меню, модалки,
+       настройки. Карточки контента НЕ размывают фон (это самый
+       дорогой эффект), у них прозрачная заливка + блик.
+     • никаких filter: blur на пятнах фона — только radial-gradient.
+     • все анимации — transform/opacity (композитор, без layout).
+     • --glass-blur управляется настройкой «Стекло» и авто-даунгрейдом.
+   ============================================================ */
+
+:root {
+  --glass-blur: 14px;
+  --glass-sat: 175%;
+  --glass-edge: rgba(255, 255, 255, .20);
+  --mx: .5;
+  --my: .3;
+
+  /* системные цвета Apple (dark) */
+  --bg: #000000;
+  --bg2: #0b0c0f;
+  --panel: rgba(28, 28, 30, .55);
+  --card2: rgba(118, 118, 128, .16);
+  --line: rgba(255, 255, 255, .12);
+  --hairline: rgba(255, 255, 255, .18);
+  --text: #ffffff;
+  --dim: rgba(235, 235, 245, .62);
+  --faint: rgba(235, 235, 245, .38);
+  --ok: #30d158;
+  --bad: #ff453a;
+  --warn: #ffd60a;
+  --radius: 22px;
+  --shadow: 0 20px 60px -34px rgba(0, 0, 0, .9);
+}
+
+/* светлые темы */
+body[data-theme="light"],
+body[data-theme="sand"] {
+  --panel: rgba(255, 255, 255, .66) !important;
+  --card2: rgba(120, 120, 128, .12) !important;
+  --line: rgba(60, 60, 67, .16) !important;
+  --hairline: rgba(60, 60, 67, .22) !important;
+  --glass-edge: rgba(255, 255, 255, .95);
+  --text: #000 !important;
+  --dim: rgba(60, 60, 67, .62) !important;
+  --faint: rgba(60, 60, 67, .40) !important;
+  --bg: #f2f2f7 !important;
+  --bg2: #e5e5ea !important;
+  --shadow: 0 20px 50px -34px rgba(20, 30, 50, .35);
+}
+
+/* режим «без стекла» (слабые машины) */
+html.no-glass .lg,
+html.no-glass .topbar,
+html.no-glass .settings-card,
+html.no-glass .nav-menu,
+html.no-glass .modal-card {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  background: color-mix(in srgb, var(--bg2) 94%, transparent) !important;
+}
+
+/* ------------------------------------------------------------
+   Фон-сцена: пятна света на чёрном (без blur — дёшево)
+   ------------------------------------------------------------ */
+body { background: var(--scene-bg, #000) !important; background-image: none !important; }
+body[data-theme="light"], body[data-theme="sand"] { background: var(--bg) !important; }
+.glow, .app-bg { display: none !important; }
+
+.glass-light {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(56vw 56vw at 16% 2%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 62%),
+    radial-gradient(46vw 46vw at 92% 14%, rgba(106, 92, 255, .24), transparent 64%),
+    radial-gradient(60vw 60vw at 62% 100%, rgba(255, 110, 160, .15), transparent 66%),
+    var(--scene-bg, #000);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  transition: transform .4s ease-out;
+}
+body[data-theme="light"] .glass-light,
+body[data-theme="sand"] .glass-light {
+  background:
+    radial-gradient(56vw 56vw at 16% 2%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 62%),
+    radial-gradient(46vw 46vw at 92% 14%, rgba(120, 110, 255, .16), transparent 64%),
+    radial-gradient(60vw 60vw at 62% 100%, rgba(255, 130, 170, .14), transparent 66%),
+    var(--scene-bg, #f2f2f7);
+}
+/* лёгкое параллакс-смещение от курсора (одно свойство, без перерисовки) */
+html:not(.no-glass) .glass-light { transform: translate3d(calc((var(--mx) - .5) * 16px), calc((var(--my) - .5) * 12px), 0); }
+.glass-light.lite, .glass-light.lite i { animation: none !important; display: none; }
+.glass-light i { display: none; }
+
+.wrap, .topbar { position: relative; z-index: 2; }
+
+/* ------------------------------------------------------------
+   1. Стекло — только 4 дорогих поверхности
+   ------------------------------------------------------------ */
+.topbar,
+.settings-card,
+.nav-menu,
+.modal-card,
+.cmd-card {
+  background: color-mix(in srgb, var(--bg2) 55%, transparent) !important;
+  border: 1px solid var(--glass-edge) !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-sat));
+}
+/* карточка перевода по клику — плотная подложка, иначе текст
+   просвечивает сквозь абзац и перевод не читается */
+.wordpop {
+  background: #16171a !important;
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border-color: rgba(255, 255, 255, .14) !important;
+}
+body[data-theme="light"] .wordpop,
+body[data-theme="sand"] .wordpop {
+  background: #f3f3f6 !important;
+  border-color: rgba(0, 0, 0, .10) !important;
+}
+.topbar {
+  background: color-mix(in srgb, var(--scene-bg, #000) 58%, transparent) !important;
+  border-bottom: 1px solid var(--glass-edge) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .10);
+}
+body.is-scrolled .topbar { background: color-mix(in srgb, var(--scene-bg, #000) 82%, transparent) !important; }
+body[data-theme="light"] .topbar,
+body[data-theme="sand"] .topbar { background: color-mix(in srgb, #fff 52%, transparent) !important; }
+body[data-theme="light"].is-scrolled .topbar,
+body[data-theme="sand"].is-scrolled .topbar { background: color-mix(in srgb, #fff 76%, transparent) !important; }
+
+/* ------------------------------------------------------------
+   2. Карточки контента — «стеклянная» заливка без размытия
+      (≈6× дешевле backdrop-filter, вид почти тот же)
+   ------------------------------------------------------------ */
+.card, .tr-card, .tr-tabs button, .game-card, .ws-set-card,
+.group-card, .tr-side, .set-group {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .015) 42%, rgba(255, 255, 255, .01)),
+    color-mix(in srgb, var(--bg2) 62%, transparent) !important;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .015) 42%, rgba(255, 255, 255, .01)) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: var(--radius);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .16),
+    0 18px 40px -32px rgba(0, 0, 0, .9) !important;
+  contain: layout paint style;
+}
+body[data-theme="light"] .card, body[data-theme="sand"] .card,
+body[data-theme="light"] .tr-card, body[data-theme="sand"] .tr-card,
+body[data-theme="light"] .tr-tabs button, body[data-theme="sand"] .tr-tabs button {
+  background: rgba(255, 255, 255, .74) !important;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .5)) !important;
+}
+
+/* блик под курсором — один градиент, только на крупных карточках */
+.card::after, .tr-card::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  pointer-events: none; z-index: 0;
+  background: radial-gradient(38% 60% at calc(var(--mx) * 100%) calc(var(--my) * 100%),
+    rgba(255, 255, 255, .10), transparent 68%);
+  opacity: .8;
+}
+.card > *, .tr-card > * { position: relative; z-index: 1; }
+html.no-glass .card::after, html.no-glass .tr-card::after { display: none; }
+
+/* ------------------------------------------------------------
+   3. Кнопки — iOS
+   ------------------------------------------------------------ */
+.btn {
+  border-radius: 13px !important;
+  font-weight: 600 !important;
+  transition: transform .12s cubic-bezier(.2, .9, .3, 1), filter .16s, background .16s;
+  will-change: transform;
+}
+.btn:active { transform: scale(.97); }
+.btn.primary,
+#nextBtn, #trNext, #wsCheck {
+  background: #0a84ff !important;
+  background-image: none !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25) !important;
+}
+.btn.primary:hover, #nextBtn:hover, #trNext:hover { filter: brightness(1.08); }
+.btn.primary:disabled {
+  background: var(--card2) !important; color: var(--faint) !important;
+  border: 1px dashed var(--line) !important; box-shadow: none !important;
+}
+.btn.ghost {
+  background: var(--card2) !important;
+  border: 1px solid var(--glass-edge) !important;
+  color: var(--text) !important;
+}
+.btn.ghost:hover { background: color-mix(in srgb, #fff 10%, transparent) !important; }
+.btn.danger { color: var(--bad) !important; }
+.btn.accent, #setResetAll { background: #0a84ff !important; color: #fff !important; }
+
+.segmented {
+  background: var(--card2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 999px !important;
+  padding: 3px !important;
+}
+.segmented button { border-radius: 999px !important; font-weight: 600; }
+.segmented button.active {
+  background: #fff !important; color: #000 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3) !important;
+}
+
+.input, .select {
+  background: var(--card2) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  transition: border-color .15s, box-shadow .15s;
+}
+.input:focus, .select:focus {
+  border-color: #0a84ff !important;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, .28) !important;
+}
+
+/* тумблеры — размеры и поведение iOS */
+.switch-row { padding-right: 54px; }
+.switch-row::after {
+  width: 44px !important; height: 26px !important;
+  background: var(--card2) !important; border-radius: 999px !important;
+  position: absolute !important; right: 0 !important; top: 50% !important;
+  margin-top: -13px !important;
+}
+.switch-row.on::after { background: var(--ok) !important; }
+.switch-row i {
+  width: 22px !important; height: 22px !important;
+  right: 23px !important; top: 50% !important; margin-top: -11px !important;
+  background: #fff !important; opacity: 1 !important; z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .35) !important;
+  transition: right .22s cubic-bezier(.3, .9, .3, 1) !important;
+}
+.switch-row.on i { right: 3px !important; }
+
+.set-toggle, .set-toggle.on {
+  background: var(--card2) !important; background-image: none !important;
+  width: 51px !important; height: 31px !important;
+}
+.set-toggle.on { background: var(--ok) !important; }
+.set-toggle .knob, .set-toggle.on .knob {
+  background: #fff !important; width: 27px !important; height: 27px !important;
+  top: 2px !important; left: 2px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3) !important;
+}
+.set-toggle.on .knob { transform: translateX(20px) !important; }
+
+/* ------------------------------------------------------------
+   4. Навигация
+   ------------------------------------------------------------ */
+.dq-nav .nav-trigger, .dq-nav .nav-stat {
+  border-radius: 999px !important; padding: 7px 13px !important;
+  font-weight: 600 !important;
+}
+.dq-nav .nav-group.open > .nav-trigger,
+.dq-nav .nav-stat.active { background: var(--card2) !important; }
+.dq-nav .nav-group.has-active > .nav-trigger {
+  background: color-mix(in srgb, #fff 12%, transparent) !important;
+  color: var(--text) !important;
+}
+body[data-theme="light"] .dq-nav .nav-group.has-active > .nav-trigger,
+body[data-theme="sand"] .dq-nav .nav-group.has-active > .nav-trigger {
+  background: rgba(0, 0, 0, .10) !important;
+  color: var(--text) !important;
+}
+.dq-nav .nav-group.has-active > .nav-trigger::after { content: none; }
+
+.nav-menu {
+  border-radius: 18px !important; padding: 6px !important;
+  background: #121419 !important;
+  background-image: none !important;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform-origin: top left;
+  animation: navPop .16s cubic-bezier(.2, .9, .3, 1.2) both;
+}
+body[data-theme="light"] .nav-menu,
+body[data-theme="sand"] .nav-menu { background: #f7f7fa !important; }
+@keyframes navPop { from { opacity: 0; transform: scale(.97) translateY(-4px); } to { opacity: 1; transform: none; } }
+.nav-menu-item { border-radius: 11px !important; }
+/* без белой заливки: меню в шапке перекрывало ни тёмную, ни светлую тему */
+.nav-menu-item.active { background: color-mix(in srgb, #fff 12%, transparent) !important; }
+.nav-menu-item.active::before { display: none; }
+
+/* ------------------------------------------------------------
+   5. Настройки — iOS Settings
+   ------------------------------------------------------------ */
+.settings-overlay { background: rgba(0, 0, 0, .58) !important; padding: 4vh 16px; }
+/* Панель настроек — единственное место с собственной палитрой:
+   раньше карточка наследовала цвет темы (на «Неоне» — фиолетово-прозрачная)
+   и текст сливался с фоном. Теперь это плотная серая «iOS Settings». */
+.settings-card {
+  --set-bg: #16171a;
+  --set-sunken: rgba(0, 0, 0, .28);
+  --set-row: rgba(255, 255, 255, .055);
+  --set-text: #f5f6f8;
+  --set-dim: rgba(235, 235, 245, .70);
+  --set-faint: rgba(235, 235, 245, .52);
+  --set-line: rgba(255, 255, 255, .09);
+  --text: var(--set-text) !important;
+  --dim: var(--set-dim) !important;
+  --faint: var(--set-faint) !important;
+  --line: var(--set-line) !important;
+  --card2: rgba(118, 118, 128, .22) !important;
+  color: var(--set-text) !important;
+  background: var(--set-bg) !important;
+  border-radius: 30px !important; max-width: 900px;
+  max-height: 84vh !important; display: flex; flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, .10) !important;
+  box-shadow: 0 40px 100px -40px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .06) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+body[data-theme="light"] .settings-card,
+body[data-theme="sand"] .settings-card {
+  --set-bg: #f3f3f6;
+  --set-sunken: rgba(118, 118, 128, .08);
+  --set-row: #ffffff;
+  --set-text: #111215;
+  --set-dim: rgba(60, 60, 67, .70);
+  --set-faint: rgba(60, 60, 67, .55);
+  --set-line: rgba(60, 60, 67, .12);
+  --card2: rgba(120, 120, 128, .12) !important;
+  border-color: rgba(0, 0, 0, .08) !important;
+}
+.settings-head { padding: 18px 22px 12px !important; border-bottom: 1px solid var(--set-line) !important; }
+.settings-title { font-size: 22px !important; letter-spacing: -.02em; font-weight: 700; color: var(--set-text) !important; }
+.settings-sub { font-size: 12.5px !important; color: var(--set-faint) !important; }
+
+.settings-split { grid-template-columns: 210px minmax(0, 1fr) !important; min-height: 0; flex: 1 1 auto; overflow: hidden; }
+.settings-nav {
+  background: var(--set-sunken) !important;
+  border-right: 1px solid var(--set-line) !important;
+  padding: 10px !important;
+}
+
+.set-nav-item {
+  border-radius: 11px !important; font-size: 13.5px !important;
+  padding: 9px 11px !important; color: var(--set-text) !important; font-weight: 500 !important;
+  gap: 9px;
+}
+.set-nav-item .ico {
+  width: 22px; height: 22px; flex: none; display: grid; place-items: center;
+  border-radius: 7px; font-size: 12px !important;
+  background: rgba(128, 128, 140, .22); color: var(--set-text) !important;
+}
+.set-nav-item:hover { background: rgba(128, 128, 140, .16) !important; }
+.set-nav-item.active { background: #0a84ff !important; color: #fff !important; }
+.set-nav-item.active .ico { background: rgba(0, 0, 0, .18); color: inherit !important; }
+
+/* Прокручивается сама панель, а содержимое — выше своей высоты:
+   max-height + overflow-y: auto (раньше max-height был, а overflow не было —
+   низ панели просто обрезался и спискать его было нельзя) */
+.settings-body { max-height: calc(84vh - 90px); overflow-y: auto; overscroll-behavior: contain; padding: 12px 18px 20px !important; }
+.settings-nav { max-height: calc(84vh - 90px); overflow-y: auto; }
+.set-chips { flex-wrap: wrap; }
+
+.set-group.set-section {
+  border-radius: 16px !important; overflow: hidden; margin-bottom: 22px !important;
+  background: var(--set-row) !important;
+  background-image: none !important;
+  border: 1px solid var(--set-line) !important;
+  box-shadow: none !important;
+  contain: none !important;
+}
+body[data-theme="light"] .set-group.set-section,
+body[data-theme="sand"] .set-group.set-section { background: var(--set-row) !important; }
+.set-group-head { padding: 12px 16px 6px !important; }
+.set-group-head h4 {
+  text-transform: none !important; font-size: 13.5px !important;
+  letter-spacing: 0 !important; color: var(--set-faint) !important; font-weight: 500 !important;
+}
+.set-group-head .ico { display: none; }
+
+.set-row {
+  min-height: 48px !important; padding: 10px 16px !important;
+  border-top: 1px solid var(--set-line) !important;
+  transition: background .15s;
+}
+.set-group-head + .set-row { border-top: 0 !important; }
+.set-row:hover { background: rgba(128, 128, 140, .10) !important; }
+.set-hint { display: block; font-style: normal; font-size: 12px; color: var(--set-faint) !important; margin-top: 2px; }
+.set-label { flex: 1 1 auto; min-width: 0; font-size: 15px !important; font-weight: 400 !important; color: var(--set-text) !important; }
+.set-hint { display: block; font-style: normal; font-size: 12px; color: var(--set-faint) !important; margin-top: 2px; }
+
+.set-link {
+  font: inherit; font-size: 15px; background: none; border: 0; cursor: pointer; padding: 0;
+  color: #0a84ff;
+}
+.set-slider { height: 4px !important; }
+.set-slider::-webkit-slider-thumb {
+  width: 24px !important; height: 24px !important;
+  background: #fff !important; border: 0 !important; border-radius: 50% !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .35), 0 0 0 .5px rgba(0, 0, 0, .12) !important;
+}
+.set-range { max-width: 240px; }
+.set-range-val { min-width: 46px; color: var(--dim) !important; font-size: 13px !important; font-variant-numeric: tabular-nums; }
+
+.set-chips {
+  background: var(--set-sunken); border-radius: 10px; padding: 2px; gap: 2px;
+  display: flex; flex-wrap: wrap; width: fit-content; max-width: 100%;
+}
+.set-chips .chip {
+  border-radius: 8px !important; border: 0 !important; background: transparent !important;
+  color: var(--set-dim) !important; padding: 6px 12px !important; font-size: 13px !important; white-space: nowrap;
+}
+.set-chips .chip.on {
+  background: rgba(128, 128, 140, .42) !important; color: var(--set-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .10), 0 1px 3px rgba(0, 0, 0, .25) !important;
+}
+body[data-theme="light"] .set-chips .chip.on,
+body[data-theme="sand"] .set-chips .chip.on {
+  background: #fff !important; color: #000 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .18) !important;
+}
+.set-row.stack .set-chips { display: flex; flex-wrap: wrap; width: 100%; }
+
+.set-cards { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)) !important; gap: 10px !important; }
+.set-card {
+  border-radius: 14px !important; padding: 6px 6px 8px !important; font-size: 12px !important;
+  color: var(--set-dim) !important;
+  border: 2px solid transparent !important;
+  background: rgba(128, 128, 140, .16) !important;
+}
+.set-card.on { border-color: #0a84ff !important; color: var(--set-text) !important; }
+.sc-preview { height: 46px !important; border-radius: 9px !important; }
+
+.set-sw { width: 30px !important; height: 30px !important; border-radius: 50% !important; }
+.set-sw.on { box-shadow: 0 0 0 2px var(--set-bg), 0 0 0 4px var(--sw) !important; }
+.set-sw.on::after { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: rgba(255, 255, 255, .95); }
+
+#setResetAll {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; min-height: 48px; border-radius: 16px; cursor: pointer;
+  font: inherit; font-size: 16px; font-weight: 500;
+  color: #ff453a !important; background: rgba(255, 69, 58, .10) !important;
+  border: 1px solid rgba(255, 69, 58, .22) !important;
+}
+#setResetAll:hover { background: rgba(255, 69, 58, .16) !important; }
+body[data-theme="light"] #setResetAll,
+body[data-theme="sand"] #setResetAll { color: #ff3b30 !important; background: rgba(255, 59, 48, .08) !important; }
+
+/* ------------------------------------------------------------
+   6. Тренажёр и мелочи — нейтрально, акцент только на статусах
+   ------------------------------------------------------------ */
+.q-say, .q-say.slow, .ph-btn, .tr-play.slow, .due-btn, .mic-btn {
+  background: var(--card2) !important;
+  border: 1px solid var(--line) !important;
+  color: var(--text) !important;
+  box-shadow: none !important;
+}
+.ph-card, .ph-card.ph-compact { background: var(--card2) !important; border: 1px solid var(--line) !important; }
+.goal-ring {
+  background: conic-gradient(var(--text) calc(var(--p) * 1%), color-mix(in srgb, var(--text) 10%, transparent) 0) !important;
+}
+.goal-ring::after { background: var(--bg2) !important; }
+
+.bar i { background: var(--text) !important; background-image: none !important; opacity: .85; }
+.streak { color: var(--warn) !important; font-weight: 650; }
+.badge { background: #ff453a !important; color: #fff !important; }
+.badge-line { font-size: 11px !important; color: var(--faint) !important; letter-spacing: .04em !important; }
+
+.link-btn {
+  border: 1px solid var(--line) !important; background: transparent !important;
+  border-radius: 999px !important; padding: 6px 12px !important;
+  color: var(--dim) !important; text-decoration: none !important; font-size: 12.5px !important;
+}
+.link-btn:hover { color: var(--text) !important; border-color: rgba(255, 255, 255, .3) !important; }
+
+.logo {
+  background: #fff !important; color: #000 !important; background-image: none !important;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15), 0 4px 12px -6px rgba(0, 0, 0, .8) !important;
+  border-radius: 11px !important;
+}
+h1 { font-size: 30px !important; font-weight: 800 !important; letter-spacing: -.03em !important; }
+
+/* ------------------------------------------------------------
+   7. Производительность: только композиторные анимации
+   ------------------------------------------------------------ */
+*, *::before, *::after { animation-timing-function: ease; }
+body.is-hidden *, body.is-hidden *::before, body.is-hidden *::after {
+  animation-play-state: paused !important;
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topbar, .settings-card, .nav-menu, .modal-card, .cmd-card, .wordpop {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    background: var(--bg2) !important;
+  }
+}
+
+/* ------------------------------------------------------------
+   8. Скрин: скроллбары и выделение
+   ------------------------------------------------------------ */
+::selection { background: rgba(10, 132, 255, .45); }
+* { scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .18) transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .16); border-radius: 999px;
+  border: 2px solid transparent; background-clip: content-box;
+}
+
+/* ------------------------------------------------------------
+   9. ПРОИЗВОДИТЕЛЬНОСТЬ: выключаем дорогие фоновые анимации
+      (box-shadow в цикле, бегущий блик, дышащие пятна)
+   ------------------------------------------------------------ */
+body[data-motion="on"] .bar i::after,
+body[data-motion="on"] .ws-action:not(.done) #wsCheck,
+body[data-motion="on"] .g1,
+body[data-motion="on"] #glow2,
+body[data-backdrop="stars"] .app-bg { animation: none !important; }
+
+/* пятна фона больше не «дышат» — статичный градиент */
+.g1, #glow2 { will-change: auto !important; animation: none !important; }
+
+/* постоянный слой у карточек больше не нужен — меньше памяти GPU */
+.game-card, .ws-set-card, .group-card, .tr-tabs button { will-change: auto !important; }
+
+/* прокрутка: не заставляем браузер пересчитывать анимации вне экрана */
+.card, .tr-card, .game-card, .ws-set-card { content-visibility: auto; contain-intrinsic-size: auto 320px; }
+
+/* ------------------------------------------------------------
+   10. Шапка: бренд не отнимает место у навигации
+   ------------------------------------------------------------ */
+.brand { min-width: 0 !important; flex: 0 0 auto; }
+.brand-sub {
+  font-size: 11.5px !important;
+  color: var(--faint) !important;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 190px;
+}
+.brand-title { font-size: 15px !important; }
+.topbar { gap: 12px; }
+
+/* ------------------------------------------------------------
+   11. Глубина: карточка светлее фона, с мягким градиентом сверху
+   ------------------------------------------------------------ */
+.card, .tr-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .085) 0%, rgba(255, 255, 255, .028) 34%, rgba(255, 255, 255, .012) 100%),
+    #14161b !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .18),
+    0 1px 0 rgba(0, 0, 0, .6),
+    0 26px 60px -34px rgba(0, 0, 0, .95) !important;
+}
+body[data-theme="light"] .card, body[data-theme="sand"] .card,
+body[data-theme="light"] .tr-card, body[data-theme="sand"] .tr-card {
+  background: linear-gradient(180deg, #fff, #f7f8fa) !important;
+  box-shadow: inset 0 1px 0 #fff, 0 1px 0 rgba(0, 0, 0, .04), 0 18px 40px -30px rgba(30, 40, 60, .35) !important;
+}
+
+/* страница дышит снизу, но не «обрывается» */
+main.wrap { padding-bottom: 96px; }
+.view { min-height: calc(100vh - 200px); }
+#view-journal .wide, #view-plan .wide, #view-cards .wide,
+#view-dictation .wide, #view-exam .wide { max-width: 820px; margin: 0 auto; }
+
+/* кольцо плана: крупнее и увереннее */
+.pl-ring { width: 104px !important; height: 104px !important; }
+.pl-ring b { font-size: 24px !important; }
+.pl-ring small { font-size: 13px !important; }
+
+/* заголовки страниц — как в iOS Settings */
+h1 { font-size: 28px !important; font-weight: 700 !important; }
+.head-row .muted { margin-top: 2px; }
+
+/* ------------------------------------------------------------
+   12. Нормализация ВСЕХ тем: старые «цветные» токены (neon/ocean)
+       заменяем на нейтральные — фон только через пятна сцены.
+       !important обязателен: style.css задаёт эти переменные на body.
+   ------------------------------------------------------------ */
+body[data-theme] {
+  --card2: rgba(255, 255, 255, .075) !important;
+  --line: rgba(255, 255, 255, .11) !important;
+  --hairline: rgba(255, 255, 255, .17) !important;
+  --panel: rgba(20, 22, 27, .62) !important;
+  --text: #f5f6f8 !important;
+  --dim: rgba(235, 235, 245, .62) !important;
+  --faint: rgba(235, 235, 245, .40) !important;
+}
+body[data-theme="light"],
+body[data-theme="sand"] {
+  --card2: rgba(120, 120, 128, .11) !important;
+  --line: rgba(60, 60, 67, .16) !important;
+  --hairline: rgba(60, 60, 67, .22) !important;
+  --panel: rgba(255, 255, 255, .72) !important;
+  --text: #000 !important;
+  --dim: rgba(60, 60, 67, .62) !important;
+  --faint: rgba(60, 60, 67, .40) !important;
+}
+
+/* шапка — одна на все темы */
+.topbar, body.is-scrolled .topbar {
+  background: color-mix(in srgb, #0b0c0f 80%, transparent) !important;
+  border-radius: 0 !important;
+}
+body[data-theme="light"] .topbar,
+body[data-theme="sand"] .topbar,
+body[data-theme="light"].is-scrolled .topbar,
+body[data-theme="sand"].is-scrolled .topbar {
+  background: color-mix(in srgb, #ffffff 84%, transparent) !important;
+}
+body.is-scrolled .topbar,
+body[data-theme="light"].is-scrolled .topbar,
+body[data-theme="sand"].is-scrolled .topbar { background-color: color-mix(in srgb, #0b0c0f 92%, transparent) !important; }
+body[data-theme="light"].is-scrolled .topbar,
+body[data-theme="sand"].is-scrolled .topbar { background-color: color-mix(in srgb, #fff 94%, transparent) !important; }
+
+/* океан/неон больше не красят карточки в фиолетовый */
+body[data-theme="neon"] .card,
+body[data-theme="ocean"] .card,
+body[data-theme="night"] .card { color: var(--text) !important; }
+
+/* навигация: заметный, но спокойный активный пункт */
+.dq-nav .nav-group.has-active > .nav-trigger {
+  background: rgba(255, 255, 255, .13) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .10);
+}
+body[data-theme="light"] .dq-nav .nav-group.has-active > .nav-trigger,
+body[data-theme="sand"] .dq-nav .nav-group.has-active > .nav-trigger {
+  background: rgba(0, 0, 0, .07) !important;
+}
+
+/* ------------------------------------------------------------
+   13. Типографика: единая системная гарнитура (как SF Pro)
+   ------------------------------------------------------------ */
+html, body, button, input, select, textarea, .cd-face, .tr-word, .q-text, .tr-ru {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Segoe UI Variable Display", "Segoe UI", system-ui, "Inter", Roboto, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* никакой моноширинности в контенте (только IPA) */
+.cd-face, .tr-chip, .tr-opt, .ex-opt, .dt-input, .pl-input { font-variant-numeric: tabular-nums; }
+
+/* крупные заголовки: оптический вес чуть меньше, трекинг плотнее */
+h1 { letter-spacing: -.035em !important; line-height: 1.1 !important; }
+.cd-face.front { letter-spacing: -.025em !important; font-weight: 700 !important; }
+
+/* === Performance: smooth animations === */
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.card, .glass, .btn, .chip, .panel, .modal, .overlay { will-change: transform, opacity; contain: layout paint style; backface-visibility: hidden; transform: translateZ(0); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }

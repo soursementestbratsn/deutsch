@@ -1,0 +1,961 @@
+{
+  "answered": 808,
+  "correct": 522,
+  "best_streak": 44,
+  "daily_answers": 2,
+  "last_day": "2026-11-26",
+  "theme": "Океан",
+  "accent": "Небо",
+  "animations": true,
+  "animation_level": "Плавно",
+  "favorite_group": "Все",
+  "day_streak": 1,
+  "last_study_day": "2026-11-17",
+  "xp": 8001,
+  "mode": "Мультивыбор",
+  "input_type": "choice",
+  "direction": "ru-de",
+  "daily_goal": 10,
+  "session_goal": 10,
+  "hearts": 5,
+  "favorites": [],
+  "mistakes": [
+    "['eintausend fünfhundert neunachtzig', '1589']",
+    "['fünfsechzig', '65']",
+    "['groß', 'большой']",
+    "['der Fluss', 'река']",
+    "['die Karte', 'карта']",
+    "['das ist', 'это']",
+    "['hungrig', 'голодный']",
+    "['Ich bin in der Schule', 'Я в школе.']",
+    "['Siebenundsechzig', '67']",
+    "['sechstausend vierhundert zweisiebzig', '6472']",
+    "['Zweihundert', '200']",
+    "['die Autobahn', 'автобан, автомагистраль']",
+    "['schlecht', 'плохой']",
+    "['Vierzehn', '14']",
+    "['Darf ich kurz rausgehen?', 'Можно выйти ненадолго?']",
+    "['Leute', 'люди']",
+    "['leben', 'жить']",
+    "['das Knie', 'колено']",
+    "['das', 'Грамматика · падежи']",
+    "['Jahre', 'Грамматика · множественное']",
+    "['öffne', 'Грамматика · Präsens']",
+    "['darf', 'Грамматика · модальные']",
+    "['älter', 'Грамматика · степени']",
+    "['Akkusativ', 'Грамматика · предлоги']",
+    "['der', 'Грамматика · падежи']",
+    "['Bücher', 'Грамматика · множественное']",
+    "['schlafen', 'Грамматика · Präsens']",
+    "['will', 'Грамматика · модальные']",
+    "['Präteritum', 'Грамматика · времена']",
+    "['kleiner', 'Грамматика · степени']",
+    "['Wir kauft ein Buch heute.', 'Грамматика · порядок слов']",
+    "['ist kleiner als', 'меньше']",
+    "['die Chemikalie', 'химикат; химическое вещество']",
+    "['der Not-Aus-Schalter', 'кнопка аварийного отключения']",
+    "['minus', 'минус']",
+    "['geteilt durch', 'деление']",
+    "['der Fluchtweg', 'путь эвакуации']",
+    "['die Gasflasche', 'газовый баллон']",
+    "['der Schutzhandschuh', 'защитная перчатка']",
+    "['das Glasgerät', 'стеклянный лабораторный прибор']",
+    "['der Erste-Hilfe-Kasten', 'аптечка первой помощи']",
+    "['der Strom', 'электричество; ток']",
+    "['des', 'Грамматика · падежи']",
+    "['müsst', 'Грамматика · модальные']",
+    "['darf', 'Грамматика · модальные']",
+    "['soll', 'Грамматика · модальные']",
+    "['musst', 'Грамматика · модальные']",
+    "['Dativ', 'Грамматика · предлоги']",
+    "['Akkusativ', 'Грамматика · предлоги']",
+    "['mehr', 'Грамматика · степени']",
+    "['minus', 'минус']",
+    "['die Schulter', 'плечо']",
+    "['das Blut', 'кровь']",
+    "['gut', 'хороший']",
+    "[None, None]",
+    "['die Nacht', 'ночь']",
+    "['das Haus', 'дом']"
+  ],
+  "auto_images": true,
+  "auto_images_limit": 250,
+  "online_images": true,
+  "listen_lang": "de",
+  "enabled_groups": [
+    "w:математика",
+    "w:части_тела",
+    "w:100слов_а1-а2"
+  ],
+  "enabled_words": [],
+  "needs_choice": false,
+  "games": {
+    "speed": 216,
+    "anagram": 5,
+    "pairs": 8,
+    "quiz": 8,
+    "best_speed": 239,
+    "listen": 163,
+    "typing": 14,
+    "images": 603,
+    "sentence": 45,
+    "oddone": 4,
+    "letter": 6,
+    "gender": 11,
+    "chain": 6,
+    "flash": 6
+  },
+  "grammar": {
+    "asked": 0,
+    "correct": 5,
+    "sentences": 5
+  },
+  "srs": {
+    "box": {
+      "das Pflaster": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Flamme": {
+        "b": 4,
+        "n": 4,
+        "last": "2026-11-22"
+      },
+      "der Löschsand": {
+        "b": 4,
+        "n": 4,
+        "last": "2026-11-22"
+      },
+      "mal": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-22"
+      },
+      "das Gefahrensymbol": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-22"
+      },
+      "der Not-Aus-Schalter": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-22"
+      },
+      "der Erste-Hilfe-Kasten": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-22"
+      },
+      "plus": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-22"
+      },
+      "der Notausgang": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "die Sicherheit": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "dem": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "das": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "einer": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "sind": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "geflogen": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "kauft": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "ein": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "hast": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "gesehen": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "liest": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "haben": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "gekauft": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "fängt": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "an": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "darf": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "muss": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "Kannst": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "wollen": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "sollt": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "in": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "im": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "auf": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "den": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "weil": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "ich": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "sehr": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "müde": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "bin": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "dass": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "der": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "Zug": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "heute": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "später": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "kommt": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "wenn": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "Sonne": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "scheint": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "nach": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-19"
+      },
+      "nichts": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-19"
+      },
+      "die Stadt": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-19"
+      },
+      "warum": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-19"
+      },
+      "der Finger": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-21"
+      },
+      "das Haar": {
+        "b": 5,
+        "n": 5,
+        "last": "1970-01-01"
+      },
+      "die Hand": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Augen": {
+        "b": 1,
+        "n": 1,
+        "last": "1970-01-01"
+      },
+      "die Lippe": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-25"
+      },
+      "der Fuß": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "der Rücken": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Nase": {
+        "b": 2,
+        "n": 2,
+        "last": "1970-01-01"
+      },
+      "der Zahn": {
+        "b": 2,
+        "n": 2,
+        "last": "1970-01-01"
+      },
+      "das Gesicht": {
+        "b": 3,
+        "n": 3,
+        "last": "1970-01-01"
+      },
+      "die Brust": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "der Hals": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Haut": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "der Arm": {
+        "b": 4,
+        "n": 4,
+        "last": "2026-11-19"
+      },
+      "der Zeh": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-25"
+      },
+      "das Ohr": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-26"
+      },
+      "das Herz": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-23"
+      },
+      "das Blut": {
+        "b": 1,
+        "n": 1,
+        "last": "1970-01-01"
+      },
+      "die Ohren": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Schulter": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "das Knie": {
+        "b": 1,
+        "n": 1,
+        "last": "1970-01-01"
+      },
+      "das Auge": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-21"
+      },
+      "das Bein": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Zunge": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-21"
+      },
+      "die Haare": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "die Zähne": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-21"
+      },
+      "der Körper": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-23"
+      },
+      "der Kopf": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "der Bauch": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "ist kleiner als": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-23"
+      },
+      "die Chemikalie": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-22"
+      },
+      "das Glasgerät": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "minus": {
+        "b": 6,
+        "n": 6,
+        "last": "2026-11-23"
+      },
+      "der Strom": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-22"
+      },
+      "die Gasflasche": {
+        "b": 4,
+        "n": 4,
+        "last": "2026-11-22"
+      },
+      "geteilt durch": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-22"
+      },
+      "der Feuerlöscher": {
+        "b": 5,
+        "n": 5,
+        "last": "2026-11-22"
+      },
+      "die Regel": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "der Fluchtweg": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-22"
+      },
+      "der Schutzhandschuh": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "die Zahl": {
+        "b": 6,
+        "n": 6,
+        "last": "2026-11-23"
+      },
+      "der Schutzkittel": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "der Abzug": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-22"
+      },
+      "das Feuer": {
+        "b": 3,
+        "n": 3,
+        "last": "2026-11-22"
+      },
+      "der Feuermelder": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-22"
+      },
+      "sechstausend achthundert sechsfünfzig": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-23"
+      },
+      "kommen": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-23"
+      },
+      "achttausend dreihundert neunzig": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-23"
+      },
+      "das Ergebnis": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-23"
+      },
+      "ja": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-23"
+      },
+      "gut": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "sagen": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-23"
+      },
+      "nein": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-23"
+      },
+      "auch": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-25"
+      },
+      "Abend": {
+        "b": 7,
+        "n": 11,
+        "last": "2026-11-25"
+      },
+      "die Nacht": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "ist gleich": {
+        "b": 2,
+        "n": 2,
+        "last": "2026-11-25"
+      },
+      "noch": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-25"
+      },
+      "die Frau": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-25"
+      },
+      "das Haus": {
+        "b": 0,
+        "n": 0,
+        "last": "1970-01-01"
+      },
+      "das Kind": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-25"
+      },
+      "schlecht": {
+        "b": 1,
+        "n": 1,
+        "last": "2026-11-26"
+      }
+    },
+    "due": [
+      "das Pflaster",
+      "der Not-Aus-Schalter",
+      "der Notausgang",
+      "die Sicherheit",
+      "dem",
+      "das",
+      "einer",
+      "sind",
+      "geflogen",
+      "kauft",
+      "ein",
+      "hast",
+      "gesehen",
+      "liest",
+      "haben",
+      "gekauft",
+      "fängt",
+      "an",
+      "darf",
+      "muss",
+      "Kannst",
+      "wollen",
+      "sollt",
+      "in",
+      "die",
+      "im",
+      "auf",
+      "den",
+      "weil",
+      "ich",
+      "sehr",
+      "müde",
+      "bin",
+      "dass",
+      "der",
+      "Zug",
+      "heute",
+      "später",
+      "kommt",
+      "wenn",
+      "Sonne",
+      "scheint",
+      "nach",
+      "nichts",
+      "die Stadt",
+      "warum",
+      "der Finger",
+      "das Haar",
+      "die Hand",
+      "die Augen",
+      "die Lippe",
+      "der Fuß",
+      "der Rücken",
+      "die Nase",
+      "der Zahn",
+      "das Gesicht",
+      "die Brust",
+      "der Hals",
+      "die Haut",
+      "der Zeh",
+      "das Herz",
+      "das Blut",
+      "die Ohren",
+      "die Schulter",
+      "das Knie",
+      "das Auge",
+      "das Bein",
+      "die Zunge",
+      "die Haare",
+      "die Zähne",
+      "der Kopf",
+      "der Bauch",
+      "das Glasgerät",
+      "die Regel",
+      "der Fluchtweg",
+      "der Schutzhandschuh",
+      "der Schutzkittel",
+      "der Feuermelder",
+      "sechstausend achthundert sechsfünfzig",
+      "kommen",
+      "achttausend dreihundert neunzig",
+      "das Ergebnis",
+      "ja",
+      "gut",
+      "sagen",
+      "nein",
+      "die Nacht",
+      "noch",
+      "die Frau",
+      "das Haus",
+      "das Kind"
+    ]
+  },
+  "words": {},
+  "typing_source": "слова",
+  "typing_lang": "ru",
+  "sentence_distractors": true,
+  "worksheets": {
+    "wortschatz-themen": {
+      "best": 5,
+      "total": 5,
+      "attempts": 1,
+      "last": {
+        "0": 5
+      },
+      "last_day": "2026-11-16"
+    },
+    "grammatik-a1-a2": {
+      "best": 2,
+      "total": 24,
+      "attempts": 2,
+      "last": {
+        "0": 2
+      },
+      "last_day": "2026-11-17"
+    },
+    "a1-test": {
+      "best": 65,
+      "total": 133,
+      "attempts": 1,
+      "last": {
+        "0": 65
+      },
+      "last_day": "2026-11-19"
+    }
+  },
+  "ui": {
+    "theme": "neon",
+    "glass": "balanced",
+    "accent": "coral",
+    "backdrop": "plain",
+    "density": "airy",
+    "motion": "slow",
+    "sound": true,
+    "soundVolume": 0.6,
+    "soundTone": "soft",
+    "confetti": true,
+    "answerGlow": true,
+    "serverVoice": true,
+    "voiceRate": 1,
+    "voiceGender": "auto",
+    "autoSay": true,
+    "showPron": true,
+    "showPronAnswer": true,
+    "srs": true,
+    "noRepeat": false,
+    "tolerance": 2,
+    "autoNext": true,
+    "dailyGoal": 10,
+    "haptics": true,
+    "fontSize": 100,
+    "reduceGlow": false,
+    "compactSidebar": false,
+    "highContrast": false,
+    "readRu": false,
+    "slowFirstAnswer": true,
+    "pronBrowse": true,
+    "typoStreakFreeze": true,
+    "showArticle": true,
+    "showPlural": false,
+    "showRelated": true,
+    "nlGerman": false,
+    "wordOfDay": true,
+    "gamify": true,
+    "smartRepeat": true,
+    "srsCap": 60,
+    "goalLevel": 50,
+    "studyTimer": 0,
+    "focusMusic": false,
+    "breakReminder": true,
+    "mistakeOnly": false,
+    "reverseOnMistake": true,
+    "autoCards": true,
+    "shadowing": false,
+    "typingPractice": true,
+    "greeting": true,
+    "articles": true,
+    "wordPhotos": true,
+    "photoMax": 60,
+    "glassDepth": 45,
+    "lightAngle": 145,
+    "chromatic": true,
+    "shapeMorph": true,
+    "accentGlow": true,
+    "glassTint": true,
+    "parallax": true,
+    "highContrastGlass": true
+  },
+  "history": {
+    "2026-11-16": {
+      "a": 17,
+      "c": 14
+    },
+    "2026-11-15": {
+      "a": 3,
+      "c": 2
+    },
+    "2026-11-13": {
+      "a": 7,
+      "c": 6
+    },
+    "2026-11-11": {
+      "a": 11,
+      "c": 9
+    },
+    "2026-11-09": {
+      "a": 4,
+      "c": 3
+    },
+    "2026-11-08": {
+      "a": 14,
+      "c": 12
+    },
+    "2026-11-05": {
+      "a": 9,
+      "c": 7
+    },
+    "2026-11-04": {
+      "a": 20,
+      "c": 17
+    },
+    "2026-11-02": {
+      "a": 6,
+      "c": 5
+    },
+    "2026-11-01": {
+      "a": 15,
+      "c": 13
+    },
+    "2026-10-29": {
+      "a": 8,
+      "c": 7
+    },
+    "2026-10-27": {
+      "a": 12,
+      "c": 10
+    },
+    "2026-11-17": {
+      "a": 29,
+      "c": 22
+    },
+    "2026-11-19": {
+      "a": 70,
+      "c": 53
+    },
+    "2026-11-20": {
+      "a": 21,
+      "c": 8
+    },
+    "2026-11-21": {
+      "a": 164,
+      "c": 49
+    },
+    "2026-11-22": {
+      "a": 85,
+      "c": 74
+    },
+    "2026-11-23": {
+      "a": 34,
+      "c": 28
+    },
+    "2026-11-24": {
+      "a": 2,
+      "c": 2
+    },
+    "2026-11-25": {
+      "a": 12,
+      "c": 9
+    },
+    "2026-11-26": {
+      "a": 2,
+      "c": 2
+    }
+  }
+}

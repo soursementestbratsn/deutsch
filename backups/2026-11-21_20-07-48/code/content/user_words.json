@@ -1,0 +1,195 @@
+{
+ "words": {
+  "deutsch": {
+   "text": "Deutsch",
+   "hits": 1,
+   "last": "2026-11-21T17:48:51",
+   "first": "2026-11-21T17:48:51",
+   "ru": "немецкий язык",
+   "source": "wiktionary",
+   "lemma": "Deutsch",
+   "kind": "word"
+  },
+  "die": {
+   "text": "die",
+   "hits": 1,
+   "last": "2026-11-21T18:02:53",
+   "first": "2026-11-21T18:02:53",
+   "ru": "эта; эти",
+   "source": "dict",
+   "lemma": "die",
+   "kind": "word"
+  },
+  "lippe": {
+   "text": "Lippe",
+   "hits": 1,
+   "last": "2026-11-21T18:02:54",
+   "first": "2026-11-21T18:02:54",
+   "ru": "губа",
+   "source": "dict",
+   "lemma": "die Lippe",
+   "kind": "word"
+  },
+  "ich": {
+   "text": "Ich",
+   "hits": 1,
+   "last": "2026-11-21T18:05:42",
+   "first": "2026-11-21T18:05:42",
+   "ru": "я",
+   "source": "dict",
+   "lemma": "ich",
+   "kind": "word"
+  },
+  "in": {
+   "text": "in",
+   "hits": 1,
+   "last": "2026-11-21T18:05:43",
+   "first": "2026-11-21T18:05:43",
+   "ru": "в",
+   "source": "dict",
+   "lemma": "in",
+   "kind": "word"
+  },
+  "frühstücke": {
+   "text": "frühstücke",
+   "hits": 1,
+   "last": "2026-11-21T18:06:43",
+   "first": "2026-11-21T18:06:43",
+   "ru": "завтракаю",
+   "source": "mymemory",
+   "lemma": "frühstücke",
+   "kind": "word"
+  },
+  "tag": {
+   "text": "Tag",
+   "hits": 1,
+   "last": "2026-11-21T18:06:45",
+   "first": "2026-11-21T18:06:45",
+   "ru": "день",
+   "source": "dict",
+   "lemma": "Tag",
+   "kind": "word"
+  },
+  "stehe": {
+   "text": "stehe",
+   "hits": 1,
+   "last": "2026-11-21T18:06:51",
+   "first": "2026-11-21T18:06:51",
+   "ru": "стою",
+   "source": "mymemory",
+   "lemma": "stehe",
+   "kind": "word"
+  },
+  "dann": {
+   "text": "Dann",
+   "hits": 1,
+   "last": "2026-11-21T18:07:01",
+   "first": "2026-11-21T18:07:01",
+   "ru": "потом",
+   "source": "dict",
+   "lemma": "dann",
+   "kind": "word"
+  },
+  "um": {
+   "text": "Um",
+   "hits": 1,
+   "last": "2026-11-21T18:07:17",
+   "first": "2026-11-21T18:07:17",
+   "ru": "вокруг; чтобы; для того чтобы; затем чтобы",
+   "source": "wiktionary",
+   "lemma": "Um",
+   "kind": "word"
+  },
+  "acht": {
+   "text": "acht",
+   "hits": 1,
+   "last": "2026-11-21T18:07:23",
+   "first": "2026-11-21T18:07:23",
+   "ru": "восьмёрка; наручень; наручник",
+   "source": "wiktionary",
+   "lemma": "acht",
+   "kind": "word"
+  },
+  "bleibt": {
+   "text": "bleibt",
+   "hits": 1,
+   "last": "2026-11-21T18:12:40",
+   "first": "2026-11-21T18:12:40",
+   "ru": "остается",
+   "source": "mymemory",
+   "lemma": "bleibt",
+   "kind": "word"
+  },
+  "heute": {
+   "text": "Heute",
+   "hits": 1,
+   "last": "2026-11-21T18:12:44",
+   "first": "2026-11-21T18:12:44",
+   "ru": "сегодня",
+   "source": "dict",
+   "lemma": "heute",
+   "kind": "word"
+  },
+  "praxis": {
+   "text": "Praxis",
+   "hits": 1,
+   "last": "2026-11-21T18:12:55",
+   "first": "2026-11-21T18:12:55",
+   "ru": "практика; кабинет",
+   "source": "wiktionary",
+   "lemma": "Praxis",
+   "kind": "word"
+  },
+  "halb": {
+   "text": "halb",
+   "hits": 1,
+   "last": "2026-11-21T18:13:12",
+   "first": "2026-11-21T18:13:12",
+   "ru": "пол-; наполовину",
+   "source": "wiktionary",
+   "lemma": "halb",
+   "kind": "word"
+  },
+  "quest": {
+   "text": "Quest",
+   "hits": 1,
+   "last": "2026-11-21T19:02:22",
+   "first": "2026-11-21T19:02:22",
+   "ru": "Квест",
+   "source": "mymemory",
+   "lemma": "Quest",
+   "kind": "word"
+  },
+  "dq": {
+   "text": "DQ",
+   "hits": 1,
+   "last": "2026-11-21T19:02:23",
+   "first": "2026-11-21T19:02:23",
+   "ru": "",
+   "source": "none",
+   "kind": "word"
+  }
+ },
+ "phrases": {
+  "stüc": {
+   "text": "stüc",
+   "hits": 1,
+   "last": "2026-11-21T18:06:43",
+   "first": "2026-11-21T18:06:43",
+   "ru": "шт.",
+   "source": "mymemory",
+   "lemma": "stüc",
+   "kind": "phrase"
+  },
+  "um acht uhr": {
+   "text": "Um acht Uhr",
+   "hits": 2,
+   "last": "2026-11-21T18:07:27",
+   "first": "2026-11-21T18:07:27",
+   "ru": "В восемь часов",
+   "source": "mymemory",
+   "lemma": "Um acht Uhr",
+   "kind": "phrase"
+  }
+ }
+}

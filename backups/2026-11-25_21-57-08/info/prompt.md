@@ -1,0 +1,15 @@
+Complete mobile redesign from scratch (iPhone-style):
+- New mobile-first CSS architecture (mobile2.css) with design tokens, spacing scale, typography, shadows, components
+- Redesigned index.html with 4-tab structure: Home, Practice, Library, Profile
+- New navigation system (nav2.js) with bottom tab bar, bottom sheets, swipe gestures, keyboard shortcuts
+- Home/Dashboard: stats, continue learning, quick actions, due words, word of the day
+- Practice tab: trainer, training modes (mixed/reading/listening/writing/speaking), 16 mini-games, extras
+- Library tab: dictionary, groups, tables/grammar, reading, course, materials
+- Profile tab: profile header, stats overview, my words, quick settings toggles, full settings
+- Bottom sheet system for modals (settings, more, views) with swipe-to-dismiss
+- Swipe gestures for tab switching on mobile
+- iOS-style switch toggles for settings
+- Haptic feedback support
+- Article colors (der/die/das) globally available
+- All new icons (home, book, user, close, chevron-right, doc, pen)
+- Reduced motion & high contrast support

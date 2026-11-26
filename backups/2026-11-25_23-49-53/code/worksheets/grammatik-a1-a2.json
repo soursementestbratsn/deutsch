@@ -1,0 +1,961 @@
+{
+  "id": "grammatik-a1-a2",
+  "title": "Deutsch Übungsblatt: Grammatik",
+  "level": "A1–A2",
+  "subtitle": "Артикли и падежи, Präsens/Perfekt, модальные глаголы, Wechselpräpositionen, придаточные",
+  "order": 10,
+  "variants": [
+    {
+      "name": "Вариант 1",
+      "vocab": [
+        {
+          "de": "der Mantel",
+          "ru": "пальто"
+        },
+        {
+          "de": "das Geschenk",
+          "ru": "подарок"
+        },
+        {
+          "de": "der Kollege",
+          "ru": "коллега (муж.)"
+        },
+        {
+          "de": "gehören (+ Dativ)",
+          "ru": "принадлежать (кому?)"
+        },
+        {
+          "de": "die Tasche",
+          "ru": "сумка"
+        },
+        {
+          "de": "einkaufen (kauft ... ein)",
+          "ru": "закупаться продуктами"
+        },
+        {
+          "de": "lesen (liest)",
+          "ru": "читать"
+        },
+        {
+          "de": "fliegen (ist geflogen)",
+          "ru": "лететь"
+        },
+        {
+          "de": "der Rucksack",
+          "ru": "рюкзак"
+        },
+        {
+          "de": "das Regal",
+          "ru": "полка / стеллаж"
+        },
+        {
+          "de": "müde",
+          "ru": "усталый"
+        },
+        {
+          "de": "pünktlich",
+          "ru": "вовремя / пунктуально"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "gap",
+          "title": "Artikel und Kasus (Nominativ, Akkusativ, Dativ)",
+          "instruction": "Ergänzen Sie den richtigen Artikel (der, die, das, den, dem, ein, eine, einen, einem, einer).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения",
+            "text": "<p><strong>1. Смотри в скобки:</strong> стоит <code>der/die/das</code> → нужен определённый артикль. Стоит <code>ein/eine</code> → неопределённый.</p><p><strong>2. Определи падеж по глаголу:</strong></p><ul><li>Глаголы <strong>helfen, danken, gehören, gefallen</strong> или «кому?» → всегда <strong>Dativ</strong> (<em>der/das → dem/einem</em>, <em>die → der/einer</em>).</li><li>Вопрос «кого/что?» (вижу, покупаю, открываю, пью) → <strong>Akkusativ</strong>. Меняется <strong>только мужской род</strong> (<em>der → den</em>, <em>ein → einen</em>). Женский и средний не меняются!</li></ul>"
+          },
+          "items": [
+            {
+              "before": "1. Ich kaufe heute",
+              "after": "(ein) warmen Mantel.",
+              "answers": [
+                "einen"
+              ],
+              "explanation": "Покупаю что? → Akkusativ. В скобках (ein) → неопределённый артикль. der Mantel (муж. род) в Akkusativ становится einen."
+            },
+            {
+              "before": "2. Kannst du bitte",
+              "after": "(die) Tür schließen? Es zieht.",
+              "answers": [
+                "die"
+              ],
+              "explanation": "Закрыть что? → Akkusativ. В скобках (die) → определённый артикль. Женский род (die Tür) в Akkusativ не меняется."
+            },
+            {
+              "before": "3. Das neue Handy gehört",
+              "after": "(der) Kollegen.",
+              "answers": [
+                "dem"
+              ],
+              "explanation": "Глагол gehören (принадлежать) всегда требует Dativ (кому?). В скобках (der) → der в Dativ становится dem."
+            },
+            {
+              "before": "4. Hast du",
+              "after": "(das) Buch schon gelesen?",
+              "answers": [
+                "das"
+              ],
+              "explanation": "Прочитал что? → Akkusativ. В скобках (das) → средний род в Akkusativ не меняется и остаётся das."
+            },
+            {
+              "before": "5. Die Schlüssel liegen auf",
+              "after": "(der) Schreibtisch.",
+              "answers": [
+                "dem"
+              ],
+              "explanation": "Лежат где? (Wo? нет движения) → Dativ. der Schreibtisch (муж. род) в Dativ становится dem."
+            },
+            {
+              "before": "6. Ich danke",
+              "after": "(eine) Freundin für die Hilfe.",
+              "answers": [
+                "einer"
+              ],
+              "explanation": "Глагол danken (благодарить) всегда требует Dativ (кому?). В скобках (eine) → женский род eine в Dativ становится einer."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Verben im Präsens und Perfekt",
+          "instruction": "Setzen Sie die Verben in der richtigen Form ein (Präsens oder Perfekt).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (Präsens и Perfekt)",
+            "text": "<p><strong>1. Если указано Präsens:</strong> найди подлежащее (кто делает?) и подставь окончание (<em>ich -e, du -st, er/sie/es -t, wir/sie -en, ihr -t</em>). Если есть приставка <strong>an-, auf-, ein-, fern-</strong> — оторви её и поставь в самый конец!</p><p><strong>2. Если указано Perfekt:</strong> на 2-е место ставим <strong>haben</strong> или <strong>sein</strong>, в конец — форму с <strong>ge-...</strong>. <em>Sein</em> берём только для движения из А в Б (<em>fahren, fliegen, gehen, kommen, laufen</em>). Всё остальное — <em>haben</em>.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Gestern",
+              "mid": "wir nach Berlin",
+              "after": ". (fliegen – Perfekt)",
+              "answers": [
+                "sind",
+                "geflogen"
+              ],
+              "explanation": "Маркер прошлого (Gestern) → Perfekt. fliegen — глагол движения из точки А в Б, поэтому берём sein (wir sind), а в конце ставим geflogen."
+            },
+            {
+              "before": "2. Am Samstag",
+              "mid": "meine Schwester oft im Supermarkt",
+              "after": ". (einkaufen – Präsens)",
+              "answers": [
+                "kauft",
+                "ein"
+              ],
+              "explanation": "Регулярное действие (Am Samstag) → Präsens. Подлежащее meine Schwester (она = sie, ед.ч.) → окончание -t (kauft). Отделяемая приставка ein- уходит в конец."
+            },
+            {
+              "before": "3. Was",
+              "mid": "du gestern Abend im Kino",
+              "after": "? (sehen – Perfekt)",
+              "answers": [
+                "hast",
+                "gesehen"
+              ],
+              "explanation": "Прошедшее время (gestern Abend) → Perfekt. Глагол sehen не означает перемещение, берём haben (du hast) + gesehen в конце."
+            },
+            {
+              "before": "4. Paul",
+              "after": "jeden Abend ein Buch. (lesen – Präsens)",
+              "answers": [
+                "liest"
+              ],
+              "explanation": "Регулярное действие → Präsens. Paul = er (он). У сильного глагола lesen в форме er/sie/es корневая e меняется на ie: er liest."
+            },
+            {
+              "before": "5. Wir",
+              "mid": "letzten Monat ein neues Auto",
+              "after": ". (kaufen – Perfekt)",
+              "answers": [
+                "haben",
+                "gekauft"
+              ],
+              "explanation": "Прошлое (letzten Monat) → Perfekt. Обычный глагол kaufen берёт haben (wir haben) + стандартную форму gekauft (ge- + корень + -t)."
+            },
+            {
+              "before": "6. Wann",
+              "mid": "der Unterricht morgen",
+              "after": "? (anfangen – Präsens)",
+              "answers": [
+                "fängt",
+                "an"
+              ],
+              "explanation": "Расписание → Präsens. der Unterricht (он = er). У глагола anfangen корневая a получает умлаут (fängt), а отделяемая приставка an- улетает в конец."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Modalverben (können, müssen, dürfen, wollen, sollen)",
+          "instruction": "Wählen Sie das passende Modalverb und konjugieren Sie es richtig.",
+          "badge": "5 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (выбор смысла и формы)",
+            "text": "<p><strong>Смысл:</strong> <em>dürfen</em> (разрешение/запрет), <em>müssen</em> (вынужден/надо), <em>können</em> (уметь/мочь), <em>wollen</em> (хотеть/планы), <em>sollen</em> (совет/указание от другого человека).</p><p><strong>Форма:</strong> у <strong>ich</strong> и <strong>er/sie/es/man</strong> <u>НЕТ окончаний</u> (<em>ich muss, man darf, er kann, ich will, ich soll</em>). Для <strong>du</strong> добавляем <em>-st</em> (<em>kannst, musst, darfst, willst, sollst</em>).</p>"
+          },
+          "items": [
+            {
+              "before": "1. Hier ist eine Bibliothek. Man",
+              "after": "hier nicht laut sprechen.",
+              "answers": [
+                "darf"
+              ],
+              "explanation": "Запрет/правило (нельзя громко говорить) → dürfen. Для man (как er/sie/es) форма без окончания: darf."
+            },
+            {
+              "before": "2. Ich habe kein Brot mehr. Ich",
+              "after": "heute noch einkaufen gehen.",
+              "answers": [
+                "muss"
+              ],
+              "explanation": "Необходимость/вынужденность (хлеб закончился) → müssen. Для ich форма без окончания: muss."
+            },
+            {
+              "before": "3.",
+              "after": "du mir bitte kurz helfen?",
+              "answers": [
+                "Kannst"
+              ],
+              "explanation": "Вежливая просьба / возможность → können. Для du добавляем -st и меняем гласную: Kannst."
+            },
+            {
+              "before": "4. Wir haben im August frei und",
+              "after": "ans Meer fahren.",
+              "answers": [
+                "wollen"
+              ],
+              "explanation": "Желание и планы на отпуск → wollen. Для wir форма совпадает с инфинитивом: wollen."
+            },
+            {
+              "before": "5. Der Lehrer sagt, ihr",
+              "after": "die Hausaufgaben pünktlich machen.",
+              "answers": [
+                "sollt"
+              ],
+              "explanation": "Чужое указание / требование (учитель говорит) → sollen. Для ihr окончание -t: sollt."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Wechselpräpositionen (Wo? → Dativ / Wohin? → Akkusativ)",
+          "instruction": "Ergänzen Sie die Präposition und den Artikel in der richtigen Form.",
+          "badge": "4 пункта",
+          "help": {
+            "summary": "Алгоритм решения (Wo? или Wohin?)",
+            "text": "<p><strong>Задай один вопрос к действию:</strong></p><ul><li><strong>Куда? (Wohin?)</strong> — предмет перемещают (кладут, ставят, вешают, идут) → <strong>Akkusativ</strong> (меняется только <em>der → den</em>; <em>die</em> и <em>das</em> не меняются).</li><li><strong>Где? (Wo?)</strong> — предмет уже находится на месте (лежит, стоит, спит, сидит) → <strong>Dativ</strong> (<em>der/das → dem</em>, <em>die → der</em>).</li></ul>"
+          },
+          "items": [
+            {
+              "before": "1. Ich lege das Handy",
+              "after": "(in / die) Tasche.",
+              "answers": [
+                "in die"
+              ],
+              "explanation": "Кладу куда? (Wohin? есть перемещение) → Akkusativ. Женский род (die Tasche) в Akkusativ не меняется → in die."
+            },
+            {
+              "before": "2. Die Bücher stehen",
+              "after": "(in / das) Regal.",
+              "answers": [
+                "in dem",
+                "im"
+              ],
+              "explanation": "Стоят где? (Wo? уже находятся на месте) → Dativ. Средний род (das Regal) в Dativ становится dem → in dem (или сокращённо im)."
+            },
+            {
+              "before": "3. Er stellt die Flasche",
+              "after": "(auf / der) Tisch.",
+              "answers": [
+                "auf den"
+              ],
+              "explanation": "Ставит куда? (Wohin? движение) → Akkusativ. Мужской род (der Tisch) в Akkusativ меняется на den → auf den."
+            },
+            {
+              "before": "4. Mein Laptop liegt",
+              "after": "(auf / das) Bett.",
+              "answers": [
+                "auf dem"
+              ],
+              "explanation": "Лежит где? (Wo? неподвижно) → Dativ. Средний род (das Bett) в Dativ меняется на dem → auf dem."
+            }
+          ]
+        },
+        {
+          "type": "sentence",
+          "title": "Nebensätze mit „weil“, „dass“ und „wenn“",
+          "instruction": "Verbinden Sie die zwei Sätze mit der Konjunktion in Klammern (Verb am Ende).",
+          "badge": "3 пункта",
+          "help": {
+            "summary": "Алгоритм решения (конвейер в 3 шага)",
+            "text": "<p><strong>Шаг 1:</strong> После запятой напиши союз из скобок (<em>weil / dass / wenn</em>).</p><p><strong>Шаг 2:</strong> Возьми второе предложение и «выдерни» из него глагол со 2-го места.</p><p><strong>Шаг 3:</strong> Напиши остаток предложения, а выдернутый глагол поставь <strong>в самый конец</strong> перед точкой.</p>"
+          },
+          "items": [
+            {
+              "sentence1": "1. Ich gehe heute früh schlafen. Ich bin sehr müde. (weil)",
+              "prefix": "→ Ich gehe heute früh schlafen,",
+              "answers": [
+                "weil ich sehr müde bin."
+              ],
+              "explanation": "После запятой ставим союз weil, затем подлежащее (ich), второстепенные члены (sehr müde), а спрягаемый глагол (bin) уводим в самый конец."
+            },
+            {
+              "sentence1": "2. Sie weiß nicht. Der Zug kommt heute später. (dass)",
+              "prefix": "→ Sie weiß nicht,",
+              "answers": [
+                "dass der Zug heute später kommt."
+              ],
+              "explanation": "После союза dass глагол kommt переезжает со 2-го места в самый конец предложения."
+            },
+            {
+              "sentence1": "3. Wir machen am Sonntag ein Picknick. Die Sonne scheint. (wenn)",
+              "prefix": "→ Wir machen am Sonntag ein Picknick,",
+              "answers": [
+                "wenn die Sonne scheint."
+              ],
+              "explanation": "Союз wenn отправляет глагол scheint в конец придаточного предложения."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Вариант 2",
+      "vocab": [
+        {
+          "de": "der Kuchen",
+          "ru": "пирог / торт"
+        },
+        {
+          "de": "die Oma",
+          "ru": "бабушка"
+        },
+        {
+          "de": "gefallen (+ Dativ)",
+          "ru": "нравиться (кому?)"
+        },
+        {
+          "de": "das Bild",
+          "ru": "картина / фото"
+        },
+        {
+          "de": "fernsehen (sieht ... fern)",
+          "ru": "смотреть телевизор"
+        },
+        {
+          "de": "schreiben (hat geschrieben)",
+          "ru": "писать"
+        },
+        {
+          "de": "laufen (läuft / ist gelaufen)",
+          "ru": "бегать / идти пешком"
+        },
+        {
+          "de": "der Stuhl",
+          "ru": "стул"
+        },
+        {
+          "de": "die Wand",
+          "ru": "стена"
+        },
+        {
+          "de": "das Kino",
+          "ru": "кинотеатр"
+        },
+        {
+          "de": "krank",
+          "ru": "больной"
+        },
+        {
+          "de": "die Zeit",
+          "ru": "время"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "gap",
+          "title": "Artikel und Kasus (Nominativ, Akkusativ, Dativ)",
+          "instruction": "Ergänzen Sie den richtigen Artikel (der, die, das, den, dem, ein, eine, einen, einem, einer).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения",
+            "text": "<p><strong>1. Смотри в скобки:</strong> стоит <code>der/die/das</code> → нужен определённый артикль. Стоит <code>ein/eine</code> → неопределённый.</p><p><strong>2. Определи падеж по глаголу:</strong></p><ul><li>Глаголы <strong>helfen, danken, gehören, gefallen</strong> или «кому?» → всегда <strong>Dativ</strong> (<em>der/das → dem/einem</em>, <em>die → der/einer</em>).</li><li>Вопрос «кого/что?» → <strong>Akkusativ</strong>. Меняется <strong>только мужской род</strong> (<em>der → den</em>, <em>ein → einen</em>).</li></ul>"
+          },
+          "items": [
+            {
+              "before": "1. Zum Frühstück esse ich oft",
+              "after": "(ein) Apfel.",
+              "answers": [
+                "einen"
+              ],
+              "explanation": "Ем что? → Akkusativ. В скобках (ein) → неопределённый артикль. der Apfel (муж. род) в Akkusativ становится einen."
+            },
+            {
+              "before": "2. Das neue Kleid gefällt",
+              "after": "(die) Mutter sehr gut.",
+              "answers": [
+                "der"
+              ],
+              "explanation": "Глагол gefallen (нравиться) требует Dativ (кому?). Женский род (die Mutter) в Dativ меняется на der."
+            },
+            {
+              "before": "3. Wir besuchen am Sonntag",
+              "after": "(ein) Freund in München.",
+              "answers": [
+                "einen"
+              ],
+              "explanation": "Навещаем кого? → Akkusativ. В скобках (ein) → мужской род der Freund становится einen."
+            },
+            {
+              "before": "4. Wo ist",
+              "after": "(das) Kind? Es spielt im Garten.",
+              "answers": [
+                "das"
+              ],
+              "explanation": "Кто/что? (подлежащее) → Nominativ. В скобках (das) → средний род остаётся das."
+            },
+            {
+              "before": "5. Ich schenke",
+              "after": "(der) Vater ein Buch zum Geburtstag.",
+              "answers": [
+                "dem"
+              ],
+              "explanation": "Дарю кому? → Dativ. В скобках (der) → мужской род в Dativ становится dem."
+            },
+            {
+              "before": "6. Sie trinkt morgens",
+              "after": "(eine) Tasse Tee.",
+              "answers": [
+                "eine"
+              ],
+              "explanation": "Пьёт что? → Akkusativ. В скобках (eine) → женский род в Akkusativ не меняется (eine)."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Verben im Präsens und Perfekt",
+          "instruction": "Setzen Sie die Verben in der richtigen Form ein (Präsens oder Perfekt).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (Präsens и Perfekt)",
+            "text": "<p><strong>Präsens:</strong> найди подлежащее и подставь окончание. Приставки <strong>an-, auf-, ein-, fern-</strong> уходят в конец.</p><p><strong>Perfekt:</strong> на 2-м месте <strong>haben</strong> или <strong>sein</strong>, в конце — <strong>ge-...</strong>. <em>sein</em> — только движение (fahren, fliegen, gehen, kommen, laufen).</p>"
+          },
+          "items": [
+            {
+              "before": "1. Letzte Woche",
+              "mid": "ich einen langen Brief",
+              "after": ". (schreiben – Perfekt)",
+              "answers": [
+                "habe",
+                "geschrieben"
+              ],
+              "explanation": "Прошедшее время (Letzte Woche) → Perfekt. Глагол schreiben берёт haben (ich habe) и сильную форму geschrieben в конце."
+            },
+            {
+              "before": "2. Abends",
+              "mid": "mein Opa gerne",
+              "after": ". (fernsehen – Präsens)",
+              "answers": [
+                "sieht",
+                "fern"
+              ],
+              "explanation": "Регулярно (Abends) → Präsens. mein Opa = er (он) → гласная e меняется на ie (sieht), а отделяемая приставка fern- уходит в конец."
+            },
+            {
+              "before": "3. Am Sonntag",
+              "mid": "wir im Park",
+              "after": ". (laufen – Perfekt)",
+              "answers": [
+                "sind",
+                "gelaufen"
+              ],
+              "explanation": "Perfekt. Глагол laufen означает движение/перемещение, поэтому используется sein (wir sind) + gelaufen."
+            },
+            {
+              "before": "4. Warum",
+              "after": "du so schnell? (sprechen – Präsens)",
+              "answers": [
+                "sprichst"
+              ],
+              "explanation": "Настоящее время → Präsens. Для du сильный глагол sprechen меняет e на i и получает -st: sprichst."
+            },
+            {
+              "before": "5. Meine Eltern",
+              "after": "in Frankfurt. (wohnen – Präsens)",
+              "answers": [
+                "wohnen"
+              ],
+              "explanation": "Подлежащее Meine Eltern (родители = они, мн.ч.) → в Präsens окончание -en: wohnen."
+            },
+            {
+              "before": "6. Wann",
+              "mid": "ihr gestern nach Hause",
+              "after": "? (kommen – Perfekt)",
+              "answers": [
+                "seid",
+                "gekommen"
+              ],
+              "explanation": "Вчера (gestern) → Perfekt. kommen — глагол движения, берём sein для ihr (ihr seid) + gekommen."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Modalverben (können, müssen, dürfen, wollen, sollen)",
+          "instruction": "Wählen Sie das passende Modalverb und konjugieren Sie es richtig.",
+          "badge": "5 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (выбор смысла и формы)",
+            "text": "<p><strong>Смысл:</strong> <em>dürfen</em> (разрешение/запрет), <em>müssen</em> (надо), <em>können</em> (уметь), <em>wollen</em> (хотеть), <em>sollen</em> (указание от другого).</p><p><strong>Форма:</strong> у <strong>ich</strong> и <strong>er/sie/es/man</strong> нет окончаний; для <strong>du</strong> — <em>-st</em>.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Im Museum",
+              "after": "man keine Fotos machen.",
+              "answers": [
+                "darf"
+              ],
+              "explanation": "Правила музея (запрет) → dürfen. Для man форма без окончания: darf."
+            },
+            {
+              "before": "2. Max ist krank. Er",
+              "after": "im Bett bleiben.",
+              "answers": [
+                "muss"
+              ],
+              "explanation": "Вынужденная необходимость (он болен) → müssen. Для er форма без окончания: muss."
+            },
+            {
+              "before": "3. Ich",
+              "after": "sehr gut Gitarre spielen.",
+              "answers": [
+                "kann"
+              ],
+              "explanation": "Навык / умение → können. Для ich форма без окончания: kann."
+            },
+            {
+              "before": "4.",
+              "after": "ihr heute Abend ins Kino gehen?",
+              "answers": [
+                "Wollt"
+              ],
+              "explanation": "Вопрос о желании / планах → wollen. Для ihr добавляем -t: Wollt."
+            },
+            {
+              "before": "5. Meine Mutter sagt, ich",
+              "after": "mein Zimmer aufräumen.",
+              "answers": [
+                "soll"
+              ],
+              "explanation": "Поручение от другого человека (мама говорит) → sollen. Для ich форма: soll."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Wechselpräpositionen (Wo? → Dativ / Wohin? → Akkusativ)",
+          "instruction": "Ergänzen Sie die Präposition und den Artikel in der richtigen Form.",
+          "badge": "4 пункта",
+          "help": {
+            "summary": "Алгоритм решения (Wo? или Wohin?)",
+            "text": "<p><strong>Куда? (Wohin?)</strong> — перемещение → <strong>Akkusativ</strong> (только <em>der → den</em>).</p><p><strong>Где? (Wo?)</strong> — уже на месте → <strong>Dativ</strong> (<em>der/das → dem</em>, <em>die → der</em>).</p>"
+          },
+          "items": [
+            {
+              "before": "1. Die Katze springt",
+              "after": "(auf / der) Stuhl.",
+              "answers": [
+                "auf den"
+              ],
+              "explanation": "Прыгает куда? (Wohin? движение) → Akkusativ. Мужской род (der Stuhl) → auf den."
+            },
+            {
+              "before": "2. Das Poster hängt",
+              "after": "(an / die) Wand.",
+              "answers": [
+                "an der"
+              ],
+              "explanation": "Висит где? (Wo? уже висит, движения нет) → Dativ. Женский род (die Wand) в Dativ → an der."
+            },
+            {
+              "before": "3. Wir gehen am Abend",
+              "after": "(in / das) Kino.",
+              "answers": [
+                "in das",
+                "ins"
+              ],
+              "explanation": "Идём куда? (Wohin? направление) → Akkusativ. Средний род (das Kino) не меняется → in das (или ins)."
+            },
+            {
+              "before": "4. Die Kinder sitzen",
+              "after": "(in / der) Garten.",
+              "answers": [
+                "in dem",
+                "im"
+              ],
+              "explanation": "Сидят где? (Wo? на месте) → Dativ. Мужской род (der Garten) в Dativ → in dem (или im)."
+            }
+          ]
+        },
+        {
+          "type": "sentence",
+          "title": "Nebensätze mit „weil“, „dass“ und „wenn“",
+          "instruction": "Verbinden Sie die zwei Sätze mit der Konjunktion in Klammern (Verb am Ende).",
+          "badge": "3 пункта",
+          "help": {
+            "summary": "Алгоритм решения (конвейер в 3 шага)",
+            "text": "<p><strong>Шаг 1:</strong> После запятой напиши союз из скобок.</p><p><strong>Шаг 2:</strong> «Выдерни» глагол из второго предложения.</p><p><strong>Шаг 3:</strong> Поставь глагол <strong>в самый конец</strong> перед точкой.</p>"
+          },
+          "items": [
+            {
+              "sentence1": "1. Er kommt heute nicht zur Arbeit. Er hat Fieber. (weil)",
+              "prefix": "→ Er kommt heute nicht zur Arbeit,",
+              "answers": [
+                "weil er Fieber hat."
+              ],
+              "explanation": "После союза weil глагол hat уходит со 2-го места в самый конец предложения."
+            },
+            {
+              "sentence1": "2. Ich hoffe. Du hast morgen Zeit. (dass)",
+              "prefix": "→ Ich hoffe,",
+              "answers": [
+                "dass du morgen Zeit hast."
+              ],
+              "explanation": "В придаточном с dass спрягаемый глагол hast переносится в конец."
+            },
+            {
+              "sentence1": "3. Ich trinke einen Kaffee. Ich bin müde. (wenn)",
+              "prefix": "→ Ich trinke einen Kaffee,",
+              "answers": [
+                "wenn ich müde bin."
+              ],
+              "explanation": "После wenn глагол bin уходит в самый конец перед точкой."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Вариант 3",
+      "vocab": [
+        {
+          "de": "der Hund",
+          "ru": "собака"
+        },
+        {
+          "de": "die Nachbarin",
+          "ru": "соседка"
+        },
+        {
+          "de": "das Geld",
+          "ru": "деньги"
+        },
+        {
+          "de": "aufstehen (steht ... auf)",
+          "ru": "вставать (с постели)"
+        },
+        {
+          "de": "finden (hat gefunden)",
+          "ru": "находить"
+        },
+        {
+          "de": "fahren (fährt / ist gefahren)",
+          "ru": "ехать"
+        },
+        {
+          "de": "die Küche",
+          "ru": "кухня"
+        },
+        {
+          "de": "der Boden",
+          "ru": "пол"
+        },
+        {
+          "de": "das Fenster",
+          "ru": "окно"
+        },
+        {
+          "de": "kalt",
+          "ru": "холодный"
+        },
+        {
+          "de": "lernen",
+          "ru": "учить / учиться"
+        },
+        {
+          "de": "die Prüfung",
+          "ru": "экзамен"
+        }
+      ],
+      "tasks": [
+        {
+          "type": "gap",
+          "title": "Artikel und Kasus (Nominativ, Akkusativ, Dativ)",
+          "instruction": "Ergänzen Sie den richtigen Artikel (der, die, das, den, dem, ein, eine, einen, einem, einer).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения",
+            "text": "<p><strong>1. Скобки:</strong> <code>der/die/das</code> → определённый артикль, <code>ein/eine</code> → неопределённый.</p><p><strong>2. Падеж:</strong> helfen/danken/gehören/gefallen → <strong>Dativ</strong>; «кого/что?» → <strong>Akkusativ</strong> (только муж. род меняется).</p>"
+          },
+          "items": [
+            {
+              "before": "1. Wir haben",
+              "after": "(ein) kleinen Hund zu Hause.",
+              "answers": [
+                "einen"
+              ],
+              "explanation": "Имеем кого? → Akkusativ. В скобках (ein) → мужской род der Hund в Akkusativ становится einen."
+            },
+            {
+              "before": "2. Ich helfe",
+              "after": "(die) Nachbarin mit den Taschen.",
+              "answers": [
+                "der"
+              ],
+              "explanation": "Глагол helfen (помогать) всегда требует Dativ (кому?). Женский род die в Dativ меняется на der."
+            },
+            {
+              "before": "3. Kannst du mir bitte",
+              "after": "(das) Salz geben?",
+              "answers": [
+                "das"
+              ],
+              "explanation": "Дать что? → Akkusativ. Средний род (das Salz) в Akkusativ не меняется → das."
+            },
+            {
+              "before": "4. Der Mann gibt",
+              "after": "(ein) Kind ein Eis.",
+              "answers": [
+                "einem"
+              ],
+              "explanation": "Даёт кому? → Dativ. В скобках (ein) → средний род das Kind в Dativ становится einem."
+            },
+            {
+              "before": "5. Sie sucht",
+              "after": "(der) Autoschlüssel.",
+              "answers": [
+                "den"
+              ],
+              "explanation": "Ищет что? → Akkusativ. В скобках (der) → мужской род в Akkusativ становится den."
+            },
+            {
+              "before": "6. Das Auto steht vor",
+              "after": "(das) Haus.",
+              "answers": [
+                "dem"
+              ],
+              "explanation": "Стоит где? (Wo?) → Dativ. Средний род das в Dativ становится dem."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Verben im Präsens und Perfekt",
+          "instruction": "Setzen Sie die Verben in der richtigen Form ein (Präsens oder Perfekt).",
+          "badge": "6 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (Präsens и Perfekt)",
+            "text": "<p><strong>Präsens:</strong> окончания по лицу, отделяемые приставки — в конец.</p><p><strong>Perfekt:</strong> <em>haben/sein</em> на 2-м месте + <em>Partizip II</em> в конце.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Morgens",
+              "mid": "ich um 7 Uhr",
+              "after": ". (aufstehen – Präsens)",
+              "answers": [
+                "stehe",
+                "auf"
+              ],
+              "explanation": "Регулярно (Morgens) → Präsens. Для ich окончание -e (stehe), а отделяемая приставка auf- уходит в конец."
+            },
+            {
+              "before": "2. Gestern",
+              "mid": "wir endlich den Schlüssel",
+              "after": ". (finden – Perfekt)",
+              "answers": [
+                "haben",
+                "gefunden"
+              ],
+              "explanation": "Прошлое (Gestern) → Perfekt. Обычный глагол finden берёт haben (wir haben) + сильную форму gefunden."
+            },
+            {
+              "before": "3. Wohin",
+              "mid": "ihr im Sommer",
+              "after": "? (fahren – Perfekt)",
+              "answers": [
+                "seid",
+                "gefahren"
+              ],
+              "explanation": "Perfekt. Глагол fahren означает движение/поездку, поэтому берём sein для ihr (ihr seid) + gefahren."
+            },
+            {
+              "before": "4. Mein Bruder",
+              "after": "jeden Tag mit dem Bus zur Arbeit. (fahren – Präsens)",
+              "answers": [
+                "fährt"
+              ],
+              "explanation": "Регулярно → Präsens. Mein Bruder = er (он). У сильного глагола fahren корневая a получает умлаут: fährt."
+            },
+            {
+              "before": "5. Was",
+              "mid": "du am Wochenende",
+              "after": "? (machen – Perfekt)",
+              "answers": [
+                "hast",
+                "gemacht"
+              ],
+              "explanation": "Perfekt. Глагол machen берёт haben (du hast) + стандартную форму gemacht."
+            },
+            {
+              "before": "6. Die Kinder",
+              "after": "gerne im Park. (spielen – Präsens)",
+              "answers": [
+                "spielen"
+              ],
+              "explanation": "Подлежащее Die Kinder (дети = они, мн.ч.) → в Präsens окончание -en: spielen."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Modalverben (können, müssen, dürfen, wollen, sollen)",
+          "instruction": "Wählen Sie das passende Modalverb und konjugieren Sie es richtig.",
+          "badge": "5 пунктов",
+          "help": {
+            "summary": "Алгоритм решения (выбор смысла и формы)",
+            "text": "<p><strong>Смысл:</strong> <em>dürfen</em> (запрет/разрешение), <em>müssen</em> (надо), <em>können</em> (уметь), <em>wollen</em> (хотеть), <em>sollen</em> (совет/указание).</p><p><strong>Форма:</strong> ich/er/man — без окончания, du — <em>-st</em>, ihr — <em>-t</em>.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Es ist sehr kalt. Du",
+              "after": "eine Jacke anziehen.",
+              "answers": [
+                "musst",
+                "sollst"
+              ],
+              "explanation": "Необходимость / совет в холодную погоду → müssen (musst) или sollen (sollst). Для du окончание -st."
+            },
+            {
+              "before": "2. Hier",
+              "after": "man nicht rauchen. Das ist verboten.",
+              "answers": [
+                "darf"
+              ],
+              "explanation": "Прямой запрет (verboten) → dürfen. Для man форма без окончания: darf."
+            },
+            {
+              "before": "3. Wir",
+              "after": "leider nicht kommen, wir haben keine Zeit.",
+              "answers": [
+                "können"
+              ],
+              "explanation": "Отсутствие возможности (нет времени) → können. Для wir форма: können."
+            },
+            {
+              "before": "4. Ich",
+              "after": "Deutsch lernen, weil ich in Deutschland arbeite.",
+              "answers": [
+                "will",
+                "muss"
+              ],
+              "explanation": "Личное желание (will) или необходимость (muss). Для ich форма без окончания."
+            },
+            {
+              "before": "5. Der Arzt sagt, du",
+              "after": "mehr Obst essen.",
+              "answers": [
+                "sollst"
+              ],
+              "explanation": "Рекомендация врача (Der Arzt sagt) → sollen. Для du окончание -st: sollst."
+            }
+          ]
+        },
+        {
+          "type": "gap",
+          "title": "Wechselpräpositionen (Wo? → Dativ / Wohin? → Akkusativ)",
+          "instruction": "Ergänzen Sie die Präposition und den Artikel in der richtigen Form.",
+          "badge": "4 пункта",
+          "help": {
+            "summary": "Алгоритм решения (Wo? или Wohin?)",
+            "text": "<p><strong>Куда? (Wohin?)</strong> → <strong>Akkusativ</strong>: <em>der → den</em>, а die/das не меняются.</p><p><strong>Где? (Wo?)</strong> → <strong>Dativ</strong>: <em>der/das → dem</em>, <em>die → der</em>.</p>"
+          },
+          "items": [
+            {
+              "before": "1. Die Mutter kocht",
+              "after": "(in / die) Küche.",
+              "answers": [
+                "in der"
+              ],
+              "explanation": "Готовит где? (Wo? на месте) → Dativ. Женский род (die Küche) в Dativ → in der."
+            },
+            {
+              "before": "2. Ich stelle die Schuhe",
+              "after": "(auf / der) Boden.",
+              "answers": [
+                "auf den"
+              ],
+              "explanation": "Ставлю куда? (Wohin? движение) → Akkusativ. Мужской род (der Boden) → auf den."
+            },
+            {
+              "before": "3. Der Hund liegt",
+              "after": "(unter / der) Tisch.",
+              "answers": [
+                "unter dem"
+              ],
+              "explanation": "Лежит где? (Wo? неподвижно) → Dativ. Мужской род (der Tisch) в Dativ → unter dem."
+            },
+            {
+              "before": "4. Wir hängen die Lampe",
+              "after": "(über / das) Sofa.",
+              "answers": [
+                "über das"
+              ],
+              "explanation": "Вешаем куда? (Wohin? перемещение) → Akkusativ. Средний род (das Sofa) в Akkusativ не меняется → über das."
+            }
+          ]
+        },
+        {
+          "type": "sentence",
+          "title": "Nebensätze mit „weil“, „dass“ und „wenn“",
+          "instruction": "Verbinden Sie die zwei Sätze mit der Konjunktion in Klammern (Verb am Ende).",
+          "badge": "3 пункта",
+          "help": {
+            "summary": "Алгоритм решения (конвейер в 3 шага)",
+            "text": "<p><strong>Шаг 1:</strong> Союз из скобок после запятой.</p><p><strong>Шаг 2:</strong> Глагол из второго предложения.</p><p><strong>Шаг 3:</strong> Глагол <strong>в самый конец</strong>.</p>"
+          },
+          "items": [
+            {
+              "sentence1": "1. Ich lerne viel Deutsch. Ich möchte in Berlin studieren. (weil)",
+              "prefix": "→ Ich lerne viel Deutsch,",
+              "answers": [
+                "weil ich in Berlin studieren möchte."
+              ],
+              "explanation": "После weil спрягаемый глагол (модальный möchte) уходит в самый конец после инфинитива studieren."
+            },
+            {
+              "sentence1": "2. Er sagt. Das Wetter wird morgen besser. (dass)",
+              "prefix": "→ Er sagt,",
+              "answers": [
+                "dass das Wetter morgen besser wird."
+              ],
+              "explanation": "После dass глагол wird переносится со 2-го места в конец предложения."
+            },
+            {
+              "sentence1": "3. Ich rufe dich an. Ich bin zu Hause. (wenn)",
+              "prefix": "→ Ich rufe dich an,",
+              "answers": [
+                "wenn ich zu Hause bin."
+              ],
+              "explanation": "Союз wenn отправляет глагол bin в конец придаточного предложения."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

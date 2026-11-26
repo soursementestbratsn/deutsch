@@ -1,0 +1,52 @@
+﻿python : Traceback (most recent call last):
+At line:1 char:152
++ ... ktop\дойч"; python scripts/_check_ui.py http://127.0.0.1:8124 2>&1 |  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Benutzer-PW-0000\Desktop\дойч\scripts\_check_ui.py", line 135, in <module>
+    asyncio.run(main())
+    ~~~~~~~~~~~^^^^^^^^
+  File "C:\Python315\Lib\asyncio\runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Python315\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python315\Lib\asyncio\base_events.py", line 724, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Users\Benutzer-PW-0000\Desktop\дойч\scripts\_check_ui.py", line 36, in main
+    info["dbg"] = await page.evaluate("({view: (document.querySelector('.view.active')||{}).id, q: document.querySelect
+or('#qText').textContent, dir: window.DQ.direction})")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python315\Lib\site-packages\patchright\async_api\_generated.py", line 16365, in evaluate
+    await self._impl_obj.evaluate(
+    ...<3 lines>...
+    )
+  File "C:\Python315\Lib\site-packages\patchright\_impl\_page.py", line 458, in evaluate
+    return await self._main_frame.evaluate(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        expression, arg, isolatedContext=isolatedContext
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Python315\Lib\site-packages\patchright\_impl\_frame.py", line 317, in evaluate
+    await self._channel.send(
+    ...<7 lines>...
+    )
+  File "C:\Python315\Lib\site-packages\patchright\_impl\_connection.py", line 61, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Python315\Lib\site-packages\patchright\_impl\_connection.py", line 568, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+patchright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of undefined (reading 'direction')
+    at eval (eval at evaluate (:403:30), <anonymous>:1:122)
+    at eval (<anonymous>)
+    at UtilityScript.evaluate (<anonymous>:403:30)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)

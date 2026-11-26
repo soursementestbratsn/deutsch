@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch Grammatik: Полный справочник и таблицы для приложения (A1–B1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* =====================================================================
+           БАЗОВЫЕ СТИЛИ И ЦВЕТОВАЯ СИСТЕМА ДЛЯ ИНТЕГРАЦИИ В ПРИЛОЖЕНИЕ
+           Цветовая кодировка родов (стандарт немецких учебников):
+           - Maskulin (der)  -> Синий (#2563eb / #dbeafe)
+           - Feminin (die)   -> Розово-красный (#e11d48 / #ffe4e6)
+           - Neutrum (das)   -> Зелёный (#16a34a / #dcfce7)
+           - Plural (die)    -> Оранжево-янтарный (#d97706 / #fef3c7)
+           ===================================================================== */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        code, .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Цветовые классы для ячеек таблиц (удобно маппить по ключу gender в JS/JSON) */
+        .g-m { background-color: #eff6ff; color: #1d4ed8; }
+        .g-f { background-color: #fff1f2; color: #be123c; }
+        .g-n { background-color: #f0fdf4; color: #15803d; }
+        .g-p { background-color: #fffbeb; color: #b45309; }
+
+        .badge-m { background-color: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+        .badge-f { background-color: #ffe4e6; color: #9f1239; border: 1px solid #fecdd3; }
+        .badge-n { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+        .badge-p { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+
+        /* Стилизация скроллбара для широких таблиц на мобильных устройствах */
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- =====================================================================
+         ШАПКА ПРИЛОЖЕНИЯ (HEADER + ГЛОБАЛЬНЫЙ ПОИСК ПО ТАБЛИЦАМ)
+         ===================================================================== -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div>
+                <div class="flex items-center gap-2.5">
+                    <span class="bg-slate-900 text-white text-xs font-bold px-2.5 py-1 rounded-md tracking-wider">DE-REF</span>
+                    <h1 class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight">Справочник таблиц немецкого языка</h1>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Полная база правил A1–B1 с комментариями в коде для переноса в приложение</p>
+            </div>
+
+            <!-- Поисковая строка для мгновенной фильтрации строк и карточек -->
+            <div class="flex items-center gap-2 w-full md:w-96">
+                <div class="relative w-full">
+                    <input
+                        type="text"
+                        id="global-search"
+                        oninput="filterReference(this.value)"
+                        placeholder="Поиск по правилам, словам, союзам (напр. Dativ, weil, sch)..."
+                        class="w-full pl-9 pr-8 py-2 text-sm bg-slate-100 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:outline-none transition"
+                    >
+                    <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+                    <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-700 text-sm font-bold">✕</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Быстрая навигация по 9 разделам (якорные ссылки) -->
+        <nav class="bg-slate-50 border-t border-slate-200/80 overflow-x-auto">
+            <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-1.5 text-xs font-semibold whitespace-nowrap">
+                <a href="#sec-phonetics" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">1. Чтение и фонетика</a>
+                <a href="#sec-gender" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">2. Род и мн. число</a>
+                <a href="#sec-kasus" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">3. Падежи и артикли</a>
+                <a href="#sec-pronouns" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">4. Местоимения и вопросы</a>
+                <a href="#sec-verbs" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">5. Глаголы и спряжение</a>
+                <a href="#sec-tenses" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">6. Все 6 времён</a>
+                <a href="#sec-prepositions" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">7. Предлоги и управление</a>
+                <a href="#sec-syntax" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">8. Порядок слов и союзы</a>
+                <a href="#sec-adjectives" class="px-2.5 py-1.5 rounded-lg hover:bg-white hover:text-blue-600 text-slate-700 transition">9. Прилагательные</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =====================================================================
+         ЛЕГЕНДА ЦВЕТОВОЙ КОДИРОВКИ (UI-ПОДСКАЗКА ДЛЯ ПОЛЬЗОВАТЕЛЯ)
+         ===================================================================== -->
+    <div class="max-w-7xl mx-auto w-full px-4 pt-5">
+        <div class="bg-white border border-slate-200 rounded-2xl p-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex flex-wrap items-center gap-2">
+                <span class="font-bold text-slate-700">Цветовая легенда родов:</span>
+                <span class="badge-m px-2.5 py-0.5 rounded-md font-semibold">Maskulin (der / муж. род)</span>
+                <span class="badge-f px-2.5 py-0.5 rounded-md font-semibold">Feminin (die / жен. род)</span>
+                <span class="badge-n px-2.5 py-0.5 rounded-md font-semibold">Neutrum (das / ср. род)</span>
+                <span class="badge-p px-2.5 py-0.5 rounded-md font-semibold">Plural (die / мн. число)</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="toggleAllDetails(true)" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 font-medium text-slate-700 transition">Развернуть все</button>
+                <button onclick="toggleAllDetails(false)" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 font-medium text-slate-700 transition">Свернуть все</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         ОСНОВНОЙ КОНТЕЙНЕР РАЗДЕЛОВ (КАЖДЫЙ SECTION = МОДУЛЬ ПРИЛОЖЕНИЯ)
+         ===================================================================== -->
+    <main class="max-w-7xl mx-auto w-full px-4 py-6 space-y-8" id="reference-root">
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 1: ФОНЕТИКА И ПРАВИЛА ЧТЕНИЯ
+             Назначение: Базовый экран "Правила чтения" для новичков.
+             Структура данных:
+             - Таблица 1.1: Умлауты и дифтонги (сочетания гласных)
+             - Таблица 1.2: Согласные и буквосочетания
+             - Таблица 1.3: Долгота/краткость гласных и ударение
+             ******************************************************************* -->
+        <section id="sec-phonetics" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Module 01 • Phonetik</span>
+                    <h2 class="text-lg sm:text-xl font-bold">1. Правила чтения букв и буквосочетаний</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">База произношения</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Подтаблица 1.1: Умлауты и дифтонги (сочетания гласных) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">1.1. Умлауты и дифтонги (гласные сочетания)</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-left">
+                            <thead class="bg-slate-100 text-slate-700 font-bold">
+                                <tr>
+                                    <th class="p-3 w-28">Буква / Пара</th>
+                                    <th class="p-3 w-44">Как читается</th>
+                                    <th class="p-3">Объяснение артикуляции</th>
+                                    <th class="p-3">Примеры (DE → RU)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-blue-700">ä</td>
+                                    <td class="p-3 font-semibold">[э]</td>
+                                    <td class="p-3">Открытый звук «э», как в слове «это».</td>
+                                    <td class="p-3"><em>sp<strong>ä</strong>t</em> (поздно), <em>K<strong>ä</strong>se</em> (сыр), <em>M<strong>ä</strong>dchen</em> (девочка)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-blue-700">ö</td>
+                                    <td class="p-3 font-semibold">[ё] (мягкое о)</td>
+                                    <td class="p-3">Губы трубочкой для «о», но язык произносит «э» (как в слове «мёд» без й).</td>
+                                    <td class="p-3"><em>sch<strong>ö</strong>n</em> (красивый), <em><strong>ö</strong>ffnen</em> (открывать), <em>K<strong>ö</strong>ln</em> (Кёльн)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-blue-700">ü</td>
+                                    <td class="p-3 font-semibold">[ю] (мягкое у)</td>
+                                    <td class="p-3">Губы трубочкой для «у», но язык произносит «и» (как в слове «мюсли»).</td>
+                                    <td class="p-3"><em>f<strong>ü</strong>r</em> (для), <em>T<strong>ü</strong>r</em> (дверь), <em>m<strong>ü</strong>de</em> (усталый)</td>
+                                </tr>
+                                <tr class="searchable-row bg-amber-50/40">
+                                    <td class="p-3 font-mono font-bold text-amber-800">ei / ai</td>
+                                    <td class="p-3 font-semibold">[ай]</td>
+                                    <td class="p-3">Всегда читается как русское «ай»! Не путать с ie.</td>
+                                    <td class="p-3"><em><strong>ei</strong>ns</em> (один), <em>m<strong>ei</strong>n</em> (мой), <em>Arb<strong>ei</strong>t</em> (работа)</td>
+                                </tr>
+                                <tr class="searchable-row bg-amber-50/40">
+                                    <td class="p-3 font-mono font-bold text-amber-800">ie</td>
+                                    <td class="p-3 font-semibold">[и:] (долгий и)</td>
+                                    <td class="p-3">Буква <strong>e</strong> после <strong>i</strong> не читается, она просто тянет звук «и».</td>
+                                    <td class="p-3"><em>l<strong>ie</strong>ben</em> (любить), <em>v<strong>ie</strong>l</em> (много), <em>B<strong>ie</strong>r</em> (пиво)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-blue-700">eu / äu</td>
+                                    <td class="p-3 font-semibold">[ой]</td>
+                                    <td class="p-3">Оба сочетания читаются одинаково — как «ой».</td>
+                                    <td class="p-3"><em>n<strong>eu</strong></em> (новый), <em>D<strong>eu</strong>tsch</em> (немецкий), <em>H<strong>äu</strong>ser</em> (дома)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-blue-700">au</td>
+                                    <td class="p-3 font-semibold">[ау]</td>
+                                    <td class="p-3">Слитный звук «ау» с ударением на «а».</td>
+                                    <td class="p-3"><em>H<strong>au</strong>s</em> (дом), <em><strong>Au</strong>to</em> (машина), <em>k<strong>au</strong>fen</em> (покупать)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Подтаблица 1.2: Согласные и особые сочетания -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">1.2. Согласные, свистящие и шипящие сочетания</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-left">
+                            <thead class="bg-slate-100 text-slate-700 font-bold">
+                                <tr>
+                                    <th class="p-3 w-28">Буква / Блок</th>
+                                    <th class="p-3 w-44">Как читается</th>
+                                    <th class="p-3">Правило и позиция в слове</th>
+                                    <th class="p-3">Примеры (DE → RU)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">sch</td>
+                                    <td class="p-3 font-semibold">[ш]</td>
+                                    <td class="p-3">Твёрдый звук «ш» в любой позиции слова.</td>
+                                    <td class="p-3"><em><strong>Sch</strong>ule</em> (школа), <em>Ti<strong>sch</strong></em> (стол), <em><strong>sch</strong>lafen</em> (спать)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">tsch</td>
+                                    <td class="p-3 font-semibold">[ч]</td>
+                                    <td class="p-3">Чёткий звук «ч».</td>
+                                    <td class="p-3"><em>Deu<strong>tsch</strong></em> (немецкий), <em><strong>Tsch</strong>üs</em> (пока)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">sp / st</td>
+                                    <td class="p-3 font-semibold">[шп] / [шт]</td>
+                                    <td class="p-3"><strong>Только в начале слова или корня!</strong> В середине/конце читается как [сп]/[ст].</td>
+                                    <td class="p-3"><em><strong>Sp</strong>ort</em> (шпорт), <em><strong>St</strong>adt</em> (штадт), но: <em>Fen<strong>st</strong>er</em> (фенстер)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">ch</td>
+                                    <td class="p-3 font-semibold">[х] или [хь]</td>
+                                    <td class="p-3">После <strong>a, o, u, au</strong> — твёрдое [х] (<em>ach-Laut</em>). После <strong>e, i, ä, ö, ü, l, n, r</strong> — мягкое [хь] (<em>ich-Laut</em>).</td>
+                                    <td class="p-3">Тв.: <em>B<strong>uch</strong>, m<strong>ach</strong>en</em> | Мягк.: <em><strong>ich</strong>, M<strong>ilch</strong>, n<strong>icht</strong></em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">chs</td>
+                                    <td class="p-3 font-semibold">[кс]</td>
+                                    <td class="p-3">Если <strong>s</strong> входит в корень слова (не окончание).</td>
+                                    <td class="p-3"><em>se<strong>chs</strong></em> (шесть), <em>wa<strong>chs</strong>en</em> (расти)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">s</td>
+                                    <td class="p-3 font-semibold">[з] или [с]</td>
+                                    <td class="p-3">Перед гласной в начале слога — звонко <strong>[з]</strong>. В конце слова или перед согласной — глухо <strong>[с]</strong>.</td>
+                                    <td class="p-3"><em><strong>S</strong>onne</em> [зоннэ], <em>le<strong>s</strong>en</em> [лезэн], но: <em>Hau<strong>s</strong></em> [хаус]</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">ß / ss</td>
+                                    <td class="p-3 font-semibold">[с]</td>
+                                    <td class="p-3">Всегда глухой [с]. <strong>ß</strong> (Eszett) ставится после долгой гласной или дифтонга, <strong>ss</strong> — после краткой.</td>
+                                    <td class="p-3"><em>Stra<strong>ß</strong>e</em> (улица), <em>hei<strong>ß</strong>en</em> (зваться), <em>Wa<strong>ss</strong>er</em> (вода)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">v</td>
+                                    <td class="p-3 font-semibold">[ф] (или [в])</td>
+                                    <td class="p-3">В немецких словах читается как <strong>[ф]</strong>. В заимствованиях (интернационализмах) — как <strong>[в]</strong>.</td>
+                                    <td class="p-3">[ф]: <em><strong>V</strong>ater, <strong>v</strong>iel, <strong>v</strong>erstehen</em> | [в]: <em><strong>V</strong>ase, Kla<strong>v</strong>ier</em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">w</td>
+                                    <td class="p-3 font-semibold">[в]</td>
+                                    <td class="p-3">Всегда звонкий звук «в».</td>
+                                    <td class="p-3"><em><strong>W</strong>asser</em> (вода), <em><strong>w</strong>o</em> (где), <em><strong>w</strong>ir</em> (мы)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">z / tz</td>
+                                    <td class="p-3 font-semibold">[ц]</td>
+                                    <td class="p-3">Всегда твёрдый звук «ц».</td>
+                                    <td class="p-3"><em><strong>Z</strong>eit</em> (время), <em><strong>Z</strong>ug</em> (поезд), <em>Ka<strong>tz</strong>e</em> (кошка)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">qu</td>
+                                    <td class="p-3 font-semibold">[кв]</td>
+                                    <td class="p-3">Всегда читается как «кв».</td>
+                                    <td class="p-3"><em><strong>Qu</strong>elle</em> (источник), <em>be<strong>qu</strong>em</em> (удобный)</td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">h</td>
+                                    <td class="p-3 font-semibold">[х] или немая</td>
+                                    <td class="p-3">В начале слова/корня — лёгкий выдох [х]. <strong>После гласной в середине/конце — не читается</strong>, а удлиняет гласную.</td>
+                                    <td class="p-3">Читается: <em><strong>H</strong>aus, <strong>h</strong>aben</em> | Немая: <em>ge<strong>h</strong>en, U<strong>h</strong>r, Stuh<strong>l</strong></em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-indigo-700">-ig (в конце)</td>
+                                    <td class="p-3 font-semibold">[ихь]</td>
+                                    <td class="p-3">На конце слова суффикс <em>-ig</em> читается мягко как [ихь].</td>
+                                    <td class="p-3"><em>richt<strong>ig</strong></em> (правильно), <em>wicht<strong>ig</strong></em> (важно), <em>zwanz<strong>ig</strong></em> (20)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 2: РОД СУЩЕСТВИТЕЛЬНЫХ И МНОЖЕСТВЕННОЕ ЧИСЛО
+             Назначение: Помогает определять der / die / das по смыслу и суффиксам.
+             Поля для JSON: gender ("m"|"f"|"n"), article, semantic_groups[], suffixes[], examples[]
+             ******************************************************************* -->
+        <section id="sec-gender" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">Module 02 • Genus & Plural</span>
+                    <h2 class="text-lg sm:text-xl font-bold">2. Род существительных (der / die / das) и множественное число</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Определение рода</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Карточки по 3 родам -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <!-- DER (Maskulin) -->
+                    <div class="rounded-xl border border-blue-200 bg-blue-50/40 p-4 space-y-3 searchable-row">
+                        <div class="flex items-center justify-between border-b border-blue-200 pb-2">
+                            <span class="font-extrabold text-blue-800 text-base">DER — Maskulin (Муж. род)</span>
+                            <span class="badge-m text-xs font-bold px-2 py-0.5 rounded">m</span>
+                        </div>
+                        <div class="text-xs sm:text-sm space-y-2 text-slate-700">
+                            <p><strong>По смыслу:</strong></p>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>Лица мужского пола и профессии: <em>der Mann, der Arzt, der Lehrer</em></li>
+                                <li>Дни недели, месяцы, времена года, время суток: <em>der Montag, der Mai, der Winter, der Morgen</em> (исключение: <em>die Nacht</em>)</li>
+                                <li>Стороны света и осадки: <em>der Norden, der Regen, der Schnee, der Wind</em></li>
+                                <li>Марки автомобилей и поездов: <em>der BMW, der ICE</em></li>
+                                <li>Крепкий алкоголь: <em>der Wein, der Wodka</em> (но: <em>das Bier</em>)</li>
+                            </ul>
+                            <p class="pt-1"><strong>По суффиксам (100% или почти всегда der):</strong></p>
+                            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-er</span>
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-ling</span>
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-ismus</span>
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-or</span>
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-ist</span>
+                                <span class="bg-white border border-blue-200 px-2 py-0.5 rounded font-bold text-blue-700">-ant</span>
+                            </div>
+                            <p class="text-xs text-slate-500">Примеры: <em>der Comput<strong>er</strong>, der Schmetter<strong>ling</strong>, der Tour<strong>ismus</strong>, der Mot<strong>or</strong></em>.</p>
+                        </div>
+                    </div>
+
+                    <!-- DIE (Feminin) -->
+                    <div class="rounded-xl border border-rose-200 bg-rose-50/40 p-4 space-y-3 searchable-row">
+                        <div class="flex items-center justify-between border-b border-rose-200 pb-2">
+                            <span class="font-extrabold text-rose-800 text-base">DIE — Feminin (Жен. род)</span>
+                            <span class="badge-f text-xs font-bold px-2 py-0.5 rounded">f</span>
+                        </div>
+                        <div class="text-xs sm:text-sm space-y-2 text-slate-700">
+                            <p><strong>По смыслу:</strong></p>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>Лица женского пола и профессии на <em>-in</em>: <em>die Frau, die Mutter, die Ärztin</em></li>
+                                <li>Большинство деревьев, цветов и фруктов: <em>die Rose, die Birke, die Banane, die Orange</em> (но: <em>der Apfel</em>)</li>
+                                <li>Числа как существительные: <em>die Eins, die Zehn</em></li>
+                                <li>Мотоциклы и корабли: <em>die Yamaha, die Titanic</em></li>
+                            </ul>
+                            <p class="pt-1"><strong>По суффиксам (железное правило — всегда die!):</strong></p>
+                            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-ung</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-heit</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-keit</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-schaft</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-ion</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-tät</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-ik</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-ur</span>
+                                <span class="bg-white border border-rose-200 px-2 py-0.5 rounded font-bold text-rose-700">-ei</span>
+                            </div>
+                            <p class="text-xs text-slate-500">Примеры: <em>die Wohn<strong>ung</strong>, die Frei<strong>heit</strong>, die Möglich<strong>keit</strong>, die Stat<strong>ion</strong>, die Universi<strong>tät</strong></em>.</p>
+                        </div>
+                    </div>
+
+                    <!-- DAS (Neutrum) -->
+                    <div class="rounded-xl border border-emerald-200 bg-emerald-50/40 p-4 space-y-3 searchable-row">
+                        <div class="flex items-center justify-between border-b border-emerald-200 pb-2">
+                            <span class="font-extrabold text-emerald-800 text-base">DAS — Neutrum (Ср. род)</span>
+                            <span class="badge-n text-xs font-bold px-2 py-0.5 rounded">n</span>
+                        </div>
+                        <div class="text-xs sm:text-sm space-y-2 text-slate-700">
+                            <p><strong>По смыслу:</strong></p>
+                            <ul class="list-disc pl-4 space-y-1">
+                                <li>Детёныши и дети: <em>das Kind, das Baby, das Kalb</em></li>
+                                <li>Глаголы и прилагательные, ставшие существительными: <em>das Essen</em> (еда), <em>das Lernen</em> (учёба), <em>das Gute</em> (хорошее)</li>
+                                <li>Названия цветов, металлов, химических элементов: <em>das Blau, das Gold, das Eisen</em></li>
+                                <li>Отели, кафе, кинотеатры: <em>das Hilton, das Café, das Kino</em></li>
+                            </ul>
+                            <p class="pt-1"><strong>По суффиксам и приставкам (всегда das!):</strong></p>
+                            <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">-chen</span>
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">-lein</span>
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">-um</span>
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">-ment</span>
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">-ma</span>
+                                <span class="bg-white border border-emerald-200 px-2 py-0.5 rounded font-bold text-emerald-700">Ge-...</span>
+                            </div>
+                            <p class="text-xs text-slate-500">Примеры: <em>das Mäd<strong>chen</strong>, das Bröt<strong>chen</strong>, das Muse<strong>um</strong>, das Doku<strong>ment</strong>, das <strong>Ge</strong>schenk</em>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Таблица 2.2: 5 типов образования множественного числа (Plural) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">2.2. Множественное число (Plural) — артикль всегда DIE</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-left">
+                            <thead class="bg-amber-50 text-amber-950 font-bold">
+                                <tr>
+                                    <th class="p-3">Суффикс Plural</th>
+                                    <th class="p-3">Для каких слов типично</th>
+                                    <th class="p-3">Примеры (Ед. число → Мн. число)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-amber-800">-n / -en</td>
+                                    <td class="p-3">Почти все слова женского рода (<em>die</em>) + слабые существительные мужского рода. Умлаут НЕ появляется.</td>
+                                    <td class="p-3"><em>die Frau → die Frau<strong>en</strong></em>, <em>die Lampe → die Lampe<strong>n</strong></em>, <em>der Student → die Student<strong>en</strong></em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-amber-800">-e (и ¨-e)</td>
+                                    <td class="p-3">Большинство односложных слов мужского (<em>der</em>) и среднего (<em>das</em>) рода. Часто добавляется умлаут.</td>
+                                    <td class="p-3"><em>der Tisch → die Tisch<strong>e</strong></em>, <em>der Stuhl → die St<strong>ü</strong>hl<strong>e</strong></em>, <em>das Jahr → die Jahr<strong>e</strong></em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-amber-800">-er (и ¨-er)</td>
+                                    <td class="p-3">Односложные слова среднего рода (<em>das</em>) и некоторые мужского. Если можно — всегда ставится умлаут!</td>
+                                    <td class="p-3"><em>das Kind → die Kind<strong>er</strong></em>, <em>das Buch → die B<strong>ü</strong>ch<strong>er</strong></em>, <em>der Mann → die M<strong>ä</strong>nn<strong>er</strong></em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-amber-800">- (без оконч.) или ¨</td>
+                                    <td class="p-3">Слова на <em>-er, -el, -en, -chen, -lein</em>. Окончание не добавляется, иногда только умлаут.</td>
+                                    <td class="p-3"><em>der Lehrer → die Lehrer</em>, <em>das Mädchen → die Mädchen</em>, <em>der Apfel → die <strong>Ä</strong>pfel</em></td>
+                                </tr>
+                                <tr class="searchable-row">
+                                    <td class="p-3 font-mono font-bold text-amber-800">-s</td>
+                                    <td class="p-3">Слова, оканчивающиеся на гласную (<em>-a, -i, -o, -u, -y</em>), аббревиатуры и заимствования.</td>
+                                    <td class="p-3"><em>das Auto → die Auto<strong>s</strong></em>, <em>das Handy → die Handy<strong>s</strong></em>, <em>das Café → die Café<strong>s</strong></em></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 3: ПАДЕЖИ И АРТИКЛИ (KASUS & ARTIKEL)
+             Назначение: Главная таблица склонения артиклей, которая нужна постоянно.
+             Ключи для модели данных:
+             - kasus: "nominativ" | "genitiv" | "dativ" | "akkusativ"
+             - gender: "m" | "f" | "n" | "pl"
+             - definite (der/die/das), indefinite (ein/eine), negative (kein/keine)
+             ******************************************************************* -->
+        <section id="sec-kasus" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-blue-400">Module 03 • Kasus & Artikel</span>
+                    <h2 class="text-lg sm:text-xl font-bold">3. Падежи (Kasus) и полная таблица артиклей</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Матрица склонения</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Подтаблица 3.1: Вопросы и функции падежей -->
+                <div class="table-wrap rounded-xl border border-slate-200">
+                    <table class="text-xs sm:text-sm text-left">
+                        <thead class="bg-slate-100 text-slate-800 font-bold">
+                            <tr>
+                                <th class="p-3">Падеж (Kasus)</th>
+                                <th class="p-3">Вопросы (DE / RU)</th>
+                                <th class="p-3">Главная роль в предложении</th>
+                                <th class="p-3">Пример</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr class="searchable-row">
+                                <td class="p-3 font-extrabold text-slate-900">Nominativ (И.п.)</td>
+                                <td class="p-3 font-mono text-xs">Wer? Was? (Кто? Что?)</td>
+                                <td class="p-3">Подлежащее — тот, кто сам совершает действие. Начальная форма из словаря.</td>
+                                <td class="p-3"><strong>Der Mann</strong> (кто?) liest ein Buch.</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-extrabold text-blue-700">Akkusativ (В.п.)</td>
+                                <td class="p-3 font-mono text-xs">Wen? Was? Wohin? (Кого? Что? Куда?)</td>
+                                <td class="p-3">Прямое дополнение — объект, на который направлено действие. Меняется <strong>только мужской род</strong>!</td>
+                                <td class="p-3">Ich sehe <strong>den Mann</strong> (кого?).</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-extrabold text-rose-700">Dativ (Д.п.)</td>
+                                <td class="p-3 font-mono text-xs">Wem? Wo? Wann? (Кому? Где? Когда?)</td>
+                                <td class="p-3">Косвенное дополнение (адресат) или неподвижное местонахождение. В Plural к существительному добавляется <strong>-n</strong>!</td>
+                                <td class="p-3">Ich helfe <strong>dem Mann</strong> (кому?).</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-extrabold text-purple-700">Genitiv (Р.п.)</td>
+                                <td class="p-3 font-mono text-xs">Wessen? (Чей? Чья? Чьё?)</td>
+                                <td class="p-3">Принадлежность. В муж. и ср. роде к существительному добавляется окончание <strong>-(e)s</strong>.</td>
+                                <td class="p-3">Das Auto <strong>des Mannes</strong> (чьё?).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Подтаблица 3.2: Сводная матрица артиклей (Определённый / Неопределённый / Отрицательный) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">3.2. Полная матрица склонения артиклей</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-center">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-800 font-bold">
+                                    <th class="p-3 text-left">Падеж</th>
+                                    <th class="p-3 g-m">Maskulin (m)</th>
+                                    <th class="p-3 g-f">Feminin (f)</th>
+                                    <th class="p-3 g-n">Neutrum (n)</th>
+                                    <th class="p-3 g-p">Plural (pl)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-mono">
+                                <!-- Nominativ -->
+                                <tr class="searchable-row">
+                                    <td class="p-3 text-left font-sans font-bold bg-slate-50">
+                                        Nominativ<br><span class="text-xs font-normal text-slate-500">Wer? Was?</span>
+                                    </td>
+                                    <td class="p-3 g-m font-bold">der<br>ein<br>kein</td>
+                                    <td class="p-3 g-f font-bold">die<br>eine<br>keine</td>
+                                    <td class="p-3 g-n font-bold">das<br>ein<br>kein</td>
+                                    <td class="p-3 g-p font-bold">die<br>—<br>keine</td>
+                                </tr>
+                                <!-- Akkusativ -->
+                                <tr class="searchable-row">
+                                    <td class="p-3 text-left font-sans font-bold bg-slate-50">
+                                        Akkusativ<br><span class="text-xs font-normal text-slate-500">Wen? Was?</span>
+                                    </td>
+                                    <td class="p-3 g-m font-bold underline decoration-2">den<br>einen<br>keinen</td>
+                                    <td class="p-3 g-f font-bold">die<br>eine<br>keine</td>
+                                    <td class="p-3 g-n font-bold">das<br>ein<br>kein</td>
+                                    <td class="p-3 g-p font-bold">die<br>—<br>keine</td>
+                                </tr>
+                                <!-- Dativ -->
+                                <tr class="searchable-row">
+                                    <td class="p-3 text-left font-sans font-bold bg-slate-50">
+                                        Dativ<br><span class="text-xs font-normal text-slate-500">Wem? Wo?</span>
+                                    </td>
+                                    <td class="p-3 g-m font-bold">dem<br>einem<br>keinem</td>
+                                    <td class="p-3 g-f font-bold">der<br>einer<br>keiner</td>
+                                    <td class="p-3 g-n font-bold">dem<br>einem<br>keinem</td>
+                                    <td class="p-3 g-p font-bold">den (+n)<br>— (+n)<br>keinen (+n)</td>
+                                </tr>
+                                <!-- Genitiv -->
+                                <tr class="searchable-row">
+                                    <td class="p-3 text-left font-sans font-bold bg-slate-50">
+                                        Genitiv<br><span class="text-xs font-normal text-slate-500">Wessen?</span>
+                                    </td>
+                                    <td class="p-3 g-m font-bold">des (+s)<br>eines (+s)<br>keines (+s)</td>
+                                    <td class="p-3 g-f font-bold">der<br>einer<br>keiner</td>
+                                    <td class="p-3 g-n font-bold">des (+s)<br>eines (+s)<br>keines (+s)</td>
+                                    <td class="p-3 g-p font-bold">der<br>—<br>keiner</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2">
+                        <strong>Когда ставить der/die/das vs ein/eine:</strong> <code>ein/eine</code> — когда упоминаем предмет впервые («один из многих», только в ед. числе); <code>der/die/das</code> — когда предмет конкретный, уже известный собеседнику или единственный в своём роде (<em>die Sonne</em>).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 4: МЕСТОИМЕНИЯ И ВОПРОСИТЕЛЬНЫЕ СЛОВА
+             Назначение: Личные местоимения (ich/mich/mir), притяжательные (mein/dein/sein/ihr...)
+             и базовые вопросительные слова (W-Fragen).
+             ******************************************************************* -->
+        <section id="sec-pronouns" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-purple-400">Module 04 • Pronomen & W-Fragen</span>
+                    <h2 class="text-lg sm:text-xl font-bold">4. Местоимения (личные, притяжательные) и вопросительные слова</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Склонение местоимений</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Подтаблица 4.1: Личные местоимения (Personalpronomen) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">4.1. Личные местоимения (Personalpronomen)</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-center">
+                            <thead class="bg-slate-100 text-slate-800 font-bold">
+                                <tr>
+                                    <th class="p-3 text-left">Лицо / Перевод</th>
+                                    <th class="p-3">Nominativ (Кто?)</th>
+                                    <th class="p-3 text-blue-700">Akkusativ (Кого?)</th>
+                                    <th class="p-3 text-rose-700">Dativ (Кому?)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-mono">
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">1 л. ед. (я)</td><td class="p-2.5 font-bold">ich</td><td class="p-2.5 text-blue-700">mich</td><td class="p-2.5 text-rose-700">mir</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">2 л. ед. (ты)</td><td class="p-2.5 font-bold">du</td><td class="p-2.5 text-blue-700">dich</td><td class="p-2.5 text-rose-700">dir</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">3 л. ед. (он)</td><td class="p-2.5 font-bold g-m">er</td><td class="p-2.5 text-blue-700">ihn</td><td class="p-2.5 text-rose-700">ihm</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">3 л. ед. (она)</td><td class="p-2.5 font-bold g-f">sie</td><td class="p-2.5 text-blue-700">sie</td><td class="p-2.5 text-rose-700">ihr</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">3 л. ед. (оно)</td><td class="p-2.5 font-bold g-n">es</td><td class="p-2.5 text-blue-700">es</td><td class="p-2.5 text-rose-700">ihm</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">1 л. мн. (мы)</td><td class="p-2.5 font-bold">wir</td><td class="p-2.5 text-blue-700">uns</td><td class="p-2.5 text-rose-700">uns</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">2 л. мн. (вы, друзья)</td><td class="p-2.5 font-bold">ihr</td><td class="p-2.5 text-blue-700">euch</td><td class="p-2.5 text-rose-700">euch</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">3 л. мн. (они)</td><td class="p-2.5 font-bold g-p">sie</td><td class="p-2.5 text-blue-700">sie</td><td class="p-2.5 text-rose-700">ihnen</td></tr>
+                                <tr class="searchable-row bg-slate-50"><td class="p-2.5 text-left font-sans font-semibold">Вежл. форма (Вы)</td><td class="p-2.5 font-bold">Sie</td><td class="p-2.5 text-blue-700">Sie</td><td class="p-2.5 text-rose-700">Ihnen</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Подтаблица 4.2: Притяжательные местоимения (Possessivartikel) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">4.2. Притяжательные местоимения (чей? — mein, dein, sein...)</h3>
+                    <p class="text-xs text-slate-600 mb-2">Окончания притяжательных местоимений <strong>на 100% совпадают с окончаниями артикля <code>kein</code></strong> (см. Раздел 3.2): в женском роде и во множественном числе добавляется <strong>-e</strong>, в Akkusativ муж. рода — <strong>-en</strong>, в Dativ — <strong>-em / -er / -en</strong>.</p>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-center">
+                            <thead class="bg-slate-100 text-slate-800 font-bold">
+                                <tr>
+                                    <th class="p-3 text-left">Кто владелец</th>
+                                    <th class="p-3 g-m">Maskulin (der Tisch)</th>
+                                    <th class="p-3 g-f">Feminin (die Tasche)</th>
+                                    <th class="p-3 g-n">Neutrum (das Buch)</th>
+                                    <th class="p-3 g-p">Plural (die Eltern)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-mono">
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">ich (мой)</td><td class="p-2.5 g-m font-bold">mein</td><td class="p-2.5 g-f font-bold">meine</td><td class="p-2.5 g-n font-bold">mein</td><td class="p-2.5 g-p font-bold">meine</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">du (твой)</td><td class="p-2.5 g-m font-bold">dein</td><td class="p-2.5 g-f font-bold">deine</td><td class="p-2.5 g-n font-bold">dein</td><td class="p-2.5 g-p font-bold">deine</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">er (его)</td><td class="p-2.5 g-m font-bold">sein</td><td class="p-2.5 g-f font-bold">seine</td><td class="p-2.5 g-n font-bold">sein</td><td class="p-2.5 g-p font-bold">seine</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">sie (её)</td><td class="p-2.5 g-m font-bold">ihr</td><td class="p-2.5 g-f font-bold">ihre</td><td class="p-2.5 g-n font-bold">ihr</td><td class="p-2.5 g-p font-bold">ihre</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">es (его, ср. род)</td><td class="p-2.5 g-m font-bold">sein</td><td class="p-2.5 g-f font-bold">seine</td><td class="p-2.5 g-n font-bold">sein</td><td class="p-2.5 g-p font-bold">seine</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">wir (наш)</td><td class="p-2.5 g-m font-bold">unser</td><td class="p-2.5 g-f font-bold">unsere</td><td class="p-2.5 g-n font-bold">unser</td><td class="p-2.5 g-p font-bold">unsere</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">ihr (ваш, друзья)</td><td class="p-2.5 g-m font-bold">euer</td><td class="p-2.5 g-f font-bold">eure*</td><td class="p-2.5 g-n font-bold">euer</td><td class="p-2.5 g-p font-bold">eure*</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans">sie (их)</td><td class="p-2.5 g-m font-bold">ihr</td><td class="p-2.5 g-f font-bold">ihre</td><td class="p-2.5 g-n font-bold">ihr</td><td class="p-2.5 g-p font-bold">ihre</td></tr>
+                                <tr class="searchable-row bg-slate-50"><td class="p-2.5 text-left font-sans font-semibold">Sie (Ваш, вежл.)</td><td class="p-2.5 g-m font-bold">Ihr</td><td class="p-2.5 g-f font-bold">Ihre</td><td class="p-2.5 g-n font-bold">Ihr</td><td class="p-2.5 g-p font-bold">Ihre</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1.5">*Примечание: у слова <code>euer</code> при добавлении окончания выпадает вторая гласная <em>e</em>: <code>euer Buch</code>, но <code>eure Tasche</code>.</p>
+                </div>
+
+                <!-- Подтаблица 4.3: Вопросительные слова (W-Fragen) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">4.3. Главные вопросительные слова (W-Wörter)</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5 text-xs sm:text-sm">
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Wer? / Wen? / Wem?</strong><br><span class="text-slate-600">Кто? / Кого? / Кому?</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Was?</strong><br><span class="text-slate-600">Что?</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Wo?</strong><br><span class="text-slate-600">Где? (требует Dativ)</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Wohin?</strong><br><span class="text-slate-600">Куда? (требует Akkusativ)</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Woher?</strong><br><span class="text-slate-600">Откуда? (aus / von)</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Wann?</strong><br><span class="text-slate-600">Когда?</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Warum? / Wieso?</strong><br><span class="text-slate-600">Почему? Зачем?</span></div>
+                        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 searchable-row"><strong class="font-mono text-blue-700">Wie? / Wie viel?</strong><br><span class="text-slate-600">Как? / Сколько?</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 5: ГЛАГОЛЫ И СПРЯЖЕНИЕ
+             Назначение: Личные окончания, сильные глаголы, полная таблица
+             модальных глаголов, возвратные глаголы (sich) и приставки.
+             ******************************************************************* -->
+        <section id="sec-verbs" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-amber-400">Module 05 • Verben & Konjugation</span>
+                    <h2 class="text-lg sm:text-xl font-bold">5. Глаголы: окончания, модальные глаголы и приставки</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Спряжение</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Подтаблица 5.1: Окончания в Präsens + Сильные глаголы -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">5.1. Личные окончания в Präsens</h3>
+                        <div class="table-wrap rounded-xl border border-slate-200">
+                            <table class="text-xs sm:text-sm text-left">
+                                <thead class="bg-slate-100 font-bold">
+                                    <tr>
+                                        <th class="p-2.5">Лицо</th>
+                                        <th class="p-2.5">Окончание</th>
+                                        <th class="p-2.5">Пример (machen)</th>
+                                        <th class="p-2.5">Сильный (fahren / lesen)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 font-mono">
+                                    <tr class="searchable-row"><td class="p-2.5">ich</td><td class="p-2.5 font-bold text-blue-700">-e</td><td class="p-2.5">mach<strong>e</strong></td><td class="p-2.5">fahre / lese</td></tr>
+                                    <tr class="searchable-row bg-amber-50/40"><td class="p-2.5">du</td><td class="p-2.5 font-bold text-blue-700">-st</td><td class="p-2.5">mach<strong>st</strong></td><td class="p-2.5">f<strong>ä</strong>hrst / l<strong>ie</strong>st</td></tr>
+                                    <tr class="searchable-row bg-amber-50/40"><td class="p-2.5">er/sie/es</td><td class="p-2.5 font-bold text-blue-700">-t</td><td class="p-2.5">mach<strong>t</strong></td><td class="p-2.5">f<strong>ä</strong>hrt / l<strong>ie</strong>st</td></tr>
+                                    <tr class="searchable-row"><td class="p-2.5">wir</td><td class="p-2.5 font-bold text-blue-700">-en</td><td class="p-2.5">mach<strong>en</strong></td><td class="p-2.5">fahren / lesen</td></tr>
+                                    <tr class="searchable-row"><td class="p-2.5">ihr</td><td class="p-2.5 font-bold text-blue-700">-t</td><td class="p-2.5">mach<strong>t</strong></td><td class="p-2.5">fahrt / lest</td></tr>
+                                    <tr class="searchable-row"><td class="p-2.5">sie / Sie</td><td class="p-2.5 font-bold text-blue-700">-en</td><td class="p-2.5">mach<strong>en</strong></td><td class="p-2.5">fahren / lesen</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1.5">Если основа глагола оканчивается на <strong>-t, -d, -chn, -fn</strong> (<em>arbeiten, finden, öffnen</em>), перед <em>-st</em> и <em>-t</em> вставляется соединительная <strong>-e-</strong>: <code>du arbeit<strong>e</strong>st, er arbeit<strong>e</strong>t</code>.</p>
+                    </div>
+
+                    <!-- Подтаблица 5.2: Отделяемые и неотделяемые приставки -->
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">5.2. Отделяемые и неотделяемые приставки</h3>
+                        <div class="space-y-3 text-xs sm:text-sm">
+                            <div class="p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/40 searchable-row">
+                                <div class="font-bold text-emerald-900">Отделяемые приставки (ударение на приставку!)</div>
+                                <p class="font-mono text-xs text-emerald-800 mt-1 font-bold">ab-, an-, auf-, aus-, bei-, ein-, fern-, her-, hin-, los-, mit-, nach-, vor-, weg-, zu-, zurück-, zusammen-</p>
+                                <ul class="list-disc pl-4 mt-2 space-y-1 text-slate-700">
+                                    <li><strong>Präsens / Präteritum:</strong> приставка улетает в самый конец: <em>Ich kaufe im Supermarkt <strong>ein</strong>.</em></li>
+                                    <li><strong>Perfekt:</strong> приставка <code>ge-</code> встаёт посередине: <em>ein<strong>ge</strong>kauft, auf<strong>ge</strong>standen</em>.</li>
+                                </ul>
+                            </div>
+                            <div class="p-3.5 rounded-xl border border-rose-200 bg-rose-50/40 searchable-row">
+                                <div class="font-bold text-rose-900">Неотделяемые приставки (безударные!)</div>
+                                <p class="font-mono text-xs text-rose-800 mt-1 font-bold">be-, ge-, er-, ver-, zer-, emp-, ent-, miss-</p>
+                                <ul class="list-disc pl-4 mt-2 space-y-1 text-slate-700">
+                                    <li><strong>Никогда не отделяются</strong> от корня: <em>Ich <strong>ver</strong>stehe dich.</em></li>
+                                    <li><strong>Perfekt:</strong> приставка <code>ge-</code> <strong>НЕ ставится</strong>: <em><strong>ver</strong>standen, <strong>be</strong>zahlt, <strong>er</strong>zählt</em>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Подтаблица 5.3: Полная таблица модальных глаголов -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">5.3. Модальные глаголы (Modalverben) в Präsens и Präteritum</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-center">
+                            <thead class="bg-slate-100 text-slate-800 font-bold">
+                                <tr>
+                                    <th class="p-2.5 text-left">Лицо</th>
+                                    <th class="p-2.5">können<br><span class="font-normal text-xs text-slate-500">мочь/уметь</span></th>
+                                    <th class="p-2.5">müssen<br><span class="font-normal text-xs text-slate-500">должен</span></th>
+                                    <th class="p-2.5">dürfen<br><span class="font-normal text-xs text-slate-500">можно/нельзя</span></th>
+                                    <th class="p-2.5">wollen<br><span class="font-normal text-xs text-slate-500">хотеть</span></th>
+                                    <th class="p-2.5">sollen<br><span class="font-normal text-xs text-slate-500">следует (совет)</span></th>
+                                    <th class="p-2.5">möchten<br><span class="font-normal text-xs text-slate-500">хотел бы</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-mono">
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 text-left font-sans font-bold">ich</td><td class="p-2.5 font-bold">kann</td><td class="p-2.5 font-bold">muss</td><td class="p-2.5 font-bold">darf</td><td class="p-2.5 font-bold">will</td><td class="p-2.5 font-bold">soll</td><td class="p-2.5 font-bold">möchte</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans font-bold">du</td><td class="p-2.5">kannst</td><td class="p-2.5">musst</td><td class="p-2.5">darfst</td><td class="p-2.5">willst</td><td class="p-2.5">sollst</td><td class="p-2.5">möchtest</td></tr>
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 text-left font-sans font-bold">er/sie/es/man</td><td class="p-2.5 font-bold">kann</td><td class="p-2.5 font-bold">muss</td><td class="p-2.5 font-bold">darf</td><td class="p-2.5 font-bold">will</td><td class="p-2.5 font-bold">soll</td><td class="p-2.5 font-bold">möchte</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans font-bold">wir / sie / Sie</td><td class="p-2.5">können</td><td class="p-2.5">müssen</td><td class="p-2.5">dürfen</td><td class="p-2.5">wollen</td><td class="p-2.5">sollen</td><td class="p-2.5">möchten</td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 text-left font-sans font-bold">ihr</td><td class="p-2.5">könnt</td><td class="p-2.5">müsst</td><td class="p-2.5">dürft</td><td class="p-2.5">wollt</td><td class="p-2.5">sollt</td><td class="p-2.5">möchtet</td></tr>
+                                <tr class="searchable-row bg-slate-100"><td class="p-2.5 text-left font-sans font-bold text-indigo-700">Präteritum (ich/er)</td><td class="p-2.5 font-bold text-indigo-700">konnte</td><td class="p-2.5 font-bold text-indigo-700">musste</td><td class="p-2.5 font-bold text-indigo-700">durfte</td><td class="p-2.5 font-bold text-indigo-700">wollte</td><td class="p-2.5 font-bold text-indigo-700">sollte</td><td class="p-2.5 font-bold text-indigo-700">wollte</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 6: ВСЕ 6 ВРЕМЁН НЕМЕЦКОГО ЯЗЫКА (ZEITFORMEN)
+             Назначение: Сводная таблица всех 6 времён + правило выбора haben/sein.
+             ******************************************************************* -->
+        <section id="sec-tenses" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-cyan-400">Module 06 • Zeitformen (6 Времён)</span>
+                    <h2 class="text-lg sm:text-xl font-bold">6. Все 6 времён: формулы, употребление и haben vs. sein</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Временная система</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <div class="table-wrap rounded-xl border border-slate-200">
+                    <table class="text-xs sm:text-sm text-left">
+                        <thead class="bg-slate-100 text-slate-800 font-bold">
+                            <tr>
+                                <th class="p-3">Время</th>
+                                <th class="p-3">Формула конструкции</th>
+                                <th class="p-3">Когда использовать</th>
+                                <th class="p-3">Пример с переводом</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200">
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">1. Präsens</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">Основа + окончание (-e, -st, -t, -en, -t)</td>
+                                <td class="p-3">Настоящее время, регулярные действия, факты, расписание.</td>
+                                <td class="p-3"><em>Ich <strong>lerne</strong> Deutsch.</em><br><span class="text-xs text-slate-500">Я учу немецкий.</span></td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">2. Perfekt</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">haben / sein (Präs.) + ... + Partizip II</td>
+                                <td class="p-3">Разговорное прошедшее время (устная речь, переписка, диалоги).</td>
+                                <td class="p-3"><em>Ich <strong>habe</strong> ein Buch <strong>gelesen</strong>.</em><br><span class="text-xs text-slate-500">Я прочитал книгу.</span></td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">3. Präteritum</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">Слаб.: -te | Сильн.: смена гласной (без оконч. у ich/er)</td>
+                                <td class="p-3">Письменное прошедшее (рассказы, новости) + <strong>sein, haben, модальные</strong> в речи.</td>
+                                <td class="p-3"><em>Er <strong>war</strong> krank. Sie <strong>kam</strong> spät.</em><br><span class="text-xs text-slate-500">Он был болен. Она пришла поздно.</span></td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">4. Plusquamperfekt</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">hatte / war + ... + Partizip II</td>
+                                <td class="p-3">Предпрошедшее: действие случилось <strong>раньше</strong> другого события в прошлом (<em>nachdem, bevor</em>).</td>
+                                <td class="p-3"><em>Nachdem er <strong>gegessen hatte</strong>, ging er.</em><br><span class="text-xs text-slate-500">После того как он поел, он ушёл.</span></td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">5. Futur I</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">werden (Präs.) + ... + Infinitiv</td>
+                                <td class="p-3">Планы, обещания, прогнозы на будущее или предположение о настоящем.</td>
+                                <td class="p-3"><em>Wir <strong>werden</strong> nach Berlin <strong>fliegen</strong>.</em><br><span class="text-xs text-slate-500">Мы полетим в Берлин.</span></td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-bold text-indigo-700 whitespace-nowrap">6. Futur II</td>
+                                <td class="p-3 font-mono text-xs bg-slate-50">werden + ... + Partizip II + haben/sein</td>
+                                <td class="p-3">Действие закончится к моменту в будущем (<em>bis morgen</em>) или предположение о прошлом (<em>wohl</em>).</td>
+                                <td class="p-3"><em>Er <strong>wird</strong> schon <strong>angekommen sein</strong>.</em><br><span class="text-xs text-slate-500">Он, вероятно, уже приехал.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Шпаргалка: Когда haben, а когда sein -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+                    <div class="p-4 rounded-xl border border-blue-200 bg-blue-50/40 searchable-row">
+                        <div class="font-bold text-blue-900 mb-1.5">Когда ставим SEIN (в Perfekt / Plusquamperfekt / Futur II):</div>
+                        <ul class="list-disc pl-4 space-y-1 text-slate-700">
+                            <li><strong>Движение из точки А в точку Б:</strong> <em>gehen, fahren, fliegen, kommen, laufen, reisen, umziehen, schwimmen</em> (если плывём куда-то).</li>
+                            <li><strong>Смена состояния (неконтролируемая):</strong> <em>aufstehen</em> (вставать), <em>aufwachen</em> (просыпаться), <em>einschlafen</em> (засыпать), <em>wachsen</em> (расти), <em>sterben</em> (умирать).</li>
+                            <li><strong>3 главных глагола-исключения:</strong> <em>sein</em> (ist gewesen), <em>bleiben</em> (ist geblieben — оставаться), <em>werden</em> (ist geworden — становиться).</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 searchable-row">
+                        <div class="font-bold text-slate-900 mb-1.5">Когда ставим HABEN (около 85% всех глаголов):</div>
+                        <ul class="list-disc pl-4 space-y-1 text-slate-700">
+                            <li><strong>Все переходные глаголы</strong> (после которых можно спросить <em>кого/что?</em> — Akkusativ): <em>lesen, kaufen, essen, trinken, sehen, machen, finden</em>.</li>
+                            <li><strong>Все возвратные глаголы (с <em>sich</em>):</strong> <em>sich freuen, sich duschen, sich beeilen</em>.</li>
+                            <li><strong>Все модальные глаголы</strong> и глаголы состояния/действия на месте: <em>arbeiten, schlafen, sitzen, stehen, liegen, warten, helfen</em>.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 7: ПРЕДЛОГИ И УПРАВЛЕНИЕ (PRÄPOSITIONEN & VERBEN MIT DATIV)
+             Назначение: Чёткое разделение предлогов на 3 группы + слияния + глаголы с Dativ.
+             ******************************************************************* -->
+        <section id="sec-prepositions" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-rose-400">Module 07 • Präpositionen & Rektion</span>
+                    <h2 class="text-lg sm:text-xl font-bold">7. Предлоги (Akkusativ / Dativ / Wo-Wohin) и глаголы с Dativ</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Управление</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Только Akkusativ -->
+                    <div class="p-4 rounded-xl border border-blue-200 bg-blue-50/30 searchable-row">
+                        <h3 class="font-extrabold text-blue-800 text-sm mb-2">7.1. Предлоги ТОЛЬКО с Akkusativ (FUDGO + bis)</h3>
+                        <ul class="space-y-1.5 text-xs sm:text-sm font-mono">
+                            <li><strong>für</strong> — <span class="font-sans text-slate-700">для, за (<em>für meinen Bruder</em>)</span></li>
+                            <li><strong>um</strong> — <span class="font-sans text-slate-700">вокруг; в (о часах: <em>um 8 Uhr</em>)</span></li>
+                            <li><strong>durch</strong> — <span class="font-sans text-slate-700">через, сквозь (<em>durch den Park</em>)</span></li>
+                            <li><strong>gegen</strong> — <span class="font-sans text-slate-700">против; около (<em>gegen die Wand</em>)</span></li>
+                            <li><strong>ohne</strong> — <span class="font-sans text-slate-700">без (<em>ohne einen Regenschirm</em>)</span></li>
+                            <li><strong>bis</strong> — <span class="font-sans text-slate-700">до (<em>bis nächsten Montag</em>)</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Только Dativ -->
+                    <div class="p-4 rounded-xl border border-rose-200 bg-rose-50/30 searchable-row">
+                        <h3 class="font-extrabold text-rose-800 text-sm mb-2">7.2. Предлоги ТОЛЬКО с Dativ</h3>
+                        <ul class="space-y-1.5 text-xs sm:text-sm font-mono">
+                            <li><strong>aus</strong> — <span class="font-sans text-slate-700">из (внутри), из материала (<em>aus dem Haus</em>)</span></li>
+                            <li><strong>außer</strong> — <span class="font-sans text-slate-700">кроме (<em>außer mir</em>)</span></li>
+                            <li><strong>bei</strong> — <span class="font-sans text-slate-700">у (кого-то), при, возле (<em>beim Arzt</em>)</span></li>
+                            <li><strong>mit</strong> — <span class="font-sans text-slate-700">с (кем-то), на (транспорт: <em>mit dem Bus</em>)</span></li>
+                            <li><strong>nach</strong> — <span class="font-sans text-slate-700">в (страны/города без арт.), после (<em>nach Berlin</em>)</span></li>
+                            <li><strong>seit</strong> — <span class="font-sans text-slate-700">с (какого-то времени до сих пор: <em>seit einem Jahr</em>)</span></li>
+                            <li><strong>von</strong> — <span class="font-sans text-slate-700">от, о, с (<em>vom Bahnhof</em>)</span></li>
+                            <li><strong>zu</strong> — <span class="font-sans text-slate-700">к (людям, местам в городе: <em>zur Arbeit, zum Arzt</em>)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 7.3. Wechselpräpositionen (Двойное управление) -->
+                <div class="p-4 rounded-xl border border-amber-200 bg-amber-50/30 searchable-row">
+                    <h3 class="font-extrabold text-amber-900 text-sm mb-2">7.3. Предлоги двойного управления (Wechselpräpositionen)</h3>
+                    <p class="font-mono text-xs sm:text-sm font-bold text-slate-800 mb-2">
+                        in (в), an (на вертик. / у), auf (на горизонт.), neben (рядом), hinter (позади), über (над), unter (под), vor (перед), zwischen (между)
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                        <div class="bg-white p-3 rounded-lg border border-blue-200">
+                            <span class="font-bold text-blue-700">Вопрос WOHIN? (Куда? — движение/перемещение) → Akkusativ</span><br>
+                            <span class="text-slate-600"><em>Ich stelle die Lampe <strong>auf den</strong> Tisch.</em> (Ставлю куда? на стол)</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg border border-rose-200">
+                            <span class="font-bold text-rose-700">Вопрос WO? (Где? — покой/нахождение) → Dativ</span><br>
+                            <span class="text-slate-600"><em>Die Lampe steht <strong>auf dem</strong> Tisch.</em> (Стоит где? на столе)</span>
+                        </div>
+                    </div>
+                    <div class="mt-3 text-xs bg-white p-2.5 rounded-lg border border-slate-200 font-mono">
+                        <strong>Стандартные слияния предлога и артикля:</strong>
+                        in + dem = <strong>im</strong> | in + das = <strong>ins</strong> | an + dem = <strong>am</strong> | an + das = <strong>ans</strong> | bei + dem = <strong>beim</strong> | von + dem = <strong>vom</strong> | zu + dem = <strong>zum</strong> | zu + der = <strong>zur</strong>
+                    </div>
+                </div>
+
+                <!-- 7.4. Глаголы, которые всегда требуют Dativ -->
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 searchable-row">
+                    <h3 class="font-bold text-slate-800 text-sm mb-1.5">7.4. Важные глаголы, требующие только Dativ (кому?):</h3>
+                    <p class="text-xs sm:text-sm text-slate-700">
+                        <strong>helfen</strong> (помогать), <strong>danken</strong> (благодарить), <strong>gehören</strong> (принадлежать), <strong>gefallen</strong> (нравиться), <strong>schmecken</strong> (быть вкусным кому-то), <strong>passen</strong> (подходить по размеру/времени), <strong>antworten</strong> (отвечать), <strong>gratulieren</strong> (поздравлять).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 8: ПОРЯДОК СЛОВ И СОЮЗЫ (SATZBAU & KONJUNKTIONEN)
+             Назначение: Визуальная схема позиций (Позиция 0, 1, 2, Конец) для всех типов предложений.
+             ******************************************************************* -->
+        <section id="sec-syntax" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-emerald-400">Module 08 • Satzbau & Konjunktionen</span>
+                    <h2 class="text-lg sm:text-xl font-bold">8. Порядок слов и союзы (Позиция 0, Инверсия, Глагол в конце)</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Синтаксис</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- Схемы типов предложений -->
+                <div class="table-wrap rounded-xl border border-slate-200">
+                    <table class="text-xs sm:text-sm text-left">
+                        <thead class="bg-slate-100 font-bold">
+                            <tr>
+                                <th class="p-3">Тип предложения</th>
+                                <th class="p-3 text-center">Поз. 0</th>
+                                <th class="p-3 text-center">Поз. 1</th>
+                                <th class="p-3 text-center bg-blue-50 text-blue-900">Поз. 2 (Глагол!)</th>
+                                <th class="p-3 text-center">Середина</th>
+                                <th class="p-3 text-center bg-amber-50 text-amber-900">Конец (рамка)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 font-mono text-xs">
+                            <tr class="searchable-row">
+                                <td class="p-3 font-sans font-bold">Прямой порядок</td>
+                                <td class="p-3 text-center text-slate-400">—</td>
+                                <td class="p-3 text-center">Ich</td>
+                                <td class="p-3 text-center bg-blue-50 font-bold text-blue-800">kaufe</td>
+                                <td class="p-3 text-center">heute Brot</td>
+                                <td class="p-3 text-center bg-amber-50 font-bold text-amber-800">ein.</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-sans font-bold">Обратный (инверсия)</td>
+                                <td class="p-3 text-center text-slate-400">—</td>
+                                <td class="p-3 text-center">Heute</td>
+                                <td class="p-3 text-center bg-blue-50 font-bold text-blue-800">kaufe</td>
+                                <td class="p-3 text-center">ich Brot</td>
+                                <td class="p-3 text-center bg-amber-50 font-bold text-amber-800">ein.</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-sans font-bold">Вопрос без W-слова</td>
+                                <td class="p-3 text-center text-slate-400">—</td>
+                                <td class="p-3 text-center bg-blue-50 font-bold text-blue-800">Kaufst</td>
+                                <td class="p-3 text-center">du</td>
+                                <td class="p-3 text-center">heute Brot</td>
+                                <td class="p-3 text-center bg-amber-50 font-bold text-amber-800">ein?</td>
+                            </tr>
+                            <tr class="searchable-row">
+                                <td class="p-3 font-sans font-bold">Вопрос с W-словом</td>
+                                <td class="p-3 text-center text-slate-400">—</td>
+                                <td class="p-3 text-center">Wann</td>
+                                <td class="p-3 text-center bg-blue-50 font-bold text-blue-800">kaufst</td>
+                                <td class="p-3 text-center">du Brot</td>
+                                <td class="p-3 text-center bg-amber-50 font-bold text-amber-800">ein?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 3 группы союзов -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+                    <!-- Позиция 0 -->
+                    <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 searchable-row">
+                        <span class="inline-block bg-slate-800 text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Группа 1: Позиция 0 (ADUSO)</span>
+                        <p class="font-mono font-bold text-slate-900">aber (но), denn (так как), und (и), sondern (а / но), oder (или)</p>
+                        <p class="text-slate-600 mt-2">Не влияют на порядок слов! После них идёт подлежащее (1-е место) + глагол (2-е место):</p>
+                        <p class="font-mono text-xs bg-white p-2 rounded border border-slate-200 mt-2">Ich bleibe zu Hause, <strong>denn</strong> ich <strong>bin</strong> krank.</p>
+                    </div>
+
+                    <!-- Позиция 1 (Инверсия) -->
+                    <div class="p-4 rounded-xl border border-blue-200 bg-blue-50/40 searchable-row">
+                        <span class="inline-block bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Группа 2: Союзные слова (Поз. 1)</span>
+                        <p class="font-mono font-bold text-blue-900">deshalb / darum (поэтому), trotzdem (несмотря на это), dann (потом), danach (после этого)</p>
+                        <p class="text-slate-600 mt-2">Занимают 1-е место, поэтому <strong>сразу после них стоит глагол</strong>:</p>
+                        <p class="font-mono text-xs bg-white p-2 rounded border border-blue-200 mt-2">Ich bin krank, <strong>deshalb bleibe</strong> ich zu Hause.</p>
+                    </div>
+
+                    <!-- Придаточные (Глагол в конце) -->
+                    <div class="p-4 rounded-xl border border-amber-200 bg-amber-50/40 searchable-row">
+                        <span class="inline-block bg-amber-600 text-white text-xs font-bold px-2 py-0.5 rounded mb-2">Группа 3: Подчинительные союзы</span>
+                        <p class="font-mono font-bold text-amber-900">weil (потому что), dass (что), wenn (если/когда), als (когда, 1 раз в прошл.), obwohl (хотя), ob (ли), damit (чтобы)</p>
+                        <p class="text-slate-600 mt-2">Выталкивают спрягаемый глагол <strong>в самый конец</strong> предложения:</p>
+                        <p class="font-mono text-xs bg-white p-2 rounded border border-amber-200 mt-2">Ich bleibe zu Hause, <strong>weil</strong> ich krank <strong>bin</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- *******************************************************************
+             РАЗДЕЛ 9: СКЛОНЕНИЕ ПРИЛАГАТЕЛЬНЫХ И СТЕПЕНИ СРАВНЕНИЯ
+             Назначение: 3 таблицы окончаний прилагательных (слабое, смешанное, сильное)
+             и образование степеней сравнения (Komparativ / Superlativ).
+             ******************************************************************* -->
+        <section id="sec-adjectives" class="ref-section bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-5 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-wider text-pink-400">Module 09 • Adjektivdeklination & Komparation</span>
+                    <h2 class="text-lg sm:text-xl font-bold">9. Склонение прилагательных и степени сравнения</h2>
+                </div>
+                <span class="text-xs bg-slate-800 text-slate-300 px-3 py-1 rounded-full self-start">Уровень A2–B1</span>
+            </div>
+
+            <div class="p-5 space-y-6">
+                <!-- 3 типа склонения в одной компактной сетке -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                    <!-- Тип 1: После определённого артикля (der, die, das, dieser) -->
+                    <div class="rounded-xl border border-slate-200 overflow-hidden searchable-row">
+                        <div class="bg-slate-100 p-3 font-bold text-xs sm:text-sm text-slate-800">
+                            Тип 1: После определённого артикля<br><span class="font-normal text-xs text-slate-500">(der, die, das, dieser, jeder, welcher)</span>
+                        </div>
+                        <table class="text-xs text-center font-mono">
+                            <thead class="bg-slate-50">
+                                <tr><th class="p-2 text-left">Падеж</th><th class="p-2 g-m">m</th><th class="p-2 g-f">f</th><th class="p-2 g-n">n</th><th class="p-2 g-p">pl</th></tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr><td class="p-2 text-left font-bold">Nom.</td><td class="p-2 g-m font-bold">-e</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-e</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Akk.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-e</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Dat.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f">-en</td><td class="p-2 g-n">-en</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Gen.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f">-en</td><td class="p-2 g-n">-en</td><td class="p-2 g-p">-en</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="p-2.5 text-xs text-slate-500 bg-slate-50">Правило «кастрюли»: только 5 ячеек имеют <strong>-e</strong>, все остальные — <strong>-en</strong>.</p>
+                    </div>
+
+                    <!-- Тип 2: После неопределённого / притяжательного (ein, kein, mein...) -->
+                    <div class="rounded-xl border border-slate-200 overflow-hidden searchable-row">
+                        <div class="bg-slate-100 p-3 font-bold text-xs sm:text-sm text-slate-800">
+                            Тип 2: После ein / kein / mein<br><span class="font-normal text-xs text-slate-500">(неопределённый и притяжательный)</span>
+                        </div>
+                        <table class="text-xs text-center font-mono">
+                            <thead class="bg-slate-50">
+                                <tr><th class="p-2 text-left">Падеж</th><th class="p-2 g-m">m</th><th class="p-2 g-f">f</th><th class="p-2 g-n">n</th><th class="p-2 g-p">pl</th></tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr><td class="p-2 text-left font-bold">Nom.</td><td class="p-2 g-m font-bold">-er</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-es</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Akk.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-es</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Dat.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f">-en</td><td class="p-2 g-n">-en</td><td class="p-2 g-p">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Gen.</td><td class="p-2 g-m">-en</td><td class="p-2 g-f">-en</td><td class="p-2 g-n">-en</td><td class="p-2 g-p">-en</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="p-2.5 text-xs text-slate-500 bg-slate-50">Где у <code>ein</code> нет окончания (Nom. m, Nom/Akk n), прилагательное берёт на себя <strong>-er / -es</strong>.</p>
+                    </div>
+
+                    <!-- Тип 3: Без артикля (после чисел, viel, etwas, или во мн. числе) -->
+                    <div class="rounded-xl border border-slate-200 overflow-hidden searchable-row">
+                        <div class="bg-slate-100 p-3 font-bold text-xs sm:text-sm text-slate-800">
+                            Тип 3: Без артикля (нулевой)<br><span class="font-normal text-xs text-slate-500">(kaltes Wasser, gute Freunde)</span>
+                        </div>
+                        <table class="text-xs text-center font-mono">
+                            <thead class="bg-slate-50">
+                                <tr><th class="p-2 text-left">Падеж</th><th class="p-2 g-m">m</th><th class="p-2 g-f">f</th><th class="p-2 g-n">n</th><th class="p-2 g-p">pl</th></tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr><td class="p-2 text-left font-bold">Nom.</td><td class="p-2 g-m font-bold">-er</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-es</td><td class="p-2 g-p font-bold">-e</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Akk.</td><td class="p-2 g-m font-bold">-en</td><td class="p-2 g-f font-bold">-e</td><td class="p-2 g-n font-bold">-es</td><td class="p-2 g-p font-bold">-e</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Dat.</td><td class="p-2 g-m font-bold">-em</td><td class="p-2 g-f font-bold">-er</td><td class="p-2 g-n font-bold">-em</td><td class="p-2 g-p font-bold">-en</td></tr>
+                                <tr><td class="p-2 text-left font-bold">Gen.</td><td class="p-2 g-m font-bold">-en</td><td class="p-2 g-f font-bold">-er</td><td class="p-2 g-n font-bold">-en</td><td class="p-2 g-p font-bold">-er</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="p-2.5 text-xs text-slate-500 bg-slate-50">Прилагательное забирает окончания определённого артикля (<em>de<strong>r</strong> → gut<strong>er</strong>, de<strong>m</strong> → gut<strong>em</strong></em>).</p>
+                    </div>
+                </div>
+
+                <!-- 9.2. Степени сравнения (Komparation) -->
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wide mb-2.5">9.2. Степени сравнения прилагательных (Positiv → Komparativ → Superlativ)</h3>
+                    <div class="table-wrap rounded-xl border border-slate-200">
+                        <table class="text-xs sm:text-sm text-left">
+                            <thead class="bg-slate-100 font-bold">
+                                <tr>
+                                    <th class="p-2.5">Тип</th>
+                                    <th class="p-2.5">Positiv (начальная)</th>
+                                    <th class="p-2.5">Komparativ (+ -er + als)</th>
+                                    <th class="p-2.5">Superlativ (am ...-sten / der ...-ste)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-mono text-xs sm:text-sm">
+                                <tr class="searchable-row"><td class="p-2.5 font-sans">Обычные</td><td class="p-2.5">schnell (быстрый)</td><td class="p-2.5">schnell<strong>er</strong> (быстрее)</td><td class="p-2.5">am schnell<strong>sten</strong> / der schnell<strong>ste</strong></td></tr>
+                                <tr class="searchable-row"><td class="p-2.5 font-sans">Односложные (a, o, u)</td><td class="p-2.5">alt (старый) / jung (молодой)</td><td class="p-2.5"><strong>ä</strong>lt<strong>er</strong> / j<strong>ü</strong>ng<strong>er</strong></td><td class="p-2.5">am <strong>ä</strong>lt<strong>esten</strong> / am j<strong>ü</strong>ng<strong>sten</strong></td></tr>
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 font-sans font-bold">Исключение: gut</td><td class="p-2.5 font-bold">gut (хороший)</td><td class="p-2.5 font-bold text-indigo-700">besser (лучше)</td><td class="p-2.5 font-bold text-indigo-700">am besten / der beste</td></tr>
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 font-sans font-bold">Исключение: viel</td><td class="p-2.5 font-bold">viel (много)</td><td class="p-2.5 font-bold text-indigo-700">mehr (больше)</td><td class="p-2.5 font-bold text-indigo-700">am meisten / die meisten</td></tr>
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 font-sans font-bold">Исключение: gern</td><td class="p-2.5 font-bold">gern (охотно)</td><td class="p-2.5 font-bold text-indigo-700">lieber (охотнее / лучше)</td><td class="p-2.5 font-bold text-indigo-700">am liebsten</td></tr>
+                                <tr class="searchable-row bg-amber-50/40"><td class="p-2.5 font-sans font-bold">Исключение: hoch</td><td class="p-2.5 font-bold">hoch (высокий)</td><td class="p-2.5 font-bold text-indigo-700">höher (выше — без c!)</td><td class="p-2.5 font-bold text-indigo-700">am höchsten</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-1.5">Сравнение: <strong>so + Positiv + wie</strong> (такой же..., как: <em>so groß wie ich</em>) | <strong>Komparativ + als</strong> (больше, чем: <em>größer als ich</em>).</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================================================
+         МИНИМАЛЬНЫЙ JAVASCRIPT ДЛЯ ПОИСКА И НАВИГАЦИИ ПО СПРАВОЧНИКУ
+         ===================================================================== -->
+    <script>
+        /**
+         * Фильтрует строки таблиц и карточки правил по введённому запросу.
+         * Если в разделе не осталось ни одного совпадения, скрывает весь раздел.
+         */
+        function filterReference(rawQuery) {
+            const query = rawQuery.trim().toLowerCase();
+            const clearBtn = document.getElementById('clear-search-btn');
+            clearBtn.classList.toggle('hidden', query.length === 0);
+
+            const sections = document.querySelectorAll('.ref-section');
+
+            sections.forEach(section => {
+                const rows = section.querySelectorAll('.searchable-row');
+                let visibleCount = 0;
+
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    const isMatch = query === '' || text.includes(query);
+                    row.style.display = isMatch ? '' : 'none';
+                    if (isMatch) visibleCount++;
+                });
+
+                // Если в секции есть строки с классом searchable-row, скрываем пустую секцию целиком
+                if (rows.length > 0) {
+                    section.style.display = visibleCount > 0 ? '' : 'none';
+                }
+            });
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('global-search');
+            input.value = '';
+            filterReference('');
+            input.focus();
+        }
+
+        function toggleAllDetails(openState) {
+            document.querySelectorAll('details').forEach(el => {
+                el.open = openState;
+            });
+        }
+    </script>
+</body>
+</html>

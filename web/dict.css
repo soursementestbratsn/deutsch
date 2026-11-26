@@ -1,0 +1,208 @@
+/* ============================================================
+   Deutsch Quest — СЛОВАРЬ, ФОТО СЛОВ И ЦВЕТНЫЕ АРТИКЛИ  (dict.css)
+
+   Файл подключён ПОСЛЕ glass.css и extras.css — значит его правила
+   побеждают. Цвета артиклей задаются здесь же (--art-der/die/das),
+   их же учитывает подсветка неверного ответа.
+   ============================================================ */
+
+/* ---------------- 1. Артикли: der · die · das ---------------- */
+:root {
+  --art-der: #4aa3ff;
+  --art-die: #ff5d6c;
+  --art-das: #35d49a;
+}
+
+b.dq-art,
+.dq-art {
+  font-weight: 800;
+  letter-spacing: .01em;
+  background: none;
+  padding: 0 1px;
+}
+.dq-art.art-der { color: var(--art-der); }
+.dq-art.art-die { color: var(--art-die); }
+.dq-art.art-das { color: var(--art-das); }
+
+/* тёмное стекло/светлые темы: чуть мягче, но контраст сохраняем */
+body[data-theme="light"] .dq-art.art-der,
+body[data-theme="sand"] .dq-art.art-der { color: #1272d8; }
+body[data-theme="light"] .dq-art.art-die,
+body[data-theme="sand"] .dq-art.art-die { color: #d8283c; }
+body[data-theme="light"] .dq-art.art-das,
+body[data-theme="sand"] .dq-art.art-das { color: #0d915c; }
+
+/* вопрос тренажёра: цветные артикли приглушены, чтобы не мешать чтению */
+.q-text .dq-art { opacity: .95; }
+.opt .dq-art { font-weight: 700; }
+
+/* ---------------- 2. Фото к словам ---------------- */
+.dq-photo {
+  width: var(--ph, 64px);
+  height: var(--ph, 64px);
+  object-fit: contain;   /* фото видно целиком, а не обрезанный квадрат */
+  border-radius: calc(var(--ph, 64px) * .3);
+  background: var(--card2, rgba(255, 255, 255, .06));
+  border: 1px solid var(--line, rgba(255, 255, 255, .12));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .28);
+  flex: 0 0 auto;
+  vertical-align: middle;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+/* по умолчанию фото скрыто, пока не загрузилось (без пустых квадратов) */
+.dq-photo[src=""] { display: none; }
+/* настройка «Рисунки к словам» выключена — прячем фон, не удаляя разметку */
+body.no-wordphotos .dq-photo { display: none !important; }
+.dq-photo:hover { transform: translateY(-1px) scale(1.03); box-shadow: 0 10px 24px rgba(0, 0, 0, .34); }
+
+/* файл фото удалён — не показываем сломанную картинку */
+img.dq-photo.broken { display: none !important; }
+
+/* фото слова в грамматическом задании */
+.gv-photo-box { display: flex; justify-content: center; margin-top: 10px; }
+.dq-photo.gv-photo {
+  width: min(54vw, 240px); height: min(54vw, 240px);
+  object-fit: contain; padding: 4px; border-radius: 16px;
+  background: color-mix(in srgb, var(--card2) 80%, transparent);
+}
+
+/* фото под строкой текста (правило, таблица, разбор) — видно целиком */
+.dq-photo.tt-photo {
+  display: block; margin: 6px 0 10px;
+  width: min(60vw, 220px); height: min(60vw, 220px);
+  object-fit: contain; padding: 3px; border-radius: 14px;
+  background: color-mix(in srgb, var(--card2) 80%, transparent);
+}
+
+/* «Мои слова»: фото слева от слова */
+.my-text { display: flex; align-items: center; gap: 10px; }
+.my-text .dq-photo { border-radius: 12px; }
+
+/* слово дня */
+.wod-de { display: flex; align-items: center; gap: 10px; }
+.wod-de .dq-photo { border-radius: 16px; box-shadow: 0 8px 20px rgba(0, 0, 0, .3); }
+
+/* ---------------- 3. Экран «Словарь» ---------------- */
+#view-dict .wide { max-width: 1180px; }
+
+.dt-head { padding: 16px 18px 12px; display: flex; flex-direction: column; gap: 10px; }
+.dt-head .search-row { margin: 0; }
+.dt-select { max-width: 260px; }
+
+.dt-filters {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.dt-spacer { flex: 1 1 auto; }
+.dt-hint { margin: 2px 0 0; line-height: 1.5; }
+.dt-hint kbd {
+  font-family: inherit; font-size: .85em; padding: 1px 6px; border-radius: 6px;
+  background: var(--card2, rgba(255, 255, 255, .08)); border: 1px solid var(--line, rgba(255, 255, 255, .14));
+}
+
+/* подсказка «нужны отдельные слова?» на экране групп */
+.dict-callout {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  margin: 14px 0 4px; padding: 14px 16px; border-radius: var(--radius, 20px);
+  background: linear-gradient(120deg, color-mix(in oklab, var(--accent) 14%, transparent), transparent 70%);
+  border: 1px solid var(--line, rgba(255, 255, 255, .12));
+}
+.dict-callout b { color: var(--text); }
+.dict-callout .muted { display: inline; }
+
+.dt-list { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+
+.dt-row {
+  display: grid;
+  grid-template-columns: 26px 56px minmax(0, 1fr) minmax(90px, 180px) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 16px;
+  background: var(--card, rgba(255, 255, 255, .04));
+  border: 1px solid transparent;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.dt-row:hover {
+  background: color-mix(in oklab, var(--accent) 7%, var(--card, rgba(255, 255, 255, .05)));
+  border-color: var(--line, rgba(255, 255, 255, .14));
+  transform: translateY(-1px);
+}
+.dt-row.on {
+  border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  background: color-mix(in oklab, var(--accent) 12%, var(--card, rgba(255, 255, 255, .04)));
+}
+.dt-row.drop {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
+}
+
+/* галочка «спрашивать это слово» */
+.dt-check {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid var(--line, rgba(255, 255, 255, .3));
+  background: transparent; cursor: pointer; position: relative;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.dt-check:hover { border-color: var(--accent); transform: scale(1.06); }
+.dt-check.on { background: var(--accent); border-color: var(--accent); }
+.dt-check.on::after {
+  content: ""; position: absolute; left: 50%; top: 46%;
+  width: 5px; height: 9px; border: 2px solid var(--onAccent, #06121c);
+  border-top: 0; border-left: 0; transform: translate(-50%, -50%) rotate(42deg);
+}
+
+/* миниатюра */
+.dt-ph {
+  width: 56px; height: 56px; border-radius: 14px; overflow: hidden;
+  display: grid; place-items: center; cursor: pointer;
+  background: var(--card2, rgba(255, 255, 255, .06));
+  border: 1px dashed var(--line, rgba(255, 255, 255, .2));
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+.dt-ph.has { border: 1px solid var(--line, rgba(255, 255, 255, .16)); }
+.dt-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dt-ph:hover { border-color: var(--accent); transform: scale(1.03); }
+.dt-ph-plus { font-size: 22px; color: var(--faint, #7b8190); line-height: 1; }
+.dt-ph:hover .dt-ph-plus { color: var(--accent); }
+
+.dt-main { min-width: 0; }
+.dt-de { font-weight: 650; font-size: 1.02rem; color: var(--text); }
+.dt-ru { color: var(--dim, #b8bcc7); font-size: .88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dt-group {
+  color: var(--faint, #7b8190); font-size: .76rem; text-align: right;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.dt-tools { display: flex; gap: 4px; }
+.dt-btn {
+  width: 32px; height: 32px; border-radius: 10px; cursor: pointer;
+  border: 1px solid transparent; background: transparent; color: var(--dim, #b8bcc7);
+  font-size: 15px; line-height: 1; display: grid; place-items: center;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.dt-btn:hover { background: var(--card2, rgba(255, 255, 255, .08)); color: var(--text); border-color: var(--line, rgba(255, 255, 255, .14)); }
+.dt-btn.danger:hover { color: #ff6b6b; border-color: rgba(255, 107, 107, .5); }
+
+.dt-more-wrap { display: flex; justify-content: center; padding: 16px 0 8px; }
+
+/* ---------------- 4. Курс: выбор варианта и Enter ---------------- */
+.cr-options .opt.sel {
+  border-color: var(--accent) !important;
+  background: color-mix(in oklab, var(--accent) 16%, transparent) !important;
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent) 35%, transparent);
+  transform: translateY(-1px);
+}
+.cr-options .opt.correct { border-color: var(--ok, #35d49a) !important; }
+.cr-options .opt.wrong { border-color: #ff5d6c !important; }
+.cr-kbd { margin-left: 6px; opacity: .75; }
+.cr-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+input.input.ok { border-color: var(--ok, #35d49a) !important; }
+input.input.bad { border-color: #ff5d6c !important; }
+
+/* ---------------- 5. Телефоны и мелочи ---------------- */
+@media (max-width: 760px) {
+  .dt-row { grid-template-columns: 24px 46px minmax(0, 1fr) auto; }
+  .dt-ph { width: 46px; height: 46px; }
+  .dt-group { display: none; }
+  .dt-select { max-width: none; flex: 1 1 100%; }
+  .dict-callout { flex-direction: column; align-items: flex-start; }
+}
