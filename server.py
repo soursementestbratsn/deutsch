@@ -278,11 +278,15 @@ def _load_user_stats(user_id):
 
 
 def _save_user_stats(user_id, stats):
-    """Save stats for a specific user."""
+    """Save stats for a specific user (atomic write)."""
     path = _stats_file_for_user(user_id)
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(tmp, path)
 
 
 def _stats():

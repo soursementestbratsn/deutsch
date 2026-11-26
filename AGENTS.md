@@ -53,26 +53,23 @@ DESKTOP (legacy, не трогать без просьбы) — `python main.py 
 
 ## 0.1 ТЕКУЩИЙ СТАТУС (обновлено 2026-11-26)
 
-### Исправлено в последней версии (v20):
-- **RU→DE перевод по клику** (Идея #1) — toggle в настройках «Слова» → «Русский → немецкий по клику». Клик по русскому слову показывает немецкий перевод (`web/wordpop.js`, `web/settings.js`, `web/theme.js`).
-- **Звуки правильно/неправильно везде** (Идея #2) — toggle в настройках «Звук» → «Звуки правильно/неправильно». Работает в тренажёре, играх, заданиях, экзамене (`web/sound.js`, `web/settings.js`, `web/theme.js`, `server.py`).
-- **Улучшенное отображение фото слов** (Идея #3) — увеличен размер фото по умолчанию (44→64px), крупнее фото в вопросе тренажёра (340→400px), повышен лимит фото на экране (60→120) (`web/dq-ui.js`, `web/dict.css`, `web/style.css`).
-- **Горячие клавиши** (Идея #84) — 1-4: выбор варианта, Space: слушать слово, Shift+Space: слушать медленно, Enter: следующий вопрос, S: слушать, ?: подсказка (`web/dq.js`, `web/index.html`).
-- **Версии файлов** — `style.css?v=120`, `dict.css?v=4`, `sound.js?v=53`, `dq-ui.js?v=4`, `settings.js?v=65`, `dq.js?v=138`, `wordpop.js?v=14`.
+### Реализовано (v24, коммит 75abf18):
+- **Безопасность (P0)**: _safe_resolve() (path traversal), rate limiting (30-60 req/min per IP), CSRF origin-проверка, валидация X-User-ID (regex), атомарная запись статистики (temp+os.replace), secure cookies (HttpOnly/Secure/SameSite), admin token только через Bearer header, .gitignore.
+- **Мобильная оптимизация (P1)**: touch targets 44x44px, thumb-zone sticky actions, safe area insets, prefers-reduced-motion, print stylesheet, ETag-кэширование (304).
+- **Чейнджлог**: исправлены поля (t вместо 	imestamp, файл/что вместо 	ype/desc), показ всех версий, навигация на /changelog.
+- **Слова**: 450 пар в 16 группах (было 276 в 10). Добавлены: ложные друзья, предлоги времени, отделяемые приставки.
+- **Настройки**: calmMode, strictArticle, gender color coding CSS tokens.
+- **Персональная БД**: прогресс изолирован по пользователям (content/de_lernen_stats_<user_id>.json), user_id из X-User-ID/cookie/IP.
+- **Git/GitHub**: репозиторий https://github.com/soursementestbratsn/deutsch, автодеплой через GitHub Actions → Fly.io.
+- **Fly.io**: https://deutsch-quest.fly.dev/ — задеплоено, работает.
 
-### Исправлено в v17:
-- **TTS качество** — фикс `voice_variant` в кэше neural audio (`server.py:1114`). Теперь голоса standard/austria/swiss имеют отдельные кэши.
-- **Группы слов** — восстановлены все 12 групп из `content/words.txt` (формат: `# Название`, `Deutsch = русский`). API `/api/data` отдаёт 15 групп (12 словарных + Числа + Фразы + Телефоны).
-- **Настройки не закрывались** — добавлен `pointer-events: auto` для `.settings-backdrop` (`style.css:951`), исправлен обработчик клика на `addEventListener` с проверкой `e.target === backdrop` (`settings.js:432`).
-- **Версии файлов** — `style.css?v=119`, `settings.js?v=64` для cache busting.
+### Версии файлов: style.css?v=121, glass.css, theme.js?v=62, settings.js?v=67, dq.js?v=140, mobile.css.
 
-### Известные проблемы:
-- **HTTP 502 на /api/pairs?words=...** — воспроизводится на проде (Fly.io). Локально endpoint работает корректно. Требуется деплой через GitHub Actions (push в main).
-- **Группы не отображаются на сайте** — вероятно, браузер кэширует старые JS/CSS. Версии подняты, после деплоя должно заработать.
+### Известные проблемы: нет.
 
 ### Деплой:
-- Fly.io деплой происходит автоматически через GitHub Actions (`.github/workflows/deploy.yml`) при push в main.
-- Локально git-репозитория нет — для деплоя нужно инициализировать git, закоммитить и запушить в GitHub.
+- Fly.io: lyctl deploy --remote-only -a deutsch-quest (токен в env FLY_API_TOKEN)
+- GitHub Actions: автодеплой при push в main
 
 ---
 
