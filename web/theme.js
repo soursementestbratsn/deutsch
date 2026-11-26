@@ -187,6 +187,7 @@ window.DQ_THEME = {
     body.classList.toggle("is-glass-tint", !!u.glassTint);
     body.classList.toggle("is-parallax", !!u.parallax);
     body.classList.toggle("is-hc-glass", !!u.highContrastGlass);
+    body.classList.toggle("is-calm", !!u.calmMode);
     const scene = document.querySelector(".glass-light");
     if (scene) scene.style.opacity = u.reduceGlow ? ".35" : "";
     return u;

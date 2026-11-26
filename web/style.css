@@ -2222,3 +2222,24 @@ body[style*="font-size"] .chip { font-size: 1em; }
 .cr-flash-ru { font-size: 19px; color: var(--dim); margin-top: 6px; }
 .cr-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
 .cr-done { text-align: center; padding: 20px 0; }
+
+/* === Error diff highlighting === */
+.diff-ok { color: #22c55e; }
+.diff-miss { color: #f59e0b; text-decoration: underline; }
+.diff-extra { color: #ef4444; text-decoration: line-through; }
+.diff-wrong { color: #ef4444; font-weight: 700; }
+
+/* === Diacritics panel === */
+.diacritics-bar { display: flex; gap: 4px; margin: 4px 0; }
+.diacritics-bar button {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: inherit; border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: 14px;
+}
+.diacritics-bar button:hover { background: rgba(255,255,255,0.18); }
+
+/* === Calm mode: hide gamification elements === */
+body.is-calm .xp-bar, body.is-calm .hearts, body.is-calm .timer,
+body.is-calm .confetti, body.is-calm .streak-badge, body.is-calm .level-badge {
+  display: none !important;
+}
+body.is-calm .gamify-panel { display: none !important; }

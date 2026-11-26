@@ -1041,3 +1041,53 @@ html, body { overflow-x: hidden; }
   .search-row .input { font-size: 16px; padding: 14px; min-height: 48px; }
   .dt-filters .chip, .dt-filters .btn { min-height: 44px; padding: 10px 14px; font-size: 14px; }
 }
+
+/* === Gender color coding (der/die/das) === */
+:root {
+  --gender-m: #60a5fa;
+  --gender-f: #f472b6;
+  --gender-n: #34d399;
+  --gender-pl: #fbbf24;
+}
+[data-theme="light"] {
+  --gender-m: #2563eb;
+  --gender-f: #db2777;
+  --gender-n: #059669;
+  --gender-pl: #d97706;
+}
+.g-m { color: var(--gender-m); }
+.g-f { color: var(--gender-f); }
+.g-n { color: var(--gender-n); }
+.g-pl { color: var(--gender-pl); }
+.g-m::before { content: "der "; font-weight: 600; }
+.g-f::before { content: "die "; font-weight: 600; }
+.g-n::before { content: "das "; font-weight: 600; }
+.g-pl::before { content: "die "; font-weight: 600; }
+
+/* === Reduced transparency / high contrast === */
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-card, .settings-card, .modal, .bottom-sheet {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(0,0,0,0.92) !important;
+  }
+  [data-theme="light"] .glass, [data-theme="light"] .glass-card {
+    background: rgba(255,255,255,0.95) !important;
+  }
+}
+@media (prefers-contrast: high) {
+  .glass, .glass-card, .settings-card, .modal {
+    border: 2px solid currentColor !important;
+    background: rgba(0,0,0,0.95) !important;
+  }
+  [data-theme="light"] .glass, [data-theme="light"] .glass-card {
+    background: rgba(255,255,255,0.98) !important;
+  }
+  .glass * { text-shadow: none !important; }
+}
+
+/* === Single glass layer rule === */
+.glass-overlay-backdrop {
+  background: rgba(0,0,0,0.6) !important;
+  backdrop-filter: blur(4px) !important;
+}

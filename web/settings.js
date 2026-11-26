@@ -93,7 +93,8 @@ window.SETTINGS = (function () {
         { key: "studyTimer", type: "range", label: "Таймер сессии", min: 0, max: 60, step: 5, plain: true, hint: "0 — без таймера; иначе минуты" },
         { key: "focusMusic", type: "toggle", label: "Тихий фон в режиме фокуса" },
         { key: "breakReminder", type: "toggle", label: "Напоминать про перерыв", hint: "Каждые 25 минут" },
-        { key: "gamify", type: "toggle", label: "XP, уровни и конфетти", hint: "Выключите — и останется только учёба" },
+        { key: "gamify", type: "toggle", label: "XP, уровни и конфетти", hint: "Выключите — и останется только учёба" }
+        ,{ key: "calmMode", type: "toggle", label: "Спокойный режим", hint: "Без таймеров, XP и сердечек" },
         /* новые — тренировка навыков */
         { key: "mistakeOnly", type: "toggle", label: "Только слова с ошибками", hint: "Тренажёр по «Слабым местам»" },
         { key: "reverseOnMistake", type: "toggle", label: "После ошибки — обращаю вопрос", hint: "Спросить это же слово в другую сторону" },
