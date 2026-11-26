@@ -7,7 +7,7 @@ app = 'deutsch-quest'
 primary_region = 'fra'
 
 [build]
-  dockerfile = 'scripts/Dockerfile'
+  dockerfile = 'scripts/python/Dockerfile'
 
 [http_service]
   internal_port = 8000
